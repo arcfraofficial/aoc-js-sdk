@@ -1,0 +1,33 @@
+{
+  "name": "aoc-js-sdk",
+  "version": "1.0.0",
+  "description": "Aoc JavaScript SDK in TypeScript",
+  "main": "lib/index.js",
+  "typings": "typings/index.d.ts",
+  "scripts": {
+    "build": "tsc -b .",
+    "typings": "tsc -d --emitDeclarationOnly --declarationDir typings",
+    "prepublish": "yarn build && yarn typings"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcfraofficial/aoc-js-sdk.git"
+  },
+  "files": ["lib", "typings"],
+  "keywords": ["swagger", "codegen", "typescript", "nodejs"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arcfraofficial/aoc-js-sdk/issues"
+  },
+  "homepage": "https://github.com/arcfraofficial/aoc-js-sdk",
+  "dependencies": {
+    "@koa/multer": "^3.0.0",
+    "axios": "^0.27.2",
+    "multer": "^1.4.4-lts.1",
+    "spdx-license-ids": "^3.0.10"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.2"
+  }
+}
