@@ -17,16 +17,26 @@ export interface CommonHeader {
   "x-aoc-request-id": string;
 }
 
-export enum ContentLanguage {
-  EnUS = "en-US",
-}
-
 export interface ClusterWhereInput {
   AND?: ClusterWhereInput[] | null;
   NOT?: ClusterWhereInput[] | null;
   OR?: ClusterWhereInput[] | null;
   access_write_compress_enabled?: boolean | null;
   access_write_compress_enabled_not?: boolean | null;
+  /** @format int64 */
+  allocated_memory_bytes?: number | null;
+  /** @format int64 */
+  allocated_memory_bytes_gt?: number | null;
+  /** @format int64 */
+  allocated_memory_bytes_gte?: number | null;
+  allocated_memory_bytes_in?: number[] | null;
+  /** @format int64 */
+  allocated_memory_bytes_lt?: number | null;
+  /** @format int64 */
+  allocated_memory_bytes_lte?: number | null;
+  /** @format int64 */
+  allocated_memory_bytes_not?: number | null;
+  allocated_memory_bytes_not_in?: number[] | null;
   /** @format int64 */
   allocated_prioritized_space?: number | null;
   /** @format int64 */
@@ -75,6 +85,34 @@ export interface ClusterWhereInput {
   architecture_not_in?: Architecture[] | null;
   auto_converge?: boolean | null;
   auto_converge_not?: boolean | null;
+  /** @format int64 */
+  cap_snapshot_unique_size?: number | null;
+  /** @format int64 */
+  cap_snapshot_unique_size_gt?: number | null;
+  /** @format int64 */
+  cap_snapshot_unique_size_gte?: number | null;
+  cap_snapshot_unique_size_in?: number[] | null;
+  /** @format int64 */
+  cap_snapshot_unique_size_lt?: number | null;
+  /** @format int64 */
+  cap_snapshot_unique_size_lte?: number | null;
+  /** @format int64 */
+  cap_snapshot_unique_size_not?: number | null;
+  cap_snapshot_unique_size_not_in?: number[] | null;
+  /** @format int64 */
+  cap_volume_unique_size?: number | null;
+  /** @format int64 */
+  cap_volume_unique_size_gt?: number | null;
+  /** @format int64 */
+  cap_volume_unique_size_gte?: number | null;
+  cap_volume_unique_size_in?: number[] | null;
+  /** @format int64 */
+  cap_volume_unique_size_lt?: number | null;
+  /** @format int64 */
+  cap_volume_unique_size_lte?: number | null;
+  /** @format int64 */
+  cap_volume_unique_size_not?: number | null;
+  cap_volume_unique_size_not_in?: number[] | null;
   /** @format int64 */
   commited_memory_bytes?: number | null;
   /** @format int64 */
@@ -138,6 +176,34 @@ export interface ClusterWhereInput {
   datacenters_every?: DatacenterWhereInput | null;
   datacenters_none?: DatacenterWhereInput | null;
   datacenters_some?: DatacenterWhereInput | null;
+  /** @format int64 */
+  dirty_cache_space?: number | null;
+  /** @format int64 */
+  dirty_cache_space_gt?: number | null;
+  /** @format int64 */
+  dirty_cache_space_gte?: number | null;
+  dirty_cache_space_in?: number[] | null;
+  /** @format int64 */
+  dirty_cache_space_lt?: number | null;
+  /** @format int64 */
+  dirty_cache_space_lte?: number | null;
+  /** @format int64 */
+  dirty_cache_space_not?: number | null;
+  dirty_cache_space_not_in?: number[] | null;
+  /** @format double */
+  dirty_cache_usage?: number | null;
+  /** @format double */
+  dirty_cache_usage_gt?: number | null;
+  /** @format double */
+  dirty_cache_usage_gte?: number | null;
+  dirty_cache_usage_in?: number[] | null;
+  /** @format double */
+  dirty_cache_usage_lt?: number | null;
+  /** @format double */
+  dirty_cache_usage_lte?: number | null;
+  /** @format double */
+  dirty_cache_usage_not?: number | null;
+  dirty_cache_usage_not_in?: number[] | null;
   disconnected_date?: string | null;
   disconnected_date_gt?: string | null;
   disconnected_date_gte?: string | null;
@@ -171,6 +237,20 @@ export interface ClusterWhereInput {
   entityAsyncStatus_not?: EntityAsyncStatus | null;
   entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
   everoute_cluster?: EverouteClusterWhereInput | null;
+  /** @format int64 */
+  failure_cache_space?: number | null;
+  /** @format int64 */
+  failure_cache_space_gt?: number | null;
+  /** @format int64 */
+  failure_cache_space_gte?: number | null;
+  failure_cache_space_in?: number[] | null;
+  /** @format int64 */
+  failure_cache_space_lt?: number | null;
+  /** @format int64 */
+  failure_cache_space_lte?: number | null;
+  /** @format int64 */
+  failure_cache_space_not?: number | null;
+  failure_cache_space_not_in?: number[] | null;
   /** @format int64 */
   failure_data_space?: number | null;
   /** @format int64 */
@@ -389,6 +469,20 @@ export interface ClusterWhereInput {
   /** @format int64 */
   max_physical_data_capacity_per_node_not?: number | null;
   max_physical_data_capacity_per_node_not_in?: number[] | null;
+  /** @format double */
+  memory_allocation_rate?: number | null;
+  /** @format double */
+  memory_allocation_rate_gt?: number | null;
+  /** @format double */
+  memory_allocation_rate_gte?: number | null;
+  memory_allocation_rate_in?: number[] | null;
+  /** @format double */
+  memory_allocation_rate_lt?: number | null;
+  /** @format double */
+  memory_allocation_rate_lte?: number | null;
+  /** @format double */
+  memory_allocation_rate_not?: number | null;
+  memory_allocation_rate_not_in?: number[] | null;
   mgt_gateway?: string | null;
   mgt_gateway_contains?: string | null;
   mgt_gateway_ends_with?: string | null;
@@ -485,6 +579,34 @@ export interface ClusterWhereInput {
   /** @format double */
   overall_efficiency_not?: number | null;
   overall_efficiency_not_in?: number[] | null;
+  /** @format double */
+  overcommit_memory_ratio?: number | null;
+  /** @format double */
+  overcommit_memory_ratio_gt?: number | null;
+  /** @format double */
+  overcommit_memory_ratio_gte?: number | null;
+  overcommit_memory_ratio_in?: number[] | null;
+  /** @format double */
+  overcommit_memory_ratio_lt?: number | null;
+  /** @format double */
+  overcommit_memory_ratio_lte?: number | null;
+  /** @format double */
+  overcommit_memory_ratio_not?: number | null;
+  overcommit_memory_ratio_not_in?: number[] | null;
+  /** @format double */
+  overprovision_ratio?: number | null;
+  /** @format double */
+  overprovision_ratio_gt?: number | null;
+  /** @format double */
+  overprovision_ratio_gte?: number | null;
+  overprovision_ratio_in?: number[] | null;
+  /** @format double */
+  overprovision_ratio_lt?: number | null;
+  /** @format double */
+  overprovision_ratio_lte?: number | null;
+  /** @format double */
+  overprovision_ratio_not?: number | null;
+  overprovision_ratio_not_in?: number[] | null;
   /** @format int64 */
   perf_allocated_data_space?: number | null;
   /** @format int64 */
@@ -1009,67 +1131,181 @@ export interface ClusterWhereInput {
   vms_some?: VmWhereInput | null;
 }
 
-export enum Architecture {
-  AARCH64 = "AARCH64",
-  X8664 = "X86_64",
-}
-
-export enum ConnectState {
-  CONNECTED = "CONNECTED",
-  DISCONNECTED = "DISCONNECTED",
-  INITIALIZING = "INITIALIZING",
-  REMOVING = "REMOVING",
-}
-
-export interface DatacenterWhereInput {
-  AND?: DatacenterWhereInput[] | null;
-  NOT?: DatacenterWhereInput[] | null;
-  OR?: DatacenterWhereInput[] | null;
-  /** @format int32 */
-  cluster_num?: number | null;
-  /** @format int32 */
-  cluster_num_gt?: number | null;
-  /** @format int32 */
-  cluster_num_gte?: number | null;
-  cluster_num_in?: number[] | null;
-  /** @format int32 */
-  cluster_num_lt?: number | null;
-  /** @format int32 */
-  cluster_num_lte?: number | null;
-  /** @format int32 */
-  cluster_num_not?: number | null;
-  cluster_num_not_in?: number[] | null;
-  clusters_every?: ClusterWhereInput | null;
-  clusters_none?: ClusterWhereInput | null;
-  clusters_some?: ClusterWhereInput | null;
+export interface VmWhereInput {
+  AND?: VmWhereInput[] | null;
+  NOT?: VmWhereInput[] | null;
+  OR?: VmWhereInput[] | null;
+  anti_malware_enabled?: boolean | null;
+  anti_malware_enabled_not?: boolean | null;
+  backup_plans_every?: BackupPlanWhereInput | null;
+  backup_plans_none?: BackupPlanWhereInput | null;
+  backup_plans_some?: BackupPlanWhereInput | null;
+  bios_uuid?: string | null;
+  bios_uuid_contains?: string | null;
+  bios_uuid_ends_with?: string | null;
+  bios_uuid_gt?: string | null;
+  bios_uuid_gte?: string | null;
+  bios_uuid_in?: string[] | null;
+  bios_uuid_lt?: string | null;
+  bios_uuid_lte?: string | null;
+  bios_uuid_not?: string | null;
+  bios_uuid_not_contains?: string | null;
+  bios_uuid_not_ends_with?: string | null;
+  bios_uuid_not_in?: string[] | null;
+  bios_uuid_not_starts_with?: string | null;
+  bios_uuid_starts_with?: string | null;
+  clock_offset?: VmClockOffset | null;
+  clock_offset_in?: VmClockOffset[] | null;
+  clock_offset_not?: VmClockOffset | null;
+  clock_offset_not_in?: VmClockOffset[] | null;
+  cloud_init_supported?: boolean | null;
+  cloud_init_supported_not?: boolean | null;
+  cluster?: ClusterWhereInput | null;
+  cpu_model?: string | null;
+  cpu_model_contains?: string | null;
+  cpu_model_ends_with?: string | null;
+  cpu_model_gt?: string | null;
+  cpu_model_gte?: string | null;
+  cpu_model_in?: string[] | null;
+  cpu_model_lt?: string | null;
+  cpu_model_lte?: string | null;
+  cpu_model_not?: string | null;
+  cpu_model_not_contains?: string | null;
+  cpu_model_not_ends_with?: string | null;
+  cpu_model_not_in?: string[] | null;
+  cpu_model_not_starts_with?: string | null;
+  cpu_model_starts_with?: string | null;
+  /** @format double */
+  cpu_usage?: number | null;
+  /** @format double */
+  cpu_usage_gt?: number | null;
+  /** @format double */
+  cpu_usage_gte?: number | null;
+  cpu_usage_in?: number[] | null;
+  /** @format double */
+  cpu_usage_lt?: number | null;
+  /** @format double */
+  cpu_usage_lte?: number | null;
+  /** @format double */
+  cpu_usage_not?: number | null;
+  cpu_usage_not_in?: number[] | null;
+  deleted_at?: string | null;
+  deleted_at_gt?: string | null;
+  deleted_at_gte?: string | null;
+  deleted_at_in?: string[] | null;
+  deleted_at_lt?: string | null;
+  deleted_at_lte?: string | null;
+  deleted_at_not?: string | null;
+  deleted_at_not_in?: string[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  dns_servers?: string | null;
+  dns_servers_contains?: string | null;
+  dns_servers_ends_with?: string | null;
+  dns_servers_gt?: string | null;
+  dns_servers_gte?: string | null;
+  dns_servers_in?: string[] | null;
+  dns_servers_lt?: string | null;
+  dns_servers_lte?: string | null;
+  dns_servers_not?: string | null;
+  dns_servers_not_contains?: string | null;
+  dns_servers_not_ends_with?: string | null;
+  dns_servers_not_in?: string[] | null;
+  dns_servers_not_starts_with?: string | null;
+  dns_servers_starts_with?: string | null;
+  dpi_enabled?: boolean | null;
+  dpi_enabled_not?: boolean | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  firmware?: VmFirmware | null;
+  firmware_in?: VmFirmware[] | null;
+  firmware_not?: VmFirmware | null;
+  firmware_not_in?: VmFirmware[] | null;
+  folder?: VmFolderWhereInput | null;
+  gpu_devices_every?: GpuDeviceWhereInput | null;
+  gpu_devices_none?: GpuDeviceWhereInput | null;
+  gpu_devices_some?: GpuDeviceWhereInput | null;
+  guest_cpu_model?: string | null;
+  guest_cpu_model_contains?: string | null;
+  guest_cpu_model_ends_with?: string | null;
+  guest_cpu_model_gt?: string | null;
+  guest_cpu_model_gte?: string | null;
+  guest_cpu_model_in?: string[] | null;
+  guest_cpu_model_lt?: string | null;
+  guest_cpu_model_lte?: string | null;
+  guest_cpu_model_not?: string | null;
+  guest_cpu_model_not_contains?: string | null;
+  guest_cpu_model_not_ends_with?: string | null;
+  guest_cpu_model_not_in?: string[] | null;
+  guest_cpu_model_not_starts_with?: string | null;
+  guest_cpu_model_starts_with?: string | null;
+  guest_os_type?: VmGuestsOperationSystem | null;
+  guest_os_type_in?: VmGuestsOperationSystem[] | null;
+  guest_os_type_not?: VmGuestsOperationSystem | null;
+  guest_os_type_not_in?: VmGuestsOperationSystem[] | null;
+  /** @format double */
+  guest_size_usage?: number | null;
+  /** @format double */
+  guest_size_usage_gt?: number | null;
+  /** @format double */
+  guest_size_usage_gte?: number | null;
+  guest_size_usage_in?: number[] | null;
+  /** @format double */
+  guest_size_usage_lt?: number | null;
+  /** @format double */
+  guest_size_usage_lte?: number | null;
+  /** @format double */
+  guest_size_usage_not?: number | null;
+  guest_size_usage_not_in?: number[] | null;
   /** @format int64 */
-  failure_data_space?: number | null;
+  guest_used_size?: number | null;
   /** @format int64 */
-  failure_data_space_gt?: number | null;
+  guest_used_size_gt?: number | null;
   /** @format int64 */
-  failure_data_space_gte?: number | null;
-  failure_data_space_in?: number[] | null;
+  guest_used_size_gte?: number | null;
+  guest_used_size_in?: number[] | null;
   /** @format int64 */
-  failure_data_space_lt?: number | null;
+  guest_used_size_lt?: number | null;
   /** @format int64 */
-  failure_data_space_lte?: number | null;
+  guest_used_size_lte?: number | null;
   /** @format int64 */
-  failure_data_space_not?: number | null;
-  failure_data_space_not_in?: number[] | null;
-  /** @format int32 */
-  host_num?: number | null;
-  /** @format int32 */
-  host_num_gt?: number | null;
-  /** @format int32 */
-  host_num_gte?: number | null;
-  host_num_in?: number[] | null;
-  /** @format int32 */
-  host_num_lt?: number | null;
-  /** @format int32 */
-  host_num_lte?: number | null;
-  /** @format int32 */
-  host_num_not?: number | null;
-  host_num_not_in?: number[] | null;
+  guest_used_size_not?: number | null;
+  guest_used_size_not_in?: number[] | null;
+  ha?: boolean | null;
+  ha_not?: boolean | null;
+  ha_priority?: VmHaPriority | null;
+  ha_priority_in?: VmHaPriority[] | null;
+  ha_priority_not?: VmHaPriority | null;
+  ha_priority_not_in?: VmHaPriority[] | null;
+  host?: HostWhereInput | null;
+  hostname?: string | null;
+  hostname_contains?: string | null;
+  hostname_ends_with?: string | null;
+  hostname_gt?: string | null;
+  hostname_gte?: string | null;
+  hostname_in?: string[] | null;
+  hostname_lt?: string | null;
+  hostname_lte?: string | null;
+  hostname_not?: string | null;
+  hostname_not_contains?: string | null;
+  hostname_not_ends_with?: string | null;
+  hostname_not_in?: string[] | null;
+  hostname_not_starts_with?: string | null;
+  hostname_starts_with?: string | null;
   id?: string | null;
   id_contains?: string | null;
   id_ends_with?: string | null;
@@ -1084,9 +1320,182 @@ export interface DatacenterWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
+  in_recycle_bin?: boolean | null;
+  in_recycle_bin_not?: boolean | null;
+  internal?: boolean | null;
+  internal_not?: boolean | null;
+  internal_product?: string | null;
+  internal_product_contains?: string | null;
+  internal_product_ends_with?: string | null;
+  internal_product_gt?: string | null;
+  internal_product_gte?: string | null;
+  internal_product_in?: string[] | null;
+  internal_product_lt?: string | null;
+  internal_product_lte?: string | null;
+  internal_product_name?: string | null;
+  internal_product_name_contains?: string | null;
+  internal_product_name_ends_with?: string | null;
+  internal_product_name_gt?: string | null;
+  internal_product_name_gte?: string | null;
+  internal_product_name_in?: string[] | null;
+  internal_product_name_lt?: string | null;
+  internal_product_name_lte?: string | null;
+  internal_product_name_not?: string | null;
+  internal_product_name_not_contains?: string | null;
+  internal_product_name_not_ends_with?: string | null;
+  internal_product_name_not_in?: string[] | null;
+  internal_product_name_not_starts_with?: string | null;
+  internal_product_name_starts_with?: string | null;
+  internal_product_not?: string | null;
+  internal_product_not_contains?: string | null;
+  internal_product_not_ends_with?: string | null;
+  internal_product_not_in?: string[] | null;
+  internal_product_not_starts_with?: string | null;
+  internal_product_starts_with?: string | null;
+  io_policy?: VmDiskIoPolicy | null;
+  io_policy_in?: VmDiskIoPolicy[] | null;
+  io_policy_not?: VmDiskIoPolicy | null;
+  io_policy_not_in?: VmDiskIoPolicy[] | null;
+  ips?: string | null;
+  ips_contains?: string | null;
+  ips_ends_with?: string | null;
+  ips_gt?: string | null;
+  ips_gte?: string | null;
+  ips_in?: string[] | null;
+  ips_lt?: string | null;
+  ips_lte?: string | null;
+  ips_not?: string | null;
+  ips_not_contains?: string | null;
+  ips_not_ends_with?: string | null;
+  ips_not_in?: string[] | null;
+  ips_not_starts_with?: string | null;
+  ips_starts_with?: string | null;
+  isolation_policy?: IsolationPolicyWhereInput | null;
+  kernel_info?: string | null;
+  kernel_info_contains?: string | null;
+  kernel_info_ends_with?: string | null;
+  kernel_info_gt?: string | null;
+  kernel_info_gte?: string | null;
+  kernel_info_in?: string[] | null;
+  kernel_info_lt?: string | null;
+  kernel_info_lte?: string | null;
+  kernel_info_not?: string | null;
+  kernel_info_not_contains?: string | null;
+  kernel_info_not_ends_with?: string | null;
+  kernel_info_not_in?: string[] | null;
+  kernel_info_not_starts_with?: string | null;
+  kernel_info_starts_with?: string | null;
   labels_every?: LabelWhereInput | null;
   labels_none?: LabelWhereInput | null;
   labels_some?: LabelWhereInput | null;
+  last_shutdown_time?: string | null;
+  last_shutdown_time_gt?: string | null;
+  last_shutdown_time_gte?: string | null;
+  last_shutdown_time_in?: string[] | null;
+  last_shutdown_time_lt?: string | null;
+  last_shutdown_time_lte?: string | null;
+  last_shutdown_time_not?: string | null;
+  last_shutdown_time_not_in?: string[] | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  /** @format int64 */
+  logical_size_bytes?: number | null;
+  /** @format int64 */
+  logical_size_bytes_gt?: number | null;
+  /** @format int64 */
+  logical_size_bytes_gte?: number | null;
+  logical_size_bytes_in?: number[] | null;
+  /** @format int64 */
+  logical_size_bytes_lt?: number | null;
+  /** @format int64 */
+  logical_size_bytes_lte?: number | null;
+  /** @format int64 */
+  logical_size_bytes_not?: number | null;
+  logical_size_bytes_not_in?: number[] | null;
+  /** @format int64 */
+  max_bandwidth?: number | null;
+  /** @format int64 */
+  max_bandwidth_gt?: number | null;
+  /** @format int64 */
+  max_bandwidth_gte?: number | null;
+  max_bandwidth_in?: number[] | null;
+  /** @format int64 */
+  max_bandwidth_lt?: number | null;
+  /** @format int64 */
+  max_bandwidth_lte?: number | null;
+  /** @format int64 */
+  max_bandwidth_not?: number | null;
+  max_bandwidth_not_in?: number[] | null;
+  max_bandwidth_policy?: VmDiskIoRestrictType | null;
+  max_bandwidth_policy_in?: VmDiskIoRestrictType[] | null;
+  max_bandwidth_policy_not?: VmDiskIoRestrictType | null;
+  max_bandwidth_policy_not_in?: VmDiskIoRestrictType[] | null;
+  /** @format int32 */
+  max_iops?: number | null;
+  /** @format int32 */
+  max_iops_gt?: number | null;
+  /** @format int32 */
+  max_iops_gte?: number | null;
+  max_iops_in?: number[] | null;
+  /** @format int32 */
+  max_iops_lt?: number | null;
+  /** @format int32 */
+  max_iops_lte?: number | null;
+  /** @format int32 */
+  max_iops_not?: number | null;
+  max_iops_not_in?: number[] | null;
+  max_iops_policy?: VmDiskIoRestrictType | null;
+  max_iops_policy_in?: VmDiskIoRestrictType[] | null;
+  max_iops_policy_not?: VmDiskIoRestrictType | null;
+  max_iops_policy_not_in?: VmDiskIoRestrictType[] | null;
+  /** @format int64 */
+  memory?: number | null;
+  /** @format int64 */
+  memory_gt?: number | null;
+  /** @format int64 */
+  memory_gte?: number | null;
+  memory_in?: number[] | null;
+  /** @format int64 */
+  memory_lt?: number | null;
+  /** @format int64 */
+  memory_lte?: number | null;
+  /** @format int64 */
+  memory_not?: number | null;
+  memory_not_in?: number[] | null;
+  /** @format double */
+  memory_usage?: number | null;
+  /** @format double */
+  memory_usage_gt?: number | null;
+  /** @format double */
+  memory_usage_gte?: number | null;
+  memory_usage_in?: number[] | null;
+  /** @format double */
+  memory_usage_lt?: number | null;
+  /** @format double */
+  memory_usage_lte?: number | null;
+  /** @format double */
+  memory_usage_not?: number | null;
+  memory_usage_not_in?: number[] | null;
   name?: string | null;
   name_contains?: string | null;
   name_ends_with?: string | null;
@@ -1101,7 +1510,3477 @@ export interface DatacenterWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
-  organization?: OrganizationWhereInput | null;
+  nested_virtualization?: boolean | null;
+  nested_virtualization_not?: boolean | null;
+  node_ip?: string | null;
+  node_ip_contains?: string | null;
+  node_ip_ends_with?: string | null;
+  node_ip_gt?: string | null;
+  node_ip_gte?: string | null;
+  node_ip_in?: string[] | null;
+  node_ip_lt?: string | null;
+  node_ip_lte?: string | null;
+  node_ip_not?: string | null;
+  node_ip_not_contains?: string | null;
+  node_ip_not_ends_with?: string | null;
+  node_ip_not_in?: string[] | null;
+  node_ip_not_starts_with?: string | null;
+  node_ip_starts_with?: string | null;
+  original_name?: string | null;
+  original_name_contains?: string | null;
+  original_name_ends_with?: string | null;
+  original_name_gt?: string | null;
+  original_name_gte?: string | null;
+  original_name_in?: string[] | null;
+  original_name_lt?: string | null;
+  original_name_lte?: string | null;
+  original_name_not?: string | null;
+  original_name_not_contains?: string | null;
+  original_name_not_ends_with?: string | null;
+  original_name_not_in?: string[] | null;
+  original_name_not_starts_with?: string | null;
+  original_name_starts_with?: string | null;
+  os?: string | null;
+  os_contains?: string | null;
+  os_ends_with?: string | null;
+  os_gt?: string | null;
+  os_gte?: string | null;
+  os_in?: string[] | null;
+  os_lt?: string | null;
+  os_lte?: string | null;
+  os_not?: string | null;
+  os_not_contains?: string | null;
+  os_not_ends_with?: string | null;
+  os_not_in?: string[] | null;
+  os_not_starts_with?: string | null;
+  os_starts_with?: string | null;
+  pci_nics_every?: NicWhereInput | null;
+  pci_nics_none?: NicWhereInput | null;
+  pci_nics_some?: NicWhereInput | null;
+  protected?: boolean | null;
+  protected_not?: boolean | null;
+  /** @format int64 */
+  provisioned_size?: number | null;
+  /** @format int64 */
+  provisioned_size_gt?: number | null;
+  /** @format int64 */
+  provisioned_size_gte?: number | null;
+  provisioned_size_in?: number[] | null;
+  /** @format int64 */
+  provisioned_size_lt?: number | null;
+  /** @format int64 */
+  provisioned_size_lte?: number | null;
+  /** @format int64 */
+  provisioned_size_not?: number | null;
+  provisioned_size_not_in?: number[] | null;
+  /** @format int64 */
+  size?: number | null;
+  /** @format int64 */
+  size_gt?: number | null;
+  /** @format int64 */
+  size_gte?: number | null;
+  size_in?: number[] | null;
+  /** @format int64 */
+  size_lt?: number | null;
+  /** @format int64 */
+  size_lte?: number | null;
+  /** @format int64 */
+  size_not?: number | null;
+  size_not_in?: number[] | null;
+  snapshots_every?: VmSnapshotWhereInput | null;
+  snapshots_none?: VmSnapshotWhereInput | null;
+  snapshots_some?: VmSnapshotWhereInput | null;
+  status?: VmStatus | null;
+  status_in?: VmStatus[] | null;
+  status_not?: VmStatus | null;
+  status_not_in?: VmStatus[] | null;
+  /** @format double */
+  unique_logical_size?: number | null;
+  /** @format double */
+  unique_logical_size_gt?: number | null;
+  /** @format double */
+  unique_logical_size_gte?: number | null;
+  unique_logical_size_in?: number[] | null;
+  /** @format double */
+  unique_logical_size_lt?: number | null;
+  /** @format double */
+  unique_logical_size_lte?: number | null;
+  /** @format double */
+  unique_logical_size_not?: number | null;
+  unique_logical_size_not_in?: number[] | null;
+  /** @format int64 */
+  unique_size?: number | null;
+  /** @format int64 */
+  unique_size_gt?: number | null;
+  /** @format int64 */
+  unique_size_gte?: number | null;
+  unique_size_in?: number[] | null;
+  /** @format int64 */
+  unique_size_lt?: number | null;
+  /** @format int64 */
+  unique_size_lte?: number | null;
+  /** @format int64 */
+  unique_size_not?: number | null;
+  unique_size_not_in?: number[] | null;
+  usb_devices_every?: UsbDeviceWhereInput | null;
+  usb_devices_none?: UsbDeviceWhereInput | null;
+  usb_devices_some?: UsbDeviceWhereInput | null;
+  /** @format int64 */
+  used_size?: number | null;
+  /** @format int64 */
+  used_size_gt?: number | null;
+  /** @format int64 */
+  used_size_gte?: number | null;
+  used_size_in?: number[] | null;
+  /** @format int64 */
+  used_size_lt?: number | null;
+  /** @format int64 */
+  used_size_lte?: number | null;
+  /** @format int64 */
+  used_size_not?: number | null;
+  used_size_not_in?: number[] | null;
+  /** @format double */
+  used_size_usage?: number | null;
+  /** @format double */
+  used_size_usage_gt?: number | null;
+  /** @format double */
+  used_size_usage_gte?: number | null;
+  used_size_usage_in?: number[] | null;
+  /** @format double */
+  used_size_usage_lt?: number | null;
+  /** @format double */
+  used_size_usage_lte?: number | null;
+  /** @format double */
+  used_size_usage_not?: number | null;
+  used_size_usage_not_in?: number[] | null;
+  /** @format int32 */
+  vcpu?: number | null;
+  /** @format int32 */
+  vcpu_gt?: number | null;
+  /** @format int32 */
+  vcpu_gte?: number | null;
+  vcpu_in?: number[] | null;
+  /** @format int32 */
+  vcpu_lt?: number | null;
+  /** @format int32 */
+  vcpu_lte?: number | null;
+  /** @format int32 */
+  vcpu_not?: number | null;
+  vcpu_not_in?: number[] | null;
+  video_type?: VmVideoType | null;
+  video_type_in?: VmVideoType[] | null;
+  video_type_not?: VmVideoType | null;
+  video_type_not_in?: VmVideoType[] | null;
+  vm_disks_every?: VmDiskWhereInput | null;
+  vm_disks_none?: VmDiskWhereInput | null;
+  vm_disks_some?: VmDiskWhereInput | null;
+  vm_nics_every?: VmNicWhereInput | null;
+  vm_nics_none?: VmNicWhereInput | null;
+  vm_nics_some?: VmNicWhereInput | null;
+  vm_placement_group_every?: VmPlacementGroupWhereInput | null;
+  vm_placement_group_none?: VmPlacementGroupWhereInput | null;
+  vm_placement_group_some?: VmPlacementGroupWhereInput | null;
+  vm_tools_status?: VmToolsStatus | null;
+  vm_tools_status_in?: VmToolsStatus[] | null;
+  vm_tools_status_not?: VmToolsStatus | null;
+  vm_tools_status_not_in?: VmToolsStatus[] | null;
+  vm_tools_version?: string | null;
+  vm_tools_version_contains?: string | null;
+  vm_tools_version_ends_with?: string | null;
+  vm_tools_version_gt?: string | null;
+  vm_tools_version_gte?: string | null;
+  vm_tools_version_in?: string[] | null;
+  vm_tools_version_lt?: string | null;
+  vm_tools_version_lte?: string | null;
+  vm_tools_version_not?: string | null;
+  vm_tools_version_not_contains?: string | null;
+  vm_tools_version_not_ends_with?: string | null;
+  vm_tools_version_not_in?: string[] | null;
+  vm_tools_version_not_starts_with?: string | null;
+  vm_tools_version_starts_with?: string | null;
+  vm_usage?: VmUsage | null;
+  vm_usage_in?: VmUsage[] | null;
+  vm_usage_not?: VmUsage | null;
+  vm_usage_not_in?: VmUsage[] | null;
+  win_opt?: boolean | null;
+  win_opt_not?: boolean | null;
+}
+
+export interface BackupPlanWhereInput {
+  AND?: BackupPlanWhereInput[] | null;
+  NOT?: BackupPlanWhereInput[] | null;
+  OR?: BackupPlanWhereInput[] | null;
+  backup_delay_option?: BackupPlanDelayOption | null;
+  backup_delay_option_in?: BackupPlanDelayOption[] | null;
+  backup_delay_option_not?: BackupPlanDelayOption | null;
+  backup_delay_option_not_in?: BackupPlanDelayOption[] | null;
+  backup_plan_executions_every?: BackupPlanExecutionWhereInput | null;
+  backup_plan_executions_none?: BackupPlanExecutionWhereInput | null;
+  backup_plan_executions_some?: BackupPlanExecutionWhereInput | null;
+  /** @format int32 */
+  backup_restore_point_count?: number | null;
+  /** @format int32 */
+  backup_restore_point_count_gt?: number | null;
+  /** @format int32 */
+  backup_restore_point_count_gte?: number | null;
+  backup_restore_point_count_in?: number[] | null;
+  /** @format int32 */
+  backup_restore_point_count_lt?: number | null;
+  /** @format int32 */
+  backup_restore_point_count_lte?: number | null;
+  /** @format int32 */
+  backup_restore_point_count_not?: number | null;
+  backup_restore_point_count_not_in?: number[] | null;
+  backup_restore_points_every?: BackupRestorePointWhereInput | null;
+  backup_restore_points_none?: BackupRestorePointWhereInput | null;
+  backup_restore_points_some?: BackupRestorePointWhereInput | null;
+  backup_service?: BackupServiceWhereInput | null;
+  backup_store_repository?: BackupStoreRepositoryWhereInput | null;
+  /** @format int64 */
+  backup_total_size?: number | null;
+  /** @format int64 */
+  backup_total_size_gt?: number | null;
+  /** @format int64 */
+  backup_total_size_gte?: number | null;
+  backup_total_size_in?: number[] | null;
+  /** @format int64 */
+  backup_total_size_lt?: number | null;
+  /** @format int64 */
+  backup_total_size_lte?: number | null;
+  /** @format int64 */
+  backup_total_size_not?: number | null;
+  backup_total_size_not_in?: number[] | null;
+  compression?: boolean | null;
+  compression_not?: boolean | null;
+  /** @format double */
+  compression_ratio?: number | null;
+  /** @format double */
+  compression_ratio_gt?: number | null;
+  /** @format double */
+  compression_ratio_gte?: number | null;
+  compression_ratio_in?: number[] | null;
+  /** @format double */
+  compression_ratio_lt?: number | null;
+  /** @format double */
+  compression_ratio_lte?: number | null;
+  /** @format double */
+  compression_ratio_not?: number | null;
+  compression_ratio_not_in?: number[] | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
+  delete_strategy?: BackupPlanDeleteStrategy | null;
+  delete_strategy_in?: BackupPlanDeleteStrategy[] | null;
+  delete_strategy_not?: BackupPlanDeleteStrategy | null;
+  delete_strategy_not_in?: BackupPlanDeleteStrategy[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  enable_window?: boolean | null;
+  enable_window_not?: boolean | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  /** @format int32 */
+  full_interval?: number | null;
+  /** @format int32 */
+  full_interval_gt?: number | null;
+  /** @format int32 */
+  full_interval_gte?: number | null;
+  full_interval_in?: number[] | null;
+  /** @format int32 */
+  full_interval_lt?: number | null;
+  /** @format int32 */
+  full_interval_lte?: number | null;
+  /** @format int32 */
+  full_interval_not?: number | null;
+  full_interval_not_in?: number[] | null;
+  full_period?: BackupPlanPeriod | null;
+  full_period_in?: BackupPlanPeriod[] | null;
+  full_period_not?: BackupPlanPeriod | null;
+  full_period_not_in?: BackupPlanPeriod[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  /** @format int32 */
+  incremental_interval?: number | null;
+  /** @format int32 */
+  incremental_interval_gt?: number | null;
+  /** @format int32 */
+  incremental_interval_gte?: number | null;
+  incremental_interval_in?: number[] | null;
+  /** @format int32 */
+  incremental_interval_lt?: number | null;
+  /** @format int32 */
+  incremental_interval_lte?: number | null;
+  /** @format int32 */
+  incremental_interval_not?: number | null;
+  incremental_interval_not_in?: number[] | null;
+  incremental_period?: BackupPlanPeriod | null;
+  incremental_period_in?: BackupPlanPeriod[] | null;
+  incremental_period_not?: BackupPlanPeriod | null;
+  incremental_period_not_in?: BackupPlanPeriod[] | null;
+  keep_policy?: BackupPlanKeepPolicy | null;
+  keep_policy_in?: BackupPlanKeepPolicy[] | null;
+  keep_policy_not?: BackupPlanKeepPolicy | null;
+  keep_policy_not_in?: BackupPlanKeepPolicy[] | null;
+  /** @format int32 */
+  keep_policy_value?: number | null;
+  /** @format int32 */
+  keep_policy_value_gt?: number | null;
+  /** @format int32 */
+  keep_policy_value_gte?: number | null;
+  keep_policy_value_in?: number[] | null;
+  /** @format int32 */
+  keep_policy_value_lt?: number | null;
+  /** @format int32 */
+  keep_policy_value_lte?: number | null;
+  /** @format int32 */
+  keep_policy_value_not?: number | null;
+  keep_policy_value_not_in?: number[] | null;
+  last_execute_status?: BackupPlanExecutionStatus | null;
+  last_execute_status_in?: BackupPlanExecutionStatus[] | null;
+  last_execute_status_message?: string | null;
+  last_execute_status_message_contains?: string | null;
+  last_execute_status_message_ends_with?: string | null;
+  last_execute_status_message_gt?: string | null;
+  last_execute_status_message_gte?: string | null;
+  last_execute_status_message_in?: string[] | null;
+  last_execute_status_message_lt?: string | null;
+  last_execute_status_message_lte?: string | null;
+  last_execute_status_message_not?: string | null;
+  last_execute_status_message_not_contains?: string | null;
+  last_execute_status_message_not_ends_with?: string | null;
+  last_execute_status_message_not_in?: string[] | null;
+  last_execute_status_message_not_starts_with?: string | null;
+  last_execute_status_message_starts_with?: string | null;
+  last_execute_status_not?: BackupPlanExecutionStatus | null;
+  last_execute_status_not_in?: BackupPlanExecutionStatus[] | null;
+  /** @format int32 */
+  last_execute_success_job_count?: number | null;
+  /** @format int32 */
+  last_execute_success_job_count_gt?: number | null;
+  /** @format int32 */
+  last_execute_success_job_count_gte?: number | null;
+  last_execute_success_job_count_in?: number[] | null;
+  /** @format int32 */
+  last_execute_success_job_count_lt?: number | null;
+  /** @format int32 */
+  last_execute_success_job_count_lte?: number | null;
+  /** @format int32 */
+  last_execute_success_job_count_not?: number | null;
+  last_execute_success_job_count_not_in?: number[] | null;
+  /** @format int32 */
+  last_execute_total_job_count?: number | null;
+  /** @format int32 */
+  last_execute_total_job_count_gt?: number | null;
+  /** @format int32 */
+  last_execute_total_job_count_gte?: number | null;
+  last_execute_total_job_count_in?: number[] | null;
+  /** @format int32 */
+  last_execute_total_job_count_lt?: number | null;
+  /** @format int32 */
+  last_execute_total_job_count_lte?: number | null;
+  /** @format int32 */
+  last_execute_total_job_count_not?: number | null;
+  last_execute_total_job_count_not_in?: number[] | null;
+  last_executed_at?: string | null;
+  last_executed_at_gt?: string | null;
+  last_executed_at_gte?: string | null;
+  last_executed_at_in?: string[] | null;
+  last_executed_at_lt?: string | null;
+  last_executed_at_lte?: string | null;
+  last_executed_at_not?: string | null;
+  last_executed_at_not_in?: string[] | null;
+  last_manual_execute_status?: BackupPlanExecutionStatus | null;
+  last_manual_execute_status_in?: BackupPlanExecutionStatus[] | null;
+  last_manual_execute_status_message?: string | null;
+  last_manual_execute_status_message_contains?: string | null;
+  last_manual_execute_status_message_ends_with?: string | null;
+  last_manual_execute_status_message_gt?: string | null;
+  last_manual_execute_status_message_gte?: string | null;
+  last_manual_execute_status_message_in?: string[] | null;
+  last_manual_execute_status_message_lt?: string | null;
+  last_manual_execute_status_message_lte?: string | null;
+  last_manual_execute_status_message_not?: string | null;
+  last_manual_execute_status_message_not_contains?: string | null;
+  last_manual_execute_status_message_not_ends_with?: string | null;
+  last_manual_execute_status_message_not_in?: string[] | null;
+  last_manual_execute_status_message_not_starts_with?: string | null;
+  last_manual_execute_status_message_starts_with?: string | null;
+  last_manual_execute_status_not?: BackupPlanExecutionStatus | null;
+  last_manual_execute_status_not_in?: BackupPlanExecutionStatus[] | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count?: number | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count_gt?: number | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count_gte?: number | null;
+  last_manual_execute_success_job_count_in?: number[] | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count_lt?: number | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count_lte?: number | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count_not?: number | null;
+  last_manual_execute_success_job_count_not_in?: number[] | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count?: number | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count_gt?: number | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count_gte?: number | null;
+  last_manual_execute_total_job_count_in?: number[] | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count_lt?: number | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count_lte?: number | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count_not?: number | null;
+  last_manual_execute_total_job_count_not_in?: number[] | null;
+  last_manual_executed_at?: string | null;
+  last_manual_executed_at_gt?: string | null;
+  last_manual_executed_at_gte?: string | null;
+  last_manual_executed_at_in?: string[] | null;
+  last_manual_executed_at_lt?: string | null;
+  last_manual_executed_at_lte?: string | null;
+  last_manual_executed_at_not?: string | null;
+  last_manual_executed_at_not_in?: string[] | null;
+  /** @format int64 */
+  logical_size?: number | null;
+  /** @format int64 */
+  logical_size_gt?: number | null;
+  /** @format int64 */
+  logical_size_gte?: number | null;
+  logical_size_in?: number[] | null;
+  /** @format int64 */
+  logical_size_lt?: number | null;
+  /** @format int64 */
+  logical_size_lte?: number | null;
+  /** @format int64 */
+  logical_size_not?: number | null;
+  logical_size_not_in?: number[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  next_execute_time?: string | null;
+  next_execute_time_gt?: string | null;
+  next_execute_time_gte?: string | null;
+  next_execute_time_in?: string[] | null;
+  next_execute_time_lt?: string | null;
+  next_execute_time_lte?: string | null;
+  next_execute_time_not?: string | null;
+  next_execute_time_not_in?: string[] | null;
+  phase?: BackupPlanPhase | null;
+  phase_in?: BackupPlanPhase[] | null;
+  phase_not?: BackupPlanPhase | null;
+  phase_not_in?: BackupPlanPhase[] | null;
+  /** @format int64 */
+  physical_size?: number | null;
+  /** @format int64 */
+  physical_size_gt?: number | null;
+  /** @format int64 */
+  physical_size_gte?: number | null;
+  physical_size_in?: number[] | null;
+  /** @format int64 */
+  physical_size_lt?: number | null;
+  /** @format int64 */
+  physical_size_lte?: number | null;
+  /** @format int64 */
+  physical_size_not?: number | null;
+  physical_size_not_in?: number[] | null;
+  snapshot_consistent_type?: ConsistentType | null;
+  snapshot_consistent_type_in?: ConsistentType[] | null;
+  snapshot_consistent_type_not?: ConsistentType | null;
+  snapshot_consistent_type_not_in?: ConsistentType[] | null;
+  status?: BackupPlanStatus | null;
+  status_in?: BackupPlanStatus[] | null;
+  status_not?: BackupPlanStatus | null;
+  status_not_in?: BackupPlanStatus[] | null;
+  /** @format int64 */
+  valid_size_of_backup_object?: number | null;
+  /** @format int64 */
+  valid_size_of_backup_object_gt?: number | null;
+  /** @format int64 */
+  valid_size_of_backup_object_gte?: number | null;
+  valid_size_of_backup_object_in?: number[] | null;
+  /** @format int64 */
+  valid_size_of_backup_object_lt?: number | null;
+  /** @format int64 */
+  valid_size_of_backup_object_lte?: number | null;
+  /** @format int64 */
+  valid_size_of_backup_object_not?: number | null;
+  valid_size_of_backup_object_not_in?: number[] | null;
+  /** @format int64 */
+  valid_size_of_restore_point?: number | null;
+  /** @format int64 */
+  valid_size_of_restore_point_gt?: number | null;
+  /** @format int64 */
+  valid_size_of_restore_point_gte?: number | null;
+  valid_size_of_restore_point_in?: number[] | null;
+  /** @format int64 */
+  valid_size_of_restore_point_lt?: number | null;
+  /** @format int64 */
+  valid_size_of_restore_point_lte?: number | null;
+  /** @format int64 */
+  valid_size_of_restore_point_not?: number | null;
+  valid_size_of_restore_point_not_in?: number[] | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
+  window_end?: string | null;
+  window_end_contains?: string | null;
+  window_end_ends_with?: string | null;
+  window_end_gt?: string | null;
+  window_end_gte?: string | null;
+  window_end_in?: string[] | null;
+  window_end_lt?: string | null;
+  window_end_lte?: string | null;
+  window_end_not?: string | null;
+  window_end_not_contains?: string | null;
+  window_end_not_ends_with?: string | null;
+  window_end_not_in?: string[] | null;
+  window_end_not_starts_with?: string | null;
+  window_end_starts_with?: string | null;
+  window_start?: string | null;
+  window_start_contains?: string | null;
+  window_start_ends_with?: string | null;
+  window_start_gt?: string | null;
+  window_start_gte?: string | null;
+  window_start_in?: string[] | null;
+  window_start_lt?: string | null;
+  window_start_lte?: string | null;
+  window_start_not?: string | null;
+  window_start_not_contains?: string | null;
+  window_start_not_ends_with?: string | null;
+  window_start_not_in?: string[] | null;
+  window_start_not_starts_with?: string | null;
+  window_start_starts_with?: string | null;
+}
+
+export enum BackupPlanDelayOption {
+  KEEP_GO_ON = "KEEP_GO_ON",
+  STOP_BACKUP = "STOP_BACKUP",
+}
+
+export interface BackupPlanExecutionWhereInput {
+  AND?: BackupPlanExecutionWhereInput[] | null;
+  NOT?: BackupPlanExecutionWhereInput[] | null;
+  OR?: BackupPlanExecutionWhereInput[] | null;
+  backup_plan?: BackupPlanWhereInput | null;
+  deletable_flag_marked?: boolean | null;
+  deletable_flag_marked_not?: boolean | null;
+  /** @format int32 */
+  duration?: number | null;
+  /** @format int32 */
+  duration_gt?: number | null;
+  /** @format int32 */
+  duration_gte?: number | null;
+  duration_in?: number[] | null;
+  /** @format int32 */
+  duration_lt?: number | null;
+  /** @format int32 */
+  duration_lte?: number | null;
+  /** @format int32 */
+  duration_not?: number | null;
+  duration_not_in?: number[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  executed_at?: string | null;
+  executed_at_gt?: string | null;
+  executed_at_gte?: string | null;
+  executed_at_in?: string[] | null;
+  executed_at_lt?: string | null;
+  executed_at_lte?: string | null;
+  executed_at_not?: string | null;
+  executed_at_not_in?: string[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  method?: BackupExecutionMethod | null;
+  method_in?: BackupExecutionMethod[] | null;
+  method_not?: BackupExecutionMethod | null;
+  method_not_in?: BackupExecutionMethod[] | null;
+  state?: BackupPlanExecutionState | null;
+  state_in?: BackupPlanExecutionState[] | null;
+  state_not?: BackupPlanExecutionState | null;
+  state_not_in?: BackupPlanExecutionState[] | null;
+  status?: BackupPlanExecutionStatus | null;
+  status_in?: BackupPlanExecutionStatus[] | null;
+  status_not?: BackupPlanExecutionStatus | null;
+  status_not_in?: BackupPlanExecutionStatus[] | null;
+  /** @format int32 */
+  success_job_count?: number | null;
+  /** @format int32 */
+  success_job_count_gt?: number | null;
+  /** @format int32 */
+  success_job_count_gte?: number | null;
+  success_job_count_in?: number[] | null;
+  /** @format int32 */
+  success_job_count_lt?: number | null;
+  /** @format int32 */
+  success_job_count_lte?: number | null;
+  /** @format int32 */
+  success_job_count_not?: number | null;
+  success_job_count_not_in?: number[] | null;
+  /** @format int32 */
+  total_job_count?: number | null;
+  /** @format int32 */
+  total_job_count_gt?: number | null;
+  /** @format int32 */
+  total_job_count_gte?: number | null;
+  total_job_count_in?: number[] | null;
+  /** @format int32 */
+  total_job_count_lt?: number | null;
+  /** @format int32 */
+  total_job_count_lte?: number | null;
+  /** @format int32 */
+  total_job_count_not?: number | null;
+  total_job_count_not_in?: number[] | null;
+  type?: BackupExecutionType | null;
+  type_in?: BackupExecutionType[] | null;
+  type_not?: BackupExecutionType | null;
+  type_not_in?: BackupExecutionType[] | null;
+}
+
+export enum EntityAsyncStatus {
+  CREATING = "CREATING",
+  DELETING = "DELETING",
+  UPDATING = "UPDATING",
+}
+
+export enum BackupExecutionMethod {
+  AUTO = "AUTO",
+  MANUAL = "MANUAL",
+}
+
+export enum BackupPlanExecutionState {
+  FAILED = "FAILED",
+  PARTLY_FAILED = "PARTLY_FAILED",
+  PAUSED = "PAUSED",
+  PAUSING = "PAUSING",
+  RUNNING = "RUNNING",
+  STARTING = "STARTING",
+  SUCCEED = "SUCCEED",
+}
+
+export enum BackupPlanExecutionStatus {
+  FAILED = "FAILED",
+  NEVER_EXECUTE = "NEVER_EXECUTE",
+  PARTIAL_SUCCESS = "PARTIAL_SUCCESS",
+  PAUSED = "PAUSED",
+  RUNNING = "RUNNING",
+  SUCCESS = "SUCCESS",
+  WAITING_EXECUTE = "WAITING_EXECUTE",
+}
+
+export enum BackupExecutionType {
+  FULL = "FULL",
+  INCREMENTAL = "INCREMENTAL",
+  SYNTHETIC_FULL = "SYNTHETIC_FULL",
+}
+
+export interface BackupRestorePointWhereInput {
+  AND?: BackupRestorePointWhereInput[] | null;
+  NOT?: BackupRestorePointWhereInput[] | null;
+  OR?: BackupRestorePointWhereInput[] | null;
+  backup_plan?: BackupPlanWhereInput | null;
+  backup_restore_executions_every?: BackupRestoreExecutionWhereInput | null;
+  backup_restore_executions_none?: BackupRestoreExecutionWhereInput | null;
+  backup_restore_executions_some?: BackupRestoreExecutionWhereInput | null;
+  backup_target_execution?: BackupTargetExecutionWhereInput | null;
+  cluster_local_id?: string | null;
+  cluster_local_id_contains?: string | null;
+  cluster_local_id_ends_with?: string | null;
+  cluster_local_id_gt?: string | null;
+  cluster_local_id_gte?: string | null;
+  cluster_local_id_in?: string[] | null;
+  cluster_local_id_lt?: string | null;
+  cluster_local_id_lte?: string | null;
+  cluster_local_id_not?: string | null;
+  cluster_local_id_not_contains?: string | null;
+  cluster_local_id_not_ends_with?: string | null;
+  cluster_local_id_not_in?: string[] | null;
+  cluster_local_id_not_starts_with?: string | null;
+  cluster_local_id_starts_with?: string | null;
+  compressed?: boolean | null;
+  compressed_not?: boolean | null;
+  /** @format double */
+  compression_ratio?: number | null;
+  /** @format double */
+  compression_ratio_gt?: number | null;
+  /** @format double */
+  compression_ratio_gte?: number | null;
+  compression_ratio_in?: number[] | null;
+  /** @format double */
+  compression_ratio_lt?: number | null;
+  /** @format double */
+  compression_ratio_lte?: number | null;
+  /** @format double */
+  compression_ratio_not?: number | null;
+  compression_ratio_not_in?: number[] | null;
+  creation?: BackupRestorePointCreation | null;
+  creation_in?: BackupRestorePointCreation[] | null;
+  creation_not?: BackupRestorePointCreation | null;
+  creation_not_in?: BackupRestorePointCreation[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  /** @format int64 */
+  logical_size?: number | null;
+  /** @format int64 */
+  logical_size_gt?: number | null;
+  /** @format int64 */
+  logical_size_gte?: number | null;
+  logical_size_in?: number[] | null;
+  /** @format int64 */
+  logical_size_lt?: number | null;
+  /** @format int64 */
+  logical_size_lte?: number | null;
+  /** @format int64 */
+  logical_size_not?: number | null;
+  logical_size_not_in?: number[] | null;
+  parent_restore_point?: string | null;
+  parent_restore_point_contains?: string | null;
+  parent_restore_point_ends_with?: string | null;
+  parent_restore_point_gt?: string | null;
+  parent_restore_point_gte?: string | null;
+  parent_restore_point_in?: string[] | null;
+  parent_restore_point_lt?: string | null;
+  parent_restore_point_lte?: string | null;
+  parent_restore_point_not?: string | null;
+  parent_restore_point_not_contains?: string | null;
+  parent_restore_point_not_ends_with?: string | null;
+  parent_restore_point_not_in?: string[] | null;
+  parent_restore_point_not_starts_with?: string | null;
+  parent_restore_point_starts_with?: string | null;
+  /** @format int64 */
+  physical_size?: number | null;
+  /** @format int64 */
+  physical_size_gt?: number | null;
+  /** @format int64 */
+  physical_size_gte?: number | null;
+  physical_size_in?: number[] | null;
+  /** @format int64 */
+  physical_size_lt?: number | null;
+  /** @format int64 */
+  physical_size_lte?: number | null;
+  /** @format int64 */
+  physical_size_not?: number | null;
+  physical_size_not_in?: number[] | null;
+  /** @format int64 */
+  size?: number | null;
+  /** @format int64 */
+  size_gt?: number | null;
+  /** @format int64 */
+  size_gte?: number | null;
+  size_in?: number[] | null;
+  /** @format int64 */
+  size_lt?: number | null;
+  /** @format int64 */
+  size_lte?: number | null;
+  /** @format int64 */
+  size_not?: number | null;
+  size_not_in?: number[] | null;
+  slice?: string | null;
+  slice_contains?: string | null;
+  slice_ends_with?: string | null;
+  slice_gt?: string | null;
+  slice_gte?: string | null;
+  slice_in?: string[] | null;
+  slice_lt?: string | null;
+  slice_lte?: string | null;
+  slice_not?: string | null;
+  slice_not_contains?: string | null;
+  slice_not_ends_with?: string | null;
+  slice_not_in?: string[] | null;
+  slice_not_starts_with?: string | null;
+  slice_starts_with?: string | null;
+  snapshot_consistent_type?: ConsistentType | null;
+  snapshot_consistent_type_in?: ConsistentType[] | null;
+  snapshot_consistent_type_not?: ConsistentType | null;
+  snapshot_consistent_type_not_in?: ConsistentType[] | null;
+  type?: BackupRestorePointType | null;
+  type_in?: BackupRestorePointType[] | null;
+  type_not?: BackupRestorePointType | null;
+  type_not_in?: BackupRestorePointType[] | null;
+  /** @format int64 */
+  valid_capacity?: number | null;
+  /** @format int64 */
+  valid_capacity_gt?: number | null;
+  /** @format int64 */
+  valid_capacity_gte?: number | null;
+  valid_capacity_in?: number[] | null;
+  /** @format int64 */
+  valid_capacity_lt?: number | null;
+  /** @format int64 */
+  valid_capacity_lte?: number | null;
+  /** @format int64 */
+  valid_capacity_not?: number | null;
+  valid_capacity_not_in?: number[] | null;
+  /** @format int64 */
+  valid_size?: number | null;
+  /** @format int64 */
+  valid_size_gt?: number | null;
+  /** @format int64 */
+  valid_size_gte?: number | null;
+  valid_size_in?: number[] | null;
+  /** @format int64 */
+  valid_size_lt?: number | null;
+  /** @format int64 */
+  valid_size_lte?: number | null;
+  /** @format int64 */
+  valid_size_not?: number | null;
+  valid_size_not_in?: number[] | null;
+  vm?: VmWhereInput | null;
+  vm_local_id?: string | null;
+  vm_local_id_contains?: string | null;
+  vm_local_id_ends_with?: string | null;
+  vm_local_id_gt?: string | null;
+  vm_local_id_gte?: string | null;
+  vm_local_id_in?: string[] | null;
+  vm_local_id_lt?: string | null;
+  vm_local_id_lte?: string | null;
+  vm_local_id_not?: string | null;
+  vm_local_id_not_contains?: string | null;
+  vm_local_id_not_ends_with?: string | null;
+  vm_local_id_not_in?: string[] | null;
+  vm_local_id_not_starts_with?: string | null;
+  vm_local_id_starts_with?: string | null;
+  vm_name?: string | null;
+  vm_name_contains?: string | null;
+  vm_name_ends_with?: string | null;
+  vm_name_gt?: string | null;
+  vm_name_gte?: string | null;
+  vm_name_in?: string[] | null;
+  vm_name_lt?: string | null;
+  vm_name_lte?: string | null;
+  vm_name_not?: string | null;
+  vm_name_not_contains?: string | null;
+  vm_name_not_ends_with?: string | null;
+  vm_name_not_in?: string[] | null;
+  vm_name_not_starts_with?: string | null;
+  vm_name_starts_with?: string | null;
+}
+
+export interface BackupRestoreExecutionWhereInput {
+  AND?: BackupRestoreExecutionWhereInput[] | null;
+  NOT?: BackupRestoreExecutionWhereInput[] | null;
+  OR?: BackupRestoreExecutionWhereInput[] | null;
+  backup_restore_point?: BackupRestorePointWhereInput | null;
+  /** @format int32 */
+  duration?: number | null;
+  /** @format int32 */
+  duration_gt?: number | null;
+  /** @format int32 */
+  duration_gte?: number | null;
+  duration_in?: number[] | null;
+  /** @format int32 */
+  duration_lt?: number | null;
+  /** @format int32 */
+  duration_lte?: number | null;
+  /** @format int32 */
+  duration_not?: number | null;
+  duration_not_in?: number[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  executed_at?: string | null;
+  executed_at_gt?: string | null;
+  executed_at_gte?: string | null;
+  executed_at_in?: string[] | null;
+  executed_at_lt?: string | null;
+  executed_at_lte?: string | null;
+  executed_at_not?: string | null;
+  executed_at_not_in?: string[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  mode?: BackupRestoreExecutionMode | null;
+  mode_in?: BackupRestoreExecutionMode[] | null;
+  mode_not?: BackupRestoreExecutionMode | null;
+  mode_not_in?: BackupRestoreExecutionMode[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  /** @format int64 */
+  read_bytes?: number | null;
+  /** @format int64 */
+  read_bytes_gt?: number | null;
+  /** @format int64 */
+  read_bytes_gte?: number | null;
+  read_bytes_in?: number[] | null;
+  /** @format int64 */
+  read_bytes_lt?: number | null;
+  /** @format int64 */
+  read_bytes_lte?: number | null;
+  /** @format int64 */
+  read_bytes_not?: number | null;
+  read_bytes_not_in?: number[] | null;
+  rebuild_name?: string | null;
+  rebuild_name_contains?: string | null;
+  rebuild_name_ends_with?: string | null;
+  rebuild_name_gt?: string | null;
+  rebuild_name_gte?: string | null;
+  rebuild_name_in?: string[] | null;
+  rebuild_name_lt?: string | null;
+  rebuild_name_lte?: string | null;
+  rebuild_name_not?: string | null;
+  rebuild_name_not_contains?: string | null;
+  rebuild_name_not_ends_with?: string | null;
+  rebuild_name_not_in?: string[] | null;
+  rebuild_name_not_starts_with?: string | null;
+  rebuild_name_starts_with?: string | null;
+  rebuild_target_cluster?: string | null;
+  rebuild_target_cluster_contains?: string | null;
+  rebuild_target_cluster_ends_with?: string | null;
+  rebuild_target_cluster_gt?: string | null;
+  rebuild_target_cluster_gte?: string | null;
+  rebuild_target_cluster_in?: string[] | null;
+  rebuild_target_cluster_lt?: string | null;
+  rebuild_target_cluster_lte?: string | null;
+  rebuild_target_cluster_not?: string | null;
+  rebuild_target_cluster_not_contains?: string | null;
+  rebuild_target_cluster_not_ends_with?: string | null;
+  rebuild_target_cluster_not_in?: string[] | null;
+  rebuild_target_cluster_not_starts_with?: string | null;
+  rebuild_target_cluster_starts_with?: string | null;
+  /** @format int32 */
+  retry_times?: number | null;
+  /** @format int32 */
+  retry_times_gt?: number | null;
+  /** @format int32 */
+  retry_times_gte?: number | null;
+  retry_times_in?: number[] | null;
+  /** @format int32 */
+  retry_times_lt?: number | null;
+  /** @format int32 */
+  retry_times_lte?: number | null;
+  /** @format int32 */
+  retry_times_not?: number | null;
+  retry_times_not_in?: number[] | null;
+  startup_after_restore?: boolean | null;
+  startup_after_restore_not?: boolean | null;
+  status?: BackupExecutionStatus | null;
+  status_in?: BackupExecutionStatus[] | null;
+  status_not?: BackupExecutionStatus | null;
+  status_not_in?: BackupExecutionStatus[] | null;
+  /** @format int64 */
+  total_bytes?: number | null;
+  /** @format int64 */
+  total_bytes_gt?: number | null;
+  /** @format int64 */
+  total_bytes_gte?: number | null;
+  total_bytes_in?: number[] | null;
+  /** @format int64 */
+  total_bytes_lt?: number | null;
+  /** @format int64 */
+  total_bytes_lte?: number | null;
+  /** @format int64 */
+  total_bytes_not?: number | null;
+  total_bytes_not_in?: number[] | null;
+}
+
+export enum BackupRestoreExecutionMode {
+  INPLACE = "INPLACE",
+  REBUILD = "REBUILD",
+}
+
+export enum BackupExecutionStatus {
+  ABORTED = "ABORTED",
+  FAILED = "FAILED",
+  INITIALIZING = "INITIALIZING",
+  PAUSED = "PAUSED",
+  PENDING = "PENDING",
+  RUNNING = "RUNNING",
+  SUCCESS = "SUCCESS",
+}
+
+export interface BackupTargetExecutionWhereInput {
+  AND?: BackupTargetExecutionWhereInput[] | null;
+  NOT?: BackupTargetExecutionWhereInput[] | null;
+  OR?: BackupTargetExecutionWhereInput[] | null;
+  backup_group?: string | null;
+  backup_group_contains?: string | null;
+  backup_group_ends_with?: string | null;
+  backup_group_gt?: string | null;
+  backup_group_gte?: string | null;
+  backup_group_in?: string[] | null;
+  backup_group_lt?: string | null;
+  backup_group_lte?: string | null;
+  backup_group_not?: string | null;
+  backup_group_not_contains?: string | null;
+  backup_group_not_ends_with?: string | null;
+  backup_group_not_in?: string[] | null;
+  backup_group_not_starts_with?: string | null;
+  backup_group_starts_with?: string | null;
+  backup_plan_execution?: BackupPlanExecutionWhereInput | null;
+  backup_restore_point?: BackupRestorePointWhereInput | null;
+  cluster_local_id?: string | null;
+  cluster_local_id_contains?: string | null;
+  cluster_local_id_ends_with?: string | null;
+  cluster_local_id_gt?: string | null;
+  cluster_local_id_gte?: string | null;
+  cluster_local_id_in?: string[] | null;
+  cluster_local_id_lt?: string | null;
+  cluster_local_id_lte?: string | null;
+  cluster_local_id_not?: string | null;
+  cluster_local_id_not_contains?: string | null;
+  cluster_local_id_not_ends_with?: string | null;
+  cluster_local_id_not_in?: string[] | null;
+  cluster_local_id_not_starts_with?: string | null;
+  cluster_local_id_starts_with?: string | null;
+  /** @format int32 */
+  duration?: number | null;
+  /** @format int32 */
+  duration_gt?: number | null;
+  /** @format int32 */
+  duration_gte?: number | null;
+  duration_in?: number[] | null;
+  /** @format int32 */
+  duration_lt?: number | null;
+  /** @format int32 */
+  duration_lte?: number | null;
+  /** @format int32 */
+  duration_not?: number | null;
+  duration_not_in?: number[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  executed_at?: string | null;
+  executed_at_gt?: string | null;
+  executed_at_gte?: string | null;
+  executed_at_in?: string[] | null;
+  executed_at_lt?: string | null;
+  executed_at_lte?: string | null;
+  executed_at_not?: string | null;
+  executed_at_not_in?: string[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  parent_backup?: string | null;
+  parent_backup_contains?: string | null;
+  parent_backup_ends_with?: string | null;
+  parent_backup_gt?: string | null;
+  parent_backup_gte?: string | null;
+  parent_backup_in?: string[] | null;
+  parent_backup_lt?: string | null;
+  parent_backup_lte?: string | null;
+  parent_backup_not?: string | null;
+  parent_backup_not_contains?: string | null;
+  parent_backup_not_ends_with?: string | null;
+  parent_backup_not_in?: string[] | null;
+  parent_backup_not_starts_with?: string | null;
+  parent_backup_starts_with?: string | null;
+  /** @format int64 */
+  read_bytes?: number | null;
+  /** @format int64 */
+  read_bytes_gt?: number | null;
+  /** @format int64 */
+  read_bytes_gte?: number | null;
+  read_bytes_in?: number[] | null;
+  /** @format int64 */
+  read_bytes_lt?: number | null;
+  /** @format int64 */
+  read_bytes_lte?: number | null;
+  /** @format int64 */
+  read_bytes_not?: number | null;
+  read_bytes_not_in?: number[] | null;
+  /** @format int32 */
+  retry_times?: number | null;
+  /** @format int32 */
+  retry_times_gt?: number | null;
+  /** @format int32 */
+  retry_times_gte?: number | null;
+  retry_times_in?: number[] | null;
+  /** @format int32 */
+  retry_times_lt?: number | null;
+  /** @format int32 */
+  retry_times_lte?: number | null;
+  /** @format int32 */
+  retry_times_not?: number | null;
+  retry_times_not_in?: number[] | null;
+  status?: BackupExecutionStatus | null;
+  status_in?: BackupExecutionStatus[] | null;
+  status_not?: BackupExecutionStatus | null;
+  status_not_in?: BackupExecutionStatus[] | null;
+  /** @format int64 */
+  total_bytes?: number | null;
+  /** @format int64 */
+  total_bytes_gt?: number | null;
+  /** @format int64 */
+  total_bytes_gte?: number | null;
+  total_bytes_in?: number[] | null;
+  /** @format int64 */
+  total_bytes_lt?: number | null;
+  /** @format int64 */
+  total_bytes_lte?: number | null;
+  /** @format int64 */
+  total_bytes_not?: number | null;
+  total_bytes_not_in?: number[] | null;
+  type?: BackupExecutionType | null;
+  type_in?: BackupExecutionType[] | null;
+  type_not?: BackupExecutionType | null;
+  type_not_in?: BackupExecutionType[] | null;
+  vm?: VmWhereInput | null;
+  vm_local_id?: string | null;
+  vm_local_id_contains?: string | null;
+  vm_local_id_ends_with?: string | null;
+  vm_local_id_gt?: string | null;
+  vm_local_id_gte?: string | null;
+  vm_local_id_in?: string[] | null;
+  vm_local_id_lt?: string | null;
+  vm_local_id_lte?: string | null;
+  vm_local_id_not?: string | null;
+  vm_local_id_not_contains?: string | null;
+  vm_local_id_not_ends_with?: string | null;
+  vm_local_id_not_in?: string[] | null;
+  vm_local_id_not_starts_with?: string | null;
+  vm_local_id_starts_with?: string | null;
+  vm_name?: string | null;
+  vm_name_contains?: string | null;
+  vm_name_ends_with?: string | null;
+  vm_name_gt?: string | null;
+  vm_name_gte?: string | null;
+  vm_name_in?: string[] | null;
+  vm_name_lt?: string | null;
+  vm_name_lte?: string | null;
+  vm_name_not?: string | null;
+  vm_name_not_contains?: string | null;
+  vm_name_not_ends_with?: string | null;
+  vm_name_not_in?: string[] | null;
+  vm_name_not_starts_with?: string | null;
+  vm_name_starts_with?: string | null;
+}
+
+export enum BackupRestorePointCreation {
+  AUTO = "AUTO",
+  FAILBACK = "FAILBACK",
+  FAILOVER = "FAILOVER",
+  FAILOVER_TEST = "FAILOVER_TEST",
+  MANUAL = "MANUAL",
+  SYNC_REPLICATION = "SYNC_REPLICATION",
+  SYNC_REPLICATION_ERROR = "SYNC_REPLICATION_ERROR",
+  SYNC_REPLICATION_INITIALIZATION = "SYNC_REPLICATION_INITIALIZATION",
+  SYNC_REPLICATION_SYNCING = "SYNC_REPLICATION_SYNCING",
+}
+
+export enum ConsistentType {
+  CRASH_CONSISTENT = "CRASH_CONSISTENT",
+  FILE_SYSTEM_CONSISTENT = "FILE_SYSTEM_CONSISTENT",
+}
+
+export enum BackupRestorePointType {
+  FULL = "FULL",
+  INCREMENTAL = "INCREMENTAL",
+  SYNTHETIC_FULL = "SYNTHETIC_FULL",
+}
+
+export interface BackupServiceWhereInput {
+  AND?: BackupServiceWhereInput[] | null;
+  NOT?: BackupServiceWhereInput[] | null;
+  OR?: BackupServiceWhereInput[] | null;
+  backup_clusters_every?: ClusterWhereInput | null;
+  backup_clusters_none?: ClusterWhereInput | null;
+  backup_clusters_some?: ClusterWhereInput | null;
+  backup_network_gateway?: string | null;
+  backup_network_gateway_contains?: string | null;
+  backup_network_gateway_ends_with?: string | null;
+  backup_network_gateway_gt?: string | null;
+  backup_network_gateway_gte?: string | null;
+  backup_network_gateway_in?: string[] | null;
+  backup_network_gateway_lt?: string | null;
+  backup_network_gateway_lte?: string | null;
+  backup_network_gateway_not?: string | null;
+  backup_network_gateway_not_contains?: string | null;
+  backup_network_gateway_not_ends_with?: string | null;
+  backup_network_gateway_not_in?: string[] | null;
+  backup_network_gateway_not_starts_with?: string | null;
+  backup_network_gateway_starts_with?: string | null;
+  backup_network_ip?: string | null;
+  backup_network_ip_contains?: string | null;
+  backup_network_ip_ends_with?: string | null;
+  backup_network_ip_gt?: string | null;
+  backup_network_ip_gte?: string | null;
+  backup_network_ip_in?: string[] | null;
+  backup_network_ip_lt?: string | null;
+  backup_network_ip_lte?: string | null;
+  backup_network_ip_not?: string | null;
+  backup_network_ip_not_contains?: string | null;
+  backup_network_ip_not_ends_with?: string | null;
+  backup_network_ip_not_in?: string[] | null;
+  backup_network_ip_not_starts_with?: string | null;
+  backup_network_ip_starts_with?: string | null;
+  backup_network_subnet_mask?: string | null;
+  backup_network_subnet_mask_contains?: string | null;
+  backup_network_subnet_mask_ends_with?: string | null;
+  backup_network_subnet_mask_gt?: string | null;
+  backup_network_subnet_mask_gte?: string | null;
+  backup_network_subnet_mask_in?: string[] | null;
+  backup_network_subnet_mask_lt?: string | null;
+  backup_network_subnet_mask_lte?: string | null;
+  backup_network_subnet_mask_not?: string | null;
+  backup_network_subnet_mask_not_contains?: string | null;
+  backup_network_subnet_mask_not_ends_with?: string | null;
+  backup_network_subnet_mask_not_in?: string[] | null;
+  backup_network_subnet_mask_not_starts_with?: string | null;
+  backup_network_subnet_mask_starts_with?: string | null;
+  backup_network_type?: BackupServiceNetworkType | null;
+  backup_network_type_in?: BackupServiceNetworkType[] | null;
+  backup_network_type_not?: BackupServiceNetworkType | null;
+  backup_network_type_not_in?: BackupServiceNetworkType[] | null;
+  backup_network_vlan?: string | null;
+  backup_network_vlan_contains?: string | null;
+  backup_network_vlan_ends_with?: string | null;
+  backup_network_vlan_gt?: string | null;
+  backup_network_vlan_gte?: string | null;
+  backup_network_vlan_in?: string[] | null;
+  backup_network_vlan_lt?: string | null;
+  backup_network_vlan_lte?: string | null;
+  backup_network_vlan_not?: string | null;
+  backup_network_vlan_not_contains?: string | null;
+  backup_network_vlan_not_ends_with?: string | null;
+  backup_network_vlan_not_in?: string[] | null;
+  backup_network_vlan_not_starts_with?: string | null;
+  backup_network_vlan_starts_with?: string | null;
+  backup_plans_every?: BackupPlanWhereInput | null;
+  backup_plans_none?: BackupPlanWhereInput | null;
+  backup_plans_some?: BackupPlanWhereInput | null;
+  /** @format int64 */
+  backup_rd_iops_max?: number | null;
+  /** @format int64 */
+  backup_rd_iops_max_gt?: number | null;
+  /** @format int64 */
+  backup_rd_iops_max_gte?: number | null;
+  backup_rd_iops_max_in?: number[] | null;
+  /** @format int64 */
+  backup_rd_iops_max_lt?: number | null;
+  /** @format int64 */
+  backup_rd_iops_max_lte?: number | null;
+  /** @format int64 */
+  backup_rd_iops_max_not?: number | null;
+  backup_rd_iops_max_not_in?: number[] | null;
+  backup_store_repositories_every?: BackupStoreRepositoryWhereInput | null;
+  backup_store_repositories_none?: BackupStoreRepositoryWhereInput | null;
+  backup_store_repositories_some?: BackupStoreRepositoryWhereInput | null;
+  /** @format int64 */
+  backup_wr_iops_max?: number | null;
+  /** @format int64 */
+  backup_wr_iops_max_gt?: number | null;
+  /** @format int64 */
+  backup_wr_iops_max_gte?: number | null;
+  backup_wr_iops_max_in?: number[] | null;
+  /** @format int64 */
+  backup_wr_iops_max_lt?: number | null;
+  /** @format int64 */
+  backup_wr_iops_max_lte?: number | null;
+  /** @format int64 */
+  backup_wr_iops_max_not?: number | null;
+  backup_wr_iops_max_not_in?: number[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  kube_config?: string | null;
+  kube_config_contains?: string | null;
+  kube_config_ends_with?: string | null;
+  kube_config_gt?: string | null;
+  kube_config_gte?: string | null;
+  kube_config_in?: string[] | null;
+  kube_config_lt?: string | null;
+  kube_config_lte?: string | null;
+  kube_config_not?: string | null;
+  kube_config_not_contains?: string | null;
+  kube_config_not_ends_with?: string | null;
+  kube_config_not_in?: string[] | null;
+  kube_config_not_starts_with?: string | null;
+  kube_config_starts_with?: string | null;
+  management_network_gateway?: string | null;
+  management_network_gateway_contains?: string | null;
+  management_network_gateway_ends_with?: string | null;
+  management_network_gateway_gt?: string | null;
+  management_network_gateway_gte?: string | null;
+  management_network_gateway_in?: string[] | null;
+  management_network_gateway_lt?: string | null;
+  management_network_gateway_lte?: string | null;
+  management_network_gateway_not?: string | null;
+  management_network_gateway_not_contains?: string | null;
+  management_network_gateway_not_ends_with?: string | null;
+  management_network_gateway_not_in?: string[] | null;
+  management_network_gateway_not_starts_with?: string | null;
+  management_network_gateway_starts_with?: string | null;
+  management_network_ip?: string | null;
+  management_network_ip_contains?: string | null;
+  management_network_ip_ends_with?: string | null;
+  management_network_ip_gt?: string | null;
+  management_network_ip_gte?: string | null;
+  management_network_ip_in?: string[] | null;
+  management_network_ip_lt?: string | null;
+  management_network_ip_lte?: string | null;
+  management_network_ip_not?: string | null;
+  management_network_ip_not_contains?: string | null;
+  management_network_ip_not_ends_with?: string | null;
+  management_network_ip_not_in?: string[] | null;
+  management_network_ip_not_starts_with?: string | null;
+  management_network_ip_starts_with?: string | null;
+  management_network_subnet_mask?: string | null;
+  management_network_subnet_mask_contains?: string | null;
+  management_network_subnet_mask_ends_with?: string | null;
+  management_network_subnet_mask_gt?: string | null;
+  management_network_subnet_mask_gte?: string | null;
+  management_network_subnet_mask_in?: string[] | null;
+  management_network_subnet_mask_lt?: string | null;
+  management_network_subnet_mask_lte?: string | null;
+  management_network_subnet_mask_not?: string | null;
+  management_network_subnet_mask_not_contains?: string | null;
+  management_network_subnet_mask_not_ends_with?: string | null;
+  management_network_subnet_mask_not_in?: string[] | null;
+  management_network_subnet_mask_not_starts_with?: string | null;
+  management_network_subnet_mask_starts_with?: string | null;
+  management_network_vlan?: string | null;
+  management_network_vlan_contains?: string | null;
+  management_network_vlan_ends_with?: string | null;
+  management_network_vlan_gt?: string | null;
+  management_network_vlan_gte?: string | null;
+  management_network_vlan_in?: string[] | null;
+  management_network_vlan_lt?: string | null;
+  management_network_vlan_lte?: string | null;
+  management_network_vlan_not?: string | null;
+  management_network_vlan_not_contains?: string | null;
+  management_network_vlan_not_ends_with?: string | null;
+  management_network_vlan_not_in?: string[] | null;
+  management_network_vlan_not_starts_with?: string | null;
+  management_network_vlan_starts_with?: string | null;
+  /** @format int32 */
+  max_job_retry_times?: number | null;
+  /** @format int32 */
+  max_job_retry_times_gt?: number | null;
+  /** @format int32 */
+  max_job_retry_times_gte?: number | null;
+  max_job_retry_times_in?: number[] | null;
+  /** @format int32 */
+  max_job_retry_times_lt?: number | null;
+  /** @format int32 */
+  max_job_retry_times_lte?: number | null;
+  /** @format int32 */
+  max_job_retry_times_not?: number | null;
+  max_job_retry_times_not_in?: number[] | null;
+  /** @format int32 */
+  max_parallel_backup_jobs?: number | null;
+  /** @format int32 */
+  max_parallel_backup_jobs_gt?: number | null;
+  /** @format int32 */
+  max_parallel_backup_jobs_gte?: number | null;
+  max_parallel_backup_jobs_in?: number[] | null;
+  /** @format int32 */
+  max_parallel_backup_jobs_lt?: number | null;
+  /** @format int32 */
+  max_parallel_backup_jobs_lte?: number | null;
+  /** @format int32 */
+  max_parallel_backup_jobs_not?: number | null;
+  max_parallel_backup_jobs_not_in?: number[] | null;
+  /** @format int32 */
+  max_parallel_restore_jobs?: number | null;
+  /** @format int32 */
+  max_parallel_restore_jobs_gt?: number | null;
+  /** @format int32 */
+  max_parallel_restore_jobs_gte?: number | null;
+  max_parallel_restore_jobs_in?: number[] | null;
+  /** @format int32 */
+  max_parallel_restore_jobs_lt?: number | null;
+  /** @format int32 */
+  max_parallel_restore_jobs_lte?: number | null;
+  /** @format int32 */
+  max_parallel_restore_jobs_not?: number | null;
+  max_parallel_restore_jobs_not_in?: number[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  /** @format int64 */
+  restore_rd_iops_max?: number | null;
+  /** @format int64 */
+  restore_rd_iops_max_gt?: number | null;
+  /** @format int64 */
+  restore_rd_iops_max_gte?: number | null;
+  restore_rd_iops_max_in?: number[] | null;
+  /** @format int64 */
+  restore_rd_iops_max_lt?: number | null;
+  /** @format int64 */
+  restore_rd_iops_max_lte?: number | null;
+  /** @format int64 */
+  restore_rd_iops_max_not?: number | null;
+  restore_rd_iops_max_not_in?: number[] | null;
+  /** @format int64 */
+  restore_wr_iops_max?: number | null;
+  /** @format int64 */
+  restore_wr_iops_max_gt?: number | null;
+  /** @format int64 */
+  restore_wr_iops_max_gte?: number | null;
+  restore_wr_iops_max_in?: number[] | null;
+  /** @format int64 */
+  restore_wr_iops_max_lt?: number | null;
+  /** @format int64 */
+  restore_wr_iops_max_lte?: number | null;
+  /** @format int64 */
+  restore_wr_iops_max_not?: number | null;
+  restore_wr_iops_max_not_in?: number[] | null;
+  /** @format int32 */
+  retry_interval?: number | null;
+  /** @format int32 */
+  retry_interval_gt?: number | null;
+  /** @format int32 */
+  retry_interval_gte?: number | null;
+  retry_interval_in?: number[] | null;
+  /** @format int32 */
+  retry_interval_lt?: number | null;
+  /** @format int32 */
+  retry_interval_lte?: number | null;
+  /** @format int32 */
+  retry_interval_not?: number | null;
+  retry_interval_not_in?: number[] | null;
+  running_vm?: VmWhereInput | null;
+  status?: BackupServiceStatus | null;
+  status_in?: BackupServiceStatus[] | null;
+  status_not?: BackupServiceStatus | null;
+  status_not_in?: BackupServiceStatus[] | null;
+  storage_network_gateway?: string | null;
+  storage_network_gateway_contains?: string | null;
+  storage_network_gateway_ends_with?: string | null;
+  storage_network_gateway_gt?: string | null;
+  storage_network_gateway_gte?: string | null;
+  storage_network_gateway_in?: string[] | null;
+  storage_network_gateway_lt?: string | null;
+  storage_network_gateway_lte?: string | null;
+  storage_network_gateway_not?: string | null;
+  storage_network_gateway_not_contains?: string | null;
+  storage_network_gateway_not_ends_with?: string | null;
+  storage_network_gateway_not_in?: string[] | null;
+  storage_network_gateway_not_starts_with?: string | null;
+  storage_network_gateway_starts_with?: string | null;
+  storage_network_ip?: string | null;
+  storage_network_ip_contains?: string | null;
+  storage_network_ip_ends_with?: string | null;
+  storage_network_ip_gt?: string | null;
+  storage_network_ip_gte?: string | null;
+  storage_network_ip_in?: string[] | null;
+  storage_network_ip_lt?: string | null;
+  storage_network_ip_lte?: string | null;
+  storage_network_ip_not?: string | null;
+  storage_network_ip_not_contains?: string | null;
+  storage_network_ip_not_ends_with?: string | null;
+  storage_network_ip_not_in?: string[] | null;
+  storage_network_ip_not_starts_with?: string | null;
+  storage_network_ip_starts_with?: string | null;
+  storage_network_subnet_mask?: string | null;
+  storage_network_subnet_mask_contains?: string | null;
+  storage_network_subnet_mask_ends_with?: string | null;
+  storage_network_subnet_mask_gt?: string | null;
+  storage_network_subnet_mask_gte?: string | null;
+  storage_network_subnet_mask_in?: string[] | null;
+  storage_network_subnet_mask_lt?: string | null;
+  storage_network_subnet_mask_lte?: string | null;
+  storage_network_subnet_mask_not?: string | null;
+  storage_network_subnet_mask_not_contains?: string | null;
+  storage_network_subnet_mask_not_ends_with?: string | null;
+  storage_network_subnet_mask_not_in?: string[] | null;
+  storage_network_subnet_mask_not_starts_with?: string | null;
+  storage_network_subnet_mask_starts_with?: string | null;
+  storage_network_type?: BackupServiceNetworkType | null;
+  storage_network_type_in?: BackupServiceNetworkType[] | null;
+  storage_network_type_not?: BackupServiceNetworkType | null;
+  storage_network_type_not_in?: BackupServiceNetworkType[] | null;
+  storage_network_vlan?: string | null;
+  storage_network_vlan_contains?: string | null;
+  storage_network_vlan_ends_with?: string | null;
+  storage_network_vlan_gt?: string | null;
+  storage_network_vlan_gte?: string | null;
+  storage_network_vlan_in?: string[] | null;
+  storage_network_vlan_lt?: string | null;
+  storage_network_vlan_lte?: string | null;
+  storage_network_vlan_not?: string | null;
+  storage_network_vlan_not_contains?: string | null;
+  storage_network_vlan_not_ends_with?: string | null;
+  storage_network_vlan_not_in?: string[] | null;
+  storage_network_vlan_not_starts_with?: string | null;
+  storage_network_vlan_starts_with?: string | null;
+}
+
+export enum Architecture {
+  AARCH64 = "AARCH64",
+  X8664 = "X86_64",
+}
+
+export interface UserWhereInput {
+  AND?: UserWhereInput[] | null;
+  NOT?: UserWhereInput[] | null;
+  OR?: UserWhereInput[] | null;
+  auth_config_id?: string | null;
+  auth_config_id_contains?: string | null;
+  auth_config_id_ends_with?: string | null;
+  auth_config_id_gt?: string | null;
+  auth_config_id_gte?: string | null;
+  auth_config_id_in?: string[] | null;
+  auth_config_id_lt?: string | null;
+  auth_config_id_lte?: string | null;
+  auth_config_id_not?: string | null;
+  auth_config_id_not_contains?: string | null;
+  auth_config_id_not_ends_with?: string | null;
+  auth_config_id_not_in?: string[] | null;
+  auth_config_id_not_starts_with?: string | null;
+  auth_config_id_starts_with?: string | null;
+  display_username?: string | null;
+  display_username_contains?: string | null;
+  display_username_ends_with?: string | null;
+  display_username_gt?: string | null;
+  display_username_gte?: string | null;
+  display_username_in?: string[] | null;
+  display_username_lt?: string | null;
+  display_username_lte?: string | null;
+  display_username_not?: string | null;
+  display_username_not_contains?: string | null;
+  display_username_not_ends_with?: string | null;
+  display_username_not_in?: string[] | null;
+  display_username_not_starts_with?: string | null;
+  display_username_starts_with?: string | null;
+  email_address?: string | null;
+  email_address_contains?: string | null;
+  email_address_ends_with?: string | null;
+  email_address_gt?: string | null;
+  email_address_gte?: string | null;
+  email_address_in?: string[] | null;
+  email_address_lt?: string | null;
+  email_address_lte?: string | null;
+  email_address_not?: string | null;
+  email_address_not_contains?: string | null;
+  email_address_not_ends_with?: string | null;
+  email_address_not_in?: string[] | null;
+  email_address_not_starts_with?: string | null;
+  email_address_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  internal?: boolean | null;
+  internal_not?: boolean | null;
+  ldap_dn?: string | null;
+  ldap_dn_contains?: string | null;
+  ldap_dn_ends_with?: string | null;
+  ldap_dn_gt?: string | null;
+  ldap_dn_gte?: string | null;
+  ldap_dn_in?: string[] | null;
+  ldap_dn_lt?: string | null;
+  ldap_dn_lte?: string | null;
+  ldap_dn_not?: string | null;
+  ldap_dn_not_contains?: string | null;
+  ldap_dn_not_ends_with?: string | null;
+  ldap_dn_not_in?: string[] | null;
+  ldap_dn_not_starts_with?: string | null;
+  ldap_dn_starts_with?: string | null;
+  mobile_phone?: string | null;
+  mobile_phone_contains?: string | null;
+  mobile_phone_ends_with?: string | null;
+  mobile_phone_gt?: string | null;
+  mobile_phone_gte?: string | null;
+  mobile_phone_in?: string[] | null;
+  mobile_phone_lt?: string | null;
+  mobile_phone_lte?: string | null;
+  mobile_phone_not?: string | null;
+  mobile_phone_not_contains?: string | null;
+  mobile_phone_not_ends_with?: string | null;
+  mobile_phone_not_in?: string[] | null;
+  mobile_phone_not_starts_with?: string | null;
+  mobile_phone_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  password_expired?: boolean | null;
+  password_expired_not?: boolean | null;
+  password_updated_at?: string | null;
+  password_updated_at_gt?: string | null;
+  password_updated_at_gte?: string | null;
+  password_updated_at_in?: string[] | null;
+  password_updated_at_lt?: string | null;
+  password_updated_at_lte?: string | null;
+  password_updated_at_not?: string | null;
+  password_updated_at_not_in?: string[] | null;
+  role?: UserRole | null;
+  role_in?: UserRole[] | null;
+  role_not?: UserRole | null;
+  role_not_in?: UserRole[] | null;
+  roles_every?: UserRoleNextWhereInput | null;
+  roles_none?: UserRoleNextWhereInput | null;
+  roles_some?: UserRoleNextWhereInput | null;
+  source?: UserSource | null;
+  source_in?: UserSource[] | null;
+  source_not?: UserSource | null;
+  source_not_in?: UserSource[] | null;
+  username?: string | null;
+  username_contains?: string | null;
+  username_ends_with?: string | null;
+  username_gt?: string | null;
+  username_gte?: string | null;
+  username_in?: string[] | null;
+  username_lt?: string | null;
+  username_lte?: string | null;
+  username_not?: string | null;
+  username_not_contains?: string | null;
+  username_not_ends_with?: string | null;
+  username_not_in?: string[] | null;
+  username_not_starts_with?: string | null;
+  username_starts_with?: string | null;
+}
+
+export enum UserRole {
+  ADMIN = "ADMIN",
+  READ_ONLY = "READ_ONLY",
+  ROOT = "ROOT",
+}
+
+export interface UserRoleNextWhereInput {
+  AND?: UserRoleNextWhereInput[] | null;
+  NOT?: UserRoleNextWhereInput[] | null;
+  OR?: UserRoleNextWhereInput[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  platform?: UserRolePlatform | null;
+  platform_in?: UserRolePlatform[] | null;
+  platform_not?: UserRolePlatform | null;
+  platform_not_in?: UserRolePlatform[] | null;
+  preset?: UserRolePreset | null;
+  preset_in?: UserRolePreset[] | null;
+  preset_not?: UserRolePreset | null;
+  preset_not_in?: UserRolePreset[] | null;
+  users_every?: UserWhereInput | null;
+  users_none?: UserWhereInput | null;
+  users_some?: UserWhereInput | null;
+}
+
+export enum UserRolePlatform {
+  MANAGEMENT = "MANAGEMENT",
+  SELF_SERVICE = "SELF_SERVICE",
+}
+
+export enum UserRolePreset {
+  ADMIN = "ADMIN",
+  AUDITOR = "AUDITOR",
+  READ_ONLY = "READ_ONLY",
+  ROOT = "ROOT",
+  USER_ADMIN = "USER_ADMIN",
+  VM_USER = "VM_USER",
+  WORKLOAD_CLUSTER_REGISTRY_USER = "WORKLOAD_CLUSTER_REGISTRY_USER",
+  WORKLOAD_CLUSTER_USER = "WORKLOAD_CLUSTER_USER",
+}
+
+export enum UserSource {
+  AUTHN = "AUTHN",
+  LDAP = "LDAP",
+  LOCAL = "LOCAL",
+  SSO = "SSO",
+}
+
+export enum BackupServiceNetworkType {
+  MANAGEMENT = "MANAGEMENT",
+  NEW_NIC = "NEW_NIC",
+  STORAGE = "STORAGE",
+}
+
+export interface BackupStoreRepositoryWhereInput {
+  AND?: BackupStoreRepositoryWhereInput[] | null;
+  NOT?: BackupStoreRepositoryWhereInput[] | null;
+  OR?: BackupStoreRepositoryWhereInput[] | null;
+  backup_plans_every?: BackupPlanWhereInput | null;
+  backup_plans_none?: BackupPlanWhereInput | null;
+  backup_plans_some?: BackupPlanWhereInput | null;
+  backup_restore_points_every?: BackupRestorePointWhereInput | null;
+  backup_restore_points_none?: BackupRestorePointWhereInput | null;
+  backup_restore_points_some?: BackupRestorePointWhereInput | null;
+  backup_service?: BackupServiceWhereInput | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  error_code?: string | null;
+  error_code_contains?: string | null;
+  error_code_ends_with?: string | null;
+  error_code_gt?: string | null;
+  error_code_gte?: string | null;
+  error_code_in?: string[] | null;
+  error_code_lt?: string | null;
+  error_code_lte?: string | null;
+  error_code_not?: string | null;
+  error_code_not_contains?: string | null;
+  error_code_not_ends_with?: string | null;
+  error_code_not_in?: string[] | null;
+  error_code_not_starts_with?: string | null;
+  error_code_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  iscsi_chap_name?: string | null;
+  iscsi_chap_name_contains?: string | null;
+  iscsi_chap_name_ends_with?: string | null;
+  iscsi_chap_name_gt?: string | null;
+  iscsi_chap_name_gte?: string | null;
+  iscsi_chap_name_in?: string[] | null;
+  iscsi_chap_name_lt?: string | null;
+  iscsi_chap_name_lte?: string | null;
+  iscsi_chap_name_not?: string | null;
+  iscsi_chap_name_not_contains?: string | null;
+  iscsi_chap_name_not_ends_with?: string | null;
+  iscsi_chap_name_not_in?: string[] | null;
+  iscsi_chap_name_not_starts_with?: string | null;
+  iscsi_chap_name_starts_with?: string | null;
+  iscsi_chap_secret?: string | null;
+  iscsi_chap_secret_contains?: string | null;
+  iscsi_chap_secret_ends_with?: string | null;
+  iscsi_chap_secret_gt?: string | null;
+  iscsi_chap_secret_gte?: string | null;
+  iscsi_chap_secret_in?: string[] | null;
+  iscsi_chap_secret_lt?: string | null;
+  iscsi_chap_secret_lte?: string | null;
+  iscsi_chap_secret_not?: string | null;
+  iscsi_chap_secret_not_contains?: string | null;
+  iscsi_chap_secret_not_ends_with?: string | null;
+  iscsi_chap_secret_not_in?: string[] | null;
+  iscsi_chap_secret_not_starts_with?: string | null;
+  iscsi_chap_secret_starts_with?: string | null;
+  iscsi_ip?: string | null;
+  iscsi_ip_contains?: string | null;
+  iscsi_ip_ends_with?: string | null;
+  iscsi_ip_gt?: string | null;
+  iscsi_ip_gte?: string | null;
+  iscsi_ip_in?: string[] | null;
+  iscsi_ip_lt?: string | null;
+  iscsi_ip_lte?: string | null;
+  iscsi_ip_not?: string | null;
+  iscsi_ip_not_contains?: string | null;
+  iscsi_ip_not_ends_with?: string | null;
+  iscsi_ip_not_in?: string[] | null;
+  iscsi_ip_not_starts_with?: string | null;
+  iscsi_ip_starts_with?: string | null;
+  iscsi_lun_id?: string | null;
+  iscsi_lun_id_contains?: string | null;
+  iscsi_lun_id_ends_with?: string | null;
+  iscsi_lun_id_gt?: string | null;
+  iscsi_lun_id_gte?: string | null;
+  iscsi_lun_id_in?: string[] | null;
+  iscsi_lun_id_lt?: string | null;
+  iscsi_lun_id_lte?: string | null;
+  iscsi_lun_id_not?: string | null;
+  iscsi_lun_id_not_contains?: string | null;
+  iscsi_lun_id_not_ends_with?: string | null;
+  iscsi_lun_id_not_in?: string[] | null;
+  iscsi_lun_id_not_starts_with?: string | null;
+  iscsi_lun_id_starts_with?: string | null;
+  /** @format int32 */
+  iscsi_port?: number | null;
+  /** @format int32 */
+  iscsi_port_gt?: number | null;
+  /** @format int32 */
+  iscsi_port_gte?: number | null;
+  iscsi_port_in?: number[] | null;
+  /** @format int32 */
+  iscsi_port_lt?: number | null;
+  /** @format int32 */
+  iscsi_port_lte?: number | null;
+  /** @format int32 */
+  iscsi_port_not?: number | null;
+  iscsi_port_not_in?: number[] | null;
+  iscsi_target_iqn?: string | null;
+  iscsi_target_iqn_contains?: string | null;
+  iscsi_target_iqn_ends_with?: string | null;
+  iscsi_target_iqn_gt?: string | null;
+  iscsi_target_iqn_gte?: string | null;
+  iscsi_target_iqn_in?: string[] | null;
+  iscsi_target_iqn_lt?: string | null;
+  iscsi_target_iqn_lte?: string | null;
+  iscsi_target_iqn_not?: string | null;
+  iscsi_target_iqn_not_contains?: string | null;
+  iscsi_target_iqn_not_ends_with?: string | null;
+  iscsi_target_iqn_not_in?: string[] | null;
+  iscsi_target_iqn_not_starts_with?: string | null;
+  iscsi_target_iqn_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  nfs_path?: string | null;
+  nfs_path_contains?: string | null;
+  nfs_path_ends_with?: string | null;
+  nfs_path_gt?: string | null;
+  nfs_path_gte?: string | null;
+  nfs_path_in?: string[] | null;
+  nfs_path_lt?: string | null;
+  nfs_path_lte?: string | null;
+  nfs_path_not?: string | null;
+  nfs_path_not_contains?: string | null;
+  nfs_path_not_ends_with?: string | null;
+  nfs_path_not_in?: string[] | null;
+  nfs_path_not_starts_with?: string | null;
+  nfs_path_starts_with?: string | null;
+  nfs_server?: string | null;
+  nfs_server_contains?: string | null;
+  nfs_server_ends_with?: string | null;
+  nfs_server_gt?: string | null;
+  nfs_server_gte?: string | null;
+  nfs_server_in?: string[] | null;
+  nfs_server_lt?: string | null;
+  nfs_server_lte?: string | null;
+  nfs_server_not?: string | null;
+  nfs_server_not_contains?: string | null;
+  nfs_server_not_ends_with?: string | null;
+  nfs_server_not_in?: string[] | null;
+  nfs_server_not_starts_with?: string | null;
+  nfs_server_starts_with?: string | null;
+  status?: BackupStoreStatus | null;
+  status_in?: BackupStoreStatus[] | null;
+  status_not?: BackupStoreStatus | null;
+  status_not_in?: BackupStoreStatus[] | null;
+  /** @format int64 */
+  total_capacity?: number | null;
+  /** @format int64 */
+  total_capacity_gt?: number | null;
+  /** @format int64 */
+  total_capacity_gte?: number | null;
+  total_capacity_in?: number[] | null;
+  /** @format int64 */
+  total_capacity_lt?: number | null;
+  /** @format int64 */
+  total_capacity_lte?: number | null;
+  /** @format int64 */
+  total_capacity_not?: number | null;
+  total_capacity_not_in?: number[] | null;
+  type?: BackupStoreType | null;
+  type_in?: BackupStoreType[] | null;
+  type_not?: BackupStoreType | null;
+  type_not_in?: BackupStoreType[] | null;
+  update_timestamp?: string | null;
+  update_timestamp_contains?: string | null;
+  update_timestamp_ends_with?: string | null;
+  update_timestamp_gt?: string | null;
+  update_timestamp_gte?: string | null;
+  update_timestamp_in?: string[] | null;
+  update_timestamp_lt?: string | null;
+  update_timestamp_lte?: string | null;
+  update_timestamp_not?: string | null;
+  update_timestamp_not_contains?: string | null;
+  update_timestamp_not_ends_with?: string | null;
+  update_timestamp_not_in?: string[] | null;
+  update_timestamp_not_starts_with?: string | null;
+  update_timestamp_starts_with?: string | null;
+  /** @format int64 */
+  used_data_space?: number | null;
+  /** @format int64 */
+  used_data_space_gt?: number | null;
+  /** @format int64 */
+  used_data_space_gte?: number | null;
+  used_data_space_in?: number[] | null;
+  /** @format int64 */
+  used_data_space_lt?: number | null;
+  /** @format int64 */
+  used_data_space_lte?: number | null;
+  /** @format int64 */
+  used_data_space_not?: number | null;
+  used_data_space_not_in?: number[] | null;
+  /** @format double */
+  used_data_space_usage?: number | null;
+  /** @format double */
+  used_data_space_usage_gt?: number | null;
+  /** @format double */
+  used_data_space_usage_gte?: number | null;
+  used_data_space_usage_in?: number[] | null;
+  /** @format double */
+  used_data_space_usage_lt?: number | null;
+  /** @format double */
+  used_data_space_usage_lte?: number | null;
+  /** @format double */
+  used_data_space_usage_not?: number | null;
+  used_data_space_usage_not_in?: number[] | null;
+  /** @format int64 */
+  valid_data_space?: number | null;
+  /** @format int64 */
+  valid_data_space_gt?: number | null;
+  /** @format int64 */
+  valid_data_space_gte?: number | null;
+  valid_data_space_in?: number[] | null;
+  /** @format int64 */
+  valid_data_space_lt?: number | null;
+  /** @format int64 */
+  valid_data_space_lte?: number | null;
+  /** @format int64 */
+  valid_data_space_not?: number | null;
+  valid_data_space_not_in?: number[] | null;
+}
+
+export enum BackupStoreStatus {
+  CONNECTED = "CONNECTED",
+  CONNECTING = "CONNECTING",
+  DISABLED = "DISABLED",
+  ERROR = "ERROR",
+  INIT = "INIT",
+  INIT_ERROR = "INIT_ERROR",
+}
+
+export enum BackupStoreType {
+  BOOSTFS = "BOOSTFS",
+  ISCSI = "ISCSI",
+  NETBACKUP = "NETBACKUP",
+  NFS3 = "NFS3",
+  NFS4 = "NFS4",
+}
+
+export enum BackupServiceStatus {
+  ERROR = "ERROR",
+  INITIALIZING = "INITIALIZING",
+  INSTALLING = "INSTALLING",
+  INSTALL_FAILED = "INSTALL_FAILED",
+  RUNNING = "RUNNING",
+  TERMINATE_FAILED = "TERMINATE_FAILED",
+  TERMINATING = "TERMINATING",
+  UPGRADE_FAILED = "UPGRADE_FAILED",
+  UPGRADING = "UPGRADING",
+}
+
+export enum BackupPlanDeleteStrategy {
+  DELETE_RESTORE_POINT = "DELETE_RESTORE_POINT",
+  KEEP_RESTORE_POINT = "KEEP_RESTORE_POINT",
+}
+
+export enum BackupPlanPeriod {
+  DAILY = "DAILY",
+  HOURLY = "HOURLY",
+  MINUTELY = "MINUTELY",
+  MONTHLY = "MONTHLY",
+  WEEKLY = "WEEKLY",
+  YEARLY = "YEARLY",
+}
+
+export enum BackupPlanKeepPolicy {
+  COUNT = "COUNT",
+  FOREVER = "FOREVER",
+  TIME = "TIME",
+}
+
+export enum BackupPlanPhase {
+  INVALID = "INVALID",
+  PAUSED = "PAUSED",
+  SCHEDULING = "SCHEDULING",
+  STOPPED = "STOPPED",
+  VALIDATING = "VALIDATING",
+  WAITING_SCHEDULE = "WAITING_SCHEDULE",
+}
+
+export enum BackupPlanStatus {
+  PAUSED = "PAUSED",
+  STOPPED = "STOPPED",
+  WORKING = "WORKING",
+}
+
+export enum VmClockOffset {
+  LOCALTIME = "LOCALTIME",
+  UTC = "UTC",
+}
+
+export enum VmFirmware {
+  BIOS = "BIOS",
+  UEFI = "UEFI",
+}
+
+export interface VmFolderWhereInput {
+  AND?: VmFolderWhereInput[] | null;
+  NOT?: VmFolderWhereInput[] | null;
+  OR?: VmFolderWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  parent?: VmFolderWhereInput | null;
+  path?: string | null;
+  path_contains?: string | null;
+  path_ends_with?: string | null;
+  path_gt?: string | null;
+  path_gte?: string | null;
+  path_in?: string[] | null;
+  path_lt?: string | null;
+  path_lte?: string | null;
+  path_not?: string | null;
+  path_not_contains?: string | null;
+  path_not_ends_with?: string | null;
+  path_not_in?: string[] | null;
+  path_not_starts_with?: string | null;
+  path_starts_with?: string | null;
+  /** @format int32 */
+  total_vm_num?: number | null;
+  /** @format int32 */
+  total_vm_num_gt?: number | null;
+  /** @format int32 */
+  total_vm_num_gte?: number | null;
+  total_vm_num_in?: number[] | null;
+  /** @format int32 */
+  total_vm_num_lt?: number | null;
+  /** @format int32 */
+  total_vm_num_lte?: number | null;
+  /** @format int32 */
+  total_vm_num_not?: number | null;
+  total_vm_num_not_in?: number[] | null;
+  /** @format int32 */
+  vm_num?: number | null;
+  /** @format int32 */
+  vm_num_gt?: number | null;
+  /** @format int32 */
+  vm_num_gte?: number | null;
+  vm_num_in?: number[] | null;
+  /** @format int32 */
+  vm_num_lt?: number | null;
+  /** @format int32 */
+  vm_num_lte?: number | null;
+  /** @format int32 */
+  vm_num_not?: number | null;
+  vm_num_not_in?: number[] | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
+}
+
+export interface GpuDeviceWhereInput {
+  AND?: GpuDeviceWhereInput[] | null;
+  NOT?: GpuDeviceWhereInput[] | null;
+  OR?: GpuDeviceWhereInput[] | null;
+  /** @format int32 */
+  assigned_vgpus_num?: number | null;
+  /** @format int32 */
+  assigned_vgpus_num_gt?: number | null;
+  /** @format int32 */
+  assigned_vgpus_num_gte?: number | null;
+  assigned_vgpus_num_in?: number[] | null;
+  /** @format int32 */
+  assigned_vgpus_num_lt?: number | null;
+  /** @format int32 */
+  assigned_vgpus_num_lte?: number | null;
+  /** @format int32 */
+  assigned_vgpus_num_not?: number | null;
+  assigned_vgpus_num_not_in?: number[] | null;
+  /** @format int32 */
+  available_vgpus_num?: number | null;
+  /** @format int32 */
+  available_vgpus_num_gt?: number | null;
+  /** @format int32 */
+  available_vgpus_num_gte?: number | null;
+  available_vgpus_num_in?: number[] | null;
+  /** @format int32 */
+  available_vgpus_num_lt?: number | null;
+  /** @format int32 */
+  available_vgpus_num_lte?: number | null;
+  /** @format int32 */
+  available_vgpus_num_not?: number | null;
+  available_vgpus_num_not_in?: number[] | null;
+  brand?: string | null;
+  brand_contains?: string | null;
+  brand_ends_with?: string | null;
+  brand_gt?: string | null;
+  brand_gte?: string | null;
+  brand_in?: string[] | null;
+  brand_lt?: string | null;
+  brand_lte?: string | null;
+  brand_not?: string | null;
+  brand_not_contains?: string | null;
+  brand_not_ends_with?: string | null;
+  brand_not_in?: string[] | null;
+  brand_not_starts_with?: string | null;
+  brand_starts_with?: string | null;
+  bus_location?: string | null;
+  bus_location_contains?: string | null;
+  bus_location_ends_with?: string | null;
+  bus_location_gt?: string | null;
+  bus_location_gte?: string | null;
+  bus_location_in?: string[] | null;
+  bus_location_lt?: string | null;
+  bus_location_lte?: string | null;
+  bus_location_not?: string | null;
+  bus_location_not_contains?: string | null;
+  bus_location_not_ends_with?: string | null;
+  bus_location_not_in?: string[] | null;
+  bus_location_not_starts_with?: string | null;
+  bus_location_starts_with?: string | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  host?: HostWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  is_nvidia_tools_ready?: boolean | null;
+  is_nvidia_tools_ready_not?: boolean | null;
+  is_nvidia_vfs_enabled?: boolean | null;
+  is_nvidia_vfs_enabled_not?: boolean | null;
+  is_nvidia_vfs_supported?: boolean | null;
+  is_nvidia_vfs_supported_not?: boolean | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  model?: string | null;
+  model_contains?: string | null;
+  model_ends_with?: string | null;
+  model_gt?: string | null;
+  model_gte?: string | null;
+  model_in?: string[] | null;
+  model_lt?: string | null;
+  model_lte?: string | null;
+  model_not?: string | null;
+  model_not_contains?: string | null;
+  model_not_ends_with?: string | null;
+  model_not_in?: string[] | null;
+  model_not_starts_with?: string | null;
+  model_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  status?: GpuDeviceStatus | null;
+  status_in?: GpuDeviceStatus[] | null;
+  status_not?: GpuDeviceStatus | null;
+  status_not_in?: GpuDeviceStatus[] | null;
+  user_usage?: GpuDeviceUsage | null;
+  user_usage_in?: GpuDeviceUsage[] | null;
+  user_usage_not?: GpuDeviceUsage | null;
+  user_usage_not_in?: GpuDeviceUsage[] | null;
+  user_vgpu_type_id?: string | null;
+  user_vgpu_type_id_contains?: string | null;
+  user_vgpu_type_id_ends_with?: string | null;
+  user_vgpu_type_id_gt?: string | null;
+  user_vgpu_type_id_gte?: string | null;
+  user_vgpu_type_id_in?: string[] | null;
+  user_vgpu_type_id_lt?: string | null;
+  user_vgpu_type_id_lte?: string | null;
+  user_vgpu_type_id_not?: string | null;
+  user_vgpu_type_id_not_contains?: string | null;
+  user_vgpu_type_id_not_ends_with?: string | null;
+  user_vgpu_type_id_not_in?: string[] | null;
+  user_vgpu_type_id_not_starts_with?: string | null;
+  user_vgpu_type_id_starts_with?: string | null;
+  user_vgpu_type_name?: string | null;
+  user_vgpu_type_name_contains?: string | null;
+  user_vgpu_type_name_ends_with?: string | null;
+  user_vgpu_type_name_gt?: string | null;
+  user_vgpu_type_name_gte?: string | null;
+  user_vgpu_type_name_in?: string[] | null;
+  user_vgpu_type_name_lt?: string | null;
+  user_vgpu_type_name_lte?: string | null;
+  user_vgpu_type_name_not?: string | null;
+  user_vgpu_type_name_not_contains?: string | null;
+  user_vgpu_type_name_not_ends_with?: string | null;
+  user_vgpu_type_name_not_in?: string[] | null;
+  user_vgpu_type_name_not_starts_with?: string | null;
+  user_vgpu_type_name_starts_with?: string | null;
+  /** @format int32 */
+  vgpu_instance_num?: number | null;
+  /** @format int32 */
+  vgpu_instance_num_gt?: number | null;
+  /** @format int32 */
+  vgpu_instance_num_gte?: number | null;
+  vgpu_instance_num_in?: number[] | null;
+  /** @format int32 */
+  vgpu_instance_num_lt?: number | null;
+  /** @format int32 */
+  vgpu_instance_num_lte?: number | null;
+  /** @format int32 */
+  vgpu_instance_num_not?: number | null;
+  vgpu_instance_num_not_in?: number[] | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
+}
+
+export interface HostWhereInput {
+  AND?: HostWhereInput[] | null;
+  NOT?: HostWhereInput[] | null;
+  OR?: HostWhereInput[] | null;
+  access_ip?: string | null;
+  access_ip_contains?: string | null;
+  access_ip_ends_with?: string | null;
+  access_ip_gt?: string | null;
+  access_ip_gte?: string | null;
+  access_ip_in?: string[] | null;
+  access_ip_lt?: string | null;
+  access_ip_lte?: string | null;
+  access_ip_not?: string | null;
+  access_ip_not_contains?: string | null;
+  access_ip_not_ends_with?: string | null;
+  access_ip_not_in?: string[] | null;
+  access_ip_not_starts_with?: string | null;
+  access_ip_starts_with?: string | null;
+  /** @format int32 */
+  allocable_cpu_cores_for_vm_exclusive?: number | null;
+  /** @format int32 */
+  allocable_cpu_cores_for_vm_exclusive_gt?: number | null;
+  /** @format int32 */
+  allocable_cpu_cores_for_vm_exclusive_gte?: number | null;
+  allocable_cpu_cores_for_vm_exclusive_in?: number[] | null;
+  /** @format int32 */
+  allocable_cpu_cores_for_vm_exclusive_lt?: number | null;
+  /** @format int32 */
+  allocable_cpu_cores_for_vm_exclusive_lte?: number | null;
+  /** @format int32 */
+  allocable_cpu_cores_for_vm_exclusive_not?: number | null;
+  allocable_cpu_cores_for_vm_exclusive_not_in?: number[] | null;
+  /** @format int64 */
+  allocatable_memory_bytes?: number | null;
+  /** @format int64 */
+  allocatable_memory_bytes_gt?: number | null;
+  /** @format int64 */
+  allocatable_memory_bytes_gte?: number | null;
+  allocatable_memory_bytes_in?: number[] | null;
+  /** @format int64 */
+  allocatable_memory_bytes_lt?: number | null;
+  /** @format int64 */
+  allocatable_memory_bytes_lte?: number | null;
+  /** @format int64 */
+  allocatable_memory_bytes_not?: number | null;
+  allocatable_memory_bytes_not_in?: number[] | null;
+  /** @format int64 */
+  allocated_memory_bytes?: number | null;
+  /** @format int64 */
+  allocated_memory_bytes_gt?: number | null;
+  /** @format int64 */
+  allocated_memory_bytes_gte?: number | null;
+  allocated_memory_bytes_in?: number[] | null;
+  /** @format int64 */
+  allocated_memory_bytes_lt?: number | null;
+  /** @format int64 */
+  allocated_memory_bytes_lte?: number | null;
+  /** @format int64 */
+  allocated_memory_bytes_not?: number | null;
+  allocated_memory_bytes_not_in?: number[] | null;
+  /** @format int64 */
+  allocated_prioritized_space?: number | null;
+  /** @format int64 */
+  allocated_prioritized_space_gt?: number | null;
+  /** @format int64 */
+  allocated_prioritized_space_gte?: number | null;
+  allocated_prioritized_space_in?: number[] | null;
+  /** @format int64 */
+  allocated_prioritized_space_lt?: number | null;
+  /** @format int64 */
+  allocated_prioritized_space_lte?: number | null;
+  /** @format int64 */
+  allocated_prioritized_space_not?: number | null;
+  allocated_prioritized_space_not_in?: number[] | null;
+  /** @format double */
+  allocated_prioritized_space_usage?: number | null;
+  /** @format double */
+  allocated_prioritized_space_usage_gt?: number | null;
+  /** @format double */
+  allocated_prioritized_space_usage_gte?: number | null;
+  allocated_prioritized_space_usage_in?: number[] | null;
+  /** @format double */
+  allocated_prioritized_space_usage_lt?: number | null;
+  /** @format double */
+  allocated_prioritized_space_usage_lte?: number | null;
+  /** @format double */
+  allocated_prioritized_space_usage_not?: number | null;
+  allocated_prioritized_space_usage_not_in?: number[] | null;
+  chunk_id?: string | null;
+  chunk_id_contains?: string | null;
+  chunk_id_ends_with?: string | null;
+  chunk_id_gt?: string | null;
+  chunk_id_gte?: string | null;
+  chunk_id_in?: string[] | null;
+  chunk_id_lt?: string | null;
+  chunk_id_lte?: string | null;
+  chunk_id_not?: string | null;
+  chunk_id_not_contains?: string | null;
+  chunk_id_not_ends_with?: string | null;
+  chunk_id_not_in?: string[] | null;
+  chunk_id_not_starts_with?: string | null;
+  chunk_id_starts_with?: string | null;
+  cluster?: ClusterWhereInput | null;
+  /** @format int64 */
+  commited_memory_bytes?: number | null;
+  /** @format int64 */
+  commited_memory_bytes_gt?: number | null;
+  /** @format int64 */
+  commited_memory_bytes_gte?: number | null;
+  commited_memory_bytes_in?: number[] | null;
+  /** @format int64 */
+  commited_memory_bytes_lt?: number | null;
+  /** @format int64 */
+  commited_memory_bytes_lte?: number | null;
+  /** @format int64 */
+  commited_memory_bytes_not?: number | null;
+  commited_memory_bytes_not_in?: number[] | null;
+  connect_status?: HostConnectStatus | null;
+  connect_status_in?: HostConnectStatus[] | null;
+  connect_status_not?: HostConnectStatus | null;
+  connect_status_not_in?: HostConnectStatus[] | null;
+  cpu_brand?: string | null;
+  cpu_brand_contains?: string | null;
+  cpu_brand_ends_with?: string | null;
+  cpu_brand_gt?: string | null;
+  cpu_brand_gte?: string | null;
+  cpu_brand_in?: string[] | null;
+  cpu_brand_lt?: string | null;
+  cpu_brand_lte?: string | null;
+  cpu_brand_not?: string | null;
+  cpu_brand_not_contains?: string | null;
+  cpu_brand_not_ends_with?: string | null;
+  cpu_brand_not_in?: string[] | null;
+  cpu_brand_not_starts_with?: string | null;
+  cpu_brand_starts_with?: string | null;
+  cpu_fan_speed_unit?: CpuFanSpeedUnit | null;
+  cpu_fan_speed_unit_in?: CpuFanSpeedUnit[] | null;
+  cpu_fan_speed_unit_not?: CpuFanSpeedUnit | null;
+  cpu_fan_speed_unit_not_in?: CpuFanSpeedUnit[] | null;
+  /** @format int64 */
+  cpu_hz_per_core?: number | null;
+  /** @format int64 */
+  cpu_hz_per_core_gt?: number | null;
+  /** @format int64 */
+  cpu_hz_per_core_gte?: number | null;
+  cpu_hz_per_core_in?: number[] | null;
+  /** @format int64 */
+  cpu_hz_per_core_lt?: number | null;
+  /** @format int64 */
+  cpu_hz_per_core_lte?: number | null;
+  /** @format int64 */
+  cpu_hz_per_core_not?: number | null;
+  cpu_hz_per_core_not_in?: number[] | null;
+  cpu_model?: string | null;
+  cpu_model_contains?: string | null;
+  cpu_model_ends_with?: string | null;
+  cpu_model_gt?: string | null;
+  cpu_model_gte?: string | null;
+  cpu_model_in?: string[] | null;
+  cpu_model_lt?: string | null;
+  cpu_model_lte?: string | null;
+  cpu_model_not?: string | null;
+  cpu_model_not_contains?: string | null;
+  cpu_model_not_ends_with?: string | null;
+  cpu_model_not_in?: string[] | null;
+  cpu_model_not_starts_with?: string | null;
+  cpu_model_starts_with?: string | null;
+  cpu_vendor?: string | null;
+  cpu_vendor_contains?: string | null;
+  cpu_vendor_ends_with?: string | null;
+  cpu_vendor_gt?: string | null;
+  cpu_vendor_gte?: string | null;
+  cpu_vendor_in?: string[] | null;
+  cpu_vendor_lt?: string | null;
+  cpu_vendor_lte?: string | null;
+  cpu_vendor_not?: string | null;
+  cpu_vendor_not_contains?: string | null;
+  cpu_vendor_not_ends_with?: string | null;
+  cpu_vendor_not_in?: string[] | null;
+  cpu_vendor_not_starts_with?: string | null;
+  cpu_vendor_starts_with?: string | null;
+  data_ip?: string | null;
+  data_ip_contains?: string | null;
+  data_ip_ends_with?: string | null;
+  data_ip_gt?: string | null;
+  data_ip_gte?: string | null;
+  data_ip_in?: string[] | null;
+  data_ip_lt?: string | null;
+  data_ip_lte?: string | null;
+  data_ip_not?: string | null;
+  data_ip_not_contains?: string | null;
+  data_ip_not_ends_with?: string | null;
+  data_ip_not_in?: string[] | null;
+  data_ip_not_starts_with?: string | null;
+  data_ip_starts_with?: string | null;
+  /** @format int64 */
+  dirty_cache_space?: number | null;
+  /** @format int64 */
+  dirty_cache_space_gt?: number | null;
+  /** @format int64 */
+  dirty_cache_space_gte?: number | null;
+  dirty_cache_space_in?: number[] | null;
+  /** @format int64 */
+  dirty_cache_space_lt?: number | null;
+  /** @format int64 */
+  dirty_cache_space_lte?: number | null;
+  /** @format int64 */
+  dirty_cache_space_not?: number | null;
+  dirty_cache_space_not_in?: number[] | null;
+  /** @format double */
+  dirty_cache_usage?: number | null;
+  /** @format double */
+  dirty_cache_usage_gt?: number | null;
+  /** @format double */
+  dirty_cache_usage_gte?: number | null;
+  dirty_cache_usage_in?: number[] | null;
+  /** @format double */
+  dirty_cache_usage_lt?: number | null;
+  /** @format double */
+  dirty_cache_usage_lte?: number | null;
+  /** @format double */
+  dirty_cache_usage_not?: number | null;
+  dirty_cache_usage_not_in?: number[] | null;
+  /** @format int64 */
+  downgraded_prioritized_space?: number | null;
+  /** @format int64 */
+  downgraded_prioritized_space_gt?: number | null;
+  /** @format int64 */
+  downgraded_prioritized_space_gte?: number | null;
+  downgraded_prioritized_space_in?: number[] | null;
+  /** @format int64 */
+  downgraded_prioritized_space_lt?: number | null;
+  /** @format int64 */
+  downgraded_prioritized_space_lte?: number | null;
+  /** @format int64 */
+  downgraded_prioritized_space_not?: number | null;
+  downgraded_prioritized_space_not_in?: number[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  /** @format int64 */
+  failure_cache_space?: number | null;
+  /** @format int64 */
+  failure_cache_space_gt?: number | null;
+  /** @format int64 */
+  failure_cache_space_gte?: number | null;
+  failure_cache_space_in?: number[] | null;
+  /** @format int64 */
+  failure_cache_space_lt?: number | null;
+  /** @format int64 */
+  failure_cache_space_lte?: number | null;
+  /** @format int64 */
+  failure_cache_space_not?: number | null;
+  failure_cache_space_not_in?: number[] | null;
+  /** @format int64 */
+  failure_data_space?: number | null;
+  /** @format int64 */
+  failure_data_space_gt?: number | null;
+  /** @format int64 */
+  failure_data_space_gte?: number | null;
+  failure_data_space_in?: number[] | null;
+  /** @format int64 */
+  failure_data_space_lt?: number | null;
+  /** @format int64 */
+  failure_data_space_lte?: number | null;
+  /** @format int64 */
+  failure_data_space_not?: number | null;
+  failure_data_space_not_in?: number[] | null;
+  gpu_devices_every?: GpuDeviceWhereInput | null;
+  gpu_devices_none?: GpuDeviceWhereInput | null;
+  gpu_devices_some?: GpuDeviceWhereInput | null;
+  /** @format int64 */
+  hdd_data_capacity?: number | null;
+  /** @format int64 */
+  hdd_data_capacity_gt?: number | null;
+  /** @format int64 */
+  hdd_data_capacity_gte?: number | null;
+  hdd_data_capacity_in?: number[] | null;
+  /** @format int64 */
+  hdd_data_capacity_lt?: number | null;
+  /** @format int64 */
+  hdd_data_capacity_lte?: number | null;
+  /** @format int64 */
+  hdd_data_capacity_not?: number | null;
+  hdd_data_capacity_not_in?: number[] | null;
+  /** @format int32 */
+  hdd_disk_count?: number | null;
+  /** @format int32 */
+  hdd_disk_count_gt?: number | null;
+  /** @format int32 */
+  hdd_disk_count_gte?: number | null;
+  hdd_disk_count_in?: number[] | null;
+  /** @format int32 */
+  hdd_disk_count_lt?: number | null;
+  /** @format int32 */
+  hdd_disk_count_lte?: number | null;
+  /** @format int32 */
+  hdd_disk_count_not?: number | null;
+  hdd_disk_count_not_in?: number[] | null;
+  hypervisor_ip?: string | null;
+  hypervisor_ip_contains?: string | null;
+  hypervisor_ip_ends_with?: string | null;
+  hypervisor_ip_gt?: string | null;
+  hypervisor_ip_gte?: string | null;
+  hypervisor_ip_in?: string[] | null;
+  hypervisor_ip_lt?: string | null;
+  hypervisor_ip_lte?: string | null;
+  hypervisor_ip_not?: string | null;
+  hypervisor_ip_not_contains?: string | null;
+  hypervisor_ip_not_ends_with?: string | null;
+  hypervisor_ip_not_in?: string[] | null;
+  hypervisor_ip_not_starts_with?: string | null;
+  hypervisor_ip_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  iommu?: IommuStatus | null;
+  iommu_in?: IommuStatus[] | null;
+  iommu_not?: IommuStatus | null;
+  iommu_not_in?: IommuStatus[] | null;
+  is_os_in_raid1?: boolean | null;
+  is_os_in_raid1_not?: boolean | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  lsm_cap_disk_safe_umount?: boolean | null;
+  lsm_cap_disk_safe_umount_not?: boolean | null;
+  management_ip?: string | null;
+  management_ip_contains?: string | null;
+  management_ip_ends_with?: string | null;
+  management_ip_gt?: string | null;
+  management_ip_gte?: string | null;
+  management_ip_in?: string[] | null;
+  management_ip_lt?: string | null;
+  management_ip_lte?: string | null;
+  management_ip_not?: string | null;
+  management_ip_not_contains?: string | null;
+  management_ip_not_ends_with?: string | null;
+  management_ip_not_in?: string[] | null;
+  management_ip_not_starts_with?: string | null;
+  management_ip_starts_with?: string | null;
+  /** @format double */
+  memory_allocation_rate?: number | null;
+  /** @format double */
+  memory_allocation_rate_gt?: number | null;
+  /** @format double */
+  memory_allocation_rate_gte?: number | null;
+  memory_allocation_rate_in?: number[] | null;
+  /** @format double */
+  memory_allocation_rate_lt?: number | null;
+  /** @format double */
+  memory_allocation_rate_lte?: number | null;
+  /** @format double */
+  memory_allocation_rate_not?: number | null;
+  memory_allocation_rate_not_in?: number[] | null;
+  memory_overcommit_enabled?: boolean | null;
+  memory_overcommit_enabled_not?: boolean | null;
+  merged_status?: HostMergedStatus | null;
+  merged_status_in?: HostMergedStatus[] | null;
+  merged_status_not?: HostMergedStatus | null;
+  merged_status_not_in?: HostMergedStatus[] | null;
+  model?: string | null;
+  model_contains?: string | null;
+  model_ends_with?: string | null;
+  model_gt?: string | null;
+  model_gte?: string | null;
+  model_in?: string[] | null;
+  model_lt?: string | null;
+  model_lte?: string | null;
+  model_not?: string | null;
+  model_not_contains?: string | null;
+  model_not_ends_with?: string | null;
+  model_not_in?: string[] | null;
+  model_not_starts_with?: string | null;
+  model_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  nested_virtualization?: boolean | null;
+  nested_virtualization_not?: boolean | null;
+  /** @format int32 */
+  nic_count?: number | null;
+  /** @format int32 */
+  nic_count_gt?: number | null;
+  /** @format int32 */
+  nic_count_gte?: number | null;
+  nic_count_in?: number[] | null;
+  /** @format int32 */
+  nic_count_lt?: number | null;
+  /** @format int32 */
+  nic_count_lte?: number | null;
+  /** @format int32 */
+  nic_count_not?: number | null;
+  nic_count_not_in?: number[] | null;
+  nics_every?: NicWhereInput | null;
+  nics_none?: NicWhereInput | null;
+  nics_some?: NicWhereInput | null;
+  node_topo_local_id?: string | null;
+  node_topo_local_id_contains?: string | null;
+  node_topo_local_id_ends_with?: string | null;
+  node_topo_local_id_gt?: string | null;
+  node_topo_local_id_gte?: string | null;
+  node_topo_local_id_in?: string[] | null;
+  node_topo_local_id_lt?: string | null;
+  node_topo_local_id_lte?: string | null;
+  node_topo_local_id_not?: string | null;
+  node_topo_local_id_not_contains?: string | null;
+  node_topo_local_id_not_ends_with?: string | null;
+  node_topo_local_id_not_in?: string[] | null;
+  node_topo_local_id_not_starts_with?: string | null;
+  node_topo_local_id_starts_with?: string | null;
+  /** @format int64 */
+  os_memory_bytes?: number | null;
+  /** @format int64 */
+  os_memory_bytes_gt?: number | null;
+  /** @format int64 */
+  os_memory_bytes_gte?: number | null;
+  os_memory_bytes_in?: number[] | null;
+  /** @format int64 */
+  os_memory_bytes_lt?: number | null;
+  /** @format int64 */
+  os_memory_bytes_lte?: number | null;
+  /** @format int64 */
+  os_memory_bytes_not?: number | null;
+  os_memory_bytes_not_in?: number[] | null;
+  os_version?: string | null;
+  os_version_contains?: string | null;
+  os_version_ends_with?: string | null;
+  os_version_gt?: string | null;
+  os_version_gte?: string | null;
+  os_version_in?: string[] | null;
+  os_version_lt?: string | null;
+  os_version_lte?: string | null;
+  os_version_not?: string | null;
+  os_version_not_contains?: string | null;
+  os_version_not_ends_with?: string | null;
+  os_version_not_in?: string[] | null;
+  os_version_not_starts_with?: string | null;
+  os_version_starts_with?: string | null;
+  /** @format int64 */
+  overcommit_active_memory_bytes?: number | null;
+  /** @format int64 */
+  overcommit_active_memory_bytes_gt?: number | null;
+  /** @format int64 */
+  overcommit_active_memory_bytes_gte?: number | null;
+  overcommit_active_memory_bytes_in?: number[] | null;
+  /** @format int64 */
+  overcommit_active_memory_bytes_lt?: number | null;
+  /** @format int64 */
+  overcommit_active_memory_bytes_lte?: number | null;
+  /** @format int64 */
+  overcommit_active_memory_bytes_not?: number | null;
+  overcommit_active_memory_bytes_not_in?: number[] | null;
+  /** @format int64 */
+  overcommit_memory_bytes?: number | null;
+  /** @format int64 */
+  overcommit_memory_bytes_gt?: number | null;
+  /** @format int64 */
+  overcommit_memory_bytes_gte?: number | null;
+  overcommit_memory_bytes_in?: number[] | null;
+  /** @format int64 */
+  overcommit_memory_bytes_lt?: number | null;
+  /** @format int64 */
+  overcommit_memory_bytes_lte?: number | null;
+  /** @format int64 */
+  overcommit_memory_bytes_not?: number | null;
+  overcommit_memory_bytes_not_in?: number[] | null;
+  /** @format double */
+  overcommit_memory_ratio?: number | null;
+  /** @format double */
+  overcommit_memory_ratio_gt?: number | null;
+  /** @format double */
+  overcommit_memory_ratio_gte?: number | null;
+  overcommit_memory_ratio_in?: number[] | null;
+  /** @format double */
+  overcommit_memory_ratio_lt?: number | null;
+  /** @format double */
+  overcommit_memory_ratio_lte?: number | null;
+  /** @format double */
+  overcommit_memory_ratio_not?: number | null;
+  overcommit_memory_ratio_not_in?: number[] | null;
+  /** @format int64 */
+  perf_allocated_data_space?: number | null;
+  /** @format int64 */
+  perf_allocated_data_space_gt?: number | null;
+  /** @format int64 */
+  perf_allocated_data_space_gte?: number | null;
+  perf_allocated_data_space_in?: number[] | null;
+  /** @format int64 */
+  perf_allocated_data_space_lt?: number | null;
+  /** @format int64 */
+  perf_allocated_data_space_lte?: number | null;
+  /** @format int64 */
+  perf_allocated_data_space_not?: number | null;
+  perf_allocated_data_space_not_in?: number[] | null;
+  /** @format int64 */
+  perf_failure_data_space?: number | null;
+  /** @format int64 */
+  perf_failure_data_space_gt?: number | null;
+  /** @format int64 */
+  perf_failure_data_space_gte?: number | null;
+  perf_failure_data_space_in?: number[] | null;
+  /** @format int64 */
+  perf_failure_data_space_lt?: number | null;
+  /** @format int64 */
+  perf_failure_data_space_lte?: number | null;
+  /** @format int64 */
+  perf_failure_data_space_not?: number | null;
+  perf_failure_data_space_not_in?: number[] | null;
+  /** @format int64 */
+  perf_total_data_capacity?: number | null;
+  /** @format int64 */
+  perf_total_data_capacity_gt?: number | null;
+  /** @format int64 */
+  perf_total_data_capacity_gte?: number | null;
+  perf_total_data_capacity_in?: number[] | null;
+  /** @format int64 */
+  perf_total_data_capacity_lt?: number | null;
+  /** @format int64 */
+  perf_total_data_capacity_lte?: number | null;
+  /** @format int64 */
+  perf_total_data_capacity_not?: number | null;
+  perf_total_data_capacity_not_in?: number[] | null;
+  /** @format int64 */
+  perf_used_data_space?: number | null;
+  /** @format int64 */
+  perf_used_data_space_gt?: number | null;
+  /** @format int64 */
+  perf_used_data_space_gte?: number | null;
+  perf_used_data_space_in?: number[] | null;
+  /** @format int64 */
+  perf_used_data_space_lt?: number | null;
+  /** @format int64 */
+  perf_used_data_space_lte?: number | null;
+  /** @format int64 */
+  perf_used_data_space_not?: number | null;
+  perf_used_data_space_not_in?: number[] | null;
+  /** @format int64 */
+  perf_valid_data_space?: number | null;
+  /** @format int64 */
+  perf_valid_data_space_gt?: number | null;
+  /** @format int64 */
+  perf_valid_data_space_gte?: number | null;
+  perf_valid_data_space_in?: number[] | null;
+  /** @format int64 */
+  perf_valid_data_space_lt?: number | null;
+  /** @format int64 */
+  perf_valid_data_space_lte?: number | null;
+  /** @format int64 */
+  perf_valid_data_space_not?: number | null;
+  perf_valid_data_space_not_in?: number[] | null;
+  /** @format int64 */
+  planned_prioritized_space?: number | null;
+  /** @format int64 */
+  planned_prioritized_space_gt?: number | null;
+  /** @format int64 */
+  planned_prioritized_space_gte?: number | null;
+  planned_prioritized_space_in?: number[] | null;
+  /** @format int64 */
+  planned_prioritized_space_lt?: number | null;
+  /** @format int64 */
+  planned_prioritized_space_lte?: number | null;
+  /** @format int64 */
+  planned_prioritized_space_not?: number | null;
+  planned_prioritized_space_not_in?: number[] | null;
+  /** @format int64 */
+  pmem_dimm_capacity?: number | null;
+  /** @format int64 */
+  pmem_dimm_capacity_gt?: number | null;
+  /** @format int64 */
+  pmem_dimm_capacity_gte?: number | null;
+  pmem_dimm_capacity_in?: number[] | null;
+  /** @format int64 */
+  pmem_dimm_capacity_lt?: number | null;
+  /** @format int64 */
+  pmem_dimm_capacity_lte?: number | null;
+  /** @format int64 */
+  pmem_dimm_capacity_not?: number | null;
+  pmem_dimm_capacity_not_in?: number[] | null;
+  /** @format int32 */
+  pmem_dimm_count?: number | null;
+  /** @format int32 */
+  pmem_dimm_count_gt?: number | null;
+  /** @format int32 */
+  pmem_dimm_count_gte?: number | null;
+  pmem_dimm_count_in?: number[] | null;
+  /** @format int32 */
+  pmem_dimm_count_lt?: number | null;
+  /** @format int32 */
+  pmem_dimm_count_lte?: number | null;
+  /** @format int32 */
+  pmem_dimm_count_not?: number | null;
+  pmem_dimm_count_not_in?: number[] | null;
+  /** @format int32 */
+  pmem_disk_count?: number | null;
+  /** @format int32 */
+  pmem_disk_count_gt?: number | null;
+  /** @format int32 */
+  pmem_disk_count_gte?: number | null;
+  pmem_disk_count_in?: number[] | null;
+  /** @format int32 */
+  pmem_disk_count_lt?: number | null;
+  /** @format int32 */
+  pmem_disk_count_lte?: number | null;
+  /** @format int32 */
+  pmem_disk_count_not?: number | null;
+  pmem_disk_count_not_in?: number[] | null;
+  /** @format double */
+  prio_space_percentage?: number | null;
+  /** @format double */
+  prio_space_percentage_gt?: number | null;
+  /** @format double */
+  prio_space_percentage_gte?: number | null;
+  prio_space_percentage_in?: number[] | null;
+  /** @format double */
+  prio_space_percentage_lt?: number | null;
+  /** @format double */
+  prio_space_percentage_lte?: number | null;
+  /** @format double */
+  prio_space_percentage_not?: number | null;
+  prio_space_percentage_not_in?: number[] | null;
+  /** @format int32 */
+  provisioned_cpu_cores?: number | null;
+  /** @format int32 */
+  provisioned_cpu_cores_gt?: number | null;
+  /** @format int32 */
+  provisioned_cpu_cores_gte?: number | null;
+  provisioned_cpu_cores_in?: number[] | null;
+  /** @format int32 */
+  provisioned_cpu_cores_lt?: number | null;
+  /** @format int32 */
+  provisioned_cpu_cores_lte?: number | null;
+  /** @format int32 */
+  provisioned_cpu_cores_not?: number | null;
+  provisioned_cpu_cores_not_in?: number[] | null;
+  /** @format int64 */
+  provisioned_memory_bytes?: number | null;
+  /** @format int64 */
+  provisioned_memory_bytes_gt?: number | null;
+  /** @format int64 */
+  provisioned_memory_bytes_gte?: number | null;
+  provisioned_memory_bytes_in?: number[] | null;
+  /** @format int64 */
+  provisioned_memory_bytes_lt?: number | null;
+  /** @format int64 */
+  provisioned_memory_bytes_lte?: number | null;
+  /** @format int64 */
+  provisioned_memory_bytes_not?: number | null;
+  provisioned_memory_bytes_not_in?: number[] | null;
+  /** @format int64 */
+  reserved_memory_bytes?: number | null;
+  /** @format int64 */
+  reserved_memory_bytes_gt?: number | null;
+  /** @format int64 */
+  reserved_memory_bytes_gte?: number | null;
+  reserved_memory_bytes_in?: number[] | null;
+  /** @format int64 */
+  reserved_memory_bytes_lt?: number | null;
+  /** @format int64 */
+  reserved_memory_bytes_lte?: number | null;
+  /** @format int64 */
+  reserved_memory_bytes_not?: number | null;
+  reserved_memory_bytes_not_in?: number[] | null;
+  /** @format int64 */
+  running_pause_overcommit_memory_bytes?: number | null;
+  /** @format int64 */
+  running_pause_overcommit_memory_bytes_gt?: number | null;
+  /** @format int64 */
+  running_pause_overcommit_memory_bytes_gte?: number | null;
+  running_pause_overcommit_memory_bytes_in?: number[] | null;
+  /** @format int64 */
+  running_pause_overcommit_memory_bytes_lt?: number | null;
+  /** @format int64 */
+  running_pause_overcommit_memory_bytes_lte?: number | null;
+  /** @format int64 */
+  running_pause_overcommit_memory_bytes_not?: number | null;
+  running_pause_overcommit_memory_bytes_not_in?: number[] | null;
+  /** @format int64 */
+  running_pause_reserved_memory_bytes?: number | null;
+  /** @format int64 */
+  running_pause_reserved_memory_bytes_gt?: number | null;
+  /** @format int64 */
+  running_pause_reserved_memory_bytes_gte?: number | null;
+  running_pause_reserved_memory_bytes_in?: number[] | null;
+  /** @format int64 */
+  running_pause_reserved_memory_bytes_lt?: number | null;
+  /** @format int64 */
+  running_pause_reserved_memory_bytes_lte?: number | null;
+  /** @format int64 */
+  running_pause_reserved_memory_bytes_not?: number | null;
+  running_pause_reserved_memory_bytes_not_in?: number[] | null;
+  /** @format int64 */
+  running_pause_vm_memory_bytes?: number | null;
+  /** @format int64 */
+  running_pause_vm_memory_bytes_gt?: number | null;
+  /** @format int64 */
+  running_pause_vm_memory_bytes_gte?: number | null;
+  running_pause_vm_memory_bytes_in?: number[] | null;
+  /** @format int64 */
+  running_pause_vm_memory_bytes_lt?: number | null;
+  /** @format int64 */
+  running_pause_vm_memory_bytes_lte?: number | null;
+  /** @format int64 */
+  running_pause_vm_memory_bytes_not?: number | null;
+  running_pause_vm_memory_bytes_not_in?: number[] | null;
+  /** @format int32 */
+  running_vm_num?: number | null;
+  /** @format int32 */
+  running_vm_num_gt?: number | null;
+  /** @format int32 */
+  running_vm_num_gte?: number | null;
+  running_vm_num_in?: number[] | null;
+  /** @format int32 */
+  running_vm_num_lt?: number | null;
+  /** @format int32 */
+  running_vm_num_lte?: number | null;
+  /** @format int32 */
+  running_vm_num_not?: number | null;
+  running_vm_num_not_in?: number[] | null;
+  /** @format int32 */
+  scvm_cpu?: number | null;
+  /** @format int32 */
+  scvm_cpu_gt?: number | null;
+  /** @format int32 */
+  scvm_cpu_gte?: number | null;
+  scvm_cpu_in?: number[] | null;
+  /** @format int32 */
+  scvm_cpu_lt?: number | null;
+  /** @format int32 */
+  scvm_cpu_lte?: number | null;
+  /** @format int32 */
+  scvm_cpu_not?: number | null;
+  scvm_cpu_not_in?: number[] | null;
+  /** @format int64 */
+  scvm_memory?: number | null;
+  /** @format int64 */
+  scvm_memory_gt?: number | null;
+  /** @format int64 */
+  scvm_memory_gte?: number | null;
+  scvm_memory_in?: number[] | null;
+  /** @format int64 */
+  scvm_memory_lt?: number | null;
+  /** @format int64 */
+  scvm_memory_lte?: number | null;
+  /** @format int64 */
+  scvm_memory_not?: number | null;
+  scvm_memory_not_in?: number[] | null;
+  scvm_name?: string | null;
+  scvm_name_contains?: string | null;
+  scvm_name_ends_with?: string | null;
+  scvm_name_gt?: string | null;
+  scvm_name_gte?: string | null;
+  scvm_name_in?: string[] | null;
+  scvm_name_lt?: string | null;
+  scvm_name_lte?: string | null;
+  scvm_name_not?: string | null;
+  scvm_name_not_contains?: string | null;
+  scvm_name_not_ends_with?: string | null;
+  scvm_name_not_in?: string[] | null;
+  scvm_name_not_starts_with?: string | null;
+  scvm_name_starts_with?: string | null;
+  serial?: string | null;
+  serial_contains?: string | null;
+  serial_ends_with?: string | null;
+  serial_gt?: string | null;
+  serial_gte?: string | null;
+  serial_in?: string[] | null;
+  serial_lt?: string | null;
+  serial_lte?: string | null;
+  serial_not?: string | null;
+  serial_not_contains?: string | null;
+  serial_not_ends_with?: string | null;
+  serial_not_in?: string[] | null;
+  serial_not_starts_with?: string | null;
+  serial_starts_with?: string | null;
+  /** @format int64 */
+  ssd_data_capacity?: number | null;
+  /** @format int64 */
+  ssd_data_capacity_gt?: number | null;
+  /** @format int64 */
+  ssd_data_capacity_gte?: number | null;
+  ssd_data_capacity_in?: number[] | null;
+  /** @format int64 */
+  ssd_data_capacity_lt?: number | null;
+  /** @format int64 */
+  ssd_data_capacity_lte?: number | null;
+  /** @format int64 */
+  ssd_data_capacity_not?: number | null;
+  ssd_data_capacity_not_in?: number[] | null;
+  /** @format int32 */
+  ssd_disk_count?: number | null;
+  /** @format int32 */
+  ssd_disk_count_gt?: number | null;
+  /** @format int32 */
+  ssd_disk_count_gte?: number | null;
+  ssd_disk_count_in?: number[] | null;
+  /** @format int32 */
+  ssd_disk_count_lt?: number | null;
+  /** @format int32 */
+  ssd_disk_count_lte?: number | null;
+  /** @format int32 */
+  ssd_disk_count_not?: number | null;
+  ssd_disk_count_not_in?: number[] | null;
+  state?: HostState | null;
+  state_in?: HostState[] | null;
+  state_not?: HostState | null;
+  state_not_in?: HostState[] | null;
+  status?: HostStatus | null;
+  status_in?: HostStatus[] | null;
+  status_not?: HostStatus | null;
+  status_not_in?: HostStatus[] | null;
+  /** @format int32 */
+  stopped_vm_num?: number | null;
+  /** @format int32 */
+  stopped_vm_num_gt?: number | null;
+  /** @format int32 */
+  stopped_vm_num_gte?: number | null;
+  stopped_vm_num_in?: number[] | null;
+  /** @format int32 */
+  stopped_vm_num_lt?: number | null;
+  /** @format int32 */
+  stopped_vm_num_lte?: number | null;
+  /** @format int32 */
+  stopped_vm_num_not?: number | null;
+  stopped_vm_num_not_in?: number[] | null;
+  /** @format int32 */
+  suspended_vm_num?: number | null;
+  /** @format int32 */
+  suspended_vm_num_gt?: number | null;
+  /** @format int32 */
+  suspended_vm_num_gte?: number | null;
+  suspended_vm_num_in?: number[] | null;
+  /** @format int32 */
+  suspended_vm_num_lt?: number | null;
+  /** @format int32 */
+  suspended_vm_num_lte?: number | null;
+  /** @format int32 */
+  suspended_vm_num_not?: number | null;
+  suspended_vm_num_not_in?: number[] | null;
+  /** @format int64 */
+  total_cache_capacity?: number | null;
+  /** @format int64 */
+  total_cache_capacity_gt?: number | null;
+  /** @format int64 */
+  total_cache_capacity_gte?: number | null;
+  total_cache_capacity_in?: number[] | null;
+  /** @format int64 */
+  total_cache_capacity_lt?: number | null;
+  /** @format int64 */
+  total_cache_capacity_lte?: number | null;
+  /** @format int64 */
+  total_cache_capacity_not?: number | null;
+  total_cache_capacity_not_in?: number[] | null;
+  /** @format int32 */
+  total_cpu_cores?: number | null;
+  /** @format int32 */
+  total_cpu_cores_gt?: number | null;
+  /** @format int32 */
+  total_cpu_cores_gte?: number | null;
+  total_cpu_cores_in?: number[] | null;
+  /** @format int32 */
+  total_cpu_cores_lt?: number | null;
+  /** @format int32 */
+  total_cpu_cores_lte?: number | null;
+  /** @format int32 */
+  total_cpu_cores_not?: number | null;
+  total_cpu_cores_not_in?: number[] | null;
   /** @format int64 */
   total_cpu_hz?: number | null;
   /** @format int64 */
@@ -1116,6 +4995,20 @@ export interface DatacenterWhereInput {
   /** @format int64 */
   total_cpu_hz_not?: number | null;
   total_cpu_hz_not_in?: number[] | null;
+  /** @format int32 */
+  total_cpu_sockets?: number | null;
+  /** @format int32 */
+  total_cpu_sockets_gt?: number | null;
+  /** @format int32 */
+  total_cpu_sockets_gte?: number | null;
+  total_cpu_sockets_in?: number[] | null;
+  /** @format int32 */
+  total_cpu_sockets_lt?: number | null;
+  /** @format int32 */
+  total_cpu_sockets_lte?: number | null;
+  /** @format int32 */
+  total_cpu_sockets_not?: number | null;
+  total_cpu_sockets_not_in?: number[] | null;
   /** @format int64 */
   total_data_capacity?: number | null;
   /** @format int64 */
@@ -1130,6 +5023,20 @@ export interface DatacenterWhereInput {
   /** @format int64 */
   total_data_capacity_not?: number | null;
   total_data_capacity_not_in?: number[] | null;
+  /** @format int32 */
+  total_logical_cpu_cores?: number | null;
+  /** @format int32 */
+  total_logical_cpu_cores_gt?: number | null;
+  /** @format int32 */
+  total_logical_cpu_cores_gte?: number | null;
+  total_logical_cpu_cores_in?: number[] | null;
+  /** @format int32 */
+  total_logical_cpu_cores_lt?: number | null;
+  /** @format int32 */
+  total_logical_cpu_cores_lte?: number | null;
+  /** @format int32 */
+  total_logical_cpu_cores_not?: number | null;
+  total_logical_cpu_cores_not_in?: number[] | null;
   /** @format int64 */
   total_memory_bytes?: number | null;
   /** @format int64 */
@@ -1144,6 +5051,37 @@ export interface DatacenterWhereInput {
   /** @format int64 */
   total_memory_bytes_not?: number | null;
   total_memory_bytes_not_in?: number[] | null;
+  /** @format int64 */
+  total_physical_memory_bytes?: number | null;
+  /** @format int64 */
+  total_physical_memory_bytes_gt?: number | null;
+  /** @format int64 */
+  total_physical_memory_bytes_gte?: number | null;
+  total_physical_memory_bytes_in?: number[] | null;
+  /** @format int64 */
+  total_physical_memory_bytes_lt?: number | null;
+  /** @format int64 */
+  total_physical_memory_bytes_lte?: number | null;
+  /** @format int64 */
+  total_physical_memory_bytes_not?: number | null;
+  total_physical_memory_bytes_not_in?: number[] | null;
+  usb_devices_every?: UsbDeviceWhereInput | null;
+  usb_devices_none?: UsbDeviceWhereInput | null;
+  usb_devices_some?: UsbDeviceWhereInput | null;
+  /** @format int64 */
+  used_cache_space?: number | null;
+  /** @format int64 */
+  used_cache_space_gt?: number | null;
+  /** @format int64 */
+  used_cache_space_gte?: number | null;
+  used_cache_space_in?: number[] | null;
+  /** @format int64 */
+  used_cache_space_lt?: number | null;
+  /** @format int64 */
+  used_cache_space_lte?: number | null;
+  /** @format int64 */
+  used_cache_space_not?: number | null;
+  used_cache_space_not_in?: number[] | null;
   /** @format double */
   used_cpu_hz?: number | null;
   /** @format double */
@@ -1186,6 +5124,34 @@ export interface DatacenterWhereInput {
   /** @format double */
   used_memory_bytes_not?: number | null;
   used_memory_bytes_not_in?: number[] | null;
+  /** @format int64 */
+  valid_cache_space?: number | null;
+  /** @format int64 */
+  valid_cache_space_gt?: number | null;
+  /** @format int64 */
+  valid_cache_space_gte?: number | null;
+  valid_cache_space_in?: number[] | null;
+  /** @format int64 */
+  valid_cache_space_lt?: number | null;
+  /** @format int64 */
+  valid_cache_space_lte?: number | null;
+  /** @format int64 */
+  valid_cache_space_not?: number | null;
+  valid_cache_space_not_in?: number[] | null;
+  /** @format int64 */
+  valid_free_cache_space?: number | null;
+  /** @format int64 */
+  valid_free_cache_space_gt?: number | null;
+  /** @format int64 */
+  valid_free_cache_space_gte?: number | null;
+  valid_free_cache_space_in?: number[] | null;
+  /** @format int64 */
+  valid_free_cache_space_lt?: number | null;
+  /** @format int64 */
+  valid_free_cache_space_lte?: number | null;
+  /** @format int64 */
+  valid_free_cache_space_not?: number | null;
+  valid_free_cache_space_not_in?: number[] | null;
   /** @format int32 */
   vm_num?: number | null;
   /** @format int32 */
@@ -1200,6 +5166,240 @@ export interface DatacenterWhereInput {
   /** @format int32 */
   vm_num_not?: number | null;
   vm_num_not_in?: number[] | null;
+  vmotion_ip?: string | null;
+  vmotion_ip_contains?: string | null;
+  vmotion_ip_ends_with?: string | null;
+  vmotion_ip_gt?: string | null;
+  vmotion_ip_gte?: string | null;
+  vmotion_ip_in?: string[] | null;
+  vmotion_ip_lt?: string | null;
+  vmotion_ip_lte?: string | null;
+  vmotion_ip_not?: string | null;
+  vmotion_ip_not_contains?: string | null;
+  vmotion_ip_not_ends_with?: string | null;
+  vmotion_ip_not_in?: string[] | null;
+  vmotion_ip_not_starts_with?: string | null;
+  vmotion_ip_starts_with?: string | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
+  with_faster_ssd_as_cache?: boolean | null;
+  with_faster_ssd_as_cache_not?: boolean | null;
+}
+
+export enum HostConnectStatus {
+  CONNECTED = "CONNECTED",
+  DISCONNECTED = "DISCONNECTED",
+}
+
+export enum CpuFanSpeedUnit {
+  PERCENT = "PERCENT",
+  RPM = "RPM",
+}
+
+export interface DatastoreWhereInput {
+  AND?: DatastoreWhereInput[] | null;
+  NOT?: DatastoreWhereInput[] | null;
+  OR?: DatastoreWhereInput[] | null;
+  /** @format double */
+  capacity_bytes?: number | null;
+  /** @format double */
+  capacity_bytes_gt?: number | null;
+  /** @format double */
+  capacity_bytes_gte?: number | null;
+  capacity_bytes_in?: number[] | null;
+  /** @format double */
+  capacity_bytes_lt?: number | null;
+  /** @format double */
+  capacity_bytes_lte?: number | null;
+  /** @format double */
+  capacity_bytes_not?: number | null;
+  capacity_bytes_not_in?: number[] | null;
+  created_time?: string | null;
+  created_time_gt?: string | null;
+  created_time_gte?: string | null;
+  created_time_in?: string[] | null;
+  created_time_lt?: string | null;
+  created_time_lte?: string | null;
+  created_time_not?: string | null;
+  created_time_not_in?: string[] | null;
+  /** @format int32 */
+  data_version?: number | null;
+  /** @format int32 */
+  data_version_gt?: number | null;
+  /** @format int32 */
+  data_version_gte?: number | null;
+  data_version_in?: number[] | null;
+  /** @format int32 */
+  data_version_lt?: number | null;
+  /** @format int32 */
+  data_version_lte?: number | null;
+  /** @format int32 */
+  data_version_not?: number | null;
+  data_version_not_in?: number[] | null;
+  /** @format int64 */
+  datastore_capacity_bytes?: number | null;
+  /** @format int64 */
+  datastore_capacity_bytes_gt?: number | null;
+  /** @format int64 */
+  datastore_capacity_bytes_gte?: number | null;
+  datastore_capacity_bytes_in?: number[] | null;
+  /** @format int64 */
+  datastore_capacity_bytes_lt?: number | null;
+  /** @format int64 */
+  datastore_capacity_bytes_lte?: number | null;
+  /** @format int64 */
+  datastore_capacity_bytes_not?: number | null;
+  datastore_capacity_bytes_not_in?: number[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  /** @format int64 */
+  free_bytes?: number | null;
+  /** @format int64 */
+  free_bytes_gt?: number | null;
+  /** @format int64 */
+  free_bytes_gte?: number | null;
+  free_bytes_in?: number[] | null;
+  /** @format int64 */
+  free_bytes_lt?: number | null;
+  /** @format int64 */
+  free_bytes_lte?: number | null;
+  /** @format int64 */
+  free_bytes_not?: number | null;
+  free_bytes_not_in?: number[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  local_hash?: string | null;
+  local_hash_contains?: string | null;
+  local_hash_ends_with?: string | null;
+  local_hash_gt?: string | null;
+  local_hash_gte?: string | null;
+  local_hash_in?: string[] | null;
+  local_hash_lt?: string | null;
+  local_hash_lte?: string | null;
+  local_hash_not?: string | null;
+  local_hash_not_contains?: string | null;
+  local_hash_not_ends_with?: string | null;
+  local_hash_not_in?: string[] | null;
+  local_hash_not_starts_with?: string | null;
+  local_hash_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  modified_time?: string | null;
+  modified_time_gt?: string | null;
+  modified_time_gte?: string | null;
+  modified_time_in?: string[] | null;
+  modified_time_lt?: string | null;
+  modified_time_lte?: string | null;
+  modified_time_not?: string | null;
+  modified_time_not_in?: string[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  recycle_policy?: string | null;
+  recycle_policy_contains?: string | null;
+  recycle_policy_ends_with?: string | null;
+  recycle_policy_gt?: string | null;
+  recycle_policy_gte?: string | null;
+  recycle_policy_in?: string[] | null;
+  recycle_policy_lt?: string | null;
+  recycle_policy_lte?: string | null;
+  recycle_policy_not?: string | null;
+  recycle_policy_not_contains?: string | null;
+  recycle_policy_not_ends_with?: string | null;
+  recycle_policy_not_in?: string[] | null;
+  recycle_policy_not_starts_with?: string | null;
+  recycle_policy_starts_with?: string | null;
+  status?: DatastoreStatus | null;
+  status_in?: DatastoreStatus[] | null;
+  status_not?: DatastoreStatus | null;
+  status_not_in?: DatastoreStatus[] | null;
+  type?: StorageProtocol | null;
+  type_in?: StorageProtocol[] | null;
+  type_not?: StorageProtocol | null;
+  type_not_in?: StorageProtocol[] | null;
+  /** @format int64 */
+  used_bytes?: number | null;
+  /** @format int64 */
+  used_bytes_gt?: number | null;
+  /** @format int64 */
+  used_bytes_gte?: number | null;
+  used_bytes_in?: number[] | null;
+  /** @format int64 */
+  used_bytes_lt?: number | null;
+  /** @format int64 */
+  used_bytes_lte?: number | null;
+  /** @format int64 */
+  used_bytes_not?: number | null;
+  used_bytes_not_in?: number[] | null;
+  vcfs_version?: string | null;
+  vcfs_version_contains?: string | null;
+  vcfs_version_ends_with?: string | null;
+  vcfs_version_gt?: string | null;
+  vcfs_version_gte?: string | null;
+  vcfs_version_in?: string[] | null;
+  vcfs_version_lt?: string | null;
+  vcfs_version_lte?: string | null;
+  vcfs_version_not?: string | null;
+  vcfs_version_not_contains?: string | null;
+  vcfs_version_not_ends_with?: string | null;
+  vcfs_version_not_in?: string[] | null;
+  vcfs_version_not_starts_with?: string | null;
+  vcfs_version_starts_with?: string | null;
 }
 
 export interface LabelWhereInput {
@@ -1607,5442 +5807,6 @@ export interface LabelWhereInput {
   vms_every?: VmWhereInput | null;
   vms_none?: VmWhereInput | null;
   vms_some?: VmWhereInput | null;
-}
-
-export interface ContentLibraryImageWhereInput {
-  AND?: ContentLibraryImageWhereInput[] | null;
-  NOT?: ContentLibraryImageWhereInput[] | null;
-  OR?: ContentLibraryImageWhereInput[] | null;
-  clusters_every?: ClusterWhereInput | null;
-  clusters_none?: ClusterWhereInput | null;
-  clusters_some?: ClusterWhereInput | null;
-  createdAt?: string | null;
-  createdAt_gt?: string | null;
-  createdAt_gte?: string | null;
-  createdAt_in?: string[] | null;
-  createdAt_lt?: string | null;
-  createdAt_lte?: string | null;
-  createdAt_not?: string | null;
-  createdAt_not_in?: string[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  elf_images_every?: ElfImageWhereInput | null;
-  elf_images_none?: ElfImageWhereInput | null;
-  elf_images_some?: ElfImageWhereInput | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  iscsi_luns_every?: IscsiLunWhereInput | null;
-  iscsi_luns_none?: IscsiLunWhereInput | null;
-  iscsi_luns_some?: IscsiLunWhereInput | null;
-  labels_every?: LabelWhereInput | null;
-  labels_none?: LabelWhereInput | null;
-  labels_some?: LabelWhereInput | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  path?: string | null;
-  path_contains?: string | null;
-  path_ends_with?: string | null;
-  path_gt?: string | null;
-  path_gte?: string | null;
-  path_in?: string[] | null;
-  path_lt?: string | null;
-  path_lte?: string | null;
-  path_not?: string | null;
-  path_not_contains?: string | null;
-  path_not_ends_with?: string | null;
-  path_not_in?: string[] | null;
-  path_not_starts_with?: string | null;
-  path_starts_with?: string | null;
-  /** @format int64 */
-  size?: number | null;
-  /** @format int64 */
-  size_gt?: number | null;
-  /** @format int64 */
-  size_gte?: number | null;
-  size_in?: number[] | null;
-  /** @format int64 */
-  size_lt?: number | null;
-  /** @format int64 */
-  size_lte?: number | null;
-  /** @format int64 */
-  size_not?: number | null;
-  size_not_in?: number[] | null;
-  vm_disks_every?: VmDiskWhereInput | null;
-  vm_disks_none?: VmDiskWhereInput | null;
-  vm_disks_some?: VmDiskWhereInput | null;
-  vm_snapshots_every?: VmSnapshotWhereInput | null;
-  vm_snapshots_none?: VmSnapshotWhereInput | null;
-  vm_snapshots_some?: VmSnapshotWhereInput | null;
-  vm_templates_every?: VmTemplateWhereInput | null;
-  vm_templates_none?: VmTemplateWhereInput | null;
-  vm_templates_some?: VmTemplateWhereInput | null;
-}
-
-export interface ElfImageWhereInput {
-  AND?: ElfImageWhereInput[] | null;
-  NOT?: ElfImageWhereInput[] | null;
-  OR?: ElfImageWhereInput[] | null;
-  cluster?: ClusterWhereInput | null;
-  content_library_image?: ContentLibraryImageWhereInput | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  labels_every?: LabelWhereInput | null;
-  labels_none?: LabelWhereInput | null;
-  labels_some?: LabelWhereInput | null;
-  local_created_at?: string | null;
-  local_created_at_gt?: string | null;
-  local_created_at_gte?: string | null;
-  local_created_at_in?: string[] | null;
-  local_created_at_lt?: string | null;
-  local_created_at_lte?: string | null;
-  local_created_at_not?: string | null;
-  local_created_at_not_in?: string[] | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  path?: string | null;
-  path_contains?: string | null;
-  path_ends_with?: string | null;
-  path_gt?: string | null;
-  path_gte?: string | null;
-  path_in?: string[] | null;
-  path_lt?: string | null;
-  path_lte?: string | null;
-  path_not?: string | null;
-  path_not_contains?: string | null;
-  path_not_ends_with?: string | null;
-  path_not_in?: string[] | null;
-  path_not_starts_with?: string | null;
-  path_starts_with?: string | null;
-  /** @format int64 */
-  size?: number | null;
-  /** @format int64 */
-  size_gt?: number | null;
-  /** @format int64 */
-  size_gte?: number | null;
-  size_in?: number[] | null;
-  /** @format int64 */
-  size_lt?: number | null;
-  /** @format int64 */
-  size_lte?: number | null;
-  /** @format int64 */
-  size_not?: number | null;
-  size_not_in?: number[] | null;
-  vm_disks_every?: VmDiskWhereInput | null;
-  vm_disks_none?: VmDiskWhereInput | null;
-  vm_disks_some?: VmDiskWhereInput | null;
-  vm_snapshots_every?: VmSnapshotWhereInput | null;
-  vm_snapshots_none?: VmSnapshotWhereInput | null;
-  vm_snapshots_some?: VmSnapshotWhereInput | null;
-  vm_templates_every?: VmTemplateWhereInput | null;
-  vm_templates_none?: VmTemplateWhereInput | null;
-  vm_templates_some?: VmTemplateWhereInput | null;
-}
-
-export enum EntityAsyncStatus {
-  CREATING = "CREATING",
-  DELETING = "DELETING",
-  UPDATING = "UPDATING",
-}
-
-export interface VmDiskWhereInput {
-  AND?: VmDiskWhereInput[] | null;
-  NOT?: VmDiskWhereInput[] | null;
-  OR?: VmDiskWhereInput[] | null;
-  /** @format int32 */
-  boot?: number | null;
-  /** @format int32 */
-  boot_gt?: number | null;
-  /** @format int32 */
-  boot_gte?: number | null;
-  boot_in?: number[] | null;
-  /** @format int32 */
-  boot_lt?: number | null;
-  /** @format int32 */
-  boot_lte?: number | null;
-  /** @format int32 */
-  boot_not?: number | null;
-  boot_not_in?: number[] | null;
-  bus?: Bus | null;
-  bus_in?: Bus[] | null;
-  bus_not?: Bus | null;
-  bus_not_in?: Bus[] | null;
-  cloud_init_image_name?: string | null;
-  cloud_init_image_name_contains?: string | null;
-  cloud_init_image_name_ends_with?: string | null;
-  cloud_init_image_name_gt?: string | null;
-  cloud_init_image_name_gte?: string | null;
-  cloud_init_image_name_in?: string[] | null;
-  cloud_init_image_name_lt?: string | null;
-  cloud_init_image_name_lte?: string | null;
-  cloud_init_image_name_not?: string | null;
-  cloud_init_image_name_not_contains?: string | null;
-  cloud_init_image_name_not_ends_with?: string | null;
-  cloud_init_image_name_not_in?: string[] | null;
-  cloud_init_image_name_not_starts_with?: string | null;
-  cloud_init_image_name_starts_with?: string | null;
-  cloud_init_image_path?: string | null;
-  cloud_init_image_path_contains?: string | null;
-  cloud_init_image_path_ends_with?: string | null;
-  cloud_init_image_path_gt?: string | null;
-  cloud_init_image_path_gte?: string | null;
-  cloud_init_image_path_in?: string[] | null;
-  cloud_init_image_path_lt?: string | null;
-  cloud_init_image_path_lte?: string | null;
-  cloud_init_image_path_not?: string | null;
-  cloud_init_image_path_not_contains?: string | null;
-  cloud_init_image_path_not_ends_with?: string | null;
-  cloud_init_image_path_not_in?: string[] | null;
-  cloud_init_image_path_not_starts_with?: string | null;
-  cloud_init_image_path_starts_with?: string | null;
-  device?: string | null;
-  device_contains?: string | null;
-  device_ends_with?: string | null;
-  device_gt?: string | null;
-  device_gte?: string | null;
-  device_in?: string[] | null;
-  device_lt?: string | null;
-  device_lte?: string | null;
-  device_not?: string | null;
-  device_not_contains?: string | null;
-  device_not_ends_with?: string | null;
-  device_not_in?: string[] | null;
-  device_not_starts_with?: string | null;
-  device_starts_with?: string | null;
-  disabled?: boolean | null;
-  disabled_not?: boolean | null;
-  elf_image?: ElfImageWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  /** @format int32 */
-  key?: number | null;
-  /** @format int32 */
-  key_gt?: number | null;
-  /** @format int32 */
-  key_gte?: number | null;
-  key_in?: number[] | null;
-  /** @format int32 */
-  key_lt?: number | null;
-  /** @format int32 */
-  key_lte?: number | null;
-  /** @format int32 */
-  key_not?: number | null;
-  key_not_in?: number[] | null;
-  /** @format int64 */
-  max_bandwidth?: number | null;
-  /** @format int64 */
-  max_bandwidth_gt?: number | null;
-  /** @format int64 */
-  max_bandwidth_gte?: number | null;
-  max_bandwidth_in?: number[] | null;
-  /** @format int64 */
-  max_bandwidth_lt?: number | null;
-  /** @format int64 */
-  max_bandwidth_lte?: number | null;
-  /** @format int64 */
-  max_bandwidth_not?: number | null;
-  max_bandwidth_not_in?: number[] | null;
-  max_bandwidth_policy?: VmDiskIoRestrictType | null;
-  max_bandwidth_policy_in?: VmDiskIoRestrictType[] | null;
-  max_bandwidth_policy_not?: VmDiskIoRestrictType | null;
-  max_bandwidth_policy_not_in?: VmDiskIoRestrictType[] | null;
-  /** @format int32 */
-  max_iops?: number | null;
-  /** @format int32 */
-  max_iops_gt?: number | null;
-  /** @format int32 */
-  max_iops_gte?: number | null;
-  max_iops_in?: number[] | null;
-  /** @format int32 */
-  max_iops_lt?: number | null;
-  /** @format int32 */
-  max_iops_lte?: number | null;
-  /** @format int32 */
-  max_iops_not?: number | null;
-  max_iops_not_in?: number[] | null;
-  max_iops_policy?: VmDiskIoRestrictType | null;
-  max_iops_policy_in?: VmDiskIoRestrictType[] | null;
-  max_iops_policy_not?: VmDiskIoRestrictType | null;
-  max_iops_policy_not_in?: VmDiskIoRestrictType[] | null;
-  serial?: string | null;
-  serial_contains?: string | null;
-  serial_ends_with?: string | null;
-  serial_gt?: string | null;
-  serial_gte?: string | null;
-  serial_in?: string[] | null;
-  serial_lt?: string | null;
-  serial_lte?: string | null;
-  serial_not?: string | null;
-  serial_not_contains?: string | null;
-  serial_not_ends_with?: string | null;
-  serial_not_in?: string[] | null;
-  serial_not_starts_with?: string | null;
-  serial_starts_with?: string | null;
-  svt_image?: SvtImageWhereInput | null;
-  type?: VmDiskType | null;
-  type_in?: VmDiskType[] | null;
-  type_not?: VmDiskType | null;
-  type_not_in?: VmDiskType[] | null;
-  unsafe_image_path?: string | null;
-  unsafe_image_path_contains?: string | null;
-  unsafe_image_path_ends_with?: string | null;
-  unsafe_image_path_gt?: string | null;
-  unsafe_image_path_gte?: string | null;
-  unsafe_image_path_in?: string[] | null;
-  unsafe_image_path_lt?: string | null;
-  unsafe_image_path_lte?: string | null;
-  unsafe_image_path_not?: string | null;
-  unsafe_image_path_not_contains?: string | null;
-  unsafe_image_path_not_ends_with?: string | null;
-  unsafe_image_path_not_in?: string[] | null;
-  unsafe_image_path_not_starts_with?: string | null;
-  unsafe_image_path_starts_with?: string | null;
-  unsafe_image_uuid?: string | null;
-  unsafe_image_uuid_contains?: string | null;
-  unsafe_image_uuid_ends_with?: string | null;
-  unsafe_image_uuid_gt?: string | null;
-  unsafe_image_uuid_gte?: string | null;
-  unsafe_image_uuid_in?: string[] | null;
-  unsafe_image_uuid_lt?: string | null;
-  unsafe_image_uuid_lte?: string | null;
-  unsafe_image_uuid_not?: string | null;
-  unsafe_image_uuid_not_contains?: string | null;
-  unsafe_image_uuid_not_ends_with?: string | null;
-  unsafe_image_uuid_not_in?: string[] | null;
-  unsafe_image_uuid_not_starts_with?: string | null;
-  unsafe_image_uuid_starts_with?: string | null;
-  unsafe_provision?: string | null;
-  unsafe_provision_contains?: string | null;
-  unsafe_provision_ends_with?: string | null;
-  unsafe_provision_gt?: string | null;
-  unsafe_provision_gte?: string | null;
-  unsafe_provision_in?: string[] | null;
-  unsafe_provision_lt?: string | null;
-  unsafe_provision_lte?: string | null;
-  unsafe_provision_not?: string | null;
-  unsafe_provision_not_contains?: string | null;
-  unsafe_provision_not_ends_with?: string | null;
-  unsafe_provision_not_in?: string[] | null;
-  unsafe_provision_not_starts_with?: string | null;
-  unsafe_provision_starts_with?: string | null;
-  vm?: VmWhereInput | null;
-  vm_volume?: VmVolumeWhereInput | null;
-}
-
-export enum Bus {
-  IDE = "IDE",
-  SCSI = "SCSI",
-  USB = "USB",
-  VIRTIO = "VIRTIO",
-}
-
-export enum VmDiskIoRestrictType {
-  DYNAMIC = "DYNAMIC",
-  FORCED = "FORCED",
-}
-
-export interface SvtImageWhereInput {
-  AND?: SvtImageWhereInput[] | null;
-  NOT?: SvtImageWhereInput[] | null;
-  OR?: SvtImageWhereInput[] | null;
-  cluster?: ClusterWhereInput | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_created_at?: string | null;
-  local_created_at_gt?: string | null;
-  local_created_at_gte?: string | null;
-  local_created_at_in?: string[] | null;
-  local_created_at_lt?: string | null;
-  local_created_at_lte?: string | null;
-  local_created_at_not?: string | null;
-  local_created_at_not_in?: string[] | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  path?: string | null;
-  path_contains?: string | null;
-  path_ends_with?: string | null;
-  path_gt?: string | null;
-  path_gte?: string | null;
-  path_in?: string[] | null;
-  path_lt?: string | null;
-  path_lte?: string | null;
-  path_not?: string | null;
-  path_not_contains?: string | null;
-  path_not_ends_with?: string | null;
-  path_not_in?: string[] | null;
-  path_not_starts_with?: string | null;
-  path_starts_with?: string | null;
-  /** @format int64 */
-  size?: number | null;
-  /** @format int64 */
-  size_gt?: number | null;
-  /** @format int64 */
-  size_gte?: number | null;
-  size_in?: number[] | null;
-  /** @format int64 */
-  size_lt?: number | null;
-  /** @format int64 */
-  size_lte?: number | null;
-  /** @format int64 */
-  size_not?: number | null;
-  size_not_in?: number[] | null;
-  /** @format int32 */
-  version?: number | null;
-  /** @format int32 */
-  version_gt?: number | null;
-  /** @format int32 */
-  version_gte?: number | null;
-  version_in?: number[] | null;
-  /** @format int32 */
-  version_lt?: number | null;
-  /** @format int32 */
-  version_lte?: number | null;
-  /** @format int32 */
-  version_not?: number | null;
-  version_not_in?: number[] | null;
-  vm_disks_every?: VmDiskWhereInput | null;
-  vm_disks_none?: VmDiskWhereInput | null;
-  vm_disks_some?: VmDiskWhereInput | null;
-}
-
-export enum VmDiskType {
-  CD_ROM = "CD_ROM",
-  DISK = "DISK",
-}
-
-export interface VmWhereInput {
-  AND?: VmWhereInput[] | null;
-  NOT?: VmWhereInput[] | null;
-  OR?: VmWhereInput[] | null;
-  bios_uuid?: string | null;
-  bios_uuid_contains?: string | null;
-  bios_uuid_ends_with?: string | null;
-  bios_uuid_gt?: string | null;
-  bios_uuid_gte?: string | null;
-  bios_uuid_in?: string[] | null;
-  bios_uuid_lt?: string | null;
-  bios_uuid_lte?: string | null;
-  bios_uuid_not?: string | null;
-  bios_uuid_not_contains?: string | null;
-  bios_uuid_not_ends_with?: string | null;
-  bios_uuid_not_in?: string[] | null;
-  bios_uuid_not_starts_with?: string | null;
-  bios_uuid_starts_with?: string | null;
-  clock_offset?: VmClockOffset | null;
-  clock_offset_in?: VmClockOffset[] | null;
-  clock_offset_not?: VmClockOffset | null;
-  clock_offset_not_in?: VmClockOffset[] | null;
-  cloud_init_supported?: boolean | null;
-  cloud_init_supported_not?: boolean | null;
-  cluster?: ClusterWhereInput | null;
-  cpu_model?: string | null;
-  cpu_model_contains?: string | null;
-  cpu_model_ends_with?: string | null;
-  cpu_model_gt?: string | null;
-  cpu_model_gte?: string | null;
-  cpu_model_in?: string[] | null;
-  cpu_model_lt?: string | null;
-  cpu_model_lte?: string | null;
-  cpu_model_not?: string | null;
-  cpu_model_not_contains?: string | null;
-  cpu_model_not_ends_with?: string | null;
-  cpu_model_not_in?: string[] | null;
-  cpu_model_not_starts_with?: string | null;
-  cpu_model_starts_with?: string | null;
-  /** @format double */
-  cpu_usage?: number | null;
-  /** @format double */
-  cpu_usage_gt?: number | null;
-  /** @format double */
-  cpu_usage_gte?: number | null;
-  cpu_usage_in?: number[] | null;
-  /** @format double */
-  cpu_usage_lt?: number | null;
-  /** @format double */
-  cpu_usage_lte?: number | null;
-  /** @format double */
-  cpu_usage_not?: number | null;
-  cpu_usage_not_in?: number[] | null;
-  deleted_at?: string | null;
-  deleted_at_gt?: string | null;
-  deleted_at_gte?: string | null;
-  deleted_at_in?: string[] | null;
-  deleted_at_lt?: string | null;
-  deleted_at_lte?: string | null;
-  deleted_at_not?: string | null;
-  deleted_at_not_in?: string[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  dns_servers?: string | null;
-  dns_servers_contains?: string | null;
-  dns_servers_ends_with?: string | null;
-  dns_servers_gt?: string | null;
-  dns_servers_gte?: string | null;
-  dns_servers_in?: string[] | null;
-  dns_servers_lt?: string | null;
-  dns_servers_lte?: string | null;
-  dns_servers_not?: string | null;
-  dns_servers_not_contains?: string | null;
-  dns_servers_not_ends_with?: string | null;
-  dns_servers_not_in?: string[] | null;
-  dns_servers_not_starts_with?: string | null;
-  dns_servers_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  firmware?: VmFirmware | null;
-  firmware_in?: VmFirmware[] | null;
-  firmware_not?: VmFirmware | null;
-  firmware_not_in?: VmFirmware[] | null;
-  folder?: VmFolderWhereInput | null;
-  gpu_devices_every?: GpuDeviceWhereInput | null;
-  gpu_devices_none?: GpuDeviceWhereInput | null;
-  gpu_devices_some?: GpuDeviceWhereInput | null;
-  guest_cpu_model?: string | null;
-  guest_cpu_model_contains?: string | null;
-  guest_cpu_model_ends_with?: string | null;
-  guest_cpu_model_gt?: string | null;
-  guest_cpu_model_gte?: string | null;
-  guest_cpu_model_in?: string[] | null;
-  guest_cpu_model_lt?: string | null;
-  guest_cpu_model_lte?: string | null;
-  guest_cpu_model_not?: string | null;
-  guest_cpu_model_not_contains?: string | null;
-  guest_cpu_model_not_ends_with?: string | null;
-  guest_cpu_model_not_in?: string[] | null;
-  guest_cpu_model_not_starts_with?: string | null;
-  guest_cpu_model_starts_with?: string | null;
-  guest_os_type?: VmGuestsOperationSystem | null;
-  guest_os_type_in?: VmGuestsOperationSystem[] | null;
-  guest_os_type_not?: VmGuestsOperationSystem | null;
-  guest_os_type_not_in?: VmGuestsOperationSystem[] | null;
-  /** @format double */
-  guest_size_usage?: number | null;
-  /** @format double */
-  guest_size_usage_gt?: number | null;
-  /** @format double */
-  guest_size_usage_gte?: number | null;
-  guest_size_usage_in?: number[] | null;
-  /** @format double */
-  guest_size_usage_lt?: number | null;
-  /** @format double */
-  guest_size_usage_lte?: number | null;
-  /** @format double */
-  guest_size_usage_not?: number | null;
-  guest_size_usage_not_in?: number[] | null;
-  /** @format int64 */
-  guest_used_size?: number | null;
-  /** @format int64 */
-  guest_used_size_gt?: number | null;
-  /** @format int64 */
-  guest_used_size_gte?: number | null;
-  guest_used_size_in?: number[] | null;
-  /** @format int64 */
-  guest_used_size_lt?: number | null;
-  /** @format int64 */
-  guest_used_size_lte?: number | null;
-  /** @format int64 */
-  guest_used_size_not?: number | null;
-  guest_used_size_not_in?: number[] | null;
-  ha?: boolean | null;
-  ha_not?: boolean | null;
-  ha_priority?: VmHaPriority | null;
-  ha_priority_in?: VmHaPriority[] | null;
-  ha_priority_not?: VmHaPriority | null;
-  ha_priority_not_in?: VmHaPriority[] | null;
-  host?: HostWhereInput | null;
-  hostname?: string | null;
-  hostname_contains?: string | null;
-  hostname_ends_with?: string | null;
-  hostname_gt?: string | null;
-  hostname_gte?: string | null;
-  hostname_in?: string[] | null;
-  hostname_lt?: string | null;
-  hostname_lte?: string | null;
-  hostname_not?: string | null;
-  hostname_not_contains?: string | null;
-  hostname_not_ends_with?: string | null;
-  hostname_not_in?: string[] | null;
-  hostname_not_starts_with?: string | null;
-  hostname_starts_with?: string | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  in_recycle_bin?: boolean | null;
-  in_recycle_bin_not?: boolean | null;
-  internal?: boolean | null;
-  internal_not?: boolean | null;
-  io_policy?: VmDiskIoPolicy | null;
-  io_policy_in?: VmDiskIoPolicy[] | null;
-  io_policy_not?: VmDiskIoPolicy | null;
-  io_policy_not_in?: VmDiskIoPolicy[] | null;
-  ips?: string | null;
-  ips_contains?: string | null;
-  ips_ends_with?: string | null;
-  ips_gt?: string | null;
-  ips_gte?: string | null;
-  ips_in?: string[] | null;
-  ips_lt?: string | null;
-  ips_lte?: string | null;
-  ips_not?: string | null;
-  ips_not_contains?: string | null;
-  ips_not_ends_with?: string | null;
-  ips_not_in?: string[] | null;
-  ips_not_starts_with?: string | null;
-  ips_starts_with?: string | null;
-  isolation_policy?: IsolationPolicyWhereInput | null;
-  kernel_info?: string | null;
-  kernel_info_contains?: string | null;
-  kernel_info_ends_with?: string | null;
-  kernel_info_gt?: string | null;
-  kernel_info_gte?: string | null;
-  kernel_info_in?: string[] | null;
-  kernel_info_lt?: string | null;
-  kernel_info_lte?: string | null;
-  kernel_info_not?: string | null;
-  kernel_info_not_contains?: string | null;
-  kernel_info_not_ends_with?: string | null;
-  kernel_info_not_in?: string[] | null;
-  kernel_info_not_starts_with?: string | null;
-  kernel_info_starts_with?: string | null;
-  labels_every?: LabelWhereInput | null;
-  labels_none?: LabelWhereInput | null;
-  labels_some?: LabelWhereInput | null;
-  last_shutdown_time?: string | null;
-  last_shutdown_time_gt?: string | null;
-  last_shutdown_time_gte?: string | null;
-  last_shutdown_time_in?: string[] | null;
-  last_shutdown_time_lt?: string | null;
-  last_shutdown_time_lte?: string | null;
-  last_shutdown_time_not?: string | null;
-  last_shutdown_time_not_in?: string[] | null;
-  local_created_at?: string | null;
-  local_created_at_gt?: string | null;
-  local_created_at_gte?: string | null;
-  local_created_at_in?: string[] | null;
-  local_created_at_lt?: string | null;
-  local_created_at_lte?: string | null;
-  local_created_at_not?: string | null;
-  local_created_at_not_in?: string[] | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  /** @format int64 */
-  logical_size_bytes?: number | null;
-  /** @format int64 */
-  logical_size_bytes_gt?: number | null;
-  /** @format int64 */
-  logical_size_bytes_gte?: number | null;
-  logical_size_bytes_in?: number[] | null;
-  /** @format int64 */
-  logical_size_bytes_lt?: number | null;
-  /** @format int64 */
-  logical_size_bytes_lte?: number | null;
-  /** @format int64 */
-  logical_size_bytes_not?: number | null;
-  logical_size_bytes_not_in?: number[] | null;
-  /** @format int64 */
-  max_bandwidth?: number | null;
-  /** @format int64 */
-  max_bandwidth_gt?: number | null;
-  /** @format int64 */
-  max_bandwidth_gte?: number | null;
-  max_bandwidth_in?: number[] | null;
-  /** @format int64 */
-  max_bandwidth_lt?: number | null;
-  /** @format int64 */
-  max_bandwidth_lte?: number | null;
-  /** @format int64 */
-  max_bandwidth_not?: number | null;
-  max_bandwidth_not_in?: number[] | null;
-  max_bandwidth_policy?: VmDiskIoRestrictType | null;
-  max_bandwidth_policy_in?: VmDiskIoRestrictType[] | null;
-  max_bandwidth_policy_not?: VmDiskIoRestrictType | null;
-  max_bandwidth_policy_not_in?: VmDiskIoRestrictType[] | null;
-  /** @format int32 */
-  max_iops?: number | null;
-  /** @format int32 */
-  max_iops_gt?: number | null;
-  /** @format int32 */
-  max_iops_gte?: number | null;
-  max_iops_in?: number[] | null;
-  /** @format int32 */
-  max_iops_lt?: number | null;
-  /** @format int32 */
-  max_iops_lte?: number | null;
-  /** @format int32 */
-  max_iops_not?: number | null;
-  max_iops_not_in?: number[] | null;
-  max_iops_policy?: VmDiskIoRestrictType | null;
-  max_iops_policy_in?: VmDiskIoRestrictType[] | null;
-  max_iops_policy_not?: VmDiskIoRestrictType | null;
-  max_iops_policy_not_in?: VmDiskIoRestrictType[] | null;
-  /** @format int64 */
-  memory?: number | null;
-  /** @format int64 */
-  memory_gt?: number | null;
-  /** @format int64 */
-  memory_gte?: number | null;
-  memory_in?: number[] | null;
-  /** @format int64 */
-  memory_lt?: number | null;
-  /** @format int64 */
-  memory_lte?: number | null;
-  /** @format int64 */
-  memory_not?: number | null;
-  memory_not_in?: number[] | null;
-  /** @format double */
-  memory_usage?: number | null;
-  /** @format double */
-  memory_usage_gt?: number | null;
-  /** @format double */
-  memory_usage_gte?: number | null;
-  memory_usage_in?: number[] | null;
-  /** @format double */
-  memory_usage_lt?: number | null;
-  /** @format double */
-  memory_usage_lte?: number | null;
-  /** @format double */
-  memory_usage_not?: number | null;
-  memory_usage_not_in?: number[] | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  nested_virtualization?: boolean | null;
-  nested_virtualization_not?: boolean | null;
-  node_ip?: string | null;
-  node_ip_contains?: string | null;
-  node_ip_ends_with?: string | null;
-  node_ip_gt?: string | null;
-  node_ip_gte?: string | null;
-  node_ip_in?: string[] | null;
-  node_ip_lt?: string | null;
-  node_ip_lte?: string | null;
-  node_ip_not?: string | null;
-  node_ip_not_contains?: string | null;
-  node_ip_not_ends_with?: string | null;
-  node_ip_not_in?: string[] | null;
-  node_ip_not_starts_with?: string | null;
-  node_ip_starts_with?: string | null;
-  original_name?: string | null;
-  original_name_contains?: string | null;
-  original_name_ends_with?: string | null;
-  original_name_gt?: string | null;
-  original_name_gte?: string | null;
-  original_name_in?: string[] | null;
-  original_name_lt?: string | null;
-  original_name_lte?: string | null;
-  original_name_not?: string | null;
-  original_name_not_contains?: string | null;
-  original_name_not_ends_with?: string | null;
-  original_name_not_in?: string[] | null;
-  original_name_not_starts_with?: string | null;
-  original_name_starts_with?: string | null;
-  os?: string | null;
-  os_contains?: string | null;
-  os_ends_with?: string | null;
-  os_gt?: string | null;
-  os_gte?: string | null;
-  os_in?: string[] | null;
-  os_lt?: string | null;
-  os_lte?: string | null;
-  os_not?: string | null;
-  os_not_contains?: string | null;
-  os_not_ends_with?: string | null;
-  os_not_in?: string[] | null;
-  os_not_starts_with?: string | null;
-  os_starts_with?: string | null;
-  pci_nics_every?: NicWhereInput | null;
-  pci_nics_none?: NicWhereInput | null;
-  pci_nics_some?: NicWhereInput | null;
-  protected?: boolean | null;
-  protected_not?: boolean | null;
-  /** @format int64 */
-  provisioned_size?: number | null;
-  /** @format int64 */
-  provisioned_size_gt?: number | null;
-  /** @format int64 */
-  provisioned_size_gte?: number | null;
-  provisioned_size_in?: number[] | null;
-  /** @format int64 */
-  provisioned_size_lt?: number | null;
-  /** @format int64 */
-  provisioned_size_lte?: number | null;
-  /** @format int64 */
-  provisioned_size_not?: number | null;
-  provisioned_size_not_in?: number[] | null;
-  /** @format int64 */
-  size?: number | null;
-  /** @format int64 */
-  size_gt?: number | null;
-  /** @format int64 */
-  size_gte?: number | null;
-  size_in?: number[] | null;
-  /** @format int64 */
-  size_lt?: number | null;
-  /** @format int64 */
-  size_lte?: number | null;
-  /** @format int64 */
-  size_not?: number | null;
-  size_not_in?: number[] | null;
-  snapshots_every?: VmSnapshotWhereInput | null;
-  snapshots_none?: VmSnapshotWhereInput | null;
-  snapshots_some?: VmSnapshotWhereInput | null;
-  status?: VmStatus | null;
-  status_in?: VmStatus[] | null;
-  status_not?: VmStatus | null;
-  status_not_in?: VmStatus[] | null;
-  /** @format double */
-  unique_logical_size?: number | null;
-  /** @format double */
-  unique_logical_size_gt?: number | null;
-  /** @format double */
-  unique_logical_size_gte?: number | null;
-  unique_logical_size_in?: number[] | null;
-  /** @format double */
-  unique_logical_size_lt?: number | null;
-  /** @format double */
-  unique_logical_size_lte?: number | null;
-  /** @format double */
-  unique_logical_size_not?: number | null;
-  unique_logical_size_not_in?: number[] | null;
-  /** @format int64 */
-  unique_size?: number | null;
-  /** @format int64 */
-  unique_size_gt?: number | null;
-  /** @format int64 */
-  unique_size_gte?: number | null;
-  unique_size_in?: number[] | null;
-  /** @format int64 */
-  unique_size_lt?: number | null;
-  /** @format int64 */
-  unique_size_lte?: number | null;
-  /** @format int64 */
-  unique_size_not?: number | null;
-  unique_size_not_in?: number[] | null;
-  usb_devices_every?: UsbDeviceWhereInput | null;
-  usb_devices_none?: UsbDeviceWhereInput | null;
-  usb_devices_some?: UsbDeviceWhereInput | null;
-  /** @format int64 */
-  used_size?: number | null;
-  /** @format int64 */
-  used_size_gt?: number | null;
-  /** @format int64 */
-  used_size_gte?: number | null;
-  used_size_in?: number[] | null;
-  /** @format int64 */
-  used_size_lt?: number | null;
-  /** @format int64 */
-  used_size_lte?: number | null;
-  /** @format int64 */
-  used_size_not?: number | null;
-  used_size_not_in?: number[] | null;
-  /** @format double */
-  used_size_usage?: number | null;
-  /** @format double */
-  used_size_usage_gt?: number | null;
-  /** @format double */
-  used_size_usage_gte?: number | null;
-  used_size_usage_in?: number[] | null;
-  /** @format double */
-  used_size_usage_lt?: number | null;
-  /** @format double */
-  used_size_usage_lte?: number | null;
-  /** @format double */
-  used_size_usage_not?: number | null;
-  used_size_usage_not_in?: number[] | null;
-  /** @format int32 */
-  vcpu?: number | null;
-  /** @format int32 */
-  vcpu_gt?: number | null;
-  /** @format int32 */
-  vcpu_gte?: number | null;
-  vcpu_in?: number[] | null;
-  /** @format int32 */
-  vcpu_lt?: number | null;
-  /** @format int32 */
-  vcpu_lte?: number | null;
-  /** @format int32 */
-  vcpu_not?: number | null;
-  vcpu_not_in?: number[] | null;
-  video_type?: VmVideoType | null;
-  video_type_in?: VmVideoType[] | null;
-  video_type_not?: VmVideoType | null;
-  video_type_not_in?: VmVideoType[] | null;
-  vm_disks_every?: VmDiskWhereInput | null;
-  vm_disks_none?: VmDiskWhereInput | null;
-  vm_disks_some?: VmDiskWhereInput | null;
-  vm_nics_every?: VmNicWhereInput | null;
-  vm_nics_none?: VmNicWhereInput | null;
-  vm_nics_some?: VmNicWhereInput | null;
-  vm_placement_group_every?: VmPlacementGroupWhereInput | null;
-  vm_placement_group_none?: VmPlacementGroupWhereInput | null;
-  vm_placement_group_some?: VmPlacementGroupWhereInput | null;
-  vm_tools_status?: VmToolsStatus | null;
-  vm_tools_status_in?: VmToolsStatus[] | null;
-  vm_tools_status_not?: VmToolsStatus | null;
-  vm_tools_status_not_in?: VmToolsStatus[] | null;
-  vm_tools_version?: string | null;
-  vm_tools_version_contains?: string | null;
-  vm_tools_version_ends_with?: string | null;
-  vm_tools_version_gt?: string | null;
-  vm_tools_version_gte?: string | null;
-  vm_tools_version_in?: string[] | null;
-  vm_tools_version_lt?: string | null;
-  vm_tools_version_lte?: string | null;
-  vm_tools_version_not?: string | null;
-  vm_tools_version_not_contains?: string | null;
-  vm_tools_version_not_ends_with?: string | null;
-  vm_tools_version_not_in?: string[] | null;
-  vm_tools_version_not_starts_with?: string | null;
-  vm_tools_version_starts_with?: string | null;
-  vm_usage?: VmUsage | null;
-  vm_usage_in?: VmUsage[] | null;
-  vm_usage_not?: VmUsage | null;
-  vm_usage_not_in?: VmUsage[] | null;
-  win_opt?: boolean | null;
-  win_opt_not?: boolean | null;
-}
-
-export enum VmClockOffset {
-  LOCALTIME = "LOCALTIME",
-  UTC = "UTC",
-}
-
-export enum VmFirmware {
-  BIOS = "BIOS",
-  UEFI = "UEFI",
-}
-
-export interface VmFolderWhereInput {
-  AND?: VmFolderWhereInput[] | null;
-  NOT?: VmFolderWhereInput[] | null;
-  OR?: VmFolderWhereInput[] | null;
-  cluster?: ClusterWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  /** @format int32 */
-  vm_num?: number | null;
-  /** @format int32 */
-  vm_num_gt?: number | null;
-  /** @format int32 */
-  vm_num_gte?: number | null;
-  vm_num_in?: number[] | null;
-  /** @format int32 */
-  vm_num_lt?: number | null;
-  /** @format int32 */
-  vm_num_lte?: number | null;
-  /** @format int32 */
-  vm_num_not?: number | null;
-  vm_num_not_in?: number[] | null;
-  vms_every?: VmWhereInput | null;
-  vms_none?: VmWhereInput | null;
-  vms_some?: VmWhereInput | null;
-}
-
-export interface GpuDeviceWhereInput {
-  AND?: GpuDeviceWhereInput[] | null;
-  NOT?: GpuDeviceWhereInput[] | null;
-  OR?: GpuDeviceWhereInput[] | null;
-  /** @format int32 */
-  assigned_vgpus_num?: number | null;
-  /** @format int32 */
-  assigned_vgpus_num_gt?: number | null;
-  /** @format int32 */
-  assigned_vgpus_num_gte?: number | null;
-  assigned_vgpus_num_in?: number[] | null;
-  /** @format int32 */
-  assigned_vgpus_num_lt?: number | null;
-  /** @format int32 */
-  assigned_vgpus_num_lte?: number | null;
-  /** @format int32 */
-  assigned_vgpus_num_not?: number | null;
-  assigned_vgpus_num_not_in?: number[] | null;
-  /** @format int32 */
-  available_vgpus_num?: number | null;
-  /** @format int32 */
-  available_vgpus_num_gt?: number | null;
-  /** @format int32 */
-  available_vgpus_num_gte?: number | null;
-  available_vgpus_num_in?: number[] | null;
-  /** @format int32 */
-  available_vgpus_num_lt?: number | null;
-  /** @format int32 */
-  available_vgpus_num_lte?: number | null;
-  /** @format int32 */
-  available_vgpus_num_not?: number | null;
-  available_vgpus_num_not_in?: number[] | null;
-  brand?: string | null;
-  brand_contains?: string | null;
-  brand_ends_with?: string | null;
-  brand_gt?: string | null;
-  brand_gte?: string | null;
-  brand_in?: string[] | null;
-  brand_lt?: string | null;
-  brand_lte?: string | null;
-  brand_not?: string | null;
-  brand_not_contains?: string | null;
-  brand_not_ends_with?: string | null;
-  brand_not_in?: string[] | null;
-  brand_not_starts_with?: string | null;
-  brand_starts_with?: string | null;
-  bus_location?: string | null;
-  bus_location_contains?: string | null;
-  bus_location_ends_with?: string | null;
-  bus_location_gt?: string | null;
-  bus_location_gte?: string | null;
-  bus_location_in?: string[] | null;
-  bus_location_lt?: string | null;
-  bus_location_lte?: string | null;
-  bus_location_not?: string | null;
-  bus_location_not_contains?: string | null;
-  bus_location_not_ends_with?: string | null;
-  bus_location_not_in?: string[] | null;
-  bus_location_not_starts_with?: string | null;
-  bus_location_starts_with?: string | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  host?: HostWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  is_nvidia_tools_ready?: boolean | null;
-  is_nvidia_tools_ready_not?: boolean | null;
-  is_nvidia_vfs_enabled?: boolean | null;
-  is_nvidia_vfs_enabled_not?: boolean | null;
-  is_nvidia_vfs_supported?: boolean | null;
-  is_nvidia_vfs_supported_not?: boolean | null;
-  labels_every?: LabelWhereInput | null;
-  labels_none?: LabelWhereInput | null;
-  labels_some?: LabelWhereInput | null;
-  local_created_at?: string | null;
-  local_created_at_gt?: string | null;
-  local_created_at_gte?: string | null;
-  local_created_at_in?: string[] | null;
-  local_created_at_lt?: string | null;
-  local_created_at_lte?: string | null;
-  local_created_at_not?: string | null;
-  local_created_at_not_in?: string[] | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  model?: string | null;
-  model_contains?: string | null;
-  model_ends_with?: string | null;
-  model_gt?: string | null;
-  model_gte?: string | null;
-  model_in?: string[] | null;
-  model_lt?: string | null;
-  model_lte?: string | null;
-  model_not?: string | null;
-  model_not_contains?: string | null;
-  model_not_ends_with?: string | null;
-  model_not_in?: string[] | null;
-  model_not_starts_with?: string | null;
-  model_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  status?: GpuDeviceStatus | null;
-  status_in?: GpuDeviceStatus[] | null;
-  status_not?: GpuDeviceStatus | null;
-  status_not_in?: GpuDeviceStatus[] | null;
-  user_usage?: GpuDeviceUsage | null;
-  user_usage_in?: GpuDeviceUsage[] | null;
-  user_usage_not?: GpuDeviceUsage | null;
-  user_usage_not_in?: GpuDeviceUsage[] | null;
-  user_vgpu_type_id?: string | null;
-  user_vgpu_type_id_contains?: string | null;
-  user_vgpu_type_id_ends_with?: string | null;
-  user_vgpu_type_id_gt?: string | null;
-  user_vgpu_type_id_gte?: string | null;
-  user_vgpu_type_id_in?: string[] | null;
-  user_vgpu_type_id_lt?: string | null;
-  user_vgpu_type_id_lte?: string | null;
-  user_vgpu_type_id_not?: string | null;
-  user_vgpu_type_id_not_contains?: string | null;
-  user_vgpu_type_id_not_ends_with?: string | null;
-  user_vgpu_type_id_not_in?: string[] | null;
-  user_vgpu_type_id_not_starts_with?: string | null;
-  user_vgpu_type_id_starts_with?: string | null;
-  user_vgpu_type_name?: string | null;
-  user_vgpu_type_name_contains?: string | null;
-  user_vgpu_type_name_ends_with?: string | null;
-  user_vgpu_type_name_gt?: string | null;
-  user_vgpu_type_name_gte?: string | null;
-  user_vgpu_type_name_in?: string[] | null;
-  user_vgpu_type_name_lt?: string | null;
-  user_vgpu_type_name_lte?: string | null;
-  user_vgpu_type_name_not?: string | null;
-  user_vgpu_type_name_not_contains?: string | null;
-  user_vgpu_type_name_not_ends_with?: string | null;
-  user_vgpu_type_name_not_in?: string[] | null;
-  user_vgpu_type_name_not_starts_with?: string | null;
-  user_vgpu_type_name_starts_with?: string | null;
-  /** @format int32 */
-  vgpu_instance_num?: number | null;
-  /** @format int32 */
-  vgpu_instance_num_gt?: number | null;
-  /** @format int32 */
-  vgpu_instance_num_gte?: number | null;
-  vgpu_instance_num_in?: number[] | null;
-  /** @format int32 */
-  vgpu_instance_num_lt?: number | null;
-  /** @format int32 */
-  vgpu_instance_num_lte?: number | null;
-  /** @format int32 */
-  vgpu_instance_num_not?: number | null;
-  vgpu_instance_num_not_in?: number[] | null;
-  vms_every?: VmWhereInput | null;
-  vms_none?: VmWhereInput | null;
-  vms_some?: VmWhereInput | null;
-}
-
-export interface HostWhereInput {
-  AND?: HostWhereInput[] | null;
-  NOT?: HostWhereInput[] | null;
-  OR?: HostWhereInput[] | null;
-  access_ip?: string | null;
-  access_ip_contains?: string | null;
-  access_ip_ends_with?: string | null;
-  access_ip_gt?: string | null;
-  access_ip_gte?: string | null;
-  access_ip_in?: string[] | null;
-  access_ip_lt?: string | null;
-  access_ip_lte?: string | null;
-  access_ip_not?: string | null;
-  access_ip_not_contains?: string | null;
-  access_ip_not_ends_with?: string | null;
-  access_ip_not_in?: string[] | null;
-  access_ip_not_starts_with?: string | null;
-  access_ip_starts_with?: string | null;
-  /** @format int32 */
-  allocable_cpu_cores_for_vm_exclusive?: number | null;
-  /** @format int32 */
-  allocable_cpu_cores_for_vm_exclusive_gt?: number | null;
-  /** @format int32 */
-  allocable_cpu_cores_for_vm_exclusive_gte?: number | null;
-  allocable_cpu_cores_for_vm_exclusive_in?: number[] | null;
-  /** @format int32 */
-  allocable_cpu_cores_for_vm_exclusive_lt?: number | null;
-  /** @format int32 */
-  allocable_cpu_cores_for_vm_exclusive_lte?: number | null;
-  /** @format int32 */
-  allocable_cpu_cores_for_vm_exclusive_not?: number | null;
-  allocable_cpu_cores_for_vm_exclusive_not_in?: number[] | null;
-  /** @format int64 */
-  allocatable_memory_bytes?: number | null;
-  /** @format int64 */
-  allocatable_memory_bytes_gt?: number | null;
-  /** @format int64 */
-  allocatable_memory_bytes_gte?: number | null;
-  allocatable_memory_bytes_in?: number[] | null;
-  /** @format int64 */
-  allocatable_memory_bytes_lt?: number | null;
-  /** @format int64 */
-  allocatable_memory_bytes_lte?: number | null;
-  /** @format int64 */
-  allocatable_memory_bytes_not?: number | null;
-  allocatable_memory_bytes_not_in?: number[] | null;
-  /** @format int64 */
-  allocated_prioritized_space?: number | null;
-  /** @format int64 */
-  allocated_prioritized_space_gt?: number | null;
-  /** @format int64 */
-  allocated_prioritized_space_gte?: number | null;
-  allocated_prioritized_space_in?: number[] | null;
-  /** @format int64 */
-  allocated_prioritized_space_lt?: number | null;
-  /** @format int64 */
-  allocated_prioritized_space_lte?: number | null;
-  /** @format int64 */
-  allocated_prioritized_space_not?: number | null;
-  allocated_prioritized_space_not_in?: number[] | null;
-  /** @format double */
-  allocated_prioritized_space_usage?: number | null;
-  /** @format double */
-  allocated_prioritized_space_usage_gt?: number | null;
-  /** @format double */
-  allocated_prioritized_space_usage_gte?: number | null;
-  allocated_prioritized_space_usage_in?: number[] | null;
-  /** @format double */
-  allocated_prioritized_space_usage_lt?: number | null;
-  /** @format double */
-  allocated_prioritized_space_usage_lte?: number | null;
-  /** @format double */
-  allocated_prioritized_space_usage_not?: number | null;
-  allocated_prioritized_space_usage_not_in?: number[] | null;
-  chunk_id?: string | null;
-  chunk_id_contains?: string | null;
-  chunk_id_ends_with?: string | null;
-  chunk_id_gt?: string | null;
-  chunk_id_gte?: string | null;
-  chunk_id_in?: string[] | null;
-  chunk_id_lt?: string | null;
-  chunk_id_lte?: string | null;
-  chunk_id_not?: string | null;
-  chunk_id_not_contains?: string | null;
-  chunk_id_not_ends_with?: string | null;
-  chunk_id_not_in?: string[] | null;
-  chunk_id_not_starts_with?: string | null;
-  chunk_id_starts_with?: string | null;
-  cluster?: ClusterWhereInput | null;
-  /** @format int64 */
-  commited_memory_bytes?: number | null;
-  /** @format int64 */
-  commited_memory_bytes_gt?: number | null;
-  /** @format int64 */
-  commited_memory_bytes_gte?: number | null;
-  commited_memory_bytes_in?: number[] | null;
-  /** @format int64 */
-  commited_memory_bytes_lt?: number | null;
-  /** @format int64 */
-  commited_memory_bytes_lte?: number | null;
-  /** @format int64 */
-  commited_memory_bytes_not?: number | null;
-  commited_memory_bytes_not_in?: number[] | null;
-  connect_status?: HostConnectStatus | null;
-  connect_status_in?: HostConnectStatus[] | null;
-  connect_status_not?: HostConnectStatus | null;
-  connect_status_not_in?: HostConnectStatus[] | null;
-  cpu_brand?: string | null;
-  cpu_brand_contains?: string | null;
-  cpu_brand_ends_with?: string | null;
-  cpu_brand_gt?: string | null;
-  cpu_brand_gte?: string | null;
-  cpu_brand_in?: string[] | null;
-  cpu_brand_lt?: string | null;
-  cpu_brand_lte?: string | null;
-  cpu_brand_not?: string | null;
-  cpu_brand_not_contains?: string | null;
-  cpu_brand_not_ends_with?: string | null;
-  cpu_brand_not_in?: string[] | null;
-  cpu_brand_not_starts_with?: string | null;
-  cpu_brand_starts_with?: string | null;
-  cpu_fan_speed_unit?: CpuFanSpeedUnit | null;
-  cpu_fan_speed_unit_in?: CpuFanSpeedUnit[] | null;
-  cpu_fan_speed_unit_not?: CpuFanSpeedUnit | null;
-  cpu_fan_speed_unit_not_in?: CpuFanSpeedUnit[] | null;
-  /** @format int64 */
-  cpu_hz_per_core?: number | null;
-  /** @format int64 */
-  cpu_hz_per_core_gt?: number | null;
-  /** @format int64 */
-  cpu_hz_per_core_gte?: number | null;
-  cpu_hz_per_core_in?: number[] | null;
-  /** @format int64 */
-  cpu_hz_per_core_lt?: number | null;
-  /** @format int64 */
-  cpu_hz_per_core_lte?: number | null;
-  /** @format int64 */
-  cpu_hz_per_core_not?: number | null;
-  cpu_hz_per_core_not_in?: number[] | null;
-  cpu_model?: string | null;
-  cpu_model_contains?: string | null;
-  cpu_model_ends_with?: string | null;
-  cpu_model_gt?: string | null;
-  cpu_model_gte?: string | null;
-  cpu_model_in?: string[] | null;
-  cpu_model_lt?: string | null;
-  cpu_model_lte?: string | null;
-  cpu_model_not?: string | null;
-  cpu_model_not_contains?: string | null;
-  cpu_model_not_ends_with?: string | null;
-  cpu_model_not_in?: string[] | null;
-  cpu_model_not_starts_with?: string | null;
-  cpu_model_starts_with?: string | null;
-  cpu_vendor?: string | null;
-  cpu_vendor_contains?: string | null;
-  cpu_vendor_ends_with?: string | null;
-  cpu_vendor_gt?: string | null;
-  cpu_vendor_gte?: string | null;
-  cpu_vendor_in?: string[] | null;
-  cpu_vendor_lt?: string | null;
-  cpu_vendor_lte?: string | null;
-  cpu_vendor_not?: string | null;
-  cpu_vendor_not_contains?: string | null;
-  cpu_vendor_not_ends_with?: string | null;
-  cpu_vendor_not_in?: string[] | null;
-  cpu_vendor_not_starts_with?: string | null;
-  cpu_vendor_starts_with?: string | null;
-  data_ip?: string | null;
-  data_ip_contains?: string | null;
-  data_ip_ends_with?: string | null;
-  data_ip_gt?: string | null;
-  data_ip_gte?: string | null;
-  data_ip_in?: string[] | null;
-  data_ip_lt?: string | null;
-  data_ip_lte?: string | null;
-  data_ip_not?: string | null;
-  data_ip_not_contains?: string | null;
-  data_ip_not_ends_with?: string | null;
-  data_ip_not_in?: string[] | null;
-  data_ip_not_starts_with?: string | null;
-  data_ip_starts_with?: string | null;
-  /** @format int64 */
-  downgraded_prioritized_space?: number | null;
-  /** @format int64 */
-  downgraded_prioritized_space_gt?: number | null;
-  /** @format int64 */
-  downgraded_prioritized_space_gte?: number | null;
-  downgraded_prioritized_space_in?: number[] | null;
-  /** @format int64 */
-  downgraded_prioritized_space_lt?: number | null;
-  /** @format int64 */
-  downgraded_prioritized_space_lte?: number | null;
-  /** @format int64 */
-  downgraded_prioritized_space_not?: number | null;
-  downgraded_prioritized_space_not_in?: number[] | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  /** @format int64 */
-  failure_data_space?: number | null;
-  /** @format int64 */
-  failure_data_space_gt?: number | null;
-  /** @format int64 */
-  failure_data_space_gte?: number | null;
-  failure_data_space_in?: number[] | null;
-  /** @format int64 */
-  failure_data_space_lt?: number | null;
-  /** @format int64 */
-  failure_data_space_lte?: number | null;
-  /** @format int64 */
-  failure_data_space_not?: number | null;
-  failure_data_space_not_in?: number[] | null;
-  gpu_devices_every?: GpuDeviceWhereInput | null;
-  gpu_devices_none?: GpuDeviceWhereInput | null;
-  gpu_devices_some?: GpuDeviceWhereInput | null;
-  /** @format int64 */
-  hdd_data_capacity?: number | null;
-  /** @format int64 */
-  hdd_data_capacity_gt?: number | null;
-  /** @format int64 */
-  hdd_data_capacity_gte?: number | null;
-  hdd_data_capacity_in?: number[] | null;
-  /** @format int64 */
-  hdd_data_capacity_lt?: number | null;
-  /** @format int64 */
-  hdd_data_capacity_lte?: number | null;
-  /** @format int64 */
-  hdd_data_capacity_not?: number | null;
-  hdd_data_capacity_not_in?: number[] | null;
-  /** @format int32 */
-  hdd_disk_count?: number | null;
-  /** @format int32 */
-  hdd_disk_count_gt?: number | null;
-  /** @format int32 */
-  hdd_disk_count_gte?: number | null;
-  hdd_disk_count_in?: number[] | null;
-  /** @format int32 */
-  hdd_disk_count_lt?: number | null;
-  /** @format int32 */
-  hdd_disk_count_lte?: number | null;
-  /** @format int32 */
-  hdd_disk_count_not?: number | null;
-  hdd_disk_count_not_in?: number[] | null;
-  hypervisor_ip?: string | null;
-  hypervisor_ip_contains?: string | null;
-  hypervisor_ip_ends_with?: string | null;
-  hypervisor_ip_gt?: string | null;
-  hypervisor_ip_gte?: string | null;
-  hypervisor_ip_in?: string[] | null;
-  hypervisor_ip_lt?: string | null;
-  hypervisor_ip_lte?: string | null;
-  hypervisor_ip_not?: string | null;
-  hypervisor_ip_not_contains?: string | null;
-  hypervisor_ip_not_ends_with?: string | null;
-  hypervisor_ip_not_in?: string[] | null;
-  hypervisor_ip_not_starts_with?: string | null;
-  hypervisor_ip_starts_with?: string | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  iommu?: IommuStatus | null;
-  iommu_in?: IommuStatus[] | null;
-  iommu_not?: IommuStatus | null;
-  iommu_not_in?: IommuStatus[] | null;
-  is_os_in_raid1?: boolean | null;
-  is_os_in_raid1_not?: boolean | null;
-  labels_every?: LabelWhereInput | null;
-  labels_none?: LabelWhereInput | null;
-  labels_some?: LabelWhereInput | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  lsm_cap_disk_safe_umount?: boolean | null;
-  lsm_cap_disk_safe_umount_not?: boolean | null;
-  management_ip?: string | null;
-  management_ip_contains?: string | null;
-  management_ip_ends_with?: string | null;
-  management_ip_gt?: string | null;
-  management_ip_gte?: string | null;
-  management_ip_in?: string[] | null;
-  management_ip_lt?: string | null;
-  management_ip_lte?: string | null;
-  management_ip_not?: string | null;
-  management_ip_not_contains?: string | null;
-  management_ip_not_ends_with?: string | null;
-  management_ip_not_in?: string[] | null;
-  management_ip_not_starts_with?: string | null;
-  management_ip_starts_with?: string | null;
-  merged_status?: HostMergedStatus | null;
-  merged_status_in?: HostMergedStatus[] | null;
-  merged_status_not?: HostMergedStatus | null;
-  merged_status_not_in?: HostMergedStatus[] | null;
-  model?: string | null;
-  model_contains?: string | null;
-  model_ends_with?: string | null;
-  model_gt?: string | null;
-  model_gte?: string | null;
-  model_in?: string[] | null;
-  model_lt?: string | null;
-  model_lte?: string | null;
-  model_not?: string | null;
-  model_not_contains?: string | null;
-  model_not_ends_with?: string | null;
-  model_not_in?: string[] | null;
-  model_not_starts_with?: string | null;
-  model_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  nested_virtualization?: boolean | null;
-  nested_virtualization_not?: boolean | null;
-  /** @format int32 */
-  nic_count?: number | null;
-  /** @format int32 */
-  nic_count_gt?: number | null;
-  /** @format int32 */
-  nic_count_gte?: number | null;
-  nic_count_in?: number[] | null;
-  /** @format int32 */
-  nic_count_lt?: number | null;
-  /** @format int32 */
-  nic_count_lte?: number | null;
-  /** @format int32 */
-  nic_count_not?: number | null;
-  nic_count_not_in?: number[] | null;
-  nics_every?: NicWhereInput | null;
-  nics_none?: NicWhereInput | null;
-  nics_some?: NicWhereInput | null;
-  node_topo_local_id?: string | null;
-  node_topo_local_id_contains?: string | null;
-  node_topo_local_id_ends_with?: string | null;
-  node_topo_local_id_gt?: string | null;
-  node_topo_local_id_gte?: string | null;
-  node_topo_local_id_in?: string[] | null;
-  node_topo_local_id_lt?: string | null;
-  node_topo_local_id_lte?: string | null;
-  node_topo_local_id_not?: string | null;
-  node_topo_local_id_not_contains?: string | null;
-  node_topo_local_id_not_ends_with?: string | null;
-  node_topo_local_id_not_in?: string[] | null;
-  node_topo_local_id_not_starts_with?: string | null;
-  node_topo_local_id_starts_with?: string | null;
-  /** @format int64 */
-  os_memory_bytes?: number | null;
-  /** @format int64 */
-  os_memory_bytes_gt?: number | null;
-  /** @format int64 */
-  os_memory_bytes_gte?: number | null;
-  os_memory_bytes_in?: number[] | null;
-  /** @format int64 */
-  os_memory_bytes_lt?: number | null;
-  /** @format int64 */
-  os_memory_bytes_lte?: number | null;
-  /** @format int64 */
-  os_memory_bytes_not?: number | null;
-  os_memory_bytes_not_in?: number[] | null;
-  os_version?: string | null;
-  os_version_contains?: string | null;
-  os_version_ends_with?: string | null;
-  os_version_gt?: string | null;
-  os_version_gte?: string | null;
-  os_version_in?: string[] | null;
-  os_version_lt?: string | null;
-  os_version_lte?: string | null;
-  os_version_not?: string | null;
-  os_version_not_contains?: string | null;
-  os_version_not_ends_with?: string | null;
-  os_version_not_in?: string[] | null;
-  os_version_not_starts_with?: string | null;
-  os_version_starts_with?: string | null;
-  /** @format int64 */
-  perf_allocated_data_space?: number | null;
-  /** @format int64 */
-  perf_allocated_data_space_gt?: number | null;
-  /** @format int64 */
-  perf_allocated_data_space_gte?: number | null;
-  perf_allocated_data_space_in?: number[] | null;
-  /** @format int64 */
-  perf_allocated_data_space_lt?: number | null;
-  /** @format int64 */
-  perf_allocated_data_space_lte?: number | null;
-  /** @format int64 */
-  perf_allocated_data_space_not?: number | null;
-  perf_allocated_data_space_not_in?: number[] | null;
-  /** @format int64 */
-  perf_failure_data_space?: number | null;
-  /** @format int64 */
-  perf_failure_data_space_gt?: number | null;
-  /** @format int64 */
-  perf_failure_data_space_gte?: number | null;
-  perf_failure_data_space_in?: number[] | null;
-  /** @format int64 */
-  perf_failure_data_space_lt?: number | null;
-  /** @format int64 */
-  perf_failure_data_space_lte?: number | null;
-  /** @format int64 */
-  perf_failure_data_space_not?: number | null;
-  perf_failure_data_space_not_in?: number[] | null;
-  /** @format int64 */
-  perf_total_data_capacity?: number | null;
-  /** @format int64 */
-  perf_total_data_capacity_gt?: number | null;
-  /** @format int64 */
-  perf_total_data_capacity_gte?: number | null;
-  perf_total_data_capacity_in?: number[] | null;
-  /** @format int64 */
-  perf_total_data_capacity_lt?: number | null;
-  /** @format int64 */
-  perf_total_data_capacity_lte?: number | null;
-  /** @format int64 */
-  perf_total_data_capacity_not?: number | null;
-  perf_total_data_capacity_not_in?: number[] | null;
-  /** @format int64 */
-  perf_used_data_space?: number | null;
-  /** @format int64 */
-  perf_used_data_space_gt?: number | null;
-  /** @format int64 */
-  perf_used_data_space_gte?: number | null;
-  perf_used_data_space_in?: number[] | null;
-  /** @format int64 */
-  perf_used_data_space_lt?: number | null;
-  /** @format int64 */
-  perf_used_data_space_lte?: number | null;
-  /** @format int64 */
-  perf_used_data_space_not?: number | null;
-  perf_used_data_space_not_in?: number[] | null;
-  /** @format int64 */
-  perf_valid_data_space?: number | null;
-  /** @format int64 */
-  perf_valid_data_space_gt?: number | null;
-  /** @format int64 */
-  perf_valid_data_space_gte?: number | null;
-  perf_valid_data_space_in?: number[] | null;
-  /** @format int64 */
-  perf_valid_data_space_lt?: number | null;
-  /** @format int64 */
-  perf_valid_data_space_lte?: number | null;
-  /** @format int64 */
-  perf_valid_data_space_not?: number | null;
-  perf_valid_data_space_not_in?: number[] | null;
-  /** @format int64 */
-  planned_prioritized_space?: number | null;
-  /** @format int64 */
-  planned_prioritized_space_gt?: number | null;
-  /** @format int64 */
-  planned_prioritized_space_gte?: number | null;
-  planned_prioritized_space_in?: number[] | null;
-  /** @format int64 */
-  planned_prioritized_space_lt?: number | null;
-  /** @format int64 */
-  planned_prioritized_space_lte?: number | null;
-  /** @format int64 */
-  planned_prioritized_space_not?: number | null;
-  planned_prioritized_space_not_in?: number[] | null;
-  /** @format int64 */
-  pmem_dimm_capacity?: number | null;
-  /** @format int64 */
-  pmem_dimm_capacity_gt?: number | null;
-  /** @format int64 */
-  pmem_dimm_capacity_gte?: number | null;
-  pmem_dimm_capacity_in?: number[] | null;
-  /** @format int64 */
-  pmem_dimm_capacity_lt?: number | null;
-  /** @format int64 */
-  pmem_dimm_capacity_lte?: number | null;
-  /** @format int64 */
-  pmem_dimm_capacity_not?: number | null;
-  pmem_dimm_capacity_not_in?: number[] | null;
-  /** @format int32 */
-  pmem_dimm_count?: number | null;
-  /** @format int32 */
-  pmem_dimm_count_gt?: number | null;
-  /** @format int32 */
-  pmem_dimm_count_gte?: number | null;
-  pmem_dimm_count_in?: number[] | null;
-  /** @format int32 */
-  pmem_dimm_count_lt?: number | null;
-  /** @format int32 */
-  pmem_dimm_count_lte?: number | null;
-  /** @format int32 */
-  pmem_dimm_count_not?: number | null;
-  pmem_dimm_count_not_in?: number[] | null;
-  /** @format int32 */
-  pmem_disk_count?: number | null;
-  /** @format int32 */
-  pmem_disk_count_gt?: number | null;
-  /** @format int32 */
-  pmem_disk_count_gte?: number | null;
-  pmem_disk_count_in?: number[] | null;
-  /** @format int32 */
-  pmem_disk_count_lt?: number | null;
-  /** @format int32 */
-  pmem_disk_count_lte?: number | null;
-  /** @format int32 */
-  pmem_disk_count_not?: number | null;
-  pmem_disk_count_not_in?: number[] | null;
-  /** @format double */
-  prio_space_percentage?: number | null;
-  /** @format double */
-  prio_space_percentage_gt?: number | null;
-  /** @format double */
-  prio_space_percentage_gte?: number | null;
-  prio_space_percentage_in?: number[] | null;
-  /** @format double */
-  prio_space_percentage_lt?: number | null;
-  /** @format double */
-  prio_space_percentage_lte?: number | null;
-  /** @format double */
-  prio_space_percentage_not?: number | null;
-  prio_space_percentage_not_in?: number[] | null;
-  /** @format int32 */
-  provisioned_cpu_cores?: number | null;
-  /** @format int32 */
-  provisioned_cpu_cores_gt?: number | null;
-  /** @format int32 */
-  provisioned_cpu_cores_gte?: number | null;
-  provisioned_cpu_cores_in?: number[] | null;
-  /** @format int32 */
-  provisioned_cpu_cores_lt?: number | null;
-  /** @format int32 */
-  provisioned_cpu_cores_lte?: number | null;
-  /** @format int32 */
-  provisioned_cpu_cores_not?: number | null;
-  provisioned_cpu_cores_not_in?: number[] | null;
-  /** @format int64 */
-  provisioned_memory_bytes?: number | null;
-  /** @format int64 */
-  provisioned_memory_bytes_gt?: number | null;
-  /** @format int64 */
-  provisioned_memory_bytes_gte?: number | null;
-  provisioned_memory_bytes_in?: number[] | null;
-  /** @format int64 */
-  provisioned_memory_bytes_lt?: number | null;
-  /** @format int64 */
-  provisioned_memory_bytes_lte?: number | null;
-  /** @format int64 */
-  provisioned_memory_bytes_not?: number | null;
-  provisioned_memory_bytes_not_in?: number[] | null;
-  /** @format int64 */
-  running_pause_vm_memory_bytes?: number | null;
-  /** @format int64 */
-  running_pause_vm_memory_bytes_gt?: number | null;
-  /** @format int64 */
-  running_pause_vm_memory_bytes_gte?: number | null;
-  running_pause_vm_memory_bytes_in?: number[] | null;
-  /** @format int64 */
-  running_pause_vm_memory_bytes_lt?: number | null;
-  /** @format int64 */
-  running_pause_vm_memory_bytes_lte?: number | null;
-  /** @format int64 */
-  running_pause_vm_memory_bytes_not?: number | null;
-  running_pause_vm_memory_bytes_not_in?: number[] | null;
-  /** @format int32 */
-  running_vm_num?: number | null;
-  /** @format int32 */
-  running_vm_num_gt?: number | null;
-  /** @format int32 */
-  running_vm_num_gte?: number | null;
-  running_vm_num_in?: number[] | null;
-  /** @format int32 */
-  running_vm_num_lt?: number | null;
-  /** @format int32 */
-  running_vm_num_lte?: number | null;
-  /** @format int32 */
-  running_vm_num_not?: number | null;
-  running_vm_num_not_in?: number[] | null;
-  /** @format int32 */
-  scvm_cpu?: number | null;
-  /** @format int32 */
-  scvm_cpu_gt?: number | null;
-  /** @format int32 */
-  scvm_cpu_gte?: number | null;
-  scvm_cpu_in?: number[] | null;
-  /** @format int32 */
-  scvm_cpu_lt?: number | null;
-  /** @format int32 */
-  scvm_cpu_lte?: number | null;
-  /** @format int32 */
-  scvm_cpu_not?: number | null;
-  scvm_cpu_not_in?: number[] | null;
-  /** @format int64 */
-  scvm_memory?: number | null;
-  /** @format int64 */
-  scvm_memory_gt?: number | null;
-  /** @format int64 */
-  scvm_memory_gte?: number | null;
-  scvm_memory_in?: number[] | null;
-  /** @format int64 */
-  scvm_memory_lt?: number | null;
-  /** @format int64 */
-  scvm_memory_lte?: number | null;
-  /** @format int64 */
-  scvm_memory_not?: number | null;
-  scvm_memory_not_in?: number[] | null;
-  scvm_name?: string | null;
-  scvm_name_contains?: string | null;
-  scvm_name_ends_with?: string | null;
-  scvm_name_gt?: string | null;
-  scvm_name_gte?: string | null;
-  scvm_name_in?: string[] | null;
-  scvm_name_lt?: string | null;
-  scvm_name_lte?: string | null;
-  scvm_name_not?: string | null;
-  scvm_name_not_contains?: string | null;
-  scvm_name_not_ends_with?: string | null;
-  scvm_name_not_in?: string[] | null;
-  scvm_name_not_starts_with?: string | null;
-  scvm_name_starts_with?: string | null;
-  serial?: string | null;
-  serial_contains?: string | null;
-  serial_ends_with?: string | null;
-  serial_gt?: string | null;
-  serial_gte?: string | null;
-  serial_in?: string[] | null;
-  serial_lt?: string | null;
-  serial_lte?: string | null;
-  serial_not?: string | null;
-  serial_not_contains?: string | null;
-  serial_not_ends_with?: string | null;
-  serial_not_in?: string[] | null;
-  serial_not_starts_with?: string | null;
-  serial_starts_with?: string | null;
-  /** @format int64 */
-  ssd_data_capacity?: number | null;
-  /** @format int64 */
-  ssd_data_capacity_gt?: number | null;
-  /** @format int64 */
-  ssd_data_capacity_gte?: number | null;
-  ssd_data_capacity_in?: number[] | null;
-  /** @format int64 */
-  ssd_data_capacity_lt?: number | null;
-  /** @format int64 */
-  ssd_data_capacity_lte?: number | null;
-  /** @format int64 */
-  ssd_data_capacity_not?: number | null;
-  ssd_data_capacity_not_in?: number[] | null;
-  /** @format int32 */
-  ssd_disk_count?: number | null;
-  /** @format int32 */
-  ssd_disk_count_gt?: number | null;
-  /** @format int32 */
-  ssd_disk_count_gte?: number | null;
-  ssd_disk_count_in?: number[] | null;
-  /** @format int32 */
-  ssd_disk_count_lt?: number | null;
-  /** @format int32 */
-  ssd_disk_count_lte?: number | null;
-  /** @format int32 */
-  ssd_disk_count_not?: number | null;
-  ssd_disk_count_not_in?: number[] | null;
-  state?: HostState | null;
-  state_in?: HostState[] | null;
-  state_not?: HostState | null;
-  state_not_in?: HostState[] | null;
-  status?: HostStatus | null;
-  status_in?: HostStatus[] | null;
-  status_not?: HostStatus | null;
-  status_not_in?: HostStatus[] | null;
-  /** @format int32 */
-  stopped_vm_num?: number | null;
-  /** @format int32 */
-  stopped_vm_num_gt?: number | null;
-  /** @format int32 */
-  stopped_vm_num_gte?: number | null;
-  stopped_vm_num_in?: number[] | null;
-  /** @format int32 */
-  stopped_vm_num_lt?: number | null;
-  /** @format int32 */
-  stopped_vm_num_lte?: number | null;
-  /** @format int32 */
-  stopped_vm_num_not?: number | null;
-  stopped_vm_num_not_in?: number[] | null;
-  /** @format int32 */
-  suspended_vm_num?: number | null;
-  /** @format int32 */
-  suspended_vm_num_gt?: number | null;
-  /** @format int32 */
-  suspended_vm_num_gte?: number | null;
-  suspended_vm_num_in?: number[] | null;
-  /** @format int32 */
-  suspended_vm_num_lt?: number | null;
-  /** @format int32 */
-  suspended_vm_num_lte?: number | null;
-  /** @format int32 */
-  suspended_vm_num_not?: number | null;
-  suspended_vm_num_not_in?: number[] | null;
-  /** @format int64 */
-  total_cache_capacity?: number | null;
-  /** @format int64 */
-  total_cache_capacity_gt?: number | null;
-  /** @format int64 */
-  total_cache_capacity_gte?: number | null;
-  total_cache_capacity_in?: number[] | null;
-  /** @format int64 */
-  total_cache_capacity_lt?: number | null;
-  /** @format int64 */
-  total_cache_capacity_lte?: number | null;
-  /** @format int64 */
-  total_cache_capacity_not?: number | null;
-  total_cache_capacity_not_in?: number[] | null;
-  /** @format int32 */
-  total_cpu_cores?: number | null;
-  /** @format int32 */
-  total_cpu_cores_gt?: number | null;
-  /** @format int32 */
-  total_cpu_cores_gte?: number | null;
-  total_cpu_cores_in?: number[] | null;
-  /** @format int32 */
-  total_cpu_cores_lt?: number | null;
-  /** @format int32 */
-  total_cpu_cores_lte?: number | null;
-  /** @format int32 */
-  total_cpu_cores_not?: number | null;
-  total_cpu_cores_not_in?: number[] | null;
-  /** @format int64 */
-  total_cpu_hz?: number | null;
-  /** @format int64 */
-  total_cpu_hz_gt?: number | null;
-  /** @format int64 */
-  total_cpu_hz_gte?: number | null;
-  total_cpu_hz_in?: number[] | null;
-  /** @format int64 */
-  total_cpu_hz_lt?: number | null;
-  /** @format int64 */
-  total_cpu_hz_lte?: number | null;
-  /** @format int64 */
-  total_cpu_hz_not?: number | null;
-  total_cpu_hz_not_in?: number[] | null;
-  /** @format int32 */
-  total_cpu_sockets?: number | null;
-  /** @format int32 */
-  total_cpu_sockets_gt?: number | null;
-  /** @format int32 */
-  total_cpu_sockets_gte?: number | null;
-  total_cpu_sockets_in?: number[] | null;
-  /** @format int32 */
-  total_cpu_sockets_lt?: number | null;
-  /** @format int32 */
-  total_cpu_sockets_lte?: number | null;
-  /** @format int32 */
-  total_cpu_sockets_not?: number | null;
-  total_cpu_sockets_not_in?: number[] | null;
-  /** @format int64 */
-  total_data_capacity?: number | null;
-  /** @format int64 */
-  total_data_capacity_gt?: number | null;
-  /** @format int64 */
-  total_data_capacity_gte?: number | null;
-  total_data_capacity_in?: number[] | null;
-  /** @format int64 */
-  total_data_capacity_lt?: number | null;
-  /** @format int64 */
-  total_data_capacity_lte?: number | null;
-  /** @format int64 */
-  total_data_capacity_not?: number | null;
-  total_data_capacity_not_in?: number[] | null;
-  /** @format int64 */
-  total_memory_bytes?: number | null;
-  /** @format int64 */
-  total_memory_bytes_gt?: number | null;
-  /** @format int64 */
-  total_memory_bytes_gte?: number | null;
-  total_memory_bytes_in?: number[] | null;
-  /** @format int64 */
-  total_memory_bytes_lt?: number | null;
-  /** @format int64 */
-  total_memory_bytes_lte?: number | null;
-  /** @format int64 */
-  total_memory_bytes_not?: number | null;
-  total_memory_bytes_not_in?: number[] | null;
-  usb_devices_every?: UsbDeviceWhereInput | null;
-  usb_devices_none?: UsbDeviceWhereInput | null;
-  usb_devices_some?: UsbDeviceWhereInput | null;
-  /** @format int64 */
-  used_cache_space?: number | null;
-  /** @format int64 */
-  used_cache_space_gt?: number | null;
-  /** @format int64 */
-  used_cache_space_gte?: number | null;
-  used_cache_space_in?: number[] | null;
-  /** @format int64 */
-  used_cache_space_lt?: number | null;
-  /** @format int64 */
-  used_cache_space_lte?: number | null;
-  /** @format int64 */
-  used_cache_space_not?: number | null;
-  used_cache_space_not_in?: number[] | null;
-  /** @format double */
-  used_cpu_hz?: number | null;
-  /** @format double */
-  used_cpu_hz_gt?: number | null;
-  /** @format double */
-  used_cpu_hz_gte?: number | null;
-  used_cpu_hz_in?: number[] | null;
-  /** @format double */
-  used_cpu_hz_lt?: number | null;
-  /** @format double */
-  used_cpu_hz_lte?: number | null;
-  /** @format double */
-  used_cpu_hz_not?: number | null;
-  used_cpu_hz_not_in?: number[] | null;
-  /** @format int64 */
-  used_data_space?: number | null;
-  /** @format int64 */
-  used_data_space_gt?: number | null;
-  /** @format int64 */
-  used_data_space_gte?: number | null;
-  used_data_space_in?: number[] | null;
-  /** @format int64 */
-  used_data_space_lt?: number | null;
-  /** @format int64 */
-  used_data_space_lte?: number | null;
-  /** @format int64 */
-  used_data_space_not?: number | null;
-  used_data_space_not_in?: number[] | null;
-  /** @format double */
-  used_memory_bytes?: number | null;
-  /** @format double */
-  used_memory_bytes_gt?: number | null;
-  /** @format double */
-  used_memory_bytes_gte?: number | null;
-  used_memory_bytes_in?: number[] | null;
-  /** @format double */
-  used_memory_bytes_lt?: number | null;
-  /** @format double */
-  used_memory_bytes_lte?: number | null;
-  /** @format double */
-  used_memory_bytes_not?: number | null;
-  used_memory_bytes_not_in?: number[] | null;
-  /** @format int64 */
-  valid_cache_space?: number | null;
-  /** @format int64 */
-  valid_cache_space_gt?: number | null;
-  /** @format int64 */
-  valid_cache_space_gte?: number | null;
-  valid_cache_space_in?: number[] | null;
-  /** @format int64 */
-  valid_cache_space_lt?: number | null;
-  /** @format int64 */
-  valid_cache_space_lte?: number | null;
-  /** @format int64 */
-  valid_cache_space_not?: number | null;
-  valid_cache_space_not_in?: number[] | null;
-  /** @format int64 */
-  valid_free_cache_space?: number | null;
-  /** @format int64 */
-  valid_free_cache_space_gt?: number | null;
-  /** @format int64 */
-  valid_free_cache_space_gte?: number | null;
-  valid_free_cache_space_in?: number[] | null;
-  /** @format int64 */
-  valid_free_cache_space_lt?: number | null;
-  /** @format int64 */
-  valid_free_cache_space_lte?: number | null;
-  /** @format int64 */
-  valid_free_cache_space_not?: number | null;
-  valid_free_cache_space_not_in?: number[] | null;
-  /** @format int32 */
-  vm_num?: number | null;
-  /** @format int32 */
-  vm_num_gt?: number | null;
-  /** @format int32 */
-  vm_num_gte?: number | null;
-  vm_num_in?: number[] | null;
-  /** @format int32 */
-  vm_num_lt?: number | null;
-  /** @format int32 */
-  vm_num_lte?: number | null;
-  /** @format int32 */
-  vm_num_not?: number | null;
-  vm_num_not_in?: number[] | null;
-  vmotion_ip?: string | null;
-  vmotion_ip_contains?: string | null;
-  vmotion_ip_ends_with?: string | null;
-  vmotion_ip_gt?: string | null;
-  vmotion_ip_gte?: string | null;
-  vmotion_ip_in?: string[] | null;
-  vmotion_ip_lt?: string | null;
-  vmotion_ip_lte?: string | null;
-  vmotion_ip_not?: string | null;
-  vmotion_ip_not_contains?: string | null;
-  vmotion_ip_not_ends_with?: string | null;
-  vmotion_ip_not_in?: string[] | null;
-  vmotion_ip_not_starts_with?: string | null;
-  vmotion_ip_starts_with?: string | null;
-  vms_every?: VmWhereInput | null;
-  vms_none?: VmWhereInput | null;
-  vms_some?: VmWhereInput | null;
-  with_faster_ssd_as_cache?: boolean | null;
-  with_faster_ssd_as_cache_not?: boolean | null;
-}
-
-export enum HostConnectStatus {
-  CONNECTED = "CONNECTED",
-  DISCONNECTED = "DISCONNECTED",
-}
-
-export enum CpuFanSpeedUnit {
-  PERCENT = "PERCENT",
-  RPM = "RPM",
-}
-
-export enum IommuStatus {
-  DISABLE = "DISABLE",
-  ENABLE = "ENABLE",
-  NEED_REBOOT = "NEED_REBOOT",
-}
-
-export enum HostMergedStatus {
-  DISCONNECTED = "DISCONNECTED",
-  HEALTHY = "HEALTHY",
-  INITIALIZING = "INITIALIZING",
-  UNUSUAL = "UNUSUAL",
-}
-
-export interface NicWhereInput {
-  AND?: NicWhereInput[] | null;
-  NOT?: NicWhereInput[] | null;
-  OR?: NicWhereInput[] | null;
-  driver?: string | null;
-  driver_contains?: string | null;
-  driver_ends_with?: string | null;
-  driver_gt?: string | null;
-  driver_gte?: string | null;
-  driver_in?: string[] | null;
-  driver_lt?: string | null;
-  driver_lte?: string | null;
-  driver_not?: string | null;
-  driver_not_contains?: string | null;
-  driver_not_ends_with?: string | null;
-  driver_not_in?: string[] | null;
-  driver_not_starts_with?: string | null;
-  driver_starts_with?: string | null;
-  driver_state?: NicDriverState | null;
-  driver_state_in?: NicDriverState[] | null;
-  driver_state_not?: NicDriverState | null;
-  driver_state_not_in?: NicDriverState[] | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  gateway_ip?: string | null;
-  gateway_ip_contains?: string | null;
-  gateway_ip_ends_with?: string | null;
-  gateway_ip_gt?: string | null;
-  gateway_ip_gte?: string | null;
-  gateway_ip_in?: string[] | null;
-  gateway_ip_lt?: string | null;
-  gateway_ip_lte?: string | null;
-  gateway_ip_not?: string | null;
-  gateway_ip_not_contains?: string | null;
-  gateway_ip_not_ends_with?: string | null;
-  gateway_ip_not_in?: string[] | null;
-  gateway_ip_not_starts_with?: string | null;
-  gateway_ip_starts_with?: string | null;
-  host?: HostWhereInput | null;
-  ibdev?: string | null;
-  ibdev_contains?: string | null;
-  ibdev_ends_with?: string | null;
-  ibdev_gt?: string | null;
-  ibdev_gte?: string | null;
-  ibdev_in?: string[] | null;
-  ibdev_lt?: string | null;
-  ibdev_lte?: string | null;
-  ibdev_not?: string | null;
-  ibdev_not_contains?: string | null;
-  ibdev_not_ends_with?: string | null;
-  ibdev_not_in?: string[] | null;
-  ibdev_not_starts_with?: string | null;
-  ibdev_starts_with?: string | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  iommu_status?: IommuStatus | null;
-  iommu_status_in?: IommuStatus[] | null;
-  iommu_status_not?: IommuStatus | null;
-  iommu_status_not_in?: IommuStatus[] | null;
-  ip_address?: string | null;
-  ip_address_contains?: string | null;
-  ip_address_ends_with?: string | null;
-  ip_address_gt?: string | null;
-  ip_address_gte?: string | null;
-  ip_address_in?: string[] | null;
-  ip_address_lt?: string | null;
-  ip_address_lte?: string | null;
-  ip_address_not?: string | null;
-  ip_address_not_contains?: string | null;
-  ip_address_not_ends_with?: string | null;
-  ip_address_not_in?: string[] | null;
-  ip_address_not_starts_with?: string | null;
-  ip_address_starts_with?: string | null;
-  is_sriov?: boolean | null;
-  is_sriov_not?: boolean | null;
-  labels_every?: LabelWhereInput | null;
-  labels_none?: LabelWhereInput | null;
-  labels_some?: LabelWhereInput | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  mac_address?: string | null;
-  mac_address_contains?: string | null;
-  mac_address_ends_with?: string | null;
-  mac_address_gt?: string | null;
-  mac_address_gte?: string | null;
-  mac_address_in?: string[] | null;
-  mac_address_lt?: string | null;
-  mac_address_lte?: string | null;
-  mac_address_not?: string | null;
-  mac_address_not_contains?: string | null;
-  mac_address_not_ends_with?: string | null;
-  mac_address_not_in?: string[] | null;
-  mac_address_not_starts_with?: string | null;
-  mac_address_starts_with?: string | null;
-  /** @format int32 */
-  max_vf_num?: number | null;
-  /** @format int32 */
-  max_vf_num_gt?: number | null;
-  /** @format int32 */
-  max_vf_num_gte?: number | null;
-  max_vf_num_in?: number[] | null;
-  /** @format int32 */
-  max_vf_num_lt?: number | null;
-  /** @format int32 */
-  max_vf_num_lte?: number | null;
-  /** @format int32 */
-  max_vf_num_not?: number | null;
-  max_vf_num_not_in?: number[] | null;
-  model?: string | null;
-  model_contains?: string | null;
-  model_ends_with?: string | null;
-  model_gt?: string | null;
-  model_gte?: string | null;
-  model_in?: string[] | null;
-  model_lt?: string | null;
-  model_lte?: string | null;
-  model_not?: string | null;
-  model_not_contains?: string | null;
-  model_not_ends_with?: string | null;
-  model_not_in?: string[] | null;
-  model_not_starts_with?: string | null;
-  model_starts_with?: string | null;
-  /** @format int32 */
-  mtu?: number | null;
-  /** @format int32 */
-  mtu_gt?: number | null;
-  /** @format int32 */
-  mtu_gte?: number | null;
-  mtu_in?: number[] | null;
-  /** @format int32 */
-  mtu_lt?: number | null;
-  /** @format int32 */
-  mtu_lte?: number | null;
-  /** @format int32 */
-  mtu_not?: number | null;
-  mtu_not_in?: number[] | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  nic_uuid?: string | null;
-  nic_uuid_contains?: string | null;
-  nic_uuid_ends_with?: string | null;
-  nic_uuid_gt?: string | null;
-  nic_uuid_gte?: string | null;
-  nic_uuid_in?: string[] | null;
-  nic_uuid_lt?: string | null;
-  nic_uuid_lte?: string | null;
-  nic_uuid_not?: string | null;
-  nic_uuid_not_contains?: string | null;
-  nic_uuid_not_ends_with?: string | null;
-  nic_uuid_not_in?: string[] | null;
-  nic_uuid_not_starts_with?: string | null;
-  nic_uuid_starts_with?: string | null;
-  physical?: boolean | null;
-  physical_not?: boolean | null;
-  rdma_enabled?: boolean | null;
-  rdma_enabled_not?: boolean | null;
-  running?: boolean | null;
-  running_not?: boolean | null;
-  /** @format int64 */
-  speed?: number | null;
-  /** @format int64 */
-  speed_gt?: number | null;
-  /** @format int64 */
-  speed_gte?: number | null;
-  speed_in?: number[] | null;
-  /** @format int64 */
-  speed_lt?: number | null;
-  /** @format int64 */
-  speed_lte?: number | null;
-  /** @format int64 */
-  speed_not?: number | null;
-  speed_not_in?: number[] | null;
-  subnet_mask?: string | null;
-  subnet_mask_contains?: string | null;
-  subnet_mask_ends_with?: string | null;
-  subnet_mask_gt?: string | null;
-  subnet_mask_gte?: string | null;
-  subnet_mask_in?: string[] | null;
-  subnet_mask_lt?: string | null;
-  subnet_mask_lte?: string | null;
-  subnet_mask_not?: string | null;
-  subnet_mask_not_contains?: string | null;
-  subnet_mask_not_ends_with?: string | null;
-  subnet_mask_not_in?: string[] | null;
-  subnet_mask_not_starts_with?: string | null;
-  subnet_mask_starts_with?: string | null;
-  /** @format int32 */
-  total_vf_num?: number | null;
-  /** @format int32 */
-  total_vf_num_gt?: number | null;
-  /** @format int32 */
-  total_vf_num_gte?: number | null;
-  total_vf_num_in?: number[] | null;
-  /** @format int32 */
-  total_vf_num_lt?: number | null;
-  /** @format int32 */
-  total_vf_num_lte?: number | null;
-  /** @format int32 */
-  total_vf_num_not?: number | null;
-  total_vf_num_not_in?: number[] | null;
-  type?: NetworkType | null;
-  type_in?: NetworkType[] | null;
-  type_not?: NetworkType | null;
-  type_not_in?: NetworkType[] | null;
-  up?: boolean | null;
-  up_not?: boolean | null;
-  /** @format int32 */
-  used_vf_num?: number | null;
-  /** @format int32 */
-  used_vf_num_gt?: number | null;
-  /** @format int32 */
-  used_vf_num_gte?: number | null;
-  used_vf_num_in?: number[] | null;
-  /** @format int32 */
-  used_vf_num_lt?: number | null;
-  /** @format int32 */
-  used_vf_num_lte?: number | null;
-  /** @format int32 */
-  used_vf_num_not?: number | null;
-  used_vf_num_not_in?: number[] | null;
-  user_usage?: NicUserUsage | null;
-  user_usage_in?: NicUserUsage[] | null;
-  user_usage_not?: NicUserUsage | null;
-  user_usage_not_in?: NicUserUsage[] | null;
-  vds?: VdsWhereInput | null;
-  vms_every?: VmWhereInput | null;
-  vms_none?: VmWhereInput | null;
-  vms_some?: VmWhereInput | null;
-}
-
-export enum NicDriverState {
-  NEED_REBOOT = "NEED_REBOOT",
-  NOT_READY = "NOT_READY",
-  NO_DRIVER = "NO_DRIVER",
-  READY = "READY",
-}
-
-export enum NetworkType {
-  ACCESS = "ACCESS",
-  MANAGEMENT = "MANAGEMENT",
-  MIGRATION = "MIGRATION",
-  STORAGE = "STORAGE",
-  STORAGE_ACCESS = "STORAGE_ACCESS",
-  VM = "VM",
-  VPC_SYS = "VPC_SYS",
-  VPC_VM = "VPC_VM",
-}
-
-export enum NicUserUsage {
-  DEFAULT = "DEFAULT",
-  PASS_THROUGH = "PASS_THROUGH",
-  SRIOV = "SRIOV",
-}
-
-export interface VdsWhereInput {
-  AND?: VdsWhereInput[] | null;
-  NOT?: VdsWhereInput[] | null;
-  OR?: VdsWhereInput[] | null;
-  bond_mode?: string | null;
-  bond_mode_contains?: string | null;
-  bond_mode_ends_with?: string | null;
-  bond_mode_gt?: string | null;
-  bond_mode_gte?: string | null;
-  bond_mode_in?: string[] | null;
-  bond_mode_lt?: string | null;
-  bond_mode_lte?: string | null;
-  bond_mode_not?: string | null;
-  bond_mode_not_contains?: string | null;
-  bond_mode_not_ends_with?: string | null;
-  bond_mode_not_in?: string[] | null;
-  bond_mode_not_starts_with?: string | null;
-  bond_mode_starts_with?: string | null;
-  cluster?: ClusterWhereInput | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  everoute_cluster?: EverouteClusterWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  internal?: boolean | null;
-  internal_not?: boolean | null;
-  labels_every?: LabelWhereInput | null;
-  labels_none?: LabelWhereInput | null;
-  labels_some?: LabelWhereInput | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  nics_every?: NicWhereInput | null;
-  nics_none?: NicWhereInput | null;
-  nics_some?: NicWhereInput | null;
-  ovsbr_name?: string | null;
-  ovsbr_name_contains?: string | null;
-  ovsbr_name_ends_with?: string | null;
-  ovsbr_name_gt?: string | null;
-  ovsbr_name_gte?: string | null;
-  ovsbr_name_in?: string[] | null;
-  ovsbr_name_lt?: string | null;
-  ovsbr_name_lte?: string | null;
-  ovsbr_name_not?: string | null;
-  ovsbr_name_not_contains?: string | null;
-  ovsbr_name_not_ends_with?: string | null;
-  ovsbr_name_not_in?: string[] | null;
-  ovsbr_name_not_starts_with?: string | null;
-  ovsbr_name_starts_with?: string | null;
-  type?: NetworkType | null;
-  type_in?: NetworkType[] | null;
-  type_not?: NetworkType | null;
-  type_not_in?: NetworkType[] | null;
-  vlans_every?: VlanWhereInput | null;
-  vlans_none?: VlanWhereInput | null;
-  /** @format int32 */
-  vlans_num?: number | null;
-  /** @format int32 */
-  vlans_num_gt?: number | null;
-  /** @format int32 */
-  vlans_num_gte?: number | null;
-  vlans_num_in?: number[] | null;
-  /** @format int32 */
-  vlans_num_lt?: number | null;
-  /** @format int32 */
-  vlans_num_lte?: number | null;
-  /** @format int32 */
-  vlans_num_not?: number | null;
-  vlans_num_not_in?: number[] | null;
-  vlans_some?: VlanWhereInput | null;
-  work_mode?: string | null;
-  work_mode_contains?: string | null;
-  work_mode_ends_with?: string | null;
-  work_mode_gt?: string | null;
-  work_mode_gte?: string | null;
-  work_mode_in?: string[] | null;
-  work_mode_lt?: string | null;
-  work_mode_lte?: string | null;
-  work_mode_not?: string | null;
-  work_mode_not_contains?: string | null;
-  work_mode_not_ends_with?: string | null;
-  work_mode_not_in?: string[] | null;
-  work_mode_not_starts_with?: string | null;
-  work_mode_starts_with?: string | null;
-}
-
-export interface EverouteClusterWhereInput {
-  AND?: EverouteClusterWhereInput[] | null;
-  NOT?: EverouteClusterWhereInput[] | null;
-  OR?: EverouteClusterWhereInput[] | null;
-  agent_elf_clusters_every?: ClusterWhereInput | null;
-  agent_elf_clusters_none?: ClusterWhereInput | null;
-  agent_elf_clusters_some?: ClusterWhereInput | null;
-  agent_elf_vdses_every?: VdsWhereInput | null;
-  agent_elf_vdses_none?: VdsWhereInput | null;
-  agent_elf_vdses_some?: VdsWhereInput | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  global_default_action?: GlobalPolicyAction | null;
-  global_default_action_in?: GlobalPolicyAction[] | null;
-  global_default_action_not?: GlobalPolicyAction | null;
-  global_default_action_not_in?: GlobalPolicyAction[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  installed?: boolean | null;
-  installed_not?: boolean | null;
-  load_balancer_service?: LoadBalancerServiceWhereInput | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  phase?: EverouteClusterPhase | null;
-  phase_in?: EverouteClusterPhase[] | null;
-  phase_not?: EverouteClusterPhase | null;
-  phase_not_in?: EverouteClusterPhase[] | null;
-  version?: string | null;
-  version_contains?: string | null;
-  version_ends_with?: string | null;
-  version_gt?: string | null;
-  version_gte?: string | null;
-  version_in?: string[] | null;
-  version_lt?: string | null;
-  version_lte?: string | null;
-  version_not?: string | null;
-  version_not_contains?: string | null;
-  version_not_ends_with?: string | null;
-  version_not_in?: string[] | null;
-  version_not_starts_with?: string | null;
-  version_starts_with?: string | null;
-  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
-}
-
-export enum GlobalPolicyAction {
-  ALLOW = "ALLOW",
-  DROP = "DROP",
-}
-
-export interface LoadBalancerServiceWhereInput {
-  AND?: LoadBalancerServiceWhereInput[] | null;
-  NOT?: LoadBalancerServiceWhereInput[] | null;
-  OR?: LoadBalancerServiceWhereInput[] | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  everoute_cluster?: EverouteClusterWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  phase?: EverouteClusterPhase | null;
-  phase_in?: EverouteClusterPhase[] | null;
-  phase_not?: EverouteClusterPhase | null;
-  phase_not_in?: EverouteClusterPhase[] | null;
-  vm_instances_every?: VmWhereInput | null;
-  vm_instances_none?: VmWhereInput | null;
-  vm_instances_some?: VmWhereInput | null;
-}
-
-export enum EverouteClusterPhase {
-  Associated = "Associated",
-  Failed = "Failed",
-  Init = "Init",
-  Running = "Running",
-  Terminating = "Terminating",
-  Updating = "Updating",
-  Upgrading = "Upgrading",
-}
-
-export interface VlanWhereInput {
-  AND?: VlanWhereInput[] | null;
-  NOT?: VlanWhereInput[] | null;
-  OR?: VlanWhereInput[] | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  gateway_ip?: string | null;
-  gateway_ip_contains?: string | null;
-  gateway_ip_ends_with?: string | null;
-  gateway_ip_gt?: string | null;
-  gateway_ip_gte?: string | null;
-  gateway_ip_in?: string[] | null;
-  gateway_ip_lt?: string | null;
-  gateway_ip_lte?: string | null;
-  gateway_ip_not?: string | null;
-  gateway_ip_not_contains?: string | null;
-  gateway_ip_not_ends_with?: string | null;
-  gateway_ip_not_in?: string[] | null;
-  gateway_ip_not_starts_with?: string | null;
-  gateway_ip_starts_with?: string | null;
-  gateway_subnetmask?: string | null;
-  gateway_subnetmask_contains?: string | null;
-  gateway_subnetmask_ends_with?: string | null;
-  gateway_subnetmask_gt?: string | null;
-  gateway_subnetmask_gte?: string | null;
-  gateway_subnetmask_in?: string[] | null;
-  gateway_subnetmask_lt?: string | null;
-  gateway_subnetmask_lte?: string | null;
-  gateway_subnetmask_not?: string | null;
-  gateway_subnetmask_not_contains?: string | null;
-  gateway_subnetmask_not_ends_with?: string | null;
-  gateway_subnetmask_not_in?: string[] | null;
-  gateway_subnetmask_not_starts_with?: string | null;
-  gateway_subnetmask_starts_with?: string | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  labels_every?: LabelWhereInput | null;
-  labels_none?: LabelWhereInput | null;
-  labels_some?: LabelWhereInput | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  mode_type?: VlanModeType | null;
-  mode_type_in?: VlanModeType[] | null;
-  mode_type_not?: VlanModeType | null;
-  mode_type_not_in?: VlanModeType[] | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  /** @format double */
-  qos_burst?: number | null;
-  /** @format double */
-  qos_burst_gt?: number | null;
-  /** @format double */
-  qos_burst_gte?: number | null;
-  qos_burst_in?: number[] | null;
-  /** @format double */
-  qos_burst_lt?: number | null;
-  /** @format double */
-  qos_burst_lte?: number | null;
-  /** @format double */
-  qos_burst_not?: number | null;
-  qos_burst_not_in?: number[] | null;
-  /** @format double */
-  qos_max_bandwidth?: number | null;
-  /** @format double */
-  qos_max_bandwidth_gt?: number | null;
-  /** @format double */
-  qos_max_bandwidth_gte?: number | null;
-  qos_max_bandwidth_in?: number[] | null;
-  /** @format double */
-  qos_max_bandwidth_lt?: number | null;
-  /** @format double */
-  qos_max_bandwidth_lte?: number | null;
-  /** @format double */
-  qos_max_bandwidth_not?: number | null;
-  qos_max_bandwidth_not_in?: number[] | null;
-  /** @format double */
-  qos_min_bandwidth?: number | null;
-  /** @format double */
-  qos_min_bandwidth_gt?: number | null;
-  /** @format double */
-  qos_min_bandwidth_gte?: number | null;
-  qos_min_bandwidth_in?: number[] | null;
-  /** @format double */
-  qos_min_bandwidth_lt?: number | null;
-  /** @format double */
-  qos_min_bandwidth_lte?: number | null;
-  /** @format double */
-  qos_min_bandwidth_not?: number | null;
-  qos_min_bandwidth_not_in?: number[] | null;
-  /** @format int32 */
-  qos_priority?: number | null;
-  /** @format int32 */
-  qos_priority_gt?: number | null;
-  /** @format int32 */
-  qos_priority_gte?: number | null;
-  qos_priority_in?: number[] | null;
-  /** @format int32 */
-  qos_priority_lt?: number | null;
-  /** @format int32 */
-  qos_priority_lte?: number | null;
-  /** @format int32 */
-  qos_priority_not?: number | null;
-  qos_priority_not_in?: number[] | null;
-  subnetmask?: string | null;
-  subnetmask_contains?: string | null;
-  subnetmask_ends_with?: string | null;
-  subnetmask_gt?: string | null;
-  subnetmask_gte?: string | null;
-  subnetmask_in?: string[] | null;
-  subnetmask_lt?: string | null;
-  subnetmask_lte?: string | null;
-  subnetmask_not?: string | null;
-  subnetmask_not_contains?: string | null;
-  subnetmask_not_ends_with?: string | null;
-  subnetmask_not_in?: string[] | null;
-  subnetmask_not_starts_with?: string | null;
-  subnetmask_starts_with?: string | null;
-  type?: NetworkType | null;
-  type_in?: NetworkType[] | null;
-  type_not?: NetworkType | null;
-  type_not_in?: NetworkType[] | null;
-  vds?: VdsWhereInput | null;
-  /** @format int32 */
-  vlan_id?: number | null;
-  /** @format int32 */
-  vlan_id_gt?: number | null;
-  /** @format int32 */
-  vlan_id_gte?: number | null;
-  vlan_id_in?: number[] | null;
-  /** @format int32 */
-  vlan_id_lt?: number | null;
-  /** @format int32 */
-  vlan_id_lte?: number | null;
-  /** @format int32 */
-  vlan_id_not?: number | null;
-  vlan_id_not_in?: number[] | null;
-  vm_nics_every?: VmNicWhereInput | null;
-  vm_nics_none?: VmNicWhereInput | null;
-  vm_nics_some?: VmNicWhereInput | null;
-}
-
-export enum VlanModeType {
-  GENEVE = "GENEVE",
-  VLAN_ACCESS = "VLAN_ACCESS",
-  VLAN_TRUNK = "VLAN_TRUNK",
-  VXLAN = "VXLAN",
-}
-
-export interface VmNicWhereInput {
-  AND?: VmNicWhereInput[] | null;
-  NOT?: VmNicWhereInput[] | null;
-  OR?: VmNicWhereInput[] | null;
-  /** @format double */
-  egress_rate_limit_burst_in_bit?: number | null;
-  /** @format double */
-  egress_rate_limit_burst_in_bit_gt?: number | null;
-  /** @format double */
-  egress_rate_limit_burst_in_bit_gte?: number | null;
-  egress_rate_limit_burst_in_bit_in?: number[] | null;
-  /** @format double */
-  egress_rate_limit_burst_in_bit_lt?: number | null;
-  /** @format double */
-  egress_rate_limit_burst_in_bit_lte?: number | null;
-  /** @format double */
-  egress_rate_limit_burst_in_bit_not?: number | null;
-  egress_rate_limit_burst_in_bit_not_in?: number[] | null;
-  egress_rate_limit_enabled?: boolean | null;
-  egress_rate_limit_enabled_not?: boolean | null;
-  /** @format double */
-  egress_rate_limit_max_rate_in_bitps?: number | null;
-  /** @format double */
-  egress_rate_limit_max_rate_in_bitps_gt?: number | null;
-  /** @format double */
-  egress_rate_limit_max_rate_in_bitps_gte?: number | null;
-  egress_rate_limit_max_rate_in_bitps_in?: number[] | null;
-  /** @format double */
-  egress_rate_limit_max_rate_in_bitps_lt?: number | null;
-  /** @format double */
-  egress_rate_limit_max_rate_in_bitps_lte?: number | null;
-  /** @format double */
-  egress_rate_limit_max_rate_in_bitps_not?: number | null;
-  egress_rate_limit_max_rate_in_bitps_not_in?: number[] | null;
-  enabled?: boolean | null;
-  enabled_not?: boolean | null;
-  gateway?: string | null;
-  gateway_contains?: string | null;
-  gateway_ends_with?: string | null;
-  gateway_gt?: string | null;
-  gateway_gte?: string | null;
-  gateway_in?: string[] | null;
-  gateway_lt?: string | null;
-  gateway_lte?: string | null;
-  gateway_not?: string | null;
-  gateway_not_contains?: string | null;
-  gateway_not_ends_with?: string | null;
-  gateway_not_in?: string[] | null;
-  gateway_not_starts_with?: string | null;
-  gateway_starts_with?: string | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  /** @format double */
-  ingress_rate_limit_burst_in_bit?: number | null;
-  /** @format double */
-  ingress_rate_limit_burst_in_bit_gt?: number | null;
-  /** @format double */
-  ingress_rate_limit_burst_in_bit_gte?: number | null;
-  ingress_rate_limit_burst_in_bit_in?: number[] | null;
-  /** @format double */
-  ingress_rate_limit_burst_in_bit_lt?: number | null;
-  /** @format double */
-  ingress_rate_limit_burst_in_bit_lte?: number | null;
-  /** @format double */
-  ingress_rate_limit_burst_in_bit_not?: number | null;
-  ingress_rate_limit_burst_in_bit_not_in?: number[] | null;
-  ingress_rate_limit_enabled?: boolean | null;
-  ingress_rate_limit_enabled_not?: boolean | null;
-  /** @format double */
-  ingress_rate_limit_max_rate_in_bitps?: number | null;
-  /** @format double */
-  ingress_rate_limit_max_rate_in_bitps_gt?: number | null;
-  /** @format double */
-  ingress_rate_limit_max_rate_in_bitps_gte?: number | null;
-  ingress_rate_limit_max_rate_in_bitps_in?: number[] | null;
-  /** @format double */
-  ingress_rate_limit_max_rate_in_bitps_lt?: number | null;
-  /** @format double */
-  ingress_rate_limit_max_rate_in_bitps_lte?: number | null;
-  /** @format double */
-  ingress_rate_limit_max_rate_in_bitps_not?: number | null;
-  ingress_rate_limit_max_rate_in_bitps_not_in?: number[] | null;
-  interface_id?: string | null;
-  interface_id_contains?: string | null;
-  interface_id_ends_with?: string | null;
-  interface_id_gt?: string | null;
-  interface_id_gte?: string | null;
-  interface_id_in?: string[] | null;
-  interface_id_lt?: string | null;
-  interface_id_lte?: string | null;
-  interface_id_not?: string | null;
-  interface_id_not_contains?: string | null;
-  interface_id_not_ends_with?: string | null;
-  interface_id_not_in?: string[] | null;
-  interface_id_not_starts_with?: string | null;
-  interface_id_starts_with?: string | null;
-  ip_address?: string | null;
-  ip_address_contains?: string | null;
-  ip_address_ends_with?: string | null;
-  ip_address_gt?: string | null;
-  ip_address_gte?: string | null;
-  ip_address_in?: string[] | null;
-  ip_address_lt?: string | null;
-  ip_address_lte?: string | null;
-  ip_address_not?: string | null;
-  ip_address_not_contains?: string | null;
-  ip_address_not_ends_with?: string | null;
-  ip_address_not_in?: string[] | null;
-  ip_address_not_starts_with?: string | null;
-  ip_address_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  mac_address?: string | null;
-  mac_address_contains?: string | null;
-  mac_address_ends_with?: string | null;
-  mac_address_gt?: string | null;
-  mac_address_gte?: string | null;
-  mac_address_in?: string[] | null;
-  mac_address_lt?: string | null;
-  mac_address_lte?: string | null;
-  mac_address_not?: string | null;
-  mac_address_not_contains?: string | null;
-  mac_address_not_ends_with?: string | null;
-  mac_address_not_in?: string[] | null;
-  mac_address_not_starts_with?: string | null;
-  mac_address_starts_with?: string | null;
-  mirror?: boolean | null;
-  mirror_not?: boolean | null;
-  model?: VmNicModel | null;
-  model_in?: VmNicModel[] | null;
-  model_not?: VmNicModel | null;
-  model_not_in?: VmNicModel[] | null;
-  nic?: NicWhereInput | null;
-  /** @format int32 */
-  order?: number | null;
-  /** @format int32 */
-  order_gt?: number | null;
-  /** @format int32 */
-  order_gte?: number | null;
-  order_in?: number[] | null;
-  /** @format int32 */
-  order_lt?: number | null;
-  /** @format int32 */
-  order_lte?: number | null;
-  /** @format int32 */
-  order_not?: number | null;
-  order_not_in?: number[] | null;
-  subnet_mask?: string | null;
-  subnet_mask_contains?: string | null;
-  subnet_mask_ends_with?: string | null;
-  subnet_mask_gt?: string | null;
-  subnet_mask_gte?: string | null;
-  subnet_mask_in?: string[] | null;
-  subnet_mask_lt?: string | null;
-  subnet_mask_lte?: string | null;
-  subnet_mask_not?: string | null;
-  subnet_mask_not_contains?: string | null;
-  subnet_mask_not_ends_with?: string | null;
-  subnet_mask_not_in?: string[] | null;
-  subnet_mask_not_starts_with?: string | null;
-  subnet_mask_starts_with?: string | null;
-  type?: VmNicType | null;
-  type_in?: VmNicType[] | null;
-  type_not?: VmNicType | null;
-  type_not_in?: VmNicType[] | null;
-  vlan?: VlanWhereInput | null;
-  vm?: VmWhereInput | null;
-}
-
-export enum VmNicModel {
-  E1000 = "E1000",
-  SRIOV = "SRIOV",
-  VIRTIO = "VIRTIO",
-}
-
-export enum VmNicType {
-  VLAN = "VLAN",
-  VPC = "VPC",
-}
-
-export interface VirtualPrivateCloudServiceWhereInput {
-  AND?: VirtualPrivateCloudServiceWhereInput[] | null;
-  NOT?: VirtualPrivateCloudServiceWhereInput[] | null;
-  OR?: VirtualPrivateCloudServiceWhereInput[] | null;
-  cluster_bindings_every?: VirtualPrivateCloudClusterBindingWhereInput | null;
-  cluster_bindings_none?: VirtualPrivateCloudClusterBindingWhereInput | null;
-  cluster_bindings_some?: VirtualPrivateCloudClusterBindingWhereInput | null;
-  edge_gateway_groups_every?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
-  edge_gateway_groups_none?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
-  edge_gateway_groups_some?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
-  edge_gateways_every?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
-  edge_gateways_none?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
-  edge_gateways_some?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  everoute_cluster?: EverouteClusterWhereInput | null;
-  external_subnets_every?: VirtualPrivateCloudExternalSubnetWhereInput | null;
-  external_subnets_none?: VirtualPrivateCloudExternalSubnetWhereInput | null;
-  external_subnets_some?: VirtualPrivateCloudExternalSubnetWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  internal_cidr?: string | null;
-  internal_cidr_contains?: string | null;
-  internal_cidr_ends_with?: string | null;
-  internal_cidr_gt?: string | null;
-  internal_cidr_gte?: string | null;
-  internal_cidr_in?: string[] | null;
-  internal_cidr_lt?: string | null;
-  internal_cidr_lte?: string | null;
-  internal_cidr_not?: string | null;
-  internal_cidr_not_contains?: string | null;
-  internal_cidr_not_ends_with?: string | null;
-  internal_cidr_not_in?: string[] | null;
-  internal_cidr_not_starts_with?: string | null;
-  internal_cidr_starts_with?: string | null;
-  phase?: EverouteClusterPhase | null;
-  phase_in?: EverouteClusterPhase[] | null;
-  phase_not?: EverouteClusterPhase | null;
-  phase_not_in?: EverouteClusterPhase[] | null;
-  vpcs_every?: VirtualPrivateCloudWhereInput | null;
-  vpcs_none?: VirtualPrivateCloudWhereInput | null;
-  vpcs_some?: VirtualPrivateCloudWhereInput | null;
-}
-
-export interface VirtualPrivateCloudClusterBindingWhereInput {
-  AND?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
-  NOT?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
-  OR?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
-  cluster?: ClusterWhereInput | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  /** @format int32 */
-  mtu?: number | null;
-  /** @format int32 */
-  mtu_gt?: number | null;
-  /** @format int32 */
-  mtu_gte?: number | null;
-  mtu_in?: number[] | null;
-  /** @format int32 */
-  mtu_lt?: number | null;
-  /** @format int32 */
-  mtu_lte?: number | null;
-  /** @format int32 */
-  mtu_not?: number | null;
-  mtu_not_in?: number[] | null;
-  vds?: VdsWhereInput | null;
-  /** @format int32 */
-  vlan_id?: number | null;
-  /** @format int32 */
-  vlan_id_gt?: number | null;
-  /** @format int32 */
-  vlan_id_gte?: number | null;
-  vlan_id_in?: number[] | null;
-  /** @format int32 */
-  vlan_id_lt?: number | null;
-  /** @format int32 */
-  vlan_id_lte?: number | null;
-  /** @format int32 */
-  vlan_id_not?: number | null;
-  vlan_id_not_in?: number[] | null;
-  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
-}
-
-export interface VirtualPrivateCloudEdgeGatewayGroupWhereInput {
-  AND?: VirtualPrivateCloudEdgeGatewayGroupWhereInput[] | null;
-  NOT?: VirtualPrivateCloudEdgeGatewayGroupWhereInput[] | null;
-  OR?: VirtualPrivateCloudEdgeGatewayGroupWhereInput[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  edge_gateways_every?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
-  edge_gateways_none?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
-  edge_gateways_some?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  primary_edge_gateway_id?: string | null;
-  primary_edge_gateway_id_contains?: string | null;
-  primary_edge_gateway_id_ends_with?: string | null;
-  primary_edge_gateway_id_gt?: string | null;
-  primary_edge_gateway_id_gte?: string | null;
-  primary_edge_gateway_id_in?: string[] | null;
-  primary_edge_gateway_id_lt?: string | null;
-  primary_edge_gateway_id_lte?: string | null;
-  primary_edge_gateway_id_not?: string | null;
-  primary_edge_gateway_id_not_contains?: string | null;
-  primary_edge_gateway_id_not_ends_with?: string | null;
-  primary_edge_gateway_id_not_in?: string[] | null;
-  primary_edge_gateway_id_not_starts_with?: string | null;
-  primary_edge_gateway_id_starts_with?: string | null;
-}
-
-export interface VirtualPrivateCloudEdgeGatewayWhereInput {
-  AND?: VirtualPrivateCloudEdgeGatewayWhereInput[] | null;
-  NOT?: VirtualPrivateCloudEdgeGatewayWhereInput[] | null;
-  OR?: VirtualPrivateCloudEdgeGatewayWhereInput[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  vdses_every?: VdsWhereInput | null;
-  vdses_none?: VdsWhereInput | null;
-  vdses_some?: VdsWhereInput | null;
-}
-
-export interface VirtualPrivateCloudExternalSubnetWhereInput {
-  AND?: VirtualPrivateCloudExternalSubnetWhereInput[] | null;
-  NOT?: VirtualPrivateCloudExternalSubnetWhereInput[] | null;
-  OR?: VirtualPrivateCloudExternalSubnetWhereInput[] | null;
-  cidr?: string | null;
-  cidr_contains?: string | null;
-  cidr_ends_with?: string | null;
-  cidr_gt?: string | null;
-  cidr_gte?: string | null;
-  cidr_in?: string[] | null;
-  cidr_lt?: string | null;
-  cidr_lte?: string | null;
-  cidr_not?: string | null;
-  cidr_not_contains?: string | null;
-  cidr_not_ends_with?: string | null;
-  cidr_not_in?: string[] | null;
-  cidr_not_starts_with?: string | null;
-  cidr_starts_with?: string | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  edge_gateway?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  exclusive?: boolean | null;
-  exclusive_not?: boolean | null;
-  floating_ip_cidr?: string | null;
-  floating_ip_cidr_contains?: string | null;
-  floating_ip_cidr_ends_with?: string | null;
-  floating_ip_cidr_gt?: string | null;
-  floating_ip_cidr_gte?: string | null;
-  floating_ip_cidr_in?: string[] | null;
-  floating_ip_cidr_lt?: string | null;
-  floating_ip_cidr_lte?: string | null;
-  floating_ip_cidr_not?: string | null;
-  floating_ip_cidr_not_contains?: string | null;
-  floating_ip_cidr_not_ends_with?: string | null;
-  floating_ip_cidr_not_in?: string[] | null;
-  floating_ip_cidr_not_starts_with?: string | null;
-  floating_ip_cidr_starts_with?: string | null;
-  floating_ips_every?: VirtualPrivateCloudFloatingIpWhereInput | null;
-  floating_ips_none?: VirtualPrivateCloudFloatingIpWhereInput | null;
-  floating_ips_some?: VirtualPrivateCloudFloatingIpWhereInput | null;
-  gateway?: string | null;
-  gateway_contains?: string | null;
-  gateway_ends_with?: string | null;
-  gateway_gt?: string | null;
-  gateway_gte?: string | null;
-  gateway_in?: string[] | null;
-  gateway_lt?: string | null;
-  gateway_lte?: string | null;
-  gateway_not?: string | null;
-  gateway_not_contains?: string | null;
-  gateway_not_ends_with?: string | null;
-  gateway_not_in?: string[] | null;
-  gateway_not_starts_with?: string | null;
-  gateway_starts_with?: string | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  nat_gateway_cidr?: string | null;
-  nat_gateway_cidr_contains?: string | null;
-  nat_gateway_cidr_ends_with?: string | null;
-  nat_gateway_cidr_gt?: string | null;
-  nat_gateway_cidr_gte?: string | null;
-  nat_gateway_cidr_in?: string[] | null;
-  nat_gateway_cidr_lt?: string | null;
-  nat_gateway_cidr_lte?: string | null;
-  nat_gateway_cidr_not?: string | null;
-  nat_gateway_cidr_not_contains?: string | null;
-  nat_gateway_cidr_not_ends_with?: string | null;
-  nat_gateway_cidr_not_in?: string[] | null;
-  nat_gateway_cidr_not_starts_with?: string | null;
-  nat_gateway_cidr_starts_with?: string | null;
-  nat_gateways_every?: VirtualPrivateCloudNatGatewayWhereInput | null;
-  nat_gateways_none?: VirtualPrivateCloudNatGatewayWhereInput | null;
-  nat_gateways_some?: VirtualPrivateCloudNatGatewayWhereInput | null;
-  router_gateway_cidr?: string | null;
-  router_gateway_cidr_contains?: string | null;
-  router_gateway_cidr_ends_with?: string | null;
-  router_gateway_cidr_gt?: string | null;
-  router_gateway_cidr_gte?: string | null;
-  router_gateway_cidr_in?: string[] | null;
-  router_gateway_cidr_lt?: string | null;
-  router_gateway_cidr_lte?: string | null;
-  router_gateway_cidr_not?: string | null;
-  router_gateway_cidr_not_contains?: string | null;
-  router_gateway_cidr_not_ends_with?: string | null;
-  router_gateway_cidr_not_in?: string[] | null;
-  router_gateway_cidr_not_starts_with?: string | null;
-  router_gateway_cidr_starts_with?: string | null;
-  router_gateways_every?: VirtualPrivateCloudRouterGatewayWhereInput | null;
-  router_gateways_none?: VirtualPrivateCloudRouterGatewayWhereInput | null;
-  router_gateways_some?: VirtualPrivateCloudRouterGatewayWhereInput | null;
-  vlan?: VlanWhereInput | null;
-  vpc?: VirtualPrivateCloudWhereInput | null;
-}
-
-export interface VirtualPrivateCloudFloatingIpWhereInput {
-  AND?: VirtualPrivateCloudFloatingIpWhereInput[] | null;
-  NOT?: VirtualPrivateCloudFloatingIpWhereInput[] | null;
-  OR?: VirtualPrivateCloudFloatingIpWhereInput[] | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  external_ip?: string | null;
-  external_ip_contains?: string | null;
-  external_ip_ends_with?: string | null;
-  external_ip_gt?: string | null;
-  external_ip_gte?: string | null;
-  external_ip_in?: string[] | null;
-  external_ip_lt?: string | null;
-  external_ip_lte?: string | null;
-  external_ip_not?: string | null;
-  external_ip_not_contains?: string | null;
-  external_ip_not_ends_with?: string | null;
-  external_ip_not_in?: string[] | null;
-  external_ip_not_starts_with?: string | null;
-  external_ip_starts_with?: string | null;
-  external_subnet?: VirtualPrivateCloudExternalSubnetWhereInput | null;
-  external_subnet_group?: VirtualPrivateCloudExternalSubnetGroupWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  vpc?: VirtualPrivateCloudWhereInput | null;
-}
-
-export interface VirtualPrivateCloudExternalSubnetGroupWhereInput {
-  AND?: VirtualPrivateCloudExternalSubnetGroupWhereInput[] | null;
-  NOT?: VirtualPrivateCloudExternalSubnetGroupWhereInput[] | null;
-  OR?: VirtualPrivateCloudExternalSubnetGroupWhereInput[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  edge_gateway_group?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  exclusive?: boolean | null;
-  exclusive_not?: boolean | null;
-  floating_ips_every?: VirtualPrivateCloudFloatingIpWhereInput | null;
-  floating_ips_none?: VirtualPrivateCloudFloatingIpWhereInput | null;
-  floating_ips_some?: VirtualPrivateCloudFloatingIpWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  nat_gateways_every?: VirtualPrivateCloudNatGatewayWhereInput | null;
-  nat_gateways_none?: VirtualPrivateCloudNatGatewayWhereInput | null;
-  nat_gateways_some?: VirtualPrivateCloudNatGatewayWhereInput | null;
-  router_gateways_every?: VirtualPrivateCloudRouterGatewayWhereInput | null;
-  router_gateways_none?: VirtualPrivateCloudRouterGatewayWhereInput | null;
-  router_gateways_some?: VirtualPrivateCloudRouterGatewayWhereInput | null;
-  shared_in_edge_gateway_group?: boolean | null;
-  shared_in_edge_gateway_group_not?: boolean | null;
-  vpc?: VirtualPrivateCloudWhereInput | null;
-}
-
-export interface VirtualPrivateCloudNatGatewayWhereInput {
-  AND?: VirtualPrivateCloudNatGatewayWhereInput[] | null;
-  NOT?: VirtualPrivateCloudNatGatewayWhereInput[] | null;
-  OR?: VirtualPrivateCloudNatGatewayWhereInput[] | null;
-  enable_dnat?: boolean | null;
-  enable_dnat_not?: boolean | null;
-  enable_snat?: boolean | null;
-  enable_snat_not?: boolean | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  external_ip?: string | null;
-  external_ip_contains?: string | null;
-  external_ip_ends_with?: string | null;
-  external_ip_gt?: string | null;
-  external_ip_gte?: string | null;
-  external_ip_in?: string[] | null;
-  external_ip_lt?: string | null;
-  external_ip_lte?: string | null;
-  external_ip_not?: string | null;
-  external_ip_not_contains?: string | null;
-  external_ip_not_ends_with?: string | null;
-  external_ip_not_in?: string[] | null;
-  external_ip_not_starts_with?: string | null;
-  external_ip_starts_with?: string | null;
-  external_subnet?: VirtualPrivateCloudExternalSubnetWhereInput | null;
-  external_subnet_group?: VirtualPrivateCloudExternalSubnetGroupWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  vpc?: VirtualPrivateCloudWhereInput | null;
-}
-
-export interface VirtualPrivateCloudWhereInput {
-  AND?: VirtualPrivateCloudWhereInput[] | null;
-  NOT?: VirtualPrivateCloudWhereInput[] | null;
-  OR?: VirtualPrivateCloudWhereInput[] | null;
-  /** @format int32 */
-  associate_external_subnet_num?: number | null;
-  /** @format int32 */
-  associate_external_subnet_num_gt?: number | null;
-  /** @format int32 */
-  associate_external_subnet_num_gte?: number | null;
-  associate_external_subnet_num_in?: number[] | null;
-  /** @format int32 */
-  associate_external_subnet_num_lt?: number | null;
-  /** @format int32 */
-  associate_external_subnet_num_lte?: number | null;
-  /** @format int32 */
-  associate_external_subnet_num_not?: number | null;
-  associate_external_subnet_num_not_in?: number[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  /** @format int32 */
-  mtu?: number | null;
-  /** @format int32 */
-  mtu_gt?: number | null;
-  /** @format int32 */
-  mtu_gte?: number | null;
-  mtu_in?: number[] | null;
-  /** @format int32 */
-  mtu_lt?: number | null;
-  /** @format int32 */
-  mtu_lte?: number | null;
-  /** @format int32 */
-  mtu_not?: number | null;
-  mtu_not_in?: number[] | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  route_tables_every?: VirtualPrivateCloudRouteTableWhereInput | null;
-  route_tables_none?: VirtualPrivateCloudRouteTableWhereInput | null;
-  route_tables_some?: VirtualPrivateCloudRouteTableWhereInput | null;
-  security_groups_every?: VirtualPrivateCloudSecurityGroupWhereInput | null;
-  security_groups_none?: VirtualPrivateCloudSecurityGroupWhereInput | null;
-  security_groups_some?: VirtualPrivateCloudSecurityGroupWhereInput | null;
-  security_policies_every?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
-  security_policies_none?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
-  security_policies_some?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
-  subnets_every?: VirtualPrivateCloudSubnetWhereInput | null;
-  subnets_none?: VirtualPrivateCloudSubnetWhereInput | null;
-  subnets_some?: VirtualPrivateCloudSubnetWhereInput | null;
-  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
-}
-
-export interface VirtualPrivateCloudRouteTableWhereInput {
-  AND?: VirtualPrivateCloudRouteTableWhereInput[] | null;
-  NOT?: VirtualPrivateCloudRouteTableWhereInput[] | null;
-  OR?: VirtualPrivateCloudRouteTableWhereInput[] | null;
-  default_for_vpc?: boolean | null;
-  default_for_vpc_not?: boolean | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  routes_every?: VirtualPrivateCloudRouteWhereInput | null;
-  routes_none?: VirtualPrivateCloudRouteWhereInput | null;
-  routes_some?: VirtualPrivateCloudRouteWhereInput | null;
-  subnets_every?: VirtualPrivateCloudSubnetWhereInput | null;
-  subnets_none?: VirtualPrivateCloudSubnetWhereInput | null;
-  subnets_some?: VirtualPrivateCloudSubnetWhereInput | null;
-  vpc?: VirtualPrivateCloudWhereInput | null;
-}
-
-export interface VirtualPrivateCloudRouteWhereInput {
-  AND?: VirtualPrivateCloudRouteWhereInput[] | null;
-  NOT?: VirtualPrivateCloudRouteWhereInput[] | null;
-  OR?: VirtualPrivateCloudRouteWhereInput[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  destination?: string | null;
-  destination_contains?: string | null;
-  destination_ends_with?: string | null;
-  destination_gt?: string | null;
-  destination_gte?: string | null;
-  destination_in?: string[] | null;
-  destination_lt?: string | null;
-  destination_lte?: string | null;
-  destination_not?: string | null;
-  destination_not_contains?: string | null;
-  destination_not_ends_with?: string | null;
-  destination_not_in?: string[] | null;
-  destination_not_starts_with?: string | null;
-  destination_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  nat_gateway?: VirtualPrivateCloudNatGatewayWhereInput | null;
-  next_hop_local_id?: string | null;
-  next_hop_local_id_contains?: string | null;
-  next_hop_local_id_ends_with?: string | null;
-  next_hop_local_id_gt?: string | null;
-  next_hop_local_id_gte?: string | null;
-  next_hop_local_id_in?: string[] | null;
-  next_hop_local_id_lt?: string | null;
-  next_hop_local_id_lte?: string | null;
-  next_hop_local_id_not?: string | null;
-  next_hop_local_id_not_contains?: string | null;
-  next_hop_local_id_not_ends_with?: string | null;
-  next_hop_local_id_not_in?: string[] | null;
-  next_hop_local_id_not_starts_with?: string | null;
-  next_hop_local_id_starts_with?: string | null;
-  next_hop_type?: VirtualPrivateCloudRouteNextHopType | null;
-  next_hop_type_in?: VirtualPrivateCloudRouteNextHopType[] | null;
-  next_hop_type_not?: VirtualPrivateCloudRouteNextHopType | null;
-  next_hop_type_not_in?: VirtualPrivateCloudRouteNextHopType[] | null;
-  route_table?: VirtualPrivateCloudRouteTableWhereInput | null;
-  router_gateway?: VirtualPrivateCloudRouterGatewayWhereInput | null;
-}
-
-export enum VirtualPrivateCloudRouteNextHopType {
-  NAT_GATEWAY = "NAT_GATEWAY",
-  ROUTER_GATEWAY = "ROUTER_GATEWAY",
-  UNKNOWN = "UNKNOWN",
-  VPC_PEERING = "VPC_PEERING",
-}
-
-export interface VirtualPrivateCloudRouterGatewayWhereInput {
-  AND?: VirtualPrivateCloudRouterGatewayWhereInput[] | null;
-  NOT?: VirtualPrivateCloudRouterGatewayWhereInput[] | null;
-  OR?: VirtualPrivateCloudRouterGatewayWhereInput[] | null;
-  associated_subnets_every?: VirtualPrivateCloudSubnetWhereInput | null;
-  associated_subnets_none?: VirtualPrivateCloudSubnetWhereInput | null;
-  associated_subnets_some?: VirtualPrivateCloudSubnetWhereInput | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  external_ip?: string | null;
-  external_ip_contains?: string | null;
-  external_ip_ends_with?: string | null;
-  external_ip_gt?: string | null;
-  external_ip_gte?: string | null;
-  external_ip_in?: string[] | null;
-  external_ip_lt?: string | null;
-  external_ip_lte?: string | null;
-  external_ip_not?: string | null;
-  external_ip_not_contains?: string | null;
-  external_ip_not_ends_with?: string | null;
-  external_ip_not_in?: string[] | null;
-  external_ip_not_starts_with?: string | null;
-  external_ip_starts_with?: string | null;
-  external_subnet?: VirtualPrivateCloudExternalSubnetWhereInput | null;
-  external_subnet_group?: VirtualPrivateCloudExternalSubnetGroupWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  nexthop_ip?: string | null;
-  nexthop_ip_contains?: string | null;
-  nexthop_ip_ends_with?: string | null;
-  nexthop_ip_gt?: string | null;
-  nexthop_ip_gte?: string | null;
-  nexthop_ip_in?: string[] | null;
-  nexthop_ip_lt?: string | null;
-  nexthop_ip_lte?: string | null;
-  nexthop_ip_not?: string | null;
-  nexthop_ip_not_contains?: string | null;
-  nexthop_ip_not_ends_with?: string | null;
-  nexthop_ip_not_in?: string[] | null;
-  nexthop_ip_not_starts_with?: string | null;
-  nexthop_ip_starts_with?: string | null;
-  vpc?: VirtualPrivateCloudWhereInput | null;
-}
-
-export interface VirtualPrivateCloudSubnetWhereInput {
-  AND?: VirtualPrivateCloudSubnetWhereInput[] | null;
-  NOT?: VirtualPrivateCloudSubnetWhereInput[] | null;
-  OR?: VirtualPrivateCloudSubnetWhereInput[] | null;
-  cidr?: string | null;
-  cidr_contains?: string | null;
-  cidr_ends_with?: string | null;
-  cidr_gt?: string | null;
-  cidr_gte?: string | null;
-  cidr_in?: string[] | null;
-  cidr_lt?: string | null;
-  cidr_lte?: string | null;
-  cidr_not?: string | null;
-  cidr_not_contains?: string | null;
-  cidr_not_ends_with?: string | null;
-  cidr_not_in?: string[] | null;
-  cidr_not_starts_with?: string | null;
-  cidr_starts_with?: string | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  gateway?: string | null;
-  gateway_contains?: string | null;
-  gateway_ends_with?: string | null;
-  gateway_gt?: string | null;
-  gateway_gte?: string | null;
-  gateway_in?: string[] | null;
-  gateway_lt?: string | null;
-  gateway_lte?: string | null;
-  gateway_not?: string | null;
-  gateway_not_contains?: string | null;
-  gateway_not_ends_with?: string | null;
-  gateway_not_in?: string[] | null;
-  gateway_not_starts_with?: string | null;
-  gateway_starts_with?: string | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  route_table?: VirtualPrivateCloudRouteTableWhereInput | null;
-  /** @format int32 */
-  total_ip_count?: number | null;
-  /** @format int32 */
-  total_ip_count_gt?: number | null;
-  /** @format int32 */
-  total_ip_count_gte?: number | null;
-  total_ip_count_in?: number[] | null;
-  /** @format int32 */
-  total_ip_count_lt?: number | null;
-  /** @format int32 */
-  total_ip_count_lte?: number | null;
-  /** @format int32 */
-  total_ip_count_not?: number | null;
-  total_ip_count_not_in?: number[] | null;
-  /** @format int32 */
-  unused_ip_count?: number | null;
-  /** @format int32 */
-  unused_ip_count_gt?: number | null;
-  /** @format int32 */
-  unused_ip_count_gte?: number | null;
-  unused_ip_count_in?: number[] | null;
-  /** @format int32 */
-  unused_ip_count_lt?: number | null;
-  /** @format int32 */
-  unused_ip_count_lte?: number | null;
-  /** @format int32 */
-  unused_ip_count_not?: number | null;
-  unused_ip_count_not_in?: number[] | null;
-  vpc?: VirtualPrivateCloudWhereInput | null;
-}
-
-export interface VirtualPrivateCloudSecurityGroupWhereInput {
-  AND?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
-  NOT?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
-  OR?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
-  default_for_vpc?: boolean | null;
-  default_for_vpc_not?: boolean | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  vms_every?: VmWhereInput | null;
-  vms_none?: VmWhereInput | null;
-  vms_some?: VmWhereInput | null;
-  vpc?: VirtualPrivateCloudWhereInput | null;
-}
-
-export interface VirtualPrivateCloudSecurityPolicyWhereInput {
-  AND?: VirtualPrivateCloudSecurityPolicyWhereInput[] | null;
-  NOT?: VirtualPrivateCloudSecurityPolicyWhereInput[] | null;
-  OR?: VirtualPrivateCloudSecurityPolicyWhereInput[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  policy_mode?: VirtualPrivateCloudSecurityPolicyMode | null;
-  policy_mode_in?: VirtualPrivateCloudSecurityPolicyMode[] | null;
-  policy_mode_not?: VirtualPrivateCloudSecurityPolicyMode | null;
-  policy_mode_not_in?: VirtualPrivateCloudSecurityPolicyMode[] | null;
-  vpc?: VirtualPrivateCloudWhereInput | null;
-}
-
-export enum VirtualPrivateCloudSecurityPolicyMode {
-  MONITOR = "MONITOR",
-  WORK = "WORK",
-}
-
-export enum HostState {
-  IDLE = "IDLE",
-  IN_USE = "IN_USE",
-  REMOVING = "REMOVING",
-}
-
-export enum HostStatus {
-  CONNECTED_ERROR = "CONNECTED_ERROR",
-  CONNECTED_HEALTHY = "CONNECTED_HEALTHY",
-  CONNECTED_WARNING = "CONNECTED_WARNING",
-  CONNECTING = "CONNECTING",
-  INITIALIZING = "INITIALIZING",
-  SESSION_EXPIRED = "SESSION_EXPIRED",
-}
-
-export interface UsbDeviceWhereInput {
-  AND?: UsbDeviceWhereInput[] | null;
-  NOT?: UsbDeviceWhereInput[] | null;
-  OR?: UsbDeviceWhereInput[] | null;
-  binded?: boolean | null;
-  binded_not?: boolean | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  host?: HostWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_created_at?: string | null;
-  local_created_at_gt?: string | null;
-  local_created_at_gte?: string | null;
-  local_created_at_in?: string[] | null;
-  local_created_at_lt?: string | null;
-  local_created_at_lte?: string | null;
-  local_created_at_not?: string | null;
-  local_created_at_not_in?: string[] | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  manufacturer?: string | null;
-  manufacturer_contains?: string | null;
-  manufacturer_ends_with?: string | null;
-  manufacturer_gt?: string | null;
-  manufacturer_gte?: string | null;
-  manufacturer_in?: string[] | null;
-  manufacturer_lt?: string | null;
-  manufacturer_lte?: string | null;
-  manufacturer_not?: string | null;
-  manufacturer_not_contains?: string | null;
-  manufacturer_not_ends_with?: string | null;
-  manufacturer_not_in?: string[] | null;
-  manufacturer_not_starts_with?: string | null;
-  manufacturer_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  /** @format int64 */
-  size?: number | null;
-  /** @format int64 */
-  size_gt?: number | null;
-  /** @format int64 */
-  size_gte?: number | null;
-  size_in?: number[] | null;
-  /** @format int64 */
-  size_lt?: number | null;
-  /** @format int64 */
-  size_lte?: number | null;
-  /** @format int64 */
-  size_not?: number | null;
-  size_not_in?: number[] | null;
-  status?: UsbDeviceStatus | null;
-  status_in?: UsbDeviceStatus[] | null;
-  status_not?: UsbDeviceStatus | null;
-  status_not_in?: UsbDeviceStatus[] | null;
-  usb_type?: string | null;
-  usb_type_contains?: string | null;
-  usb_type_ends_with?: string | null;
-  usb_type_gt?: string | null;
-  usb_type_gte?: string | null;
-  usb_type_in?: string[] | null;
-  usb_type_lt?: string | null;
-  usb_type_lte?: string | null;
-  usb_type_not?: string | null;
-  usb_type_not_contains?: string | null;
-  usb_type_not_ends_with?: string | null;
-  usb_type_not_in?: string[] | null;
-  usb_type_not_starts_with?: string | null;
-  usb_type_starts_with?: string | null;
-  vms_every?: VmWhereInput | null;
-  vms_none?: VmWhereInput | null;
-  vms_some?: VmWhereInput | null;
-}
-
-export enum UsbDeviceStatus {
-  EJECTED = "EJECTED",
-  NORMAL = "NORMAL",
-}
-
-export enum GpuDeviceStatus {
-  NEED_REBOOT = "NEED_REBOOT",
-  NOT_READY = "NOT_READY",
-  READY = "READY",
-}
-
-export enum GpuDeviceUsage {
-  PASS_THROUGH = "PASS_THROUGH",
-  VGPU = "VGPU",
-}
-
-export enum VmGuestsOperationSystem {
-  LINUX = "LINUX",
-  UNKNOWN = "UNKNOWN",
-  WINDOWS = "WINDOWS",
-}
-
-export enum VmHaPriority {
-  LEVEL1LOW = "LEVEL_1_LOW",
-  LEVEL2MEDIUM = "LEVEL_2_MEDIUM",
-  LEVEL3HIGH = "LEVEL_3_HIGH",
-}
-
-export enum VmDiskIoPolicy {
-  RESTRICT_EACH_DISK = "RESTRICT_EACH_DISK",
-  RESTRICT_WHOLE_VM = "RESTRICT_WHOLE_VM",
-}
-
-export interface IsolationPolicyWhereInput {
-  AND?: IsolationPolicyWhereInput[] | null;
-  NOT?: IsolationPolicyWhereInput[] | null;
-  OR?: IsolationPolicyWhereInput[] | null;
-  everoute_cluster?: EverouteClusterWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  labels_every?: LabelWhereInput | null;
-  labels_none?: LabelWhereInput | null;
-  labels_some?: LabelWhereInput | null;
-  mode?: IsolationMode | null;
-  mode_in?: IsolationMode[] | null;
-  mode_not?: IsolationMode | null;
-  mode_not_in?: IsolationMode[] | null;
-  statistics?: SecurityPolicyStatisticsWhereInput | null;
-  vm?: VmWhereInput | null;
-}
-
-export enum IsolationMode {
-  ALL = "ALL",
-  PARTIAL = "PARTIAL",
-}
-
-export interface SecurityPolicyStatisticsWhereInput {
-  AND?: SecurityPolicyStatisticsWhereInput[] | null;
-  NOT?: SecurityPolicyStatisticsWhereInput[] | null;
-  OR?: SecurityPolicyStatisticsWhereInput[] | null;
-  count_reset_timestamp?: string | null;
-  count_reset_timestamp_gt?: string | null;
-  count_reset_timestamp_gte?: string | null;
-  count_reset_timestamp_in?: string[] | null;
-  count_reset_timestamp_lt?: string | null;
-  count_reset_timestamp_lte?: string | null;
-  count_reset_timestamp_not?: string | null;
-  count_reset_timestamp_not_in?: string[] | null;
-  count_update_timestamp?: string | null;
-  count_update_timestamp_gt?: string | null;
-  count_update_timestamp_gte?: string | null;
-  count_update_timestamp_in?: string[] | null;
-  count_update_timestamp_lt?: string | null;
-  count_update_timestamp_lte?: string | null;
-  count_update_timestamp_not?: string | null;
-  count_update_timestamp_not_in?: string[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  /** @format int32 */
-  match_allow_count?: number | null;
-  /** @format int32 */
-  match_allow_count_gt?: number | null;
-  /** @format int32 */
-  match_allow_count_gte?: number | null;
-  match_allow_count_in?: number[] | null;
-  /** @format int32 */
-  match_allow_count_lt?: number | null;
-  /** @format int32 */
-  match_allow_count_lte?: number | null;
-  /** @format int32 */
-  match_allow_count_not?: number | null;
-  match_allow_count_not_in?: number[] | null;
-  /** @format int32 */
-  match_default_allow_count?: number | null;
-  /** @format int32 */
-  match_default_allow_count_gt?: number | null;
-  /** @format int32 */
-  match_default_allow_count_gte?: number | null;
-  match_default_allow_count_in?: number[] | null;
-  /** @format int32 */
-  match_default_allow_count_lt?: number | null;
-  /** @format int32 */
-  match_default_allow_count_lte?: number | null;
-  /** @format int32 */
-  match_default_allow_count_not?: number | null;
-  match_default_allow_count_not_in?: number[] | null;
-  /** @format int32 */
-  match_default_drop_count?: number | null;
-  /** @format int32 */
-  match_default_drop_count_gt?: number | null;
-  /** @format int32 */
-  match_default_drop_count_gte?: number | null;
-  match_default_drop_count_in?: number[] | null;
-  /** @format int32 */
-  match_default_drop_count_lt?: number | null;
-  /** @format int32 */
-  match_default_drop_count_lte?: number | null;
-  /** @format int32 */
-  match_default_drop_count_not?: number | null;
-  match_default_drop_count_not_in?: number[] | null;
-  /** @format int32 */
-  match_drop_count?: number | null;
-  /** @format int32 */
-  match_drop_count_gt?: number | null;
-  /** @format int32 */
-  match_drop_count_gte?: number | null;
-  match_drop_count_in?: number[] | null;
-  /** @format int32 */
-  match_drop_count_lt?: number | null;
-  /** @format int32 */
-  match_drop_count_lte?: number | null;
-  /** @format int32 */
-  match_drop_count_not?: number | null;
-  match_drop_count_not_in?: number[] | null;
-  /** @format int32 */
-  match_whitelist_count?: number | null;
-  /** @format int32 */
-  match_whitelist_count_gt?: number | null;
-  /** @format int32 */
-  match_whitelist_count_gte?: number | null;
-  match_whitelist_count_in?: number[] | null;
-  /** @format int32 */
-  match_whitelist_count_lt?: number | null;
-  /** @format int32 */
-  match_whitelist_count_lte?: number | null;
-  /** @format int32 */
-  match_whitelist_count_not?: number | null;
-  match_whitelist_count_not_in?: number[] | null;
-  /** @format int32 */
-  total_count?: number | null;
-  /** @format int32 */
-  total_count_gt?: number | null;
-  /** @format int32 */
-  total_count_gte?: number | null;
-  total_count_in?: number[] | null;
-  /** @format int32 */
-  total_count_lt?: number | null;
-  /** @format int32 */
-  total_count_lte?: number | null;
-  /** @format int32 */
-  total_count_not?: number | null;
-  total_count_not_in?: number[] | null;
-}
-
-export interface VmSnapshotWhereInput {
-  AND?: VmSnapshotWhereInput[] | null;
-  NOT?: VmSnapshotWhereInput[] | null;
-  OR?: VmSnapshotWhereInput[] | null;
-  clock_offset?: VmClockOffset | null;
-  clock_offset_in?: VmClockOffset[] | null;
-  clock_offset_not?: VmClockOffset | null;
-  clock_offset_not_in?: VmClockOffset[] | null;
-  cluster?: ClusterWhereInput | null;
-  consistent_type?: ConsistentType | null;
-  consistent_type_in?: ConsistentType[] | null;
-  consistent_type_not?: ConsistentType | null;
-  consistent_type_not_in?: ConsistentType[] | null;
-  cpu_model?: string | null;
-  cpu_model_contains?: string | null;
-  cpu_model_ends_with?: string | null;
-  cpu_model_gt?: string | null;
-  cpu_model_gte?: string | null;
-  cpu_model_in?: string[] | null;
-  cpu_model_lt?: string | null;
-  cpu_model_lte?: string | null;
-  cpu_model_not?: string | null;
-  cpu_model_not_contains?: string | null;
-  cpu_model_not_ends_with?: string | null;
-  cpu_model_not_in?: string[] | null;
-  cpu_model_not_starts_with?: string | null;
-  cpu_model_starts_with?: string | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  firmware?: VmFirmware | null;
-  firmware_in?: VmFirmware[] | null;
-  firmware_not?: VmFirmware | null;
-  firmware_not_in?: VmFirmware[] | null;
-  ha?: boolean | null;
-  ha_not?: boolean | null;
-  ha_priority?: VmHaPriority | null;
-  ha_priority_in?: VmHaPriority[] | null;
-  ha_priority_not?: VmHaPriority | null;
-  ha_priority_not_in?: VmHaPriority[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  io_policy?: VmDiskIoPolicy | null;
-  io_policy_in?: VmDiskIoPolicy[] | null;
-  io_policy_not?: VmDiskIoPolicy | null;
-  io_policy_not_in?: VmDiskIoPolicy[] | null;
-  labels_every?: LabelWhereInput | null;
-  labels_none?: LabelWhereInput | null;
-  labels_some?: LabelWhereInput | null;
-  local_created_at?: string | null;
-  local_created_at_gt?: string | null;
-  local_created_at_gte?: string | null;
-  local_created_at_in?: string[] | null;
-  local_created_at_lt?: string | null;
-  local_created_at_lte?: string | null;
-  local_created_at_not?: string | null;
-  local_created_at_not_in?: string[] | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  /** @format int64 */
-  max_bandwidth?: number | null;
-  /** @format int64 */
-  max_bandwidth_gt?: number | null;
-  /** @format int64 */
-  max_bandwidth_gte?: number | null;
-  max_bandwidth_in?: number[] | null;
-  /** @format int64 */
-  max_bandwidth_lt?: number | null;
-  /** @format int64 */
-  max_bandwidth_lte?: number | null;
-  /** @format int64 */
-  max_bandwidth_not?: number | null;
-  max_bandwidth_not_in?: number[] | null;
-  max_bandwidth_policy?: VmDiskIoRestrictType | null;
-  max_bandwidth_policy_in?: VmDiskIoRestrictType[] | null;
-  max_bandwidth_policy_not?: VmDiskIoRestrictType | null;
-  max_bandwidth_policy_not_in?: VmDiskIoRestrictType[] | null;
-  /** @format int32 */
-  max_iops?: number | null;
-  /** @format int32 */
-  max_iops_gt?: number | null;
-  /** @format int32 */
-  max_iops_gte?: number | null;
-  max_iops_in?: number[] | null;
-  /** @format int32 */
-  max_iops_lt?: number | null;
-  /** @format int32 */
-  max_iops_lte?: number | null;
-  /** @format int32 */
-  max_iops_not?: number | null;
-  max_iops_not_in?: number[] | null;
-  max_iops_policy?: VmDiskIoRestrictType | null;
-  max_iops_policy_in?: VmDiskIoRestrictType[] | null;
-  max_iops_policy_not?: VmDiskIoRestrictType | null;
-  max_iops_policy_not_in?: VmDiskIoRestrictType[] | null;
-  /** @format int64 */
-  memory?: number | null;
-  /** @format int64 */
-  memory_gt?: number | null;
-  /** @format int64 */
-  memory_gte?: number | null;
-  memory_in?: number[] | null;
-  /** @format int64 */
-  memory_lt?: number | null;
-  /** @format int64 */
-  memory_lte?: number | null;
-  /** @format int64 */
-  memory_not?: number | null;
-  memory_not_in?: number[] | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  /** @format int64 */
-  size?: number | null;
-  /** @format int64 */
-  size_gt?: number | null;
-  /** @format int64 */
-  size_gte?: number | null;
-  size_in?: number[] | null;
-  /** @format int64 */
-  size_lt?: number | null;
-  /** @format int64 */
-  size_lte?: number | null;
-  /** @format int64 */
-  size_not?: number | null;
-  size_not_in?: number[] | null;
-  /** @format int32 */
-  vcpu?: number | null;
-  /** @format int32 */
-  vcpu_gt?: number | null;
-  /** @format int32 */
-  vcpu_gte?: number | null;
-  vcpu_in?: number[] | null;
-  /** @format int32 */
-  vcpu_lt?: number | null;
-  /** @format int32 */
-  vcpu_lte?: number | null;
-  /** @format int32 */
-  vcpu_not?: number | null;
-  vcpu_not_in?: number[] | null;
-  vm?: VmWhereInput | null;
-  win_opt?: boolean | null;
-  win_opt_not?: boolean | null;
-}
-
-export enum ConsistentType {
-  CRASH_CONSISTENT = "CRASH_CONSISTENT",
-  FILE_SYSTEM_CONSISTENT = "FILE_SYSTEM_CONSISTENT",
-}
-
-export enum VmStatus {
-  DELETED = "DELETED",
-  RUNNING = "RUNNING",
-  STOPPED = "STOPPED",
-  SUSPENDED = "SUSPENDED",
-  UNKNOWN = "UNKNOWN",
-}
-
-export enum VmVideoType {
-  CIRRUS = "CIRRUS",
-  QXL = "QXL",
-  VGA = "VGA",
-  VIRTIO = "VIRTIO",
-}
-
-export interface VmPlacementGroupWhereInput {
-  AND?: VmPlacementGroupWhereInput[] | null;
-  NOT?: VmPlacementGroupWhereInput[] | null;
-  OR?: VmPlacementGroupWhereInput[] | null;
-  cluster?: ClusterWhereInput | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  enabled?: boolean | null;
-  enabled_not?: boolean | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  local_created_at?: string | null;
-  local_created_at_gt?: string | null;
-  local_created_at_gte?: string | null;
-  local_created_at_in?: string[] | null;
-  local_created_at_lt?: string | null;
-  local_created_at_lte?: string | null;
-  local_created_at_not?: string | null;
-  local_created_at_not_in?: string[] | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  local_updated_at?: string | null;
-  local_updated_at_gt?: string | null;
-  local_updated_at_gte?: string | null;
-  local_updated_at_in?: string[] | null;
-  local_updated_at_lt?: string | null;
-  local_updated_at_lte?: string | null;
-  local_updated_at_not?: string | null;
-  local_updated_at_not_in?: string[] | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  vm_host_must_enabled?: boolean | null;
-  vm_host_must_enabled_not?: boolean | null;
-  vm_host_must_host_uuids_every?: HostWhereInput | null;
-  vm_host_must_host_uuids_none?: HostWhereInput | null;
-  vm_host_must_host_uuids_some?: HostWhereInput | null;
-  vm_host_must_policy?: boolean | null;
-  vm_host_must_policy_not?: boolean | null;
-  vm_host_prefer_enabled?: boolean | null;
-  vm_host_prefer_enabled_not?: boolean | null;
-  vm_host_prefer_host_uuids_every?: HostWhereInput | null;
-  vm_host_prefer_host_uuids_none?: HostWhereInput | null;
-  vm_host_prefer_host_uuids_some?: HostWhereInput | null;
-  vm_host_prefer_policy?: boolean | null;
-  vm_host_prefer_policy_not?: boolean | null;
-  vm_vm_policy?: VmVmPolicy | null;
-  vm_vm_policy_enabled?: boolean | null;
-  vm_vm_policy_enabled_not?: boolean | null;
-  vm_vm_policy_in?: VmVmPolicy[] | null;
-  vm_vm_policy_not?: VmVmPolicy | null;
-  vm_vm_policy_not_in?: VmVmPolicy[] | null;
-  vms_every?: VmWhereInput | null;
-  vms_none?: VmWhereInput | null;
-  vms_some?: VmWhereInput | null;
-}
-
-export enum VmVmPolicy {
-  MUST_DIFFERENT = "MUST_DIFFERENT",
-  MUST_SAME = "MUST_SAME",
-  PREFER_DIFFERENT = "PREFER_DIFFERENT",
-  PREFER_SAME = "PREFER_SAME",
-}
-
-export enum VmToolsStatus {
-  NOT_INSTALLED = "NOT_INSTALLED",
-  NOT_RUNNING = "NOT_RUNNING",
-  RESTRICTION = "RESTRICTION",
-  RUNNING = "RUNNING",
-}
-
-export enum VmUsage {
-  ADVANCED_MONITORING = "ADVANCED_MONITORING",
-  AGENT_MESH_NODE = "AGENT_MESH_NODE",
-  BACKUP_CONTROLLER = "BACKUP_CONTROLLER",
-  BUNDLE_APPLICATION = "BUNDLE_APPLICATION",
-  CLOUDTOWER = "CLOUDTOWER",
-  EVEROUTE_CONTROLLER = "EVEROUTE_CONTROLLER",
-  REGISTRY = "REGISTRY",
-  REPLICATION_CONTROLLER = "REPLICATION_CONTROLLER",
-  SFS_CONTROLLER = "SFS_CONTROLLER",
-  SHARE_REGISTRY = "SHARE_REGISTRY",
-  SKS_MANAGEMENT = "SKS_MANAGEMENT",
-}
-
-export interface VmVolumeWhereInput {
-  AND?: VmVolumeWhereInput[] | null;
-  NOT?: VmVolumeWhereInput[] | null;
-  OR?: VmVolumeWhereInput[] | null;
-  cluster?: ClusterWhereInput | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  elf_storage_policy?: VmVolumeElfStoragePolicyType | null;
-  /** @format int32 */
-  elf_storage_policy_ec_k?: number | null;
-  /** @format int32 */
-  elf_storage_policy_ec_k_gt?: number | null;
-  /** @format int32 */
-  elf_storage_policy_ec_k_gte?: number | null;
-  elf_storage_policy_ec_k_in?: number[] | null;
-  /** @format int32 */
-  elf_storage_policy_ec_k_lt?: number | null;
-  /** @format int32 */
-  elf_storage_policy_ec_k_lte?: number | null;
-  /** @format int32 */
-  elf_storage_policy_ec_k_not?: number | null;
-  elf_storage_policy_ec_k_not_in?: number[] | null;
-  /** @format int32 */
-  elf_storage_policy_ec_m?: number | null;
-  /** @format int32 */
-  elf_storage_policy_ec_m_gt?: number | null;
-  /** @format int32 */
-  elf_storage_policy_ec_m_gte?: number | null;
-  elf_storage_policy_ec_m_in?: number[] | null;
-  /** @format int32 */
-  elf_storage_policy_ec_m_lt?: number | null;
-  /** @format int32 */
-  elf_storage_policy_ec_m_lte?: number | null;
-  /** @format int32 */
-  elf_storage_policy_ec_m_not?: number | null;
-  elf_storage_policy_ec_m_not_in?: number[] | null;
-  elf_storage_policy_in?: VmVolumeElfStoragePolicyType[] | null;
-  elf_storage_policy_not?: VmVolumeElfStoragePolicyType | null;
-  elf_storage_policy_not_in?: VmVolumeElfStoragePolicyType[] | null;
-  /** @format int32 */
-  elf_storage_policy_replica_num?: number | null;
-  /** @format int32 */
-  elf_storage_policy_replica_num_gt?: number | null;
-  /** @format int32 */
-  elf_storage_policy_replica_num_gte?: number | null;
-  elf_storage_policy_replica_num_in?: number[] | null;
-  /** @format int32 */
-  elf_storage_policy_replica_num_lt?: number | null;
-  /** @format int32 */
-  elf_storage_policy_replica_num_lte?: number | null;
-  /** @format int32 */
-  elf_storage_policy_replica_num_not?: number | null;
-  elf_storage_policy_replica_num_not_in?: number[] | null;
-  elf_storage_policy_thin_provision?: boolean | null;
-  elf_storage_policy_thin_provision_not?: boolean | null;
-  entityAsyncStatus?: EntityAsyncStatus | null;
-  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
-  entityAsyncStatus_not?: EntityAsyncStatus | null;
-  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
-  /** @format double */
-  guest_size_usage?: number | null;
-  /** @format double */
-  guest_size_usage_gt?: number | null;
-  /** @format double */
-  guest_size_usage_gte?: number | null;
-  guest_size_usage_in?: number[] | null;
-  /** @format double */
-  guest_size_usage_lt?: number | null;
-  /** @format double */
-  guest_size_usage_lte?: number | null;
-  /** @format double */
-  guest_size_usage_not?: number | null;
-  guest_size_usage_not_in?: number[] | null;
-  /** @format int64 */
-  guest_used_size?: number | null;
-  /** @format int64 */
-  guest_used_size_gt?: number | null;
-  /** @format int64 */
-  guest_used_size_gte?: number | null;
-  guest_used_size_in?: number[] | null;
-  /** @format int64 */
-  guest_used_size_lt?: number | null;
-  /** @format int64 */
-  guest_used_size_lte?: number | null;
-  /** @format int64 */
-  guest_used_size_not?: number | null;
-  guest_used_size_not_in?: number[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  labels_every?: LabelWhereInput | null;
-  labels_none?: LabelWhereInput | null;
-  labels_some?: LabelWhereInput | null;
-  local_created_at?: string | null;
-  local_created_at_gt?: string | null;
-  local_created_at_gte?: string | null;
-  local_created_at_in?: string[] | null;
-  local_created_at_lt?: string | null;
-  local_created_at_lte?: string | null;
-  local_created_at_not?: string | null;
-  local_created_at_not_in?: string[] | null;
-  local_id?: string | null;
-  local_id_contains?: string | null;
-  local_id_ends_with?: string | null;
-  local_id_gt?: string | null;
-  local_id_gte?: string | null;
-  local_id_in?: string[] | null;
-  local_id_lt?: string | null;
-  local_id_lte?: string | null;
-  local_id_not?: string | null;
-  local_id_not_contains?: string | null;
-  local_id_not_ends_with?: string | null;
-  local_id_not_in?: string[] | null;
-  local_id_not_starts_with?: string | null;
-  local_id_starts_with?: string | null;
-  lun?: IscsiLunWhereInput | null;
-  mounting?: boolean | null;
-  mounting_not?: boolean | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  path?: string | null;
-  path_contains?: string | null;
-  path_ends_with?: string | null;
-  path_gt?: string | null;
-  path_gte?: string | null;
-  path_in?: string[] | null;
-  path_lt?: string | null;
-  path_lte?: string | null;
-  path_not?: string | null;
-  path_not_contains?: string | null;
-  path_not_ends_with?: string | null;
-  path_not_in?: string[] | null;
-  path_not_starts_with?: string | null;
-  path_starts_with?: string | null;
-  resident_in_cache?: boolean | null;
-  resident_in_cache_not?: boolean | null;
-  sharing?: boolean | null;
-  sharing_not?: boolean | null;
-  /** @format int64 */
-  size?: number | null;
-  /** @format int64 */
-  size_gt?: number | null;
-  /** @format int64 */
-  size_gte?: number | null;
-  size_in?: number[] | null;
-  /** @format int64 */
-  size_lt?: number | null;
-  /** @format int64 */
-  size_lte?: number | null;
-  /** @format int64 */
-  size_not?: number | null;
-  size_not_in?: number[] | null;
-  type?: VmVolumeType | null;
-  type_in?: VmVolumeType[] | null;
-  type_not?: VmVolumeType | null;
-  type_not_in?: VmVolumeType[] | null;
-  /** @format double */
-  unique_logical_size?: number | null;
-  /** @format double */
-  unique_logical_size_gt?: number | null;
-  /** @format double */
-  unique_logical_size_gte?: number | null;
-  unique_logical_size_in?: number[] | null;
-  /** @format double */
-  unique_logical_size_lt?: number | null;
-  /** @format double */
-  unique_logical_size_lte?: number | null;
-  /** @format double */
-  unique_logical_size_not?: number | null;
-  unique_logical_size_not_in?: number[] | null;
-  /** @format int64 */
-  unique_size?: number | null;
-  /** @format int64 */
-  unique_size_gt?: number | null;
-  /** @format int64 */
-  unique_size_gte?: number | null;
-  unique_size_in?: number[] | null;
-  /** @format int64 */
-  unique_size_lt?: number | null;
-  /** @format int64 */
-  unique_size_lte?: number | null;
-  /** @format int64 */
-  unique_size_not?: number | null;
-  unique_size_not_in?: number[] | null;
-  /** @format int64 */
-  used_size?: number | null;
-  /** @format int64 */
-  used_size_gt?: number | null;
-  /** @format int64 */
-  used_size_gte?: number | null;
-  used_size_in?: number[] | null;
-  /** @format int64 */
-  used_size_lt?: number | null;
-  /** @format int64 */
-  used_size_lte?: number | null;
-  /** @format int64 */
-  used_size_not?: number | null;
-  used_size_not_in?: number[] | null;
-  /** @format double */
-  used_size_usage?: number | null;
-  /** @format double */
-  used_size_usage_gt?: number | null;
-  /** @format double */
-  used_size_usage_gte?: number | null;
-  used_size_usage_in?: number[] | null;
-  /** @format double */
-  used_size_usage_lt?: number | null;
-  /** @format double */
-  used_size_usage_lte?: number | null;
-  /** @format double */
-  used_size_usage_not?: number | null;
-  used_size_usage_not_in?: number[] | null;
-  vm_disks_every?: VmDiskWhereInput | null;
-  vm_disks_none?: VmDiskWhereInput | null;
-  vm_disks_some?: VmDiskWhereInput | null;
-}
-
-export enum VmVolumeElfStoragePolicyType {
-  EC = "EC",
-  ELFCPREPLICA2THICKPROVISION = "ELF_CP_REPLICA_2_THICK_PROVISION",
-  ELFCPREPLICA2THINPROVISION = "ELF_CP_REPLICA_2_THIN_PROVISION",
-  ELFCPREPLICA3THICKPROVISION = "ELF_CP_REPLICA_3_THICK_PROVISION",
-  ELFCPREPLICA3THINPROVISION = "ELF_CP_REPLICA_3_THIN_PROVISION",
-  REPLICA1THICKPROVISION = "REPLICA_1_THICK_PROVISION",
-  REPLICA1THINPROVISION = "REPLICA_1_THIN_PROVISION",
-  REPLICA2THICKPROVISION = "REPLICA_2_THICK_PROVISION",
-  REPLICA2THINPROVISION = "REPLICA_2_THIN_PROVISION",
-  REPLICA3THICKPROVISION = "REPLICA_3_THICK_PROVISION",
-  REPLICA3THINPROVISION = "REPLICA_3_THIN_PROVISION",
 }
 
 export interface IscsiLunWhereInput {
@@ -7483,6 +6247,9 @@ export interface IscsiLunWhereInput {
   /** @format int32 */
   replica_num_not?: number | null;
   replica_num_not_in?: number[] | null;
+  replication_plans_every?: ReplicationPlanWhereInput | null;
+  replication_plans_none?: ReplicationPlanWhereInput | null;
+  replication_plans_some?: ReplicationPlanWhereInput | null;
   resiliency_type?: ResiliencyType | null;
   resiliency_type_in?: ResiliencyType[] | null;
   resiliency_type_not?: ResiliencyType | null;
@@ -7587,16 +6354,6 @@ export interface IscsiLunWhereInput {
   zbs_volume_id_not_in?: string[] | null;
   zbs_volume_id_not_starts_with?: string | null;
   zbs_volume_id_starts_with?: string | null;
-}
-
-export enum ConfigurationMethod {
-  BUSINESS_HOST = "BUSINESS_HOST",
-  MANUAL = "MANUAL",
-}
-
-export enum EncryptMethod {
-  AES256CTR = "AES256_CTR",
-  PLAIN_TEXT = "PLAIN_TEXT",
 }
 
 export interface IscsiTargetWhereInput {
@@ -8116,14 +6873,2170 @@ export interface IscsiTargetWhereInput {
   thin_provision_not?: boolean | null;
 }
 
+export enum ConfigurationMethod {
+  BUSINESS_HOST = "BUSINESS_HOST",
+  MANUAL = "MANUAL",
+}
+
+export enum EncryptMethod {
+  AES256CTR = "AES256_CTR",
+  PLAIN_TEXT = "PLAIN_TEXT",
+  SM4CTR = "SM4_CTR",
+}
+
 export enum ResiliencyType {
   EC = "EC",
   REPLICA = "REPLICA",
 }
 
+export interface VmSnapshotWhereInput {
+  AND?: VmSnapshotWhereInput[] | null;
+  NOT?: VmSnapshotWhereInput[] | null;
+  OR?: VmSnapshotWhereInput[] | null;
+  clock_offset?: VmClockOffset | null;
+  clock_offset_in?: VmClockOffset[] | null;
+  clock_offset_not?: VmClockOffset | null;
+  clock_offset_not_in?: VmClockOffset[] | null;
+  cluster?: ClusterWhereInput | null;
+  consistent_type?: ConsistentType | null;
+  consistent_type_in?: ConsistentType[] | null;
+  consistent_type_not?: ConsistentType | null;
+  consistent_type_not_in?: ConsistentType[] | null;
+  cpu_model?: string | null;
+  cpu_model_contains?: string | null;
+  cpu_model_ends_with?: string | null;
+  cpu_model_gt?: string | null;
+  cpu_model_gte?: string | null;
+  cpu_model_in?: string[] | null;
+  cpu_model_lt?: string | null;
+  cpu_model_lte?: string | null;
+  cpu_model_not?: string | null;
+  cpu_model_not_contains?: string | null;
+  cpu_model_not_ends_with?: string | null;
+  cpu_model_not_in?: string[] | null;
+  cpu_model_not_starts_with?: string | null;
+  cpu_model_starts_with?: string | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  firmware?: VmFirmware | null;
+  firmware_in?: VmFirmware[] | null;
+  firmware_not?: VmFirmware | null;
+  firmware_not_in?: VmFirmware[] | null;
+  ha?: boolean | null;
+  ha_not?: boolean | null;
+  ha_priority?: VmHaPriority | null;
+  ha_priority_in?: VmHaPriority[] | null;
+  ha_priority_not?: VmHaPriority | null;
+  ha_priority_not_in?: VmHaPriority[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  io_policy?: VmDiskIoPolicy | null;
+  io_policy_in?: VmDiskIoPolicy[] | null;
+  io_policy_not?: VmDiskIoPolicy | null;
+  io_policy_not_in?: VmDiskIoPolicy[] | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  /** @format int64 */
+  max_bandwidth?: number | null;
+  /** @format int64 */
+  max_bandwidth_gt?: number | null;
+  /** @format int64 */
+  max_bandwidth_gte?: number | null;
+  max_bandwidth_in?: number[] | null;
+  /** @format int64 */
+  max_bandwidth_lt?: number | null;
+  /** @format int64 */
+  max_bandwidth_lte?: number | null;
+  /** @format int64 */
+  max_bandwidth_not?: number | null;
+  max_bandwidth_not_in?: number[] | null;
+  max_bandwidth_policy?: VmDiskIoRestrictType | null;
+  max_bandwidth_policy_in?: VmDiskIoRestrictType[] | null;
+  max_bandwidth_policy_not?: VmDiskIoRestrictType | null;
+  max_bandwidth_policy_not_in?: VmDiskIoRestrictType[] | null;
+  /** @format int32 */
+  max_iops?: number | null;
+  /** @format int32 */
+  max_iops_gt?: number | null;
+  /** @format int32 */
+  max_iops_gte?: number | null;
+  max_iops_in?: number[] | null;
+  /** @format int32 */
+  max_iops_lt?: number | null;
+  /** @format int32 */
+  max_iops_lte?: number | null;
+  /** @format int32 */
+  max_iops_not?: number | null;
+  max_iops_not_in?: number[] | null;
+  max_iops_policy?: VmDiskIoRestrictType | null;
+  max_iops_policy_in?: VmDiskIoRestrictType[] | null;
+  max_iops_policy_not?: VmDiskIoRestrictType | null;
+  max_iops_policy_not_in?: VmDiskIoRestrictType[] | null;
+  /** @format int64 */
+  memory?: number | null;
+  /** @format int64 */
+  memory_gt?: number | null;
+  /** @format int64 */
+  memory_gte?: number | null;
+  memory_in?: number[] | null;
+  /** @format int64 */
+  memory_lt?: number | null;
+  /** @format int64 */
+  memory_lte?: number | null;
+  /** @format int64 */
+  memory_not?: number | null;
+  memory_not_in?: number[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  /** @format int64 */
+  size?: number | null;
+  /** @format int64 */
+  size_gt?: number | null;
+  /** @format int64 */
+  size_gte?: number | null;
+  size_in?: number[] | null;
+  /** @format int64 */
+  size_lt?: number | null;
+  /** @format int64 */
+  size_lte?: number | null;
+  /** @format int64 */
+  size_not?: number | null;
+  size_not_in?: number[] | null;
+  /** @format int32 */
+  vcpu?: number | null;
+  /** @format int32 */
+  vcpu_gt?: number | null;
+  /** @format int32 */
+  vcpu_gte?: number | null;
+  vcpu_in?: number[] | null;
+  /** @format int32 */
+  vcpu_lt?: number | null;
+  /** @format int32 */
+  vcpu_lte?: number | null;
+  /** @format int32 */
+  vcpu_not?: number | null;
+  vcpu_not_in?: number[] | null;
+  vm?: VmWhereInput | null;
+  win_opt?: boolean | null;
+  win_opt_not?: boolean | null;
+}
+
+export enum VmHaPriority {
+  LEVEL1LOW = "LEVEL_1_LOW",
+  LEVEL2MEDIUM = "LEVEL_2_MEDIUM",
+  LEVEL3HIGH = "LEVEL_3_HIGH",
+}
+
+export enum VmDiskIoPolicy {
+  RESTRICT_EACH_DISK = "RESTRICT_EACH_DISK",
+  RESTRICT_WHOLE_VM = "RESTRICT_WHOLE_VM",
+}
+
+export enum VmDiskIoRestrictType {
+  DYNAMIC = "DYNAMIC",
+  FORCED = "FORCED",
+}
+
+export interface ReplicationPlanWhereInput {
+  AND?: ReplicationPlanWhereInput[] | null;
+  NOT?: ReplicationPlanWhereInput[] | null;
+  OR?: ReplicationPlanWhereInput[] | null;
+  abort_window_unfinished?: boolean | null;
+  abort_window_unfinished_not?: boolean | null;
+  activation_timestamp?: string | null;
+  activation_timestamp_gt?: string | null;
+  activation_timestamp_gte?: string | null;
+  activation_timestamp_in?: string[] | null;
+  activation_timestamp_lt?: string | null;
+  activation_timestamp_lte?: string | null;
+  activation_timestamp_not?: string | null;
+  activation_timestamp_not_in?: string[] | null;
+  compression?: boolean | null;
+  compression_not?: boolean | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
+  delete_strategy?: BackupPlanDeleteStrategy | null;
+  delete_strategy_in?: BackupPlanDeleteStrategy[] | null;
+  delete_strategy_not?: BackupPlanDeleteStrategy | null;
+  delete_strategy_not_in?: BackupPlanDeleteStrategy[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  /** @format int32 */
+  ec_k?: number | null;
+  /** @format int32 */
+  ec_k_gt?: number | null;
+  /** @format int32 */
+  ec_k_gte?: number | null;
+  ec_k_in?: number[] | null;
+  /** @format int32 */
+  ec_k_lt?: number | null;
+  /** @format int32 */
+  ec_k_lte?: number | null;
+  /** @format int32 */
+  ec_k_not?: number | null;
+  ec_k_not_in?: number[] | null;
+  /** @format int32 */
+  ec_m?: number | null;
+  /** @format int32 */
+  ec_m_gt?: number | null;
+  /** @format int32 */
+  ec_m_gte?: number | null;
+  ec_m_in?: number[] | null;
+  /** @format int32 */
+  ec_m_lt?: number | null;
+  /** @format int32 */
+  ec_m_lte?: number | null;
+  /** @format int32 */
+  ec_m_not?: number | null;
+  ec_m_not_in?: number[] | null;
+  enable_window?: boolean | null;
+  enable_window_not?: boolean | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  inbound?: boolean | null;
+  inbound_not?: boolean | null;
+  /** @format int32 */
+  interval?: number | null;
+  /** @format int32 */
+  interval_gt?: number | null;
+  /** @format int32 */
+  interval_gte?: number | null;
+  interval_in?: number[] | null;
+  /** @format int32 */
+  interval_lt?: number | null;
+  /** @format int32 */
+  interval_lte?: number | null;
+  /** @format int32 */
+  interval_not?: number | null;
+  interval_not_in?: number[] | null;
+  iscsi_luns_every?: IscsiLunWhereInput | null;
+  iscsi_luns_none?: IscsiLunWhereInput | null;
+  iscsi_luns_some?: IscsiLunWhereInput | null;
+  keep_mac_address?: boolean | null;
+  keep_mac_address_not?: boolean | null;
+  keep_policy?: BackupPlanKeepPolicy | null;
+  keep_policy_in?: BackupPlanKeepPolicy[] | null;
+  keep_policy_not?: BackupPlanKeepPolicy | null;
+  keep_policy_not_in?: BackupPlanKeepPolicy[] | null;
+  /** @format int32 */
+  keep_policy_value?: number | null;
+  /** @format int32 */
+  keep_policy_value_gt?: number | null;
+  /** @format int32 */
+  keep_policy_value_gte?: number | null;
+  keep_policy_value_in?: number[] | null;
+  /** @format int32 */
+  keep_policy_value_lt?: number | null;
+  /** @format int32 */
+  keep_policy_value_lte?: number | null;
+  /** @format int32 */
+  keep_policy_value_not?: number | null;
+  keep_policy_value_not_in?: number[] | null;
+  last_execute_status?: BackupPlanExecutionStatus | null;
+  last_execute_status_in?: BackupPlanExecutionStatus[] | null;
+  last_execute_status_message?: string | null;
+  last_execute_status_message_contains?: string | null;
+  last_execute_status_message_ends_with?: string | null;
+  last_execute_status_message_gt?: string | null;
+  last_execute_status_message_gte?: string | null;
+  last_execute_status_message_in?: string[] | null;
+  last_execute_status_message_lt?: string | null;
+  last_execute_status_message_lte?: string | null;
+  last_execute_status_message_not?: string | null;
+  last_execute_status_message_not_contains?: string | null;
+  last_execute_status_message_not_ends_with?: string | null;
+  last_execute_status_message_not_in?: string[] | null;
+  last_execute_status_message_not_starts_with?: string | null;
+  last_execute_status_message_starts_with?: string | null;
+  last_execute_status_not?: BackupPlanExecutionStatus | null;
+  last_execute_status_not_in?: BackupPlanExecutionStatus[] | null;
+  /** @format int32 */
+  last_execute_success_job_count?: number | null;
+  /** @format int32 */
+  last_execute_success_job_count_gt?: number | null;
+  /** @format int32 */
+  last_execute_success_job_count_gte?: number | null;
+  last_execute_success_job_count_in?: number[] | null;
+  /** @format int32 */
+  last_execute_success_job_count_lt?: number | null;
+  /** @format int32 */
+  last_execute_success_job_count_lte?: number | null;
+  /** @format int32 */
+  last_execute_success_job_count_not?: number | null;
+  last_execute_success_job_count_not_in?: number[] | null;
+  /** @format int32 */
+  last_execute_total_job_count?: number | null;
+  /** @format int32 */
+  last_execute_total_job_count_gt?: number | null;
+  /** @format int32 */
+  last_execute_total_job_count_gte?: number | null;
+  last_execute_total_job_count_in?: number[] | null;
+  /** @format int32 */
+  last_execute_total_job_count_lt?: number | null;
+  /** @format int32 */
+  last_execute_total_job_count_lte?: number | null;
+  /** @format int32 */
+  last_execute_total_job_count_not?: number | null;
+  last_execute_total_job_count_not_in?: number[] | null;
+  last_executed_at?: string | null;
+  last_executed_at_gt?: string | null;
+  last_executed_at_gte?: string | null;
+  last_executed_at_in?: string[] | null;
+  last_executed_at_lt?: string | null;
+  last_executed_at_lte?: string | null;
+  last_executed_at_not?: string | null;
+  last_executed_at_not_in?: string[] | null;
+  last_manual_execute_status?: BackupPlanExecutionStatus | null;
+  last_manual_execute_status_in?: BackupPlanExecutionStatus[] | null;
+  last_manual_execute_status_message?: string | null;
+  last_manual_execute_status_message_contains?: string | null;
+  last_manual_execute_status_message_ends_with?: string | null;
+  last_manual_execute_status_message_gt?: string | null;
+  last_manual_execute_status_message_gte?: string | null;
+  last_manual_execute_status_message_in?: string[] | null;
+  last_manual_execute_status_message_lt?: string | null;
+  last_manual_execute_status_message_lte?: string | null;
+  last_manual_execute_status_message_not?: string | null;
+  last_manual_execute_status_message_not_contains?: string | null;
+  last_manual_execute_status_message_not_ends_with?: string | null;
+  last_manual_execute_status_message_not_in?: string[] | null;
+  last_manual_execute_status_message_not_starts_with?: string | null;
+  last_manual_execute_status_message_starts_with?: string | null;
+  last_manual_execute_status_not?: BackupPlanExecutionStatus | null;
+  last_manual_execute_status_not_in?: BackupPlanExecutionStatus[] | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count?: number | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count_gt?: number | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count_gte?: number | null;
+  last_manual_execute_success_job_count_in?: number[] | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count_lt?: number | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count_lte?: number | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count_not?: number | null;
+  last_manual_execute_success_job_count_not_in?: number[] | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count?: number | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count_gt?: number | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count_gte?: number | null;
+  last_manual_execute_total_job_count_in?: number[] | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count_lt?: number | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count_lte?: number | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count_not?: number | null;
+  last_manual_execute_total_job_count_not_in?: number[] | null;
+  last_manual_executed_at?: string | null;
+  last_manual_executed_at_gt?: string | null;
+  last_manual_executed_at_gte?: string | null;
+  last_manual_executed_at_in?: string[] | null;
+  last_manual_executed_at_lt?: string | null;
+  last_manual_executed_at_lte?: string | null;
+  last_manual_executed_at_not?: string | null;
+  last_manual_executed_at_not_in?: string[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  next_execution_time?: string | null;
+  next_execution_time_gt?: string | null;
+  next_execution_time_gte?: string | null;
+  next_execution_time_in?: string[] | null;
+  next_execution_time_lt?: string | null;
+  next_execution_time_lte?: string | null;
+  next_execution_time_not?: string | null;
+  next_execution_time_not_in?: string[] | null;
+  period?: ReplicationPlanPeriod | null;
+  period_in?: ReplicationPlanPeriod[] | null;
+  period_not?: ReplicationPlanPeriod | null;
+  period_not_in?: ReplicationPlanPeriod[] | null;
+  phase?: BackupPlanPhase | null;
+  phase_in?: BackupPlanPhase[] | null;
+  phase_not?: BackupPlanPhase | null;
+  phase_not_in?: BackupPlanPhase[] | null;
+  replica_name_rule?: ReplicaNameRule | null;
+  replica_name_rule_in?: ReplicaNameRule[] | null;
+  replica_name_rule_not?: ReplicaNameRule | null;
+  replica_name_rule_not_in?: ReplicaNameRule[] | null;
+  replica_name_setting?: string | null;
+  replica_name_setting_contains?: string | null;
+  replica_name_setting_ends_with?: string | null;
+  replica_name_setting_gt?: string | null;
+  replica_name_setting_gte?: string | null;
+  replica_name_setting_in?: string[] | null;
+  replica_name_setting_lt?: string | null;
+  replica_name_setting_lte?: string | null;
+  replica_name_setting_not?: string | null;
+  replica_name_setting_not_contains?: string | null;
+  replica_name_setting_not_ends_with?: string | null;
+  replica_name_setting_not_in?: string[] | null;
+  replica_name_setting_not_starts_with?: string | null;
+  replica_name_setting_starts_with?: string | null;
+  /** @format int32 */
+  replica_num?: number | null;
+  /** @format int32 */
+  replica_num_gt?: number | null;
+  /** @format int32 */
+  replica_num_gte?: number | null;
+  replica_num_in?: number[] | null;
+  /** @format int32 */
+  replica_num_lt?: number | null;
+  /** @format int32 */
+  replica_num_lte?: number | null;
+  /** @format int32 */
+  replica_num_not?: number | null;
+  replica_num_not_in?: number[] | null;
+  replica_vms_every?: ReplicaVmWhereInput | null;
+  replica_vms_none?: ReplicaVmWhereInput | null;
+  replica_vms_some?: ReplicaVmWhereInput | null;
+  resiliency_type?: ResiliencyType | null;
+  resiliency_type_in?: ResiliencyType[] | null;
+  resiliency_type_not?: ResiliencyType | null;
+  resiliency_type_not_in?: ResiliencyType[] | null;
+  snapshot_consistent_type?: ConsistentType | null;
+  snapshot_consistent_type_in?: ConsistentType[] | null;
+  snapshot_consistent_type_not?: ConsistentType | null;
+  snapshot_consistent_type_not_in?: ConsistentType[] | null;
+  status?: BackupPlanStatus | null;
+  status_in?: BackupPlanStatus[] | null;
+  status_not?: BackupPlanStatus | null;
+  status_not_in?: BackupPlanStatus[] | null;
+  storage_policy?: VmVolumeElfStoragePolicyType | null;
+  storage_policy_in?: VmVolumeElfStoragePolicyType[] | null;
+  storage_policy_not?: VmVolumeElfStoragePolicyType | null;
+  storage_policy_not_in?: VmVolumeElfStoragePolicyType[] | null;
+  target_cluster?: ClusterWhereInput | null;
+  target_replication_service?: ReplicationServiceWhereInput | null;
+  thin_provision?: boolean | null;
+  thin_provision_not?: boolean | null;
+  type?: ReplicationPlanType | null;
+  type_in?: ReplicationPlanType[] | null;
+  type_not?: ReplicationPlanType | null;
+  type_not_in?: ReplicationPlanType[] | null;
+  updatedAt?: string | null;
+  updatedAt_gt?: string | null;
+  updatedAt_gte?: string | null;
+  updatedAt_in?: string[] | null;
+  updatedAt_lt?: string | null;
+  updatedAt_lte?: string | null;
+  updatedAt_not?: string | null;
+  updatedAt_not_in?: string[] | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
+  window_end?: string | null;
+  window_end_contains?: string | null;
+  window_end_ends_with?: string | null;
+  window_end_gt?: string | null;
+  window_end_gte?: string | null;
+  window_end_in?: string[] | null;
+  window_end_lt?: string | null;
+  window_end_lte?: string | null;
+  window_end_not?: string | null;
+  window_end_not_contains?: string | null;
+  window_end_not_ends_with?: string | null;
+  window_end_not_in?: string[] | null;
+  window_end_not_starts_with?: string | null;
+  window_end_starts_with?: string | null;
+  window_start?: string | null;
+  window_start_contains?: string | null;
+  window_start_ends_with?: string | null;
+  window_start_gt?: string | null;
+  window_start_gte?: string | null;
+  window_start_in?: string[] | null;
+  window_start_lt?: string | null;
+  window_start_lte?: string | null;
+  window_start_not?: string | null;
+  window_start_not_contains?: string | null;
+  window_start_not_ends_with?: string | null;
+  window_start_not_in?: string[] | null;
+  window_start_not_starts_with?: string | null;
+  window_start_starts_with?: string | null;
+}
+
+export interface ReplicationServiceWhereInput {
+  AND?: ReplicationServiceWhereInput[] | null;
+  NOT?: ReplicationServiceWhereInput[] | null;
+  OR?: ReplicationServiceWhereInput[] | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  kube_config?: string | null;
+  kube_config_contains?: string | null;
+  kube_config_ends_with?: string | null;
+  kube_config_gt?: string | null;
+  kube_config_gte?: string | null;
+  kube_config_in?: string[] | null;
+  kube_config_lt?: string | null;
+  kube_config_lte?: string | null;
+  kube_config_not?: string | null;
+  kube_config_not_contains?: string | null;
+  kube_config_not_ends_with?: string | null;
+  kube_config_not_in?: string[] | null;
+  kube_config_not_starts_with?: string | null;
+  kube_config_starts_with?: string | null;
+  /** @format int32 */
+  max_failback_jobs?: number | null;
+  /** @format int32 */
+  max_failback_jobs_gt?: number | null;
+  /** @format int32 */
+  max_failback_jobs_gte?: number | null;
+  max_failback_jobs_in?: number[] | null;
+  /** @format int32 */
+  max_failback_jobs_lt?: number | null;
+  /** @format int32 */
+  max_failback_jobs_lte?: number | null;
+  /** @format int32 */
+  max_failback_jobs_not?: number | null;
+  max_failback_jobs_not_in?: number[] | null;
+  /** @format double */
+  max_failback_speed_limit?: number | null;
+  /** @format double */
+  max_failback_speed_limit_gt?: number | null;
+  /** @format double */
+  max_failback_speed_limit_gte?: number | null;
+  max_failback_speed_limit_in?: number[] | null;
+  /** @format double */
+  max_failback_speed_limit_lt?: number | null;
+  /** @format double */
+  max_failback_speed_limit_lte?: number | null;
+  /** @format double */
+  max_failback_speed_limit_not?: number | null;
+  max_failback_speed_limit_not_in?: number[] | null;
+  /** @format int32 */
+  max_replication_jobs?: number | null;
+  /** @format int32 */
+  max_replication_jobs_gt?: number | null;
+  /** @format int32 */
+  max_replication_jobs_gte?: number | null;
+  max_replication_jobs_in?: number[] | null;
+  /** @format int32 */
+  max_replication_jobs_lt?: number | null;
+  /** @format int32 */
+  max_replication_jobs_lte?: number | null;
+  /** @format int32 */
+  max_replication_jobs_not?: number | null;
+  max_replication_jobs_not_in?: number[] | null;
+  /** @format double */
+  max_replication_speed_limit?: number | null;
+  /** @format double */
+  max_replication_speed_limit_gt?: number | null;
+  /** @format double */
+  max_replication_speed_limit_gte?: number | null;
+  max_replication_speed_limit_in?: number[] | null;
+  /** @format double */
+  max_replication_speed_limit_lt?: number | null;
+  /** @format double */
+  max_replication_speed_limit_lte?: number | null;
+  /** @format double */
+  max_replication_speed_limit_not?: number | null;
+  max_replication_speed_limit_not_in?: number[] | null;
+  /** @format int32 */
+  max_retry_times?: number | null;
+  /** @format int32 */
+  max_retry_times_gt?: number | null;
+  /** @format int32 */
+  max_retry_times_gte?: number | null;
+  max_retry_times_in?: number[] | null;
+  /** @format int32 */
+  max_retry_times_lt?: number | null;
+  /** @format int32 */
+  max_retry_times_lte?: number | null;
+  /** @format int32 */
+  max_retry_times_not?: number | null;
+  max_retry_times_not_in?: number[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  replication_clusters_every?: ClusterWhereInput | null;
+  replication_clusters_none?: ClusterWhereInput | null;
+  replication_clusters_some?: ClusterWhereInput | null;
+  replication_plans_every?: ReplicationPlanWhereInput | null;
+  replication_plans_none?: ReplicationPlanWhereInput | null;
+  replication_plans_some?: ReplicationPlanWhereInput | null;
+  /** @format int32 */
+  retry_interval?: number | null;
+  /** @format int32 */
+  retry_interval_gt?: number | null;
+  /** @format int32 */
+  retry_interval_gte?: number | null;
+  retry_interval_in?: number[] | null;
+  /** @format int32 */
+  retry_interval_lt?: number | null;
+  /** @format int32 */
+  retry_interval_lte?: number | null;
+  /** @format int32 */
+  retry_interval_not?: number | null;
+  retry_interval_not_in?: number[] | null;
+  sync_replication_plans_every?: SyncReplicationPlanWhereInput | null;
+  sync_replication_plans_none?: SyncReplicationPlanWhereInput | null;
+  sync_replication_plans_some?: SyncReplicationPlanWhereInput | null;
+  updatedAt?: string | null;
+  updatedAt_gt?: string | null;
+  updatedAt_gte?: string | null;
+  updatedAt_in?: string[] | null;
+  updatedAt_lt?: string | null;
+  updatedAt_lte?: string | null;
+  updatedAt_not?: string | null;
+  updatedAt_not_in?: string[] | null;
+}
+
+export interface ReplicaVmWhereInput {
+  AND?: ReplicaVmWhereInput[] | null;
+  NOT?: ReplicaVmWhereInput[] | null;
+  OR?: ReplicaVmWhereInput[] | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  failover_test_replica_group?: string | null;
+  failover_test_replica_group_contains?: string | null;
+  failover_test_replica_group_ends_with?: string | null;
+  failover_test_replica_group_gt?: string | null;
+  failover_test_replica_group_gte?: string | null;
+  failover_test_replica_group_in?: string[] | null;
+  failover_test_replica_group_lt?: string | null;
+  failover_test_replica_group_lte?: string | null;
+  failover_test_replica_group_not?: string | null;
+  failover_test_replica_group_not_contains?: string | null;
+  failover_test_replica_group_not_ends_with?: string | null;
+  failover_test_replica_group_not_in?: string[] | null;
+  failover_test_replica_group_not_starts_with?: string | null;
+  failover_test_replica_group_starts_with?: string | null;
+  failover_test_vm?: VmWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  inbound?: boolean | null;
+  inbound_not?: boolean | null;
+  iscsi_lun?: IscsiLunWhereInput | null;
+  last_out_of_sync_at?: string | null;
+  last_out_of_sync_at_gt?: string | null;
+  last_out_of_sync_at_gte?: string | null;
+  last_out_of_sync_at_in?: string[] | null;
+  last_out_of_sync_at_lt?: string | null;
+  last_out_of_sync_at_lte?: string | null;
+  last_out_of_sync_at_not?: string | null;
+  last_out_of_sync_at_not_in?: string[] | null;
+  last_out_of_sync_reason?: string | null;
+  last_out_of_sync_reason_contains?: string | null;
+  last_out_of_sync_reason_ends_with?: string | null;
+  last_out_of_sync_reason_gt?: string | null;
+  last_out_of_sync_reason_gte?: string | null;
+  last_out_of_sync_reason_in?: string[] | null;
+  last_out_of_sync_reason_lt?: string | null;
+  last_out_of_sync_reason_lte?: string | null;
+  last_out_of_sync_reason_not?: string | null;
+  last_out_of_sync_reason_not_contains?: string | null;
+  last_out_of_sync_reason_not_ends_with?: string | null;
+  last_out_of_sync_reason_not_in?: string[] | null;
+  last_out_of_sync_reason_not_starts_with?: string | null;
+  last_out_of_sync_reason_starts_with?: string | null;
+  last_synced_at?: string | null;
+  last_synced_at_gt?: string | null;
+  last_synced_at_gte?: string | null;
+  last_synced_at_in?: string[] | null;
+  last_synced_at_lt?: string | null;
+  last_synced_at_lte?: string | null;
+  last_synced_at_not?: string | null;
+  last_synced_at_not_in?: string[] | null;
+  method?: ReplicationMethod | null;
+  method_in?: ReplicationMethod[] | null;
+  method_not?: ReplicationMethod | null;
+  method_not_in?: ReplicationMethod[] | null;
+  origin_iscsi_lun?: IscsiLunWhereInput | null;
+  origin_vm?: VmWhereInput | null;
+  origin_vm_cluster_local_id?: string | null;
+  origin_vm_cluster_local_id_contains?: string | null;
+  origin_vm_cluster_local_id_ends_with?: string | null;
+  origin_vm_cluster_local_id_gt?: string | null;
+  origin_vm_cluster_local_id_gte?: string | null;
+  origin_vm_cluster_local_id_in?: string[] | null;
+  origin_vm_cluster_local_id_lt?: string | null;
+  origin_vm_cluster_local_id_lte?: string | null;
+  origin_vm_cluster_local_id_not?: string | null;
+  origin_vm_cluster_local_id_not_contains?: string | null;
+  origin_vm_cluster_local_id_not_ends_with?: string | null;
+  origin_vm_cluster_local_id_not_in?: string[] | null;
+  origin_vm_cluster_local_id_not_starts_with?: string | null;
+  origin_vm_cluster_local_id_starts_with?: string | null;
+  origin_vm_cluster_name?: string | null;
+  origin_vm_cluster_name_contains?: string | null;
+  origin_vm_cluster_name_ends_with?: string | null;
+  origin_vm_cluster_name_gt?: string | null;
+  origin_vm_cluster_name_gte?: string | null;
+  origin_vm_cluster_name_in?: string[] | null;
+  origin_vm_cluster_name_lt?: string | null;
+  origin_vm_cluster_name_lte?: string | null;
+  origin_vm_cluster_name_not?: string | null;
+  origin_vm_cluster_name_not_contains?: string | null;
+  origin_vm_cluster_name_not_ends_with?: string | null;
+  origin_vm_cluster_name_not_in?: string[] | null;
+  origin_vm_cluster_name_not_starts_with?: string | null;
+  origin_vm_cluster_name_starts_with?: string | null;
+  origin_vm_local_id?: string | null;
+  origin_vm_local_id_contains?: string | null;
+  origin_vm_local_id_ends_with?: string | null;
+  origin_vm_local_id_gt?: string | null;
+  origin_vm_local_id_gte?: string | null;
+  origin_vm_local_id_in?: string[] | null;
+  origin_vm_local_id_lt?: string | null;
+  origin_vm_local_id_lte?: string | null;
+  origin_vm_local_id_not?: string | null;
+  origin_vm_local_id_not_contains?: string | null;
+  origin_vm_local_id_not_ends_with?: string | null;
+  origin_vm_local_id_not_in?: string[] | null;
+  origin_vm_local_id_not_starts_with?: string | null;
+  origin_vm_local_id_starts_with?: string | null;
+  origin_vm_name?: string | null;
+  origin_vm_name_contains?: string | null;
+  origin_vm_name_ends_with?: string | null;
+  origin_vm_name_gt?: string | null;
+  origin_vm_name_gte?: string | null;
+  origin_vm_name_in?: string[] | null;
+  origin_vm_name_lt?: string | null;
+  origin_vm_name_lte?: string | null;
+  origin_vm_name_not?: string | null;
+  origin_vm_name_not_contains?: string | null;
+  origin_vm_name_not_ends_with?: string | null;
+  origin_vm_name_not_in?: string[] | null;
+  origin_vm_name_not_starts_with?: string | null;
+  origin_vm_name_starts_with?: string | null;
+  replica_group?: string | null;
+  replica_group_contains?: string | null;
+  replica_group_ends_with?: string | null;
+  replica_group_gt?: string | null;
+  replica_group_gte?: string | null;
+  replica_group_in?: string[] | null;
+  replica_group_lt?: string | null;
+  replica_group_lte?: string | null;
+  replica_group_not?: string | null;
+  replica_group_not_contains?: string | null;
+  replica_group_not_ends_with?: string | null;
+  replica_group_not_in?: string[] | null;
+  replica_group_not_starts_with?: string | null;
+  replica_group_starts_with?: string | null;
+  replication_group?: string | null;
+  replication_group_contains?: string | null;
+  replication_group_ends_with?: string | null;
+  replication_group_gt?: string | null;
+  replication_group_gte?: string | null;
+  replication_group_in?: string[] | null;
+  replication_group_lt?: string | null;
+  replication_group_lte?: string | null;
+  replication_group_not?: string | null;
+  replication_group_not_contains?: string | null;
+  replication_group_not_ends_with?: string | null;
+  replication_group_not_in?: string[] | null;
+  replication_group_not_starts_with?: string | null;
+  replication_group_starts_with?: string | null;
+  replication_plan?: ReplicationPlanWhereInput | null;
+  replication_service?: ReplicationServiceWhereInput | null;
+  /** @format int32 */
+  resource_version?: number | null;
+  /** @format int32 */
+  resource_version_gt?: number | null;
+  /** @format int32 */
+  resource_version_gte?: number | null;
+  resource_version_in?: number[] | null;
+  /** @format int32 */
+  resource_version_lt?: number | null;
+  /** @format int32 */
+  resource_version_lte?: number | null;
+  /** @format int32 */
+  resource_version_not?: number | null;
+  resource_version_not_in?: number[] | null;
+  state?: ReplicaVmState | null;
+  state_in?: ReplicaVmState[] | null;
+  state_not?: ReplicaVmState | null;
+  state_not_in?: ReplicaVmState[] | null;
+  sync_replication_object_status?: SyncReplicationObjectStatus | null;
+  sync_replication_object_status_in?: SyncReplicationObjectStatus[] | null;
+  sync_replication_object_status_not?: SyncReplicationObjectStatus | null;
+  sync_replication_object_status_not_in?: SyncReplicationObjectStatus[] | null;
+  sync_replication_plan?: SyncReplicationPlanWhereInput | null;
+  sync_replication_status?: SyncReplicationStatus | null;
+  sync_replication_status_in?: SyncReplicationStatus[] | null;
+  sync_replication_status_not?: SyncReplicationStatus | null;
+  sync_replication_status_not_in?: SyncReplicationStatus[] | null;
+  targets_deletable?: boolean | null;
+  targets_deletable_not?: boolean | null;
+  type?: ReplicationObjectType | null;
+  type_in?: ReplicationObjectType[] | null;
+  type_not?: ReplicationObjectType | null;
+  type_not_in?: ReplicationObjectType[] | null;
+  updatedAt?: string | null;
+  updatedAt_gt?: string | null;
+  updatedAt_gte?: string | null;
+  updatedAt_in?: string[] | null;
+  updatedAt_lt?: string | null;
+  updatedAt_lte?: string | null;
+  updatedAt_not?: string | null;
+  updatedAt_not_in?: string[] | null;
+  vm?: VmWhereInput | null;
+}
+
+export enum ReplicationMethod {
+  ASYNC = "ASYNC",
+  SYNC = "SYNC",
+}
+
+export interface SyncReplicationPlanWhereInput {
+  AND?: SyncReplicationPlanWhereInput[] | null;
+  NOT?: SyncReplicationPlanWhereInput[] | null;
+  OR?: SyncReplicationPlanWhereInput[] | null;
+  activation_timestamp?: string | null;
+  activation_timestamp_gt?: string | null;
+  activation_timestamp_gte?: string | null;
+  activation_timestamp_in?: string[] | null;
+  activation_timestamp_lt?: string | null;
+  activation_timestamp_lte?: string | null;
+  activation_timestamp_not?: string | null;
+  activation_timestamp_not_in?: string[] | null;
+  compression?: boolean | null;
+  compression_not?: boolean | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
+  /** @format int32 */
+  data_version?: number | null;
+  /** @format int32 */
+  data_version_gt?: number | null;
+  /** @format int32 */
+  data_version_gte?: number | null;
+  data_version_in?: number[] | null;
+  /** @format int32 */
+  data_version_lt?: number | null;
+  /** @format int32 */
+  data_version_lte?: number | null;
+  /** @format int32 */
+  data_version_not?: number | null;
+  data_version_not_in?: number[] | null;
+  delete_strategy?: BackupPlanDeleteStrategy | null;
+  delete_strategy_in?: BackupPlanDeleteStrategy[] | null;
+  delete_strategy_not?: BackupPlanDeleteStrategy | null;
+  delete_strategy_not_in?: BackupPlanDeleteStrategy[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  /** @format int32 */
+  ec_k?: number | null;
+  /** @format int32 */
+  ec_k_gt?: number | null;
+  /** @format int32 */
+  ec_k_gte?: number | null;
+  ec_k_in?: number[] | null;
+  /** @format int32 */
+  ec_k_lt?: number | null;
+  /** @format int32 */
+  ec_k_lte?: number | null;
+  /** @format int32 */
+  ec_k_not?: number | null;
+  ec_k_not_in?: number[] | null;
+  /** @format int32 */
+  ec_m?: number | null;
+  /** @format int32 */
+  ec_m_gt?: number | null;
+  /** @format int32 */
+  ec_m_gte?: number | null;
+  ec_m_in?: number[] | null;
+  /** @format int32 */
+  ec_m_lt?: number | null;
+  /** @format int32 */
+  ec_m_lte?: number | null;
+  /** @format int32 */
+  ec_m_not?: number | null;
+  ec_m_not_in?: number[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  failover_test_keep_mac_address?: boolean | null;
+  failover_test_keep_mac_address_not?: boolean | null;
+  failover_test_name_rule?: ReplicaNameRule | null;
+  failover_test_name_rule_in?: ReplicaNameRule[] | null;
+  failover_test_name_rule_not?: ReplicaNameRule | null;
+  failover_test_name_rule_not_in?: ReplicaNameRule[] | null;
+  failover_test_name_setting?: string | null;
+  failover_test_name_setting_contains?: string | null;
+  failover_test_name_setting_ends_with?: string | null;
+  failover_test_name_setting_gt?: string | null;
+  failover_test_name_setting_gte?: string | null;
+  failover_test_name_setting_in?: string[] | null;
+  failover_test_name_setting_lt?: string | null;
+  failover_test_name_setting_lte?: string | null;
+  failover_test_name_setting_not?: string | null;
+  failover_test_name_setting_not_contains?: string | null;
+  failover_test_name_setting_not_ends_with?: string | null;
+  failover_test_name_setting_not_in?: string[] | null;
+  failover_test_name_setting_not_starts_with?: string | null;
+  failover_test_name_setting_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  inbound?: boolean | null;
+  inbound_not?: boolean | null;
+  initialization_time_point?: string | null;
+  initialization_time_point_contains?: string | null;
+  initialization_time_point_ends_with?: string | null;
+  initialization_time_point_gt?: string | null;
+  initialization_time_point_gte?: string | null;
+  initialization_time_point_in?: string[] | null;
+  initialization_time_point_lt?: string | null;
+  initialization_time_point_lte?: string | null;
+  initialization_time_point_not?: string | null;
+  initialization_time_point_not_contains?: string | null;
+  initialization_time_point_not_ends_with?: string | null;
+  initialization_time_point_not_in?: string[] | null;
+  initialization_time_point_not_starts_with?: string | null;
+  initialization_time_point_starts_with?: string | null;
+  /** @format int32 */
+  interval?: number | null;
+  /** @format int32 */
+  interval_gt?: number | null;
+  /** @format int32 */
+  interval_gte?: number | null;
+  interval_in?: number[] | null;
+  /** @format int32 */
+  interval_lt?: number | null;
+  /** @format int32 */
+  interval_lte?: number | null;
+  /** @format int32 */
+  interval_not?: number | null;
+  interval_not_in?: number[] | null;
+  keep_mac_address?: boolean | null;
+  keep_mac_address_not?: boolean | null;
+  keep_policy?: BackupPlanKeepPolicy | null;
+  keep_policy_in?: BackupPlanKeepPolicy[] | null;
+  keep_policy_not?: BackupPlanKeepPolicy | null;
+  keep_policy_not_in?: BackupPlanKeepPolicy[] | null;
+  /** @format int32 */
+  keep_policy_value?: number | null;
+  /** @format int32 */
+  keep_policy_value_gt?: number | null;
+  /** @format int32 */
+  keep_policy_value_gte?: number | null;
+  keep_policy_value_in?: number[] | null;
+  /** @format int32 */
+  keep_policy_value_lt?: number | null;
+  /** @format int32 */
+  keep_policy_value_lte?: number | null;
+  /** @format int32 */
+  keep_policy_value_not?: number | null;
+  keep_policy_value_not_in?: number[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  period?: ReplicationPlanPeriod | null;
+  period_in?: ReplicationPlanPeriod[] | null;
+  period_not?: ReplicationPlanPeriod | null;
+  period_not_in?: ReplicationPlanPeriod[] | null;
+  phase?: BackupPlanPhase | null;
+  phase_in?: BackupPlanPhase[] | null;
+  phase_not?: BackupPlanPhase | null;
+  phase_not_in?: BackupPlanPhase[] | null;
+  replica_name_rule?: ReplicaNameRule | null;
+  replica_name_rule_in?: ReplicaNameRule[] | null;
+  replica_name_rule_not?: ReplicaNameRule | null;
+  replica_name_rule_not_in?: ReplicaNameRule[] | null;
+  replica_name_setting?: string | null;
+  replica_name_setting_contains?: string | null;
+  replica_name_setting_ends_with?: string | null;
+  replica_name_setting_gt?: string | null;
+  replica_name_setting_gte?: string | null;
+  replica_name_setting_in?: string[] | null;
+  replica_name_setting_lt?: string | null;
+  replica_name_setting_lte?: string | null;
+  replica_name_setting_not?: string | null;
+  replica_name_setting_not_contains?: string | null;
+  replica_name_setting_not_ends_with?: string | null;
+  replica_name_setting_not_in?: string[] | null;
+  replica_name_setting_not_starts_with?: string | null;
+  replica_name_setting_starts_with?: string | null;
+  /** @format int32 */
+  replica_num?: number | null;
+  /** @format int32 */
+  replica_num_gt?: number | null;
+  /** @format int32 */
+  replica_num_gte?: number | null;
+  replica_num_in?: number[] | null;
+  /** @format int32 */
+  replica_num_lt?: number | null;
+  /** @format int32 */
+  replica_num_lte?: number | null;
+  /** @format int32 */
+  replica_num_not?: number | null;
+  replica_num_not_in?: number[] | null;
+  replica_vms_every?: ReplicaVmWhereInput | null;
+  replica_vms_none?: ReplicaVmWhereInput | null;
+  replica_vms_some?: ReplicaVmWhereInput | null;
+  resiliency_type?: ResiliencyType | null;
+  resiliency_type_in?: ResiliencyType[] | null;
+  resiliency_type_not?: ResiliencyType | null;
+  resiliency_type_not_in?: ResiliencyType[] | null;
+  /** @format int32 */
+  resource_version?: number | null;
+  /** @format int32 */
+  resource_version_gt?: number | null;
+  /** @format int32 */
+  resource_version_gte?: number | null;
+  resource_version_in?: number[] | null;
+  /** @format int32 */
+  resource_version_lt?: number | null;
+  /** @format int32 */
+  resource_version_lte?: number | null;
+  /** @format int32 */
+  resource_version_not?: number | null;
+  resource_version_not_in?: number[] | null;
+  snapshot_consistent_type?: ConsistentType | null;
+  snapshot_consistent_type_in?: ConsistentType[] | null;
+  snapshot_consistent_type_not?: ConsistentType | null;
+  snapshot_consistent_type_not_in?: ConsistentType[] | null;
+  status?: BackupPlanStatus | null;
+  status_in?: BackupPlanStatus[] | null;
+  status_not?: BackupPlanStatus | null;
+  status_not_in?: BackupPlanStatus[] | null;
+  storage_encrypted?: boolean | null;
+  storage_encrypted_not?: boolean | null;
+  storage_policy?: VmVolumeElfStoragePolicyType | null;
+  storage_policy_in?: VmVolumeElfStoragePolicyType[] | null;
+  storage_policy_not?: VmVolumeElfStoragePolicyType | null;
+  storage_policy_not_in?: VmVolumeElfStoragePolicyType[] | null;
+  target_cluster?: ClusterWhereInput | null;
+  target_replication_service?: ReplicationServiceWhereInput | null;
+  thin_provision?: boolean | null;
+  thin_provision_not?: boolean | null;
+  type?: ReplicationPlanType | null;
+  type_in?: ReplicationPlanType[] | null;
+  type_not?: ReplicationPlanType | null;
+  type_not_in?: ReplicationPlanType[] | null;
+  updatedAt?: string | null;
+  updatedAt_gt?: string | null;
+  updatedAt_gte?: string | null;
+  updatedAt_in?: string[] | null;
+  updatedAt_lt?: string | null;
+  updatedAt_lte?: string | null;
+  updatedAt_not?: string | null;
+  updatedAt_not_in?: string[] | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
+}
+
+export enum ReplicaNameRule {
+  ORIGIN = "ORIGIN",
+  PREFIX = "PREFIX",
+  SUFFIX = "SUFFIX",
+}
+
+export enum ReplicationPlanPeriod {
+  DAILY = "DAILY",
+  HOURLY = "HOURLY",
+  MINUTELY = "MINUTELY",
+  MONTHLY = "MONTHLY",
+  WEEKLY = "WEEKLY",
+}
+
+export enum VmVolumeElfStoragePolicyType {
+  EC = "EC",
+  ELFCPREPLICA2THICKPROVISION = "ELF_CP_REPLICA_2_THICK_PROVISION",
+  ELFCPREPLICA2THINPROVISION = "ELF_CP_REPLICA_2_THIN_PROVISION",
+  ELFCPREPLICA3THICKPROVISION = "ELF_CP_REPLICA_3_THICK_PROVISION",
+  ELFCPREPLICA3THINPROVISION = "ELF_CP_REPLICA_3_THIN_PROVISION",
+  REPLICA1THICKPROVISION = "REPLICA_1_THICK_PROVISION",
+  REPLICA1THINPROVISION = "REPLICA_1_THIN_PROVISION",
+  REPLICA2THICKPROVISION = "REPLICA_2_THICK_PROVISION",
+  REPLICA2THINPROVISION = "REPLICA_2_THIN_PROVISION",
+  REPLICA3THICKPROVISION = "REPLICA_3_THICK_PROVISION",
+  REPLICA3THINPROVISION = "REPLICA_3_THIN_PROVISION",
+}
+
+export enum ReplicationPlanType {
+  STORAGE_VOLUME = "STORAGE_VOLUME",
+  VM = "VM",
+}
+
+export enum ReplicaVmState {
+  FAILBACK = "FAILBACK",
+  FAILOVER = "FAILOVER",
+  FAILOVER_TEST = "FAILOVER_TEST",
+  NOT_READY = "NOT_READY",
+  PERMANENT_FAILOVER = "PERMANENT_FAILOVER",
+  READY = "READY",
+  REPLICATING = "REPLICATING",
+}
+
+export enum SyncReplicationObjectStatus {
+  SOURCE_UNREACHABLE = "SOURCE_UNREACHABLE",
+  TARGET_UNREACHABLE = "TARGET_UNREACHABLE",
+  UNEXPECTED_VM_STATUS = "UNEXPECTED_VM_STATUS",
+}
+
+export enum SyncReplicationStatus {
+  INITIALIZING = "INITIALIZING",
+  PAUSED = "PAUSED",
+  PENDING = "PENDING",
+  SYNCED = "SYNCED",
+  SYNCING = "SYNCING",
+}
+
+export enum ReplicationObjectType {
+  CONSISTENCY_GROUP = "CONSISTENCY_GROUP",
+  ISCSI_LUN = "ISCSI_LUN",
+  NVMF_NAMESPACE = "NVMF_NAMESPACE",
+  VM = "VM",
+}
+
+export interface ContentLibraryImageWhereInput {
+  AND?: ContentLibraryImageWhereInput[] | null;
+  NOT?: ContentLibraryImageWhereInput[] | null;
+  OR?: ContentLibraryImageWhereInput[] | null;
+  clusters_every?: ClusterWhereInput | null;
+  clusters_none?: ClusterWhereInput | null;
+  clusters_some?: ClusterWhereInput | null;
+  createdAt?: string | null;
+  createdAt_gt?: string | null;
+  createdAt_gte?: string | null;
+  createdAt_in?: string[] | null;
+  createdAt_lt?: string | null;
+  createdAt_lte?: string | null;
+  createdAt_not?: string | null;
+  createdAt_not_in?: string[] | null;
+  datastores_every?: DatastoreWhereInput | null;
+  datastores_none?: DatastoreWhereInput | null;
+  datastores_some?: DatastoreWhereInput | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  elf_images_every?: ElfImageWhereInput | null;
+  elf_images_none?: ElfImageWhereInput | null;
+  elf_images_some?: ElfImageWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  iscsi_luns_every?: IscsiLunWhereInput | null;
+  iscsi_luns_none?: IscsiLunWhereInput | null;
+  iscsi_luns_some?: IscsiLunWhereInput | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  path?: string | null;
+  path_contains?: string | null;
+  path_ends_with?: string | null;
+  path_gt?: string | null;
+  path_gte?: string | null;
+  path_in?: string[] | null;
+  path_lt?: string | null;
+  path_lte?: string | null;
+  path_not?: string | null;
+  path_not_contains?: string | null;
+  path_not_ends_with?: string | null;
+  path_not_in?: string[] | null;
+  path_not_starts_with?: string | null;
+  path_starts_with?: string | null;
+  /** @format int64 */
+  size?: number | null;
+  /** @format int64 */
+  size_gt?: number | null;
+  /** @format int64 */
+  size_gte?: number | null;
+  size_in?: number[] | null;
+  /** @format int64 */
+  size_lt?: number | null;
+  /** @format int64 */
+  size_lte?: number | null;
+  /** @format int64 */
+  size_not?: number | null;
+  size_not_in?: number[] | null;
+  vm_disks_every?: VmDiskWhereInput | null;
+  vm_disks_none?: VmDiskWhereInput | null;
+  vm_disks_some?: VmDiskWhereInput | null;
+  vm_snapshots_every?: VmSnapshotWhereInput | null;
+  vm_snapshots_none?: VmSnapshotWhereInput | null;
+  vm_snapshots_some?: VmSnapshotWhereInput | null;
+  vm_templates_every?: VmTemplateWhereInput | null;
+  vm_templates_none?: VmTemplateWhereInput | null;
+  vm_templates_some?: VmTemplateWhereInput | null;
+}
+
+export interface ElfImageWhereInput {
+  AND?: ElfImageWhereInput[] | null;
+  NOT?: ElfImageWhereInput[] | null;
+  OR?: ElfImageWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  content_library_image?: ContentLibraryImageWhereInput | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  path?: string | null;
+  path_contains?: string | null;
+  path_ends_with?: string | null;
+  path_gt?: string | null;
+  path_gte?: string | null;
+  path_in?: string[] | null;
+  path_lt?: string | null;
+  path_lte?: string | null;
+  path_not?: string | null;
+  path_not_contains?: string | null;
+  path_not_ends_with?: string | null;
+  path_not_in?: string[] | null;
+  path_not_starts_with?: string | null;
+  path_starts_with?: string | null;
+  /** @format int64 */
+  size?: number | null;
+  /** @format int64 */
+  size_gt?: number | null;
+  /** @format int64 */
+  size_gte?: number | null;
+  size_in?: number[] | null;
+  /** @format int64 */
+  size_lt?: number | null;
+  /** @format int64 */
+  size_lte?: number | null;
+  /** @format int64 */
+  size_not?: number | null;
+  size_not_in?: number[] | null;
+  vm_disks_every?: VmDiskWhereInput | null;
+  vm_disks_none?: VmDiskWhereInput | null;
+  vm_disks_some?: VmDiskWhereInput | null;
+  vm_snapshots_every?: VmSnapshotWhereInput | null;
+  vm_snapshots_none?: VmSnapshotWhereInput | null;
+  vm_snapshots_some?: VmSnapshotWhereInput | null;
+  vm_templates_every?: VmTemplateWhereInput | null;
+  vm_templates_none?: VmTemplateWhereInput | null;
+  vm_templates_some?: VmTemplateWhereInput | null;
+}
+
+export interface VmDiskWhereInput {
+  AND?: VmDiskWhereInput[] | null;
+  NOT?: VmDiskWhereInput[] | null;
+  OR?: VmDiskWhereInput[] | null;
+  /** @format int32 */
+  boot?: number | null;
+  /** @format int32 */
+  boot_gt?: number | null;
+  /** @format int32 */
+  boot_gte?: number | null;
+  boot_in?: number[] | null;
+  /** @format int32 */
+  boot_lt?: number | null;
+  /** @format int32 */
+  boot_lte?: number | null;
+  /** @format int32 */
+  boot_not?: number | null;
+  boot_not_in?: number[] | null;
+  bus?: Bus | null;
+  bus_in?: Bus[] | null;
+  bus_not?: Bus | null;
+  bus_not_in?: Bus[] | null;
+  cloud_init_image_name?: string | null;
+  cloud_init_image_name_contains?: string | null;
+  cloud_init_image_name_ends_with?: string | null;
+  cloud_init_image_name_gt?: string | null;
+  cloud_init_image_name_gte?: string | null;
+  cloud_init_image_name_in?: string[] | null;
+  cloud_init_image_name_lt?: string | null;
+  cloud_init_image_name_lte?: string | null;
+  cloud_init_image_name_not?: string | null;
+  cloud_init_image_name_not_contains?: string | null;
+  cloud_init_image_name_not_ends_with?: string | null;
+  cloud_init_image_name_not_in?: string[] | null;
+  cloud_init_image_name_not_starts_with?: string | null;
+  cloud_init_image_name_starts_with?: string | null;
+  cloud_init_image_path?: string | null;
+  cloud_init_image_path_contains?: string | null;
+  cloud_init_image_path_ends_with?: string | null;
+  cloud_init_image_path_gt?: string | null;
+  cloud_init_image_path_gte?: string | null;
+  cloud_init_image_path_in?: string[] | null;
+  cloud_init_image_path_lt?: string | null;
+  cloud_init_image_path_lte?: string | null;
+  cloud_init_image_path_not?: string | null;
+  cloud_init_image_path_not_contains?: string | null;
+  cloud_init_image_path_not_ends_with?: string | null;
+  cloud_init_image_path_not_in?: string[] | null;
+  cloud_init_image_path_not_starts_with?: string | null;
+  cloud_init_image_path_starts_with?: string | null;
+  device?: string | null;
+  device_contains?: string | null;
+  device_ends_with?: string | null;
+  device_gt?: string | null;
+  device_gte?: string | null;
+  device_in?: string[] | null;
+  device_lt?: string | null;
+  device_lte?: string | null;
+  device_not?: string | null;
+  device_not_contains?: string | null;
+  device_not_ends_with?: string | null;
+  device_not_in?: string[] | null;
+  device_not_starts_with?: string | null;
+  device_starts_with?: string | null;
+  disabled?: boolean | null;
+  disabled_not?: boolean | null;
+  elf_image?: ElfImageWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  /** @format int32 */
+  key?: number | null;
+  /** @format int32 */
+  key_gt?: number | null;
+  /** @format int32 */
+  key_gte?: number | null;
+  key_in?: number[] | null;
+  /** @format int32 */
+  key_lt?: number | null;
+  /** @format int32 */
+  key_lte?: number | null;
+  /** @format int32 */
+  key_not?: number | null;
+  key_not_in?: number[] | null;
+  /** @format int64 */
+  max_bandwidth?: number | null;
+  /** @format int64 */
+  max_bandwidth_gt?: number | null;
+  /** @format int64 */
+  max_bandwidth_gte?: number | null;
+  max_bandwidth_in?: number[] | null;
+  /** @format int64 */
+  max_bandwidth_lt?: number | null;
+  /** @format int64 */
+  max_bandwidth_lte?: number | null;
+  /** @format int64 */
+  max_bandwidth_not?: number | null;
+  max_bandwidth_not_in?: number[] | null;
+  max_bandwidth_policy?: VmDiskIoRestrictType | null;
+  max_bandwidth_policy_in?: VmDiskIoRestrictType[] | null;
+  max_bandwidth_policy_not?: VmDiskIoRestrictType | null;
+  max_bandwidth_policy_not_in?: VmDiskIoRestrictType[] | null;
+  /** @format int32 */
+  max_iops?: number | null;
+  /** @format int32 */
+  max_iops_gt?: number | null;
+  /** @format int32 */
+  max_iops_gte?: number | null;
+  max_iops_in?: number[] | null;
+  /** @format int32 */
+  max_iops_lt?: number | null;
+  /** @format int32 */
+  max_iops_lte?: number | null;
+  /** @format int32 */
+  max_iops_not?: number | null;
+  max_iops_not_in?: number[] | null;
+  max_iops_policy?: VmDiskIoRestrictType | null;
+  max_iops_policy_in?: VmDiskIoRestrictType[] | null;
+  max_iops_policy_not?: VmDiskIoRestrictType | null;
+  max_iops_policy_not_in?: VmDiskIoRestrictType[] | null;
+  serial?: string | null;
+  serial_contains?: string | null;
+  serial_ends_with?: string | null;
+  serial_gt?: string | null;
+  serial_gte?: string | null;
+  serial_in?: string[] | null;
+  serial_lt?: string | null;
+  serial_lte?: string | null;
+  serial_not?: string | null;
+  serial_not_contains?: string | null;
+  serial_not_ends_with?: string | null;
+  serial_not_in?: string[] | null;
+  serial_not_starts_with?: string | null;
+  serial_starts_with?: string | null;
+  svt_image?: SvtImageWhereInput | null;
+  type?: VmDiskType | null;
+  type_in?: VmDiskType[] | null;
+  type_not?: VmDiskType | null;
+  type_not_in?: VmDiskType[] | null;
+  unsafe_image_path?: string | null;
+  unsafe_image_path_contains?: string | null;
+  unsafe_image_path_ends_with?: string | null;
+  unsafe_image_path_gt?: string | null;
+  unsafe_image_path_gte?: string | null;
+  unsafe_image_path_in?: string[] | null;
+  unsafe_image_path_lt?: string | null;
+  unsafe_image_path_lte?: string | null;
+  unsafe_image_path_not?: string | null;
+  unsafe_image_path_not_contains?: string | null;
+  unsafe_image_path_not_ends_with?: string | null;
+  unsafe_image_path_not_in?: string[] | null;
+  unsafe_image_path_not_starts_with?: string | null;
+  unsafe_image_path_starts_with?: string | null;
+  unsafe_image_uuid?: string | null;
+  unsafe_image_uuid_contains?: string | null;
+  unsafe_image_uuid_ends_with?: string | null;
+  unsafe_image_uuid_gt?: string | null;
+  unsafe_image_uuid_gte?: string | null;
+  unsafe_image_uuid_in?: string[] | null;
+  unsafe_image_uuid_lt?: string | null;
+  unsafe_image_uuid_lte?: string | null;
+  unsafe_image_uuid_not?: string | null;
+  unsafe_image_uuid_not_contains?: string | null;
+  unsafe_image_uuid_not_ends_with?: string | null;
+  unsafe_image_uuid_not_in?: string[] | null;
+  unsafe_image_uuid_not_starts_with?: string | null;
+  unsafe_image_uuid_starts_with?: string | null;
+  unsafe_provision?: string | null;
+  unsafe_provision_contains?: string | null;
+  unsafe_provision_ends_with?: string | null;
+  unsafe_provision_gt?: string | null;
+  unsafe_provision_gte?: string | null;
+  unsafe_provision_in?: string[] | null;
+  unsafe_provision_lt?: string | null;
+  unsafe_provision_lte?: string | null;
+  unsafe_provision_not?: string | null;
+  unsafe_provision_not_contains?: string | null;
+  unsafe_provision_not_ends_with?: string | null;
+  unsafe_provision_not_in?: string[] | null;
+  unsafe_provision_not_starts_with?: string | null;
+  unsafe_provision_starts_with?: string | null;
+  vm?: VmWhereInput | null;
+  vm_volume?: VmVolumeWhereInput | null;
+}
+
+export enum Bus {
+  IDE = "IDE",
+  SATA = "SATA",
+  SCSI = "SCSI",
+  USB = "USB",
+  VIRTIO = "VIRTIO",
+}
+
+export interface SvtImageWhereInput {
+  AND?: SvtImageWhereInput[] | null;
+  NOT?: SvtImageWhereInput[] | null;
+  OR?: SvtImageWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  path?: string | null;
+  path_contains?: string | null;
+  path_ends_with?: string | null;
+  path_gt?: string | null;
+  path_gte?: string | null;
+  path_in?: string[] | null;
+  path_lt?: string | null;
+  path_lte?: string | null;
+  path_not?: string | null;
+  path_not_contains?: string | null;
+  path_not_ends_with?: string | null;
+  path_not_in?: string[] | null;
+  path_not_starts_with?: string | null;
+  path_starts_with?: string | null;
+  /** @format int64 */
+  size?: number | null;
+  /** @format int64 */
+  size_gt?: number | null;
+  /** @format int64 */
+  size_gte?: number | null;
+  size_in?: number[] | null;
+  /** @format int64 */
+  size_lt?: number | null;
+  /** @format int64 */
+  size_lte?: number | null;
+  /** @format int64 */
+  size_not?: number | null;
+  size_not_in?: number[] | null;
+  /** @format int32 */
+  version?: number | null;
+  /** @format int32 */
+  version_gt?: number | null;
+  /** @format int32 */
+  version_gte?: number | null;
+  version_in?: number[] | null;
+  /** @format int32 */
+  version_lt?: number | null;
+  /** @format int32 */
+  version_lte?: number | null;
+  /** @format int32 */
+  version_not?: number | null;
+  version_not_in?: number[] | null;
+  vm_disks_every?: VmDiskWhereInput | null;
+  vm_disks_none?: VmDiskWhereInput | null;
+  vm_disks_some?: VmDiskWhereInput | null;
+}
+
+export enum VmDiskType {
+  CD_ROM = "CD_ROM",
+  DISK = "DISK",
+}
+
+export interface VmVolumeWhereInput {
+  AND?: VmVolumeWhereInput[] | null;
+  NOT?: VmVolumeWhereInput[] | null;
+  OR?: VmVolumeWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  elf_storage_policy?: VmVolumeElfStoragePolicyType | null;
+  /** @format int32 */
+  elf_storage_policy_ec_k?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_k_gt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_k_gte?: number | null;
+  elf_storage_policy_ec_k_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_ec_k_lt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_k_lte?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_k_not?: number | null;
+  elf_storage_policy_ec_k_not_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_ec_m?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_m_gt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_m_gte?: number | null;
+  elf_storage_policy_ec_m_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_ec_m_lt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_m_lte?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_m_not?: number | null;
+  elf_storage_policy_ec_m_not_in?: number[] | null;
+  elf_storage_policy_in?: VmVolumeElfStoragePolicyType[] | null;
+  elf_storage_policy_not?: VmVolumeElfStoragePolicyType | null;
+  elf_storage_policy_not_in?: VmVolumeElfStoragePolicyType[] | null;
+  /** @format int32 */
+  elf_storage_policy_replica_num?: number | null;
+  /** @format int32 */
+  elf_storage_policy_replica_num_gt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_replica_num_gte?: number | null;
+  elf_storage_policy_replica_num_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_replica_num_lt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_replica_num_lte?: number | null;
+  /** @format int32 */
+  elf_storage_policy_replica_num_not?: number | null;
+  elf_storage_policy_replica_num_not_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_gt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_gte?: number | null;
+  elf_storage_policy_stripe_num_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_lt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_lte?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_not?: number | null;
+  elf_storage_policy_stripe_num_not_in?: number[] | null;
+  elf_storage_policy_thin_provision?: boolean | null;
+  elf_storage_policy_thin_provision_not?: boolean | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  /** @format double */
+  guest_size_usage?: number | null;
+  /** @format double */
+  guest_size_usage_gt?: number | null;
+  /** @format double */
+  guest_size_usage_gte?: number | null;
+  guest_size_usage_in?: number[] | null;
+  /** @format double */
+  guest_size_usage_lt?: number | null;
+  /** @format double */
+  guest_size_usage_lte?: number | null;
+  /** @format double */
+  guest_size_usage_not?: number | null;
+  guest_size_usage_not_in?: number[] | null;
+  /** @format int64 */
+  guest_used_size?: number | null;
+  /** @format int64 */
+  guest_used_size_gt?: number | null;
+  /** @format int64 */
+  guest_used_size_gte?: number | null;
+  guest_used_size_in?: number[] | null;
+  /** @format int64 */
+  guest_used_size_lt?: number | null;
+  /** @format int64 */
+  guest_used_size_lte?: number | null;
+  /** @format int64 */
+  guest_used_size_not?: number | null;
+  guest_used_size_not_in?: number[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  lun?: IscsiLunWhereInput | null;
+  mounting?: boolean | null;
+  mounting_not?: boolean | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  path?: string | null;
+  path_contains?: string | null;
+  path_ends_with?: string | null;
+  path_gt?: string | null;
+  path_gte?: string | null;
+  path_in?: string[] | null;
+  path_lt?: string | null;
+  path_lte?: string | null;
+  path_not?: string | null;
+  path_not_contains?: string | null;
+  path_not_ends_with?: string | null;
+  path_not_in?: string[] | null;
+  path_not_starts_with?: string | null;
+  path_starts_with?: string | null;
+  provision_policy?: string | null;
+  provision_policy_contains?: string | null;
+  provision_policy_ends_with?: string | null;
+  provision_policy_gt?: string | null;
+  provision_policy_gte?: string | null;
+  provision_policy_in?: string[] | null;
+  provision_policy_lt?: string | null;
+  provision_policy_lte?: string | null;
+  provision_policy_not?: string | null;
+  provision_policy_not_contains?: string | null;
+  provision_policy_not_ends_with?: string | null;
+  provision_policy_not_in?: string[] | null;
+  provision_policy_not_starts_with?: string | null;
+  provision_policy_starts_with?: string | null;
+  resident_in_cache?: boolean | null;
+  resident_in_cache_not?: boolean | null;
+  sharing?: boolean | null;
+  sharing_not?: boolean | null;
+  /** @format int64 */
+  size?: number | null;
+  /** @format int64 */
+  size_gt?: number | null;
+  /** @format int64 */
+  size_gte?: number | null;
+  size_in?: number[] | null;
+  /** @format int64 */
+  size_lt?: number | null;
+  /** @format int64 */
+  size_lte?: number | null;
+  /** @format int64 */
+  size_not?: number | null;
+  size_not_in?: number[] | null;
+  type?: VmVolumeType | null;
+  type_in?: VmVolumeType[] | null;
+  type_not?: VmVolumeType | null;
+  type_not_in?: VmVolumeType[] | null;
+  /** @format double */
+  unique_logical_size?: number | null;
+  /** @format double */
+  unique_logical_size_gt?: number | null;
+  /** @format double */
+  unique_logical_size_gte?: number | null;
+  unique_logical_size_in?: number[] | null;
+  /** @format double */
+  unique_logical_size_lt?: number | null;
+  /** @format double */
+  unique_logical_size_lte?: number | null;
+  /** @format double */
+  unique_logical_size_not?: number | null;
+  unique_logical_size_not_in?: number[] | null;
+  /** @format int64 */
+  unique_size?: number | null;
+  /** @format int64 */
+  unique_size_gt?: number | null;
+  /** @format int64 */
+  unique_size_gte?: number | null;
+  unique_size_in?: number[] | null;
+  /** @format int64 */
+  unique_size_lt?: number | null;
+  /** @format int64 */
+  unique_size_lte?: number | null;
+  /** @format int64 */
+  unique_size_not?: number | null;
+  unique_size_not_in?: number[] | null;
+  /** @format int64 */
+  used_size?: number | null;
+  /** @format int64 */
+  used_size_gt?: number | null;
+  /** @format int64 */
+  used_size_gte?: number | null;
+  used_size_in?: number[] | null;
+  /** @format int64 */
+  used_size_lt?: number | null;
+  /** @format int64 */
+  used_size_lte?: number | null;
+  /** @format int64 */
+  used_size_not?: number | null;
+  used_size_not_in?: number[] | null;
+  /** @format double */
+  used_size_usage?: number | null;
+  /** @format double */
+  used_size_usage_gt?: number | null;
+  /** @format double */
+  used_size_usage_gte?: number | null;
+  used_size_usage_in?: number[] | null;
+  /** @format double */
+  used_size_usage_lt?: number | null;
+  /** @format double */
+  used_size_usage_lte?: number | null;
+  /** @format double */
+  used_size_usage_not?: number | null;
+  used_size_usage_not_in?: number[] | null;
+  vm_disks_every?: VmDiskWhereInput | null;
+  vm_disks_none?: VmDiskWhereInput | null;
+  vm_disks_some?: VmDiskWhereInput | null;
+}
+
+export enum StorageClusterConfigStorageType {
+  DATASTORE = "DATASTORE",
+  STORAGE_CLUSTER = "STORAGE_CLUSTER",
+}
+
 export enum VmVolumeType {
   KVM_VOLUME = "KVM_VOLUME",
   KVM_VOLUME_ISCSI = "KVM_VOLUME_ISCSI",
+  KVM_VOLUME_VCFS = "KVM_VOLUME_VCFS",
 }
 
 export interface VmTemplateWhereInput {
@@ -8368,6 +9281,9 @@ export interface ContentLibraryVmTemplateWhereInput {
   createdAt_lte?: string | null;
   createdAt_not?: string | null;
   createdAt_not_in?: string[] | null;
+  datastores_every?: DatastoreWhereInput | null;
+  datastores_none?: DatastoreWhereInput | null;
+  datastores_some?: DatastoreWhereInput | null;
   description?: string | null;
   description_contains?: string | null;
   description_ends_with?: string | null;
@@ -8505,6 +9421,10 @@ export interface ContentLibraryVmTemplateWhereInput {
   /** @format int64 */
   size_not?: number | null;
   size_not_in?: number[] | null;
+  usage?: ContentLibraryVmTemplateUsage | null;
+  usage_in?: ContentLibraryVmTemplateUsage[] | null;
+  usage_not?: ContentLibraryVmTemplateUsage | null;
+  usage_not_in?: ContentLibraryVmTemplateUsage[] | null;
   /** @format int32 */
   vcpu?: number | null;
   /** @format int32 */
@@ -8533,11 +9453,3262 @@ export interface ContentLibraryVmTemplateWhereInput {
   video_type_not_in?: string[] | null;
   video_type_not_starts_with?: string | null;
   video_type_starts_with?: string | null;
+  vm_template_configs_every?: VmTemplateConfigWhereInput | null;
+  vm_template_configs_none?: VmTemplateConfigWhereInput | null;
+  vm_template_configs_some?: VmTemplateConfigWhereInput | null;
   vm_templates_every?: VmTemplateWhereInput | null;
   vm_templates_none?: VmTemplateWhereInput | null;
   vm_templates_some?: VmTemplateWhereInput | null;
   win_opt?: boolean | null;
   win_opt_not?: boolean | null;
+}
+
+export enum ContentLibraryVmTemplateUsage {
+  SVM = "SVM",
+}
+
+export interface VmTemplateConfigWhereInput {
+  AND?: VmTemplateConfigWhereInput[] | null;
+  NOT?: VmTemplateConfigWhereInput[] | null;
+  OR?: VmTemplateConfigWhereInput[] | null;
+  architecture?: Architecture | null;
+  architecture_in?: Architecture[] | null;
+  architecture_not?: Architecture | null;
+  architecture_not_in?: Architecture[] | null;
+  clock_offset?: VmClockOffset | null;
+  clock_offset_in?: VmClockOffset[] | null;
+  clock_offset_not?: VmClockOffset | null;
+  clock_offset_not_in?: VmClockOffset[] | null;
+  cloud_init_supported?: boolean | null;
+  cloud_init_supported_not?: boolean | null;
+  content_library_vm_template?: ContentLibraryVmTemplateWhereInput | null;
+  cpu_exclusive_expected_enabled?: boolean | null;
+  cpu_exclusive_expected_enabled_not?: boolean | null;
+  cpu_model?: string | null;
+  cpu_model_contains?: string | null;
+  cpu_model_ends_with?: string | null;
+  cpu_model_gt?: string | null;
+  cpu_model_gte?: string | null;
+  cpu_model_in?: string[] | null;
+  cpu_model_lt?: string | null;
+  cpu_model_lte?: string | null;
+  cpu_model_not?: string | null;
+  cpu_model_not_contains?: string | null;
+  cpu_model_not_ends_with?: string | null;
+  cpu_model_not_in?: string[] | null;
+  cpu_model_not_starts_with?: string | null;
+  cpu_model_starts_with?: string | null;
+  datastore?: DatastoreWhereInput | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  disks_every?: VmTemplateConfigDiskWhereInput | null;
+  disks_none?: VmTemplateConfigDiskWhereInput | null;
+  disks_some?: VmTemplateConfigDiskWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  firmware?: VmFirmware | null;
+  firmware_in?: VmFirmware[] | null;
+  firmware_not?: VmFirmware | null;
+  firmware_not_in?: VmFirmware[] | null;
+  guest_os_type?: VmGuestsOperationSystem | null;
+  guest_os_type_in?: VmGuestsOperationSystem[] | null;
+  guest_os_type_not?: VmGuestsOperationSystem | null;
+  guest_os_type_not_in?: VmGuestsOperationSystem[] | null;
+  ha?: boolean | null;
+  ha_not?: boolean | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  io_policy?: VmDiskIoPolicy | null;
+  io_policy_in?: VmDiskIoPolicy[] | null;
+  io_policy_not?: VmDiskIoPolicy | null;
+  io_policy_not_in?: VmDiskIoPolicy[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  machine_family?: string | null;
+  machine_family_contains?: string | null;
+  machine_family_ends_with?: string | null;
+  machine_family_gt?: string | null;
+  machine_family_gte?: string | null;
+  machine_family_in?: string[] | null;
+  machine_family_lt?: string | null;
+  machine_family_lte?: string | null;
+  machine_family_not?: string | null;
+  machine_family_not_contains?: string | null;
+  machine_family_not_ends_with?: string | null;
+  machine_family_not_in?: string[] | null;
+  machine_family_not_starts_with?: string | null;
+  machine_family_starts_with?: string | null;
+  /** @format double */
+  max_bandwidth?: number | null;
+  /** @format double */
+  max_bandwidth_gt?: number | null;
+  /** @format double */
+  max_bandwidth_gte?: number | null;
+  max_bandwidth_in?: number[] | null;
+  /** @format double */
+  max_bandwidth_lt?: number | null;
+  /** @format double */
+  max_bandwidth_lte?: number | null;
+  /** @format double */
+  max_bandwidth_not?: number | null;
+  max_bandwidth_not_in?: number[] | null;
+  max_bandwidth_policy?: VmDiskIoRestrictType | null;
+  max_bandwidth_policy_in?: VmDiskIoRestrictType[] | null;
+  max_bandwidth_policy_not?: VmDiskIoRestrictType | null;
+  max_bandwidth_policy_not_in?: VmDiskIoRestrictType[] | null;
+  /** @format int32 */
+  max_iops?: number | null;
+  /** @format int32 */
+  max_iops_gt?: number | null;
+  /** @format int32 */
+  max_iops_gte?: number | null;
+  max_iops_in?: number[] | null;
+  /** @format int32 */
+  max_iops_lt?: number | null;
+  /** @format int32 */
+  max_iops_lte?: number | null;
+  /** @format int32 */
+  max_iops_not?: number | null;
+  max_iops_not_in?: number[] | null;
+  max_iops_policy?: VmDiskIoRestrictType | null;
+  max_iops_policy_in?: VmDiskIoRestrictType[] | null;
+  max_iops_policy_not?: VmDiskIoRestrictType | null;
+  max_iops_policy_not_in?: VmDiskIoRestrictType[] | null;
+  /** @format double */
+  memory?: number | null;
+  /** @format double */
+  memory_gt?: number | null;
+  /** @format double */
+  memory_gte?: number | null;
+  memory_in?: number[] | null;
+  /** @format double */
+  memory_lt?: number | null;
+  /** @format double */
+  memory_lte?: number | null;
+  /** @format double */
+  memory_not?: number | null;
+  memory_not_in?: number[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  os?: string | null;
+  os_contains?: string | null;
+  os_ends_with?: string | null;
+  os_gt?: string | null;
+  os_gte?: string | null;
+  os_in?: string[] | null;
+  os_lt?: string | null;
+  os_lte?: string | null;
+  os_not?: string | null;
+  os_not_contains?: string | null;
+  os_not_ends_with?: string | null;
+  os_not_in?: string[] | null;
+  os_not_starts_with?: string | null;
+  os_starts_with?: string | null;
+  path?: string | null;
+  path_contains?: string | null;
+  path_ends_with?: string | null;
+  path_gt?: string | null;
+  path_gte?: string | null;
+  path_in?: string[] | null;
+  path_lt?: string | null;
+  path_lte?: string | null;
+  path_not?: string | null;
+  path_not_contains?: string | null;
+  path_not_ends_with?: string | null;
+  path_not_in?: string[] | null;
+  path_not_starts_with?: string | null;
+  path_starts_with?: string | null;
+  secure_boot_enabled?: boolean | null;
+  secure_boot_enabled_not?: boolean | null;
+  /** @format double */
+  size?: number | null;
+  /** @format double */
+  size_gt?: number | null;
+  /** @format double */
+  size_gte?: number | null;
+  size_in?: number[] | null;
+  /** @format double */
+  size_lt?: number | null;
+  /** @format double */
+  size_lte?: number | null;
+  /** @format double */
+  size_not?: number | null;
+  size_not_in?: number[] | null;
+  storage_cluster?: ClusterWhereInput | null;
+  sync_vm_time_on_resume?: boolean | null;
+  sync_vm_time_on_resume_not?: boolean | null;
+  type?: StorageClusterConfigStorageType | null;
+  type_in?: StorageClusterConfigStorageType[] | null;
+  type_not?: StorageClusterConfigStorageType | null;
+  type_not_in?: StorageClusterConfigStorageType[] | null;
+  vcfs_version?: string | null;
+  vcfs_version_contains?: string | null;
+  vcfs_version_ends_with?: string | null;
+  vcfs_version_gt?: string | null;
+  vcfs_version_gte?: string | null;
+  vcfs_version_in?: string[] | null;
+  vcfs_version_lt?: string | null;
+  vcfs_version_lte?: string | null;
+  vcfs_version_not?: string | null;
+  vcfs_version_not_contains?: string | null;
+  vcfs_version_not_ends_with?: string | null;
+  vcfs_version_not_in?: string[] | null;
+  vcfs_version_not_starts_with?: string | null;
+  vcfs_version_starts_with?: string | null;
+  /** @format int32 */
+  vcpu?: number | null;
+  /** @format int32 */
+  vcpu_gt?: number | null;
+  /** @format int32 */
+  vcpu_gte?: number | null;
+  vcpu_in?: number[] | null;
+  /** @format int32 */
+  vcpu_lt?: number | null;
+  /** @format int32 */
+  vcpu_lte?: number | null;
+  /** @format int32 */
+  vcpu_not?: number | null;
+  vcpu_not_in?: number[] | null;
+  video_type?: string | null;
+  video_type_contains?: string | null;
+  video_type_ends_with?: string | null;
+  video_type_gt?: string | null;
+  video_type_gte?: string | null;
+  video_type_in?: string[] | null;
+  video_type_lt?: string | null;
+  video_type_lte?: string | null;
+  video_type_not?: string | null;
+  video_type_not_contains?: string | null;
+  video_type_not_ends_with?: string | null;
+  video_type_not_in?: string[] | null;
+  video_type_not_starts_with?: string | null;
+  video_type_starts_with?: string | null;
+  vm_template?: VmTemplateWhereInput | null;
+  vm_version?: string | null;
+  vm_version_contains?: string | null;
+  vm_version_ends_with?: string | null;
+  vm_version_gt?: string | null;
+  vm_version_gte?: string | null;
+  vm_version_in?: string[] | null;
+  vm_version_lt?: string | null;
+  vm_version_lte?: string | null;
+  vm_version_not?: string | null;
+  vm_version_not_contains?: string | null;
+  vm_version_not_ends_with?: string | null;
+  vm_version_not_in?: string[] | null;
+  vm_version_not_starts_with?: string | null;
+  vm_version_starts_with?: string | null;
+  vtpm_enabled?: boolean | null;
+  vtpm_enabled_not?: boolean | null;
+  win_opt?: boolean | null;
+  win_opt_not?: boolean | null;
+}
+
+export interface VmTemplateConfigDiskWhereInput {
+  AND?: VmTemplateConfigDiskWhereInput[] | null;
+  NOT?: VmTemplateConfigDiskWhereInput[] | null;
+  OR?: VmTemplateConfigDiskWhereInput[] | null;
+  /** @format int32 */
+  boot?: number | null;
+  /** @format int32 */
+  boot_gt?: number | null;
+  /** @format int32 */
+  boot_gte?: number | null;
+  boot_in?: number[] | null;
+  /** @format int32 */
+  boot_lt?: number | null;
+  /** @format int32 */
+  boot_lte?: number | null;
+  /** @format int32 */
+  boot_not?: number | null;
+  boot_not_in?: number[] | null;
+  bus?: Bus | null;
+  bus_in?: Bus[] | null;
+  bus_not?: Bus | null;
+  bus_not_in?: Bus[] | null;
+  disabled?: boolean | null;
+  disabled_not?: boolean | null;
+  disk_name?: string | null;
+  disk_name_contains?: string | null;
+  disk_name_ends_with?: string | null;
+  disk_name_gt?: string | null;
+  disk_name_gte?: string | null;
+  disk_name_in?: string[] | null;
+  disk_name_lt?: string | null;
+  disk_name_lte?: string | null;
+  disk_name_not?: string | null;
+  disk_name_not_contains?: string | null;
+  disk_name_not_ends_with?: string | null;
+  disk_name_not_in?: string[] | null;
+  disk_name_not_starts_with?: string | null;
+  disk_name_starts_with?: string | null;
+  /** @format int32 */
+  elf_storage_policy_ec_k?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_k_gt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_k_gte?: number | null;
+  elf_storage_policy_ec_k_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_ec_k_lt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_k_lte?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_k_not?: number | null;
+  elf_storage_policy_ec_k_not_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_ec_m?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_m_gt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_m_gte?: number | null;
+  elf_storage_policy_ec_m_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_ec_m_lt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_m_lte?: number | null;
+  /** @format int32 */
+  elf_storage_policy_ec_m_not?: number | null;
+  elf_storage_policy_ec_m_not_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_replica_num?: number | null;
+  /** @format int32 */
+  elf_storage_policy_replica_num_gt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_replica_num_gte?: number | null;
+  elf_storage_policy_replica_num_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_replica_num_lt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_replica_num_lte?: number | null;
+  /** @format int32 */
+  elf_storage_policy_replica_num_not?: number | null;
+  elf_storage_policy_replica_num_not_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_gt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_gte?: number | null;
+  elf_storage_policy_stripe_num_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_lt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_lte?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_not?: number | null;
+  elf_storage_policy_stripe_num_not_in?: number[] | null;
+  elf_storage_policy_thin_provision?: boolean | null;
+  elf_storage_policy_thin_provision_not?: boolean | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  /** @format int32 */
+  index?: number | null;
+  /** @format int32 */
+  index_gt?: number | null;
+  /** @format int32 */
+  index_gte?: number | null;
+  index_in?: number[] | null;
+  /** @format int32 */
+  index_lt?: number | null;
+  /** @format int32 */
+  index_lte?: number | null;
+  /** @format int32 */
+  index_not?: number | null;
+  index_not_in?: number[] | null;
+  iscsi_lun?: IscsiLunWhereInput | null;
+  /** @format double */
+  max_bandwidth?: number | null;
+  /** @format double */
+  max_bandwidth_gt?: number | null;
+  /** @format double */
+  max_bandwidth_gte?: number | null;
+  max_bandwidth_in?: number[] | null;
+  /** @format double */
+  max_bandwidth_lt?: number | null;
+  /** @format double */
+  max_bandwidth_lte?: number | null;
+  /** @format double */
+  max_bandwidth_not?: number | null;
+  max_bandwidth_not_in?: number[] | null;
+  max_bandwidth_policy?: VmDiskIoRestrictType | null;
+  max_bandwidth_policy_in?: VmDiskIoRestrictType[] | null;
+  max_bandwidth_policy_not?: VmDiskIoRestrictType | null;
+  max_bandwidth_policy_not_in?: VmDiskIoRestrictType[] | null;
+  /** @format int32 */
+  max_iops?: number | null;
+  /** @format int32 */
+  max_iops_gt?: number | null;
+  /** @format int32 */
+  max_iops_gte?: number | null;
+  max_iops_in?: number[] | null;
+  /** @format int32 */
+  max_iops_lt?: number | null;
+  /** @format int32 */
+  max_iops_lte?: number | null;
+  /** @format int32 */
+  max_iops_not?: number | null;
+  max_iops_not_in?: number[] | null;
+  max_iops_policy?: VmDiskIoRestrictType | null;
+  max_iops_policy_in?: VmDiskIoRestrictType[] | null;
+  max_iops_policy_not?: VmDiskIoRestrictType | null;
+  max_iops_policy_not_in?: VmDiskIoRestrictType[] | null;
+  provision_policy?: string | null;
+  provision_policy_contains?: string | null;
+  provision_policy_ends_with?: string | null;
+  provision_policy_gt?: string | null;
+  provision_policy_gte?: string | null;
+  provision_policy_in?: string[] | null;
+  provision_policy_lt?: string | null;
+  provision_policy_lte?: string | null;
+  provision_policy_not?: string | null;
+  provision_policy_not_contains?: string | null;
+  provision_policy_not_ends_with?: string | null;
+  provision_policy_not_in?: string[] | null;
+  provision_policy_not_starts_with?: string | null;
+  provision_policy_starts_with?: string | null;
+  resident_in_cache?: boolean | null;
+  resident_in_cache_not?: boolean | null;
+  /** @format int64 */
+  size?: number | null;
+  /** @format int64 */
+  size_gt?: number | null;
+  /** @format int64 */
+  size_gte?: number | null;
+  size_in?: number[] | null;
+  /** @format int64 */
+  size_lt?: number | null;
+  /** @format int64 */
+  size_lte?: number | null;
+  /** @format int64 */
+  size_not?: number | null;
+  size_not_in?: number[] | null;
+  storage_encrypted?: boolean | null;
+  storage_encrypted_not?: boolean | null;
+  storage_encryption_algorithm?: string | null;
+  storage_encryption_algorithm_contains?: string | null;
+  storage_encryption_algorithm_ends_with?: string | null;
+  storage_encryption_algorithm_gt?: string | null;
+  storage_encryption_algorithm_gte?: string | null;
+  storage_encryption_algorithm_in?: string[] | null;
+  storage_encryption_algorithm_lt?: string | null;
+  storage_encryption_algorithm_lte?: string | null;
+  storage_encryption_algorithm_not?: string | null;
+  storage_encryption_algorithm_not_contains?: string | null;
+  storage_encryption_algorithm_not_ends_with?: string | null;
+  storage_encryption_algorithm_not_in?: string[] | null;
+  storage_encryption_algorithm_not_starts_with?: string | null;
+  storage_encryption_algorithm_starts_with?: string | null;
+  storage_policy?: VmVolumeElfStoragePolicyType | null;
+  storage_policy_in?: VmVolumeElfStoragePolicyType[] | null;
+  storage_policy_not?: VmVolumeElfStoragePolicyType | null;
+  storage_policy_not_in?: VmVolumeElfStoragePolicyType[] | null;
+  type?: VmDiskType | null;
+  type_in?: VmDiskType[] | null;
+  type_not?: VmDiskType | null;
+  type_not_in?: VmDiskType[] | null;
+  vm_template_config?: VmTemplateConfigWhereInput | null;
+  vm_volume_template_config_file?: VmVolumeTemplateConfigFileWhereInput | null;
+  volume_storage_type?: VmTemplateConfigDiskVolumeStorageType | null;
+  volume_storage_type_in?: VmTemplateConfigDiskVolumeStorageType[] | null;
+  volume_storage_type_not?: VmTemplateConfigDiskVolumeStorageType | null;
+  volume_storage_type_not_in?: VmTemplateConfigDiskVolumeStorageType[] | null;
+}
+
+export interface VmVolumeTemplateConfigFileWhereInput {
+  AND?: VmVolumeTemplateConfigFileWhereInput[] | null;
+  NOT?: VmVolumeTemplateConfigFileWhereInput[] | null;
+  OR?: VmVolumeTemplateConfigFileWhereInput[] | null;
+  datastore?: DatastoreWhereInput | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  path?: string | null;
+  path_contains?: string | null;
+  path_ends_with?: string | null;
+  path_gt?: string | null;
+  path_gte?: string | null;
+  path_in?: string[] | null;
+  path_lt?: string | null;
+  path_lte?: string | null;
+  path_not?: string | null;
+  path_not_contains?: string | null;
+  path_not_ends_with?: string | null;
+  path_not_in?: string[] | null;
+  path_not_starts_with?: string | null;
+  path_starts_with?: string | null;
+  raw_files_every?: VmVolumeTemplateRawFileWhereInput | null;
+  raw_files_none?: VmVolumeTemplateRawFileWhereInput | null;
+  raw_files_some?: VmVolumeTemplateRawFileWhereInput | null;
+  /** @format int64 */
+  size?: number | null;
+  /** @format int64 */
+  size_gt?: number | null;
+  /** @format int64 */
+  size_gte?: number | null;
+  size_in?: number[] | null;
+  /** @format int64 */
+  size_lt?: number | null;
+  /** @format int64 */
+  size_lte?: number | null;
+  /** @format int64 */
+  size_not?: number | null;
+  size_not_in?: number[] | null;
+  vcfs_version?: string | null;
+  vcfs_version_contains?: string | null;
+  vcfs_version_ends_with?: string | null;
+  vcfs_version_gt?: string | null;
+  vcfs_version_gte?: string | null;
+  vcfs_version_in?: string[] | null;
+  vcfs_version_lt?: string | null;
+  vcfs_version_lte?: string | null;
+  vcfs_version_not?: string | null;
+  vcfs_version_not_contains?: string | null;
+  vcfs_version_not_ends_with?: string | null;
+  vcfs_version_not_in?: string[] | null;
+  vcfs_version_not_starts_with?: string | null;
+  vcfs_version_starts_with?: string | null;
+}
+
+export interface VmVolumeTemplateRawFileWhereInput {
+  AND?: VmVolumeTemplateRawFileWhereInput[] | null;
+  NOT?: VmVolumeTemplateRawFileWhereInput[] | null;
+  OR?: VmVolumeTemplateRawFileWhereInput[] | null;
+  datastore?: DatastoreWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  path?: string | null;
+  path_contains?: string | null;
+  path_ends_with?: string | null;
+  path_gt?: string | null;
+  path_gte?: string | null;
+  path_in?: string[] | null;
+  path_lt?: string | null;
+  path_lte?: string | null;
+  path_not?: string | null;
+  path_not_contains?: string | null;
+  path_not_ends_with?: string | null;
+  path_not_in?: string[] | null;
+  path_not_starts_with?: string | null;
+  path_starts_with?: string | null;
+  vm_volume_template_config_file?: VmVolumeTemplateConfigFileWhereInput | null;
+}
+
+export enum VmTemplateConfigDiskVolumeStorageType {
+  ISCSI_LUN = "ISCSI_LUN",
+  ISCSI_LUN_SNAPSHOT = "ISCSI_LUN_SNAPSHOT",
+  NONE = "NONE",
+  VCFS_VOLUME_FILE = "VCFS_VOLUME_FILE",
+}
+
+export enum VmGuestsOperationSystem {
+  LINUX = "LINUX",
+  UNKNOWN = "UNKNOWN",
+  WINDOWS = "WINDOWS",
+}
+
+export enum VmNicModel {
+  E1000 = "E1000",
+  SRIOV = "SRIOV",
+  VIRTIO = "VIRTIO",
+}
+
+export enum VmNicType {
+  VLAN = "VLAN",
+  VPC = "VPC",
+}
+
+export interface DatacenterWhereInput {
+  AND?: DatacenterWhereInput[] | null;
+  NOT?: DatacenterWhereInput[] | null;
+  OR?: DatacenterWhereInput[] | null;
+  /** @format int32 */
+  cluster_num?: number | null;
+  /** @format int32 */
+  cluster_num_gt?: number | null;
+  /** @format int32 */
+  cluster_num_gte?: number | null;
+  cluster_num_in?: number[] | null;
+  /** @format int32 */
+  cluster_num_lt?: number | null;
+  /** @format int32 */
+  cluster_num_lte?: number | null;
+  /** @format int32 */
+  cluster_num_not?: number | null;
+  cluster_num_not_in?: number[] | null;
+  clusters_every?: ClusterWhereInput | null;
+  clusters_none?: ClusterWhereInput | null;
+  clusters_some?: ClusterWhereInput | null;
+  /** @format int64 */
+  failure_data_space?: number | null;
+  /** @format int64 */
+  failure_data_space_gt?: number | null;
+  /** @format int64 */
+  failure_data_space_gte?: number | null;
+  failure_data_space_in?: number[] | null;
+  /** @format int64 */
+  failure_data_space_lt?: number | null;
+  /** @format int64 */
+  failure_data_space_lte?: number | null;
+  /** @format int64 */
+  failure_data_space_not?: number | null;
+  failure_data_space_not_in?: number[] | null;
+  /** @format int32 */
+  host_num?: number | null;
+  /** @format int32 */
+  host_num_gt?: number | null;
+  /** @format int32 */
+  host_num_gte?: number | null;
+  host_num_in?: number[] | null;
+  /** @format int32 */
+  host_num_lt?: number | null;
+  /** @format int32 */
+  host_num_lte?: number | null;
+  /** @format int32 */
+  host_num_not?: number | null;
+  host_num_not_in?: number[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  organization?: OrganizationWhereInput | null;
+  /** @format int64 */
+  total_cpu_hz?: number | null;
+  /** @format int64 */
+  total_cpu_hz_gt?: number | null;
+  /** @format int64 */
+  total_cpu_hz_gte?: number | null;
+  total_cpu_hz_in?: number[] | null;
+  /** @format int64 */
+  total_cpu_hz_lt?: number | null;
+  /** @format int64 */
+  total_cpu_hz_lte?: number | null;
+  /** @format int64 */
+  total_cpu_hz_not?: number | null;
+  total_cpu_hz_not_in?: number[] | null;
+  /** @format int64 */
+  total_data_capacity?: number | null;
+  /** @format int64 */
+  total_data_capacity_gt?: number | null;
+  /** @format int64 */
+  total_data_capacity_gte?: number | null;
+  total_data_capacity_in?: number[] | null;
+  /** @format int64 */
+  total_data_capacity_lt?: number | null;
+  /** @format int64 */
+  total_data_capacity_lte?: number | null;
+  /** @format int64 */
+  total_data_capacity_not?: number | null;
+  total_data_capacity_not_in?: number[] | null;
+  /** @format int64 */
+  total_memory_bytes?: number | null;
+  /** @format int64 */
+  total_memory_bytes_gt?: number | null;
+  /** @format int64 */
+  total_memory_bytes_gte?: number | null;
+  total_memory_bytes_in?: number[] | null;
+  /** @format int64 */
+  total_memory_bytes_lt?: number | null;
+  /** @format int64 */
+  total_memory_bytes_lte?: number | null;
+  /** @format int64 */
+  total_memory_bytes_not?: number | null;
+  total_memory_bytes_not_in?: number[] | null;
+  /** @format double */
+  used_cpu_hz?: number | null;
+  /** @format double */
+  used_cpu_hz_gt?: number | null;
+  /** @format double */
+  used_cpu_hz_gte?: number | null;
+  used_cpu_hz_in?: number[] | null;
+  /** @format double */
+  used_cpu_hz_lt?: number | null;
+  /** @format double */
+  used_cpu_hz_lte?: number | null;
+  /** @format double */
+  used_cpu_hz_not?: number | null;
+  used_cpu_hz_not_in?: number[] | null;
+  /** @format int64 */
+  used_data_space?: number | null;
+  /** @format int64 */
+  used_data_space_gt?: number | null;
+  /** @format int64 */
+  used_data_space_gte?: number | null;
+  used_data_space_in?: number[] | null;
+  /** @format int64 */
+  used_data_space_lt?: number | null;
+  /** @format int64 */
+  used_data_space_lte?: number | null;
+  /** @format int64 */
+  used_data_space_not?: number | null;
+  used_data_space_not_in?: number[] | null;
+  /** @format double */
+  used_memory_bytes?: number | null;
+  /** @format double */
+  used_memory_bytes_gt?: number | null;
+  /** @format double */
+  used_memory_bytes_gte?: number | null;
+  used_memory_bytes_in?: number[] | null;
+  /** @format double */
+  used_memory_bytes_lt?: number | null;
+  /** @format double */
+  used_memory_bytes_lte?: number | null;
+  /** @format double */
+  used_memory_bytes_not?: number | null;
+  used_memory_bytes_not_in?: number[] | null;
+  /** @format int32 */
+  vm_num?: number | null;
+  /** @format int32 */
+  vm_num_gt?: number | null;
+  /** @format int32 */
+  vm_num_gte?: number | null;
+  vm_num_in?: number[] | null;
+  /** @format int32 */
+  vm_num_lt?: number | null;
+  /** @format int32 */
+  vm_num_lte?: number | null;
+  /** @format int32 */
+  vm_num_not?: number | null;
+  vm_num_not_in?: number[] | null;
+}
+
+export interface OrganizationWhereInput {
+  AND?: OrganizationWhereInput[] | null;
+  NOT?: OrganizationWhereInput[] | null;
+  OR?: OrganizationWhereInput[] | null;
+  datacenters_every?: DatacenterWhereInput | null;
+  datacenters_none?: DatacenterWhereInput | null;
+  datacenters_some?: DatacenterWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+}
+
+export interface IsolationPolicyWhereInput {
+  AND?: IsolationPolicyWhereInput[] | null;
+  NOT?: IsolationPolicyWhereInput[] | null;
+  OR?: IsolationPolicyWhereInput[] | null;
+  everoute_cluster?: EverouteClusterWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  mode?: IsolationMode | null;
+  mode_in?: IsolationMode[] | null;
+  mode_not?: IsolationMode | null;
+  mode_not_in?: IsolationMode[] | null;
+  statistics?: SecurityPolicyStatisticsWhereInput | null;
+  vm?: VmWhereInput | null;
+}
+
+export interface EverouteClusterWhereInput {
+  AND?: EverouteClusterWhereInput[] | null;
+  NOT?: EverouteClusterWhereInput[] | null;
+  OR?: EverouteClusterWhereInput[] | null;
+  agent_elf_clusters_every?: ClusterWhereInput | null;
+  agent_elf_clusters_none?: ClusterWhereInput | null;
+  agent_elf_clusters_some?: ClusterWhereInput | null;
+  agent_elf_vdses_every?: VdsWhereInput | null;
+  agent_elf_vdses_none?: VdsWhereInput | null;
+  agent_elf_vdses_some?: VdsWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  global_default_action?: GlobalPolicyAction | null;
+  global_default_action_in?: GlobalPolicyAction[] | null;
+  global_default_action_not?: GlobalPolicyAction | null;
+  global_default_action_not_in?: GlobalPolicyAction[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  installed?: boolean | null;
+  installed_not?: boolean | null;
+  load_balancer_service?: LoadBalancerServiceWhereInput | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  phase?: EverouteClusterPhase | null;
+  phase_in?: EverouteClusterPhase[] | null;
+  phase_not?: EverouteClusterPhase | null;
+  phase_not_in?: EverouteClusterPhase[] | null;
+  version?: string | null;
+  version_contains?: string | null;
+  version_ends_with?: string | null;
+  version_gt?: string | null;
+  version_gte?: string | null;
+  version_in?: string[] | null;
+  version_lt?: string | null;
+  version_lte?: string | null;
+  version_not?: string | null;
+  version_not_contains?: string | null;
+  version_not_ends_with?: string | null;
+  version_not_in?: string[] | null;
+  version_not_starts_with?: string | null;
+  version_starts_with?: string | null;
+  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
+}
+
+export interface VdsWhereInput {
+  AND?: VdsWhereInput[] | null;
+  NOT?: VdsWhereInput[] | null;
+  OR?: VdsWhereInput[] | null;
+  bond_mode?: string | null;
+  bond_mode_contains?: string | null;
+  bond_mode_ends_with?: string | null;
+  bond_mode_gt?: string | null;
+  bond_mode_gte?: string | null;
+  bond_mode_in?: string[] | null;
+  bond_mode_lt?: string | null;
+  bond_mode_lte?: string | null;
+  bond_mode_not?: string | null;
+  bond_mode_not_contains?: string | null;
+  bond_mode_not_ends_with?: string | null;
+  bond_mode_not_in?: string[] | null;
+  bond_mode_not_starts_with?: string | null;
+  bond_mode_starts_with?: string | null;
+  cluster?: ClusterWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  everoute_cluster?: EverouteClusterWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  internal?: boolean | null;
+  internal_not?: boolean | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  nics_every?: NicWhereInput | null;
+  nics_none?: NicWhereInput | null;
+  nics_some?: NicWhereInput | null;
+  ovsbr_name?: string | null;
+  ovsbr_name_contains?: string | null;
+  ovsbr_name_ends_with?: string | null;
+  ovsbr_name_gt?: string | null;
+  ovsbr_name_gte?: string | null;
+  ovsbr_name_in?: string[] | null;
+  ovsbr_name_lt?: string | null;
+  ovsbr_name_lte?: string | null;
+  ovsbr_name_not?: string | null;
+  ovsbr_name_not_contains?: string | null;
+  ovsbr_name_not_ends_with?: string | null;
+  ovsbr_name_not_in?: string[] | null;
+  ovsbr_name_not_starts_with?: string | null;
+  ovsbr_name_starts_with?: string | null;
+  type?: NetworkType | null;
+  type_in?: NetworkType[] | null;
+  type_not?: NetworkType | null;
+  type_not_in?: NetworkType[] | null;
+  vlans_every?: VlanWhereInput | null;
+  vlans_none?: VlanWhereInput | null;
+  /** @format int32 */
+  vlans_num?: number | null;
+  /** @format int32 */
+  vlans_num_gt?: number | null;
+  /** @format int32 */
+  vlans_num_gte?: number | null;
+  vlans_num_in?: number[] | null;
+  /** @format int32 */
+  vlans_num_lt?: number | null;
+  /** @format int32 */
+  vlans_num_lte?: number | null;
+  /** @format int32 */
+  vlans_num_not?: number | null;
+  vlans_num_not_in?: number[] | null;
+  vlans_some?: VlanWhereInput | null;
+  work_mode?: string | null;
+  work_mode_contains?: string | null;
+  work_mode_ends_with?: string | null;
+  work_mode_gt?: string | null;
+  work_mode_gte?: string | null;
+  work_mode_in?: string[] | null;
+  work_mode_lt?: string | null;
+  work_mode_lte?: string | null;
+  work_mode_not?: string | null;
+  work_mode_not_contains?: string | null;
+  work_mode_not_ends_with?: string | null;
+  work_mode_not_in?: string[] | null;
+  work_mode_not_starts_with?: string | null;
+  work_mode_starts_with?: string | null;
+}
+
+export interface NicWhereInput {
+  AND?: NicWhereInput[] | null;
+  NOT?: NicWhereInput[] | null;
+  OR?: NicWhereInput[] | null;
+  driver?: string | null;
+  driver_contains?: string | null;
+  driver_ends_with?: string | null;
+  driver_gt?: string | null;
+  driver_gte?: string | null;
+  driver_in?: string[] | null;
+  driver_lt?: string | null;
+  driver_lte?: string | null;
+  driver_not?: string | null;
+  driver_not_contains?: string | null;
+  driver_not_ends_with?: string | null;
+  driver_not_in?: string[] | null;
+  driver_not_starts_with?: string | null;
+  driver_starts_with?: string | null;
+  driver_state?: NicDriverState | null;
+  driver_state_in?: NicDriverState[] | null;
+  driver_state_not?: NicDriverState | null;
+  driver_state_not_in?: NicDriverState[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  gateway_ip?: string | null;
+  gateway_ip_contains?: string | null;
+  gateway_ip_ends_with?: string | null;
+  gateway_ip_gt?: string | null;
+  gateway_ip_gte?: string | null;
+  gateway_ip_in?: string[] | null;
+  gateway_ip_lt?: string | null;
+  gateway_ip_lte?: string | null;
+  gateway_ip_not?: string | null;
+  gateway_ip_not_contains?: string | null;
+  gateway_ip_not_ends_with?: string | null;
+  gateway_ip_not_in?: string[] | null;
+  gateway_ip_not_starts_with?: string | null;
+  gateway_ip_starts_with?: string | null;
+  host?: HostWhereInput | null;
+  ibdev?: string | null;
+  ibdev_contains?: string | null;
+  ibdev_ends_with?: string | null;
+  ibdev_gt?: string | null;
+  ibdev_gte?: string | null;
+  ibdev_in?: string[] | null;
+  ibdev_lt?: string | null;
+  ibdev_lte?: string | null;
+  ibdev_not?: string | null;
+  ibdev_not_contains?: string | null;
+  ibdev_not_ends_with?: string | null;
+  ibdev_not_in?: string[] | null;
+  ibdev_not_starts_with?: string | null;
+  ibdev_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  iommu_status?: IommuStatus | null;
+  iommu_status_in?: IommuStatus[] | null;
+  iommu_status_not?: IommuStatus | null;
+  iommu_status_not_in?: IommuStatus[] | null;
+  ip_address?: string | null;
+  ip_address_contains?: string | null;
+  ip_address_ends_with?: string | null;
+  ip_address_gt?: string | null;
+  ip_address_gte?: string | null;
+  ip_address_in?: string[] | null;
+  ip_address_lt?: string | null;
+  ip_address_lte?: string | null;
+  ip_address_not?: string | null;
+  ip_address_not_contains?: string | null;
+  ip_address_not_ends_with?: string | null;
+  ip_address_not_in?: string[] | null;
+  ip_address_not_starts_with?: string | null;
+  ip_address_starts_with?: string | null;
+  is_sriov?: boolean | null;
+  is_sriov_not?: boolean | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  mac_address?: string | null;
+  mac_address_contains?: string | null;
+  mac_address_ends_with?: string | null;
+  mac_address_gt?: string | null;
+  mac_address_gte?: string | null;
+  mac_address_in?: string[] | null;
+  mac_address_lt?: string | null;
+  mac_address_lte?: string | null;
+  mac_address_not?: string | null;
+  mac_address_not_contains?: string | null;
+  mac_address_not_ends_with?: string | null;
+  mac_address_not_in?: string[] | null;
+  mac_address_not_starts_with?: string | null;
+  mac_address_starts_with?: string | null;
+  /** @format int32 */
+  max_vf_num?: number | null;
+  /** @format int32 */
+  max_vf_num_gt?: number | null;
+  /** @format int32 */
+  max_vf_num_gte?: number | null;
+  max_vf_num_in?: number[] | null;
+  /** @format int32 */
+  max_vf_num_lt?: number | null;
+  /** @format int32 */
+  max_vf_num_lte?: number | null;
+  /** @format int32 */
+  max_vf_num_not?: number | null;
+  max_vf_num_not_in?: number[] | null;
+  model?: string | null;
+  model_contains?: string | null;
+  model_ends_with?: string | null;
+  model_gt?: string | null;
+  model_gte?: string | null;
+  model_in?: string[] | null;
+  model_lt?: string | null;
+  model_lte?: string | null;
+  model_not?: string | null;
+  model_not_contains?: string | null;
+  model_not_ends_with?: string | null;
+  model_not_in?: string[] | null;
+  model_not_starts_with?: string | null;
+  model_starts_with?: string | null;
+  /** @format int32 */
+  mtu?: number | null;
+  /** @format int32 */
+  mtu_gt?: number | null;
+  /** @format int32 */
+  mtu_gte?: number | null;
+  mtu_in?: number[] | null;
+  /** @format int32 */
+  mtu_lt?: number | null;
+  /** @format int32 */
+  mtu_lte?: number | null;
+  /** @format int32 */
+  mtu_not?: number | null;
+  mtu_not_in?: number[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  nic_uuid?: string | null;
+  nic_uuid_contains?: string | null;
+  nic_uuid_ends_with?: string | null;
+  nic_uuid_gt?: string | null;
+  nic_uuid_gte?: string | null;
+  nic_uuid_in?: string[] | null;
+  nic_uuid_lt?: string | null;
+  nic_uuid_lte?: string | null;
+  nic_uuid_not?: string | null;
+  nic_uuid_not_contains?: string | null;
+  nic_uuid_not_ends_with?: string | null;
+  nic_uuid_not_in?: string[] | null;
+  nic_uuid_not_starts_with?: string | null;
+  nic_uuid_starts_with?: string | null;
+  physical?: boolean | null;
+  physical_not?: boolean | null;
+  rdma_enabled?: boolean | null;
+  rdma_enabled_not?: boolean | null;
+  running?: boolean | null;
+  running_not?: boolean | null;
+  /** @format int64 */
+  speed?: number | null;
+  /** @format int64 */
+  speed_gt?: number | null;
+  /** @format int64 */
+  speed_gte?: number | null;
+  speed_in?: number[] | null;
+  /** @format int64 */
+  speed_lt?: number | null;
+  /** @format int64 */
+  speed_lte?: number | null;
+  /** @format int64 */
+  speed_not?: number | null;
+  speed_not_in?: number[] | null;
+  subnet_mask?: string | null;
+  subnet_mask_contains?: string | null;
+  subnet_mask_ends_with?: string | null;
+  subnet_mask_gt?: string | null;
+  subnet_mask_gte?: string | null;
+  subnet_mask_in?: string[] | null;
+  subnet_mask_lt?: string | null;
+  subnet_mask_lte?: string | null;
+  subnet_mask_not?: string | null;
+  subnet_mask_not_contains?: string | null;
+  subnet_mask_not_ends_with?: string | null;
+  subnet_mask_not_in?: string[] | null;
+  subnet_mask_not_starts_with?: string | null;
+  subnet_mask_starts_with?: string | null;
+  /** @format int32 */
+  total_vf_num?: number | null;
+  /** @format int32 */
+  total_vf_num_gt?: number | null;
+  /** @format int32 */
+  total_vf_num_gte?: number | null;
+  total_vf_num_in?: number[] | null;
+  /** @format int32 */
+  total_vf_num_lt?: number | null;
+  /** @format int32 */
+  total_vf_num_lte?: number | null;
+  /** @format int32 */
+  total_vf_num_not?: number | null;
+  total_vf_num_not_in?: number[] | null;
+  type?: NetworkType | null;
+  type_in?: NetworkType[] | null;
+  type_not?: NetworkType | null;
+  type_not_in?: NetworkType[] | null;
+  up?: boolean | null;
+  up_not?: boolean | null;
+  /** @format int32 */
+  used_vf_num?: number | null;
+  /** @format int32 */
+  used_vf_num_gt?: number | null;
+  /** @format int32 */
+  used_vf_num_gte?: number | null;
+  used_vf_num_in?: number[] | null;
+  /** @format int32 */
+  used_vf_num_lt?: number | null;
+  /** @format int32 */
+  used_vf_num_lte?: number | null;
+  /** @format int32 */
+  used_vf_num_not?: number | null;
+  used_vf_num_not_in?: number[] | null;
+  user_usage?: NicUserUsage | null;
+  user_usage_in?: NicUserUsage[] | null;
+  user_usage_not?: NicUserUsage | null;
+  user_usage_not_in?: NicUserUsage[] | null;
+  vds?: VdsWhereInput | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
+}
+
+export enum NicDriverState {
+  NEED_REBOOT = "NEED_REBOOT",
+  NOT_READY = "NOT_READY",
+  NO_DRIVER = "NO_DRIVER",
+  READY = "READY",
+}
+
+export enum IommuStatus {
+  DISABLE = "DISABLE",
+  ENABLE = "ENABLE",
+  NEED_REBOOT = "NEED_REBOOT",
+}
+
+export enum NetworkType {
+  ACCESS = "ACCESS",
+  CUSTOM = "CUSTOM",
+  ERSPAN = "ERSPAN",
+  INTERNAL = "INTERNAL",
+  MANAGEMENT = "MANAGEMENT",
+  MIGRATION = "MIGRATION",
+  STORAGE = "STORAGE",
+  STORAGE_ACCESS = "STORAGE_ACCESS",
+  VM = "VM",
+  VPC_SYS = "VPC_SYS",
+  VPC_VM = "VPC_VM",
+}
+
+export enum NicUserUsage {
+  DEFAULT = "DEFAULT",
+  PASS_THROUGH = "PASS_THROUGH",
+  SRIOV = "SRIOV",
+}
+
+export interface VlanWhereInput {
+  AND?: VlanWhereInput[] | null;
+  NOT?: VlanWhereInput[] | null;
+  OR?: VlanWhereInput[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  gateway_ip?: string | null;
+  gateway_ip_contains?: string | null;
+  gateway_ip_ends_with?: string | null;
+  gateway_ip_gt?: string | null;
+  gateway_ip_gte?: string | null;
+  gateway_ip_in?: string[] | null;
+  gateway_ip_lt?: string | null;
+  gateway_ip_lte?: string | null;
+  gateway_ip_not?: string | null;
+  gateway_ip_not_contains?: string | null;
+  gateway_ip_not_ends_with?: string | null;
+  gateway_ip_not_in?: string[] | null;
+  gateway_ip_not_starts_with?: string | null;
+  gateway_ip_starts_with?: string | null;
+  gateway_subnetmask?: string | null;
+  gateway_subnetmask_contains?: string | null;
+  gateway_subnetmask_ends_with?: string | null;
+  gateway_subnetmask_gt?: string | null;
+  gateway_subnetmask_gte?: string | null;
+  gateway_subnetmask_in?: string[] | null;
+  gateway_subnetmask_lt?: string | null;
+  gateway_subnetmask_lte?: string | null;
+  gateway_subnetmask_not?: string | null;
+  gateway_subnetmask_not_contains?: string | null;
+  gateway_subnetmask_not_ends_with?: string | null;
+  gateway_subnetmask_not_in?: string[] | null;
+  gateway_subnetmask_not_starts_with?: string | null;
+  gateway_subnetmask_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  labels_every?: LabelWhereInput | null;
+  labels_none?: LabelWhereInput | null;
+  labels_some?: LabelWhereInput | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  mode_type?: VlanModeType | null;
+  mode_type_in?: VlanModeType[] | null;
+  mode_type_not?: VlanModeType | null;
+  mode_type_not_in?: VlanModeType[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  /** @format double */
+  qos_burst?: number | null;
+  /** @format double */
+  qos_burst_gt?: number | null;
+  /** @format double */
+  qos_burst_gte?: number | null;
+  qos_burst_in?: number[] | null;
+  /** @format double */
+  qos_burst_lt?: number | null;
+  /** @format double */
+  qos_burst_lte?: number | null;
+  /** @format double */
+  qos_burst_not?: number | null;
+  qos_burst_not_in?: number[] | null;
+  /** @format double */
+  qos_max_bandwidth?: number | null;
+  /** @format double */
+  qos_max_bandwidth_gt?: number | null;
+  /** @format double */
+  qos_max_bandwidth_gte?: number | null;
+  qos_max_bandwidth_in?: number[] | null;
+  /** @format double */
+  qos_max_bandwidth_lt?: number | null;
+  /** @format double */
+  qos_max_bandwidth_lte?: number | null;
+  /** @format double */
+  qos_max_bandwidth_not?: number | null;
+  qos_max_bandwidth_not_in?: number[] | null;
+  /** @format double */
+  qos_min_bandwidth?: number | null;
+  /** @format double */
+  qos_min_bandwidth_gt?: number | null;
+  /** @format double */
+  qos_min_bandwidth_gte?: number | null;
+  qos_min_bandwidth_in?: number[] | null;
+  /** @format double */
+  qos_min_bandwidth_lt?: number | null;
+  /** @format double */
+  qos_min_bandwidth_lte?: number | null;
+  /** @format double */
+  qos_min_bandwidth_not?: number | null;
+  qos_min_bandwidth_not_in?: number[] | null;
+  /** @format int32 */
+  qos_priority?: number | null;
+  /** @format int32 */
+  qos_priority_gt?: number | null;
+  /** @format int32 */
+  qos_priority_gte?: number | null;
+  qos_priority_in?: number[] | null;
+  /** @format int32 */
+  qos_priority_lt?: number | null;
+  /** @format int32 */
+  qos_priority_lte?: number | null;
+  /** @format int32 */
+  qos_priority_not?: number | null;
+  qos_priority_not_in?: number[] | null;
+  subnetmask?: string | null;
+  subnetmask_contains?: string | null;
+  subnetmask_ends_with?: string | null;
+  subnetmask_gt?: string | null;
+  subnetmask_gte?: string | null;
+  subnetmask_in?: string[] | null;
+  subnetmask_lt?: string | null;
+  subnetmask_lte?: string | null;
+  subnetmask_not?: string | null;
+  subnetmask_not_contains?: string | null;
+  subnetmask_not_ends_with?: string | null;
+  subnetmask_not_in?: string[] | null;
+  subnetmask_not_starts_with?: string | null;
+  subnetmask_starts_with?: string | null;
+  type?: NetworkType | null;
+  type_in?: NetworkType[] | null;
+  type_not?: NetworkType | null;
+  type_not_in?: NetworkType[] | null;
+  vds?: VdsWhereInput | null;
+  /** @format int32 */
+  vlan_id?: number | null;
+  /** @format int32 */
+  vlan_id_gt?: number | null;
+  /** @format int32 */
+  vlan_id_gte?: number | null;
+  vlan_id_in?: number[] | null;
+  /** @format int32 */
+  vlan_id_lt?: number | null;
+  /** @format int32 */
+  vlan_id_lte?: number | null;
+  /** @format int32 */
+  vlan_id_not?: number | null;
+  vlan_id_not_in?: number[] | null;
+  vm_nics_every?: VmNicWhereInput | null;
+  vm_nics_none?: VmNicWhereInput | null;
+  vm_nics_some?: VmNicWhereInput | null;
+}
+
+export enum VlanModeType {
+  GENEVE = "GENEVE",
+  VLAN_ACCESS = "VLAN_ACCESS",
+  VLAN_TRUNK = "VLAN_TRUNK",
+  VXLAN = "VXLAN",
+}
+
+export interface VmNicWhereInput {
+  AND?: VmNicWhereInput[] | null;
+  NOT?: VmNicWhereInput[] | null;
+  OR?: VmNicWhereInput[] | null;
+  dpi_enabled?: boolean | null;
+  dpi_enabled_not?: boolean | null;
+  /** @format double */
+  egress_rate_limit_burst_in_bit?: number | null;
+  /** @format double */
+  egress_rate_limit_burst_in_bit_gt?: number | null;
+  /** @format double */
+  egress_rate_limit_burst_in_bit_gte?: number | null;
+  egress_rate_limit_burst_in_bit_in?: number[] | null;
+  /** @format double */
+  egress_rate_limit_burst_in_bit_lt?: number | null;
+  /** @format double */
+  egress_rate_limit_burst_in_bit_lte?: number | null;
+  /** @format double */
+  egress_rate_limit_burst_in_bit_not?: number | null;
+  egress_rate_limit_burst_in_bit_not_in?: number[] | null;
+  egress_rate_limit_enabled?: boolean | null;
+  egress_rate_limit_enabled_not?: boolean | null;
+  /** @format double */
+  egress_rate_limit_max_rate_in_bitps?: number | null;
+  /** @format double */
+  egress_rate_limit_max_rate_in_bitps_gt?: number | null;
+  /** @format double */
+  egress_rate_limit_max_rate_in_bitps_gte?: number | null;
+  egress_rate_limit_max_rate_in_bitps_in?: number[] | null;
+  /** @format double */
+  egress_rate_limit_max_rate_in_bitps_lt?: number | null;
+  /** @format double */
+  egress_rate_limit_max_rate_in_bitps_lte?: number | null;
+  /** @format double */
+  egress_rate_limit_max_rate_in_bitps_not?: number | null;
+  egress_rate_limit_max_rate_in_bitps_not_in?: number[] | null;
+  enabled?: boolean | null;
+  enabled_not?: boolean | null;
+  gateway?: string | null;
+  gateway_contains?: string | null;
+  gateway_ends_with?: string | null;
+  gateway_gt?: string | null;
+  gateway_gte?: string | null;
+  gateway_in?: string[] | null;
+  gateway_lt?: string | null;
+  gateway_lte?: string | null;
+  gateway_not?: string | null;
+  gateway_not_contains?: string | null;
+  gateway_not_ends_with?: string | null;
+  gateway_not_in?: string[] | null;
+  gateway_not_starts_with?: string | null;
+  gateway_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  /** @format double */
+  ingress_rate_limit_burst_in_bit?: number | null;
+  /** @format double */
+  ingress_rate_limit_burst_in_bit_gt?: number | null;
+  /** @format double */
+  ingress_rate_limit_burst_in_bit_gte?: number | null;
+  ingress_rate_limit_burst_in_bit_in?: number[] | null;
+  /** @format double */
+  ingress_rate_limit_burst_in_bit_lt?: number | null;
+  /** @format double */
+  ingress_rate_limit_burst_in_bit_lte?: number | null;
+  /** @format double */
+  ingress_rate_limit_burst_in_bit_not?: number | null;
+  ingress_rate_limit_burst_in_bit_not_in?: number[] | null;
+  ingress_rate_limit_enabled?: boolean | null;
+  ingress_rate_limit_enabled_not?: boolean | null;
+  /** @format double */
+  ingress_rate_limit_max_rate_in_bitps?: number | null;
+  /** @format double */
+  ingress_rate_limit_max_rate_in_bitps_gt?: number | null;
+  /** @format double */
+  ingress_rate_limit_max_rate_in_bitps_gte?: number | null;
+  ingress_rate_limit_max_rate_in_bitps_in?: number[] | null;
+  /** @format double */
+  ingress_rate_limit_max_rate_in_bitps_lt?: number | null;
+  /** @format double */
+  ingress_rate_limit_max_rate_in_bitps_lte?: number | null;
+  /** @format double */
+  ingress_rate_limit_max_rate_in_bitps_not?: number | null;
+  ingress_rate_limit_max_rate_in_bitps_not_in?: number[] | null;
+  interface_id?: string | null;
+  interface_id_contains?: string | null;
+  interface_id_ends_with?: string | null;
+  interface_id_gt?: string | null;
+  interface_id_gte?: string | null;
+  interface_id_in?: string[] | null;
+  interface_id_lt?: string | null;
+  interface_id_lte?: string | null;
+  interface_id_not?: string | null;
+  interface_id_not_contains?: string | null;
+  interface_id_not_ends_with?: string | null;
+  interface_id_not_in?: string[] | null;
+  interface_id_not_starts_with?: string | null;
+  interface_id_starts_with?: string | null;
+  ip_address?: string | null;
+  ip_address_contains?: string | null;
+  ip_address_ends_with?: string | null;
+  ip_address_gt?: string | null;
+  ip_address_gte?: string | null;
+  ip_address_in?: string[] | null;
+  ip_address_lt?: string | null;
+  ip_address_lte?: string | null;
+  ip_address_not?: string | null;
+  ip_address_not_contains?: string | null;
+  ip_address_not_ends_with?: string | null;
+  ip_address_not_in?: string[] | null;
+  ip_address_not_starts_with?: string | null;
+  ip_address_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  mac_address?: string | null;
+  mac_address_contains?: string | null;
+  mac_address_ends_with?: string | null;
+  mac_address_gt?: string | null;
+  mac_address_gte?: string | null;
+  mac_address_in?: string[] | null;
+  mac_address_lt?: string | null;
+  mac_address_lte?: string | null;
+  mac_address_not?: string | null;
+  mac_address_not_contains?: string | null;
+  mac_address_not_ends_with?: string | null;
+  mac_address_not_in?: string[] | null;
+  mac_address_not_starts_with?: string | null;
+  mac_address_starts_with?: string | null;
+  mirror?: boolean | null;
+  mirror_not?: boolean | null;
+  model?: VmNicModel | null;
+  model_in?: VmNicModel[] | null;
+  model_not?: VmNicModel | null;
+  model_not_in?: VmNicModel[] | null;
+  nic?: NicWhereInput | null;
+  /** @format int32 */
+  order?: number | null;
+  /** @format int32 */
+  order_gt?: number | null;
+  /** @format int32 */
+  order_gte?: number | null;
+  order_in?: number[] | null;
+  /** @format int32 */
+  order_lt?: number | null;
+  /** @format int32 */
+  order_lte?: number | null;
+  /** @format int32 */
+  order_not?: number | null;
+  order_not_in?: number[] | null;
+  subnet_mask?: string | null;
+  subnet_mask_contains?: string | null;
+  subnet_mask_ends_with?: string | null;
+  subnet_mask_gt?: string | null;
+  subnet_mask_gte?: string | null;
+  subnet_mask_in?: string[] | null;
+  subnet_mask_lt?: string | null;
+  subnet_mask_lte?: string | null;
+  subnet_mask_not?: string | null;
+  subnet_mask_not_contains?: string | null;
+  subnet_mask_not_ends_with?: string | null;
+  subnet_mask_not_in?: string[] | null;
+  subnet_mask_not_starts_with?: string | null;
+  subnet_mask_starts_with?: string | null;
+  type?: VmNicType | null;
+  type_in?: VmNicType[] | null;
+  type_not?: VmNicType | null;
+  type_not_in?: VmNicType[] | null;
+  vlan?: VlanWhereInput | null;
+  vm?: VmWhereInput | null;
+}
+
+export interface VirtualPrivateCloudFloatingIpWhereInput {
+  AND?: VirtualPrivateCloudFloatingIpWhereInput[] | null;
+  NOT?: VirtualPrivateCloudFloatingIpWhereInput[] | null;
+  OR?: VirtualPrivateCloudFloatingIpWhereInput[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  external_ip?: string | null;
+  external_ip_contains?: string | null;
+  external_ip_ends_with?: string | null;
+  external_ip_gt?: string | null;
+  external_ip_gte?: string | null;
+  external_ip_in?: string[] | null;
+  external_ip_lt?: string | null;
+  external_ip_lte?: string | null;
+  external_ip_not?: string | null;
+  external_ip_not_contains?: string | null;
+  external_ip_not_ends_with?: string | null;
+  external_ip_not_in?: string[] | null;
+  external_ip_not_starts_with?: string | null;
+  external_ip_starts_with?: string | null;
+  external_subnet?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  external_subnet_group?: VirtualPrivateCloudExternalSubnetGroupWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudExternalSubnetWhereInput {
+  AND?: VirtualPrivateCloudExternalSubnetWhereInput[] | null;
+  NOT?: VirtualPrivateCloudExternalSubnetWhereInput[] | null;
+  OR?: VirtualPrivateCloudExternalSubnetWhereInput[] | null;
+  cidr?: string | null;
+  cidr_contains?: string | null;
+  cidr_ends_with?: string | null;
+  cidr_gt?: string | null;
+  cidr_gte?: string | null;
+  cidr_in?: string[] | null;
+  cidr_lt?: string | null;
+  cidr_lte?: string | null;
+  cidr_not?: string | null;
+  cidr_not_contains?: string | null;
+  cidr_not_ends_with?: string | null;
+  cidr_not_in?: string[] | null;
+  cidr_not_starts_with?: string | null;
+  cidr_starts_with?: string | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  edge_gateway?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  exclusive?: boolean | null;
+  exclusive_not?: boolean | null;
+  floating_ip_cidr?: string | null;
+  floating_ip_cidr_contains?: string | null;
+  floating_ip_cidr_ends_with?: string | null;
+  floating_ip_cidr_gt?: string | null;
+  floating_ip_cidr_gte?: string | null;
+  floating_ip_cidr_in?: string[] | null;
+  floating_ip_cidr_lt?: string | null;
+  floating_ip_cidr_lte?: string | null;
+  floating_ip_cidr_not?: string | null;
+  floating_ip_cidr_not_contains?: string | null;
+  floating_ip_cidr_not_ends_with?: string | null;
+  floating_ip_cidr_not_in?: string[] | null;
+  floating_ip_cidr_not_starts_with?: string | null;
+  floating_ip_cidr_starts_with?: string | null;
+  floating_ips_every?: VirtualPrivateCloudFloatingIpWhereInput | null;
+  floating_ips_none?: VirtualPrivateCloudFloatingIpWhereInput | null;
+  floating_ips_some?: VirtualPrivateCloudFloatingIpWhereInput | null;
+  gateway?: string | null;
+  gateway_contains?: string | null;
+  gateway_ends_with?: string | null;
+  gateway_gt?: string | null;
+  gateway_gte?: string | null;
+  gateway_in?: string[] | null;
+  gateway_lt?: string | null;
+  gateway_lte?: string | null;
+  gateway_not?: string | null;
+  gateway_not_contains?: string | null;
+  gateway_not_ends_with?: string | null;
+  gateway_not_in?: string[] | null;
+  gateway_not_starts_with?: string | null;
+  gateway_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  nat_gateway_cidr?: string | null;
+  nat_gateway_cidr_contains?: string | null;
+  nat_gateway_cidr_ends_with?: string | null;
+  nat_gateway_cidr_gt?: string | null;
+  nat_gateway_cidr_gte?: string | null;
+  nat_gateway_cidr_in?: string[] | null;
+  nat_gateway_cidr_lt?: string | null;
+  nat_gateway_cidr_lte?: string | null;
+  nat_gateway_cidr_not?: string | null;
+  nat_gateway_cidr_not_contains?: string | null;
+  nat_gateway_cidr_not_ends_with?: string | null;
+  nat_gateway_cidr_not_in?: string[] | null;
+  nat_gateway_cidr_not_starts_with?: string | null;
+  nat_gateway_cidr_starts_with?: string | null;
+  nat_gateways_every?: VirtualPrivateCloudNatGatewayWhereInput | null;
+  nat_gateways_none?: VirtualPrivateCloudNatGatewayWhereInput | null;
+  nat_gateways_some?: VirtualPrivateCloudNatGatewayWhereInput | null;
+  router_gateway_cidr?: string | null;
+  router_gateway_cidr_contains?: string | null;
+  router_gateway_cidr_ends_with?: string | null;
+  router_gateway_cidr_gt?: string | null;
+  router_gateway_cidr_gte?: string | null;
+  router_gateway_cidr_in?: string[] | null;
+  router_gateway_cidr_lt?: string | null;
+  router_gateway_cidr_lte?: string | null;
+  router_gateway_cidr_not?: string | null;
+  router_gateway_cidr_not_contains?: string | null;
+  router_gateway_cidr_not_ends_with?: string | null;
+  router_gateway_cidr_not_in?: string[] | null;
+  router_gateway_cidr_not_starts_with?: string | null;
+  router_gateway_cidr_starts_with?: string | null;
+  router_gateways_every?: VirtualPrivateCloudRouterGatewayWhereInput | null;
+  router_gateways_none?: VirtualPrivateCloudRouterGatewayWhereInput | null;
+  router_gateways_some?: VirtualPrivateCloudRouterGatewayWhereInput | null;
+  vlan?: VlanWhereInput | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudEdgeGatewayWhereInput {
+  AND?: VirtualPrivateCloudEdgeGatewayWhereInput[] | null;
+  NOT?: VirtualPrivateCloudEdgeGatewayWhereInput[] | null;
+  OR?: VirtualPrivateCloudEdgeGatewayWhereInput[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  edge_gateway_group?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  vdses_every?: VdsWhereInput | null;
+  vdses_none?: VdsWhereInput | null;
+  vdses_some?: VdsWhereInput | null;
+  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
+}
+
+export interface VirtualPrivateCloudEdgeGatewayGroupWhereInput {
+  AND?: VirtualPrivateCloudEdgeGatewayGroupWhereInput[] | null;
+  NOT?: VirtualPrivateCloudEdgeGatewayGroupWhereInput[] | null;
+  OR?: VirtualPrivateCloudEdgeGatewayGroupWhereInput[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  edge_gateways_every?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  edge_gateways_none?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  edge_gateways_some?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  primary_edge_gateway_id?: string | null;
+  primary_edge_gateway_id_contains?: string | null;
+  primary_edge_gateway_id_ends_with?: string | null;
+  primary_edge_gateway_id_gt?: string | null;
+  primary_edge_gateway_id_gte?: string | null;
+  primary_edge_gateway_id_in?: string[] | null;
+  primary_edge_gateway_id_lt?: string | null;
+  primary_edge_gateway_id_lte?: string | null;
+  primary_edge_gateway_id_not?: string | null;
+  primary_edge_gateway_id_not_contains?: string | null;
+  primary_edge_gateway_id_not_ends_with?: string | null;
+  primary_edge_gateway_id_not_in?: string[] | null;
+  primary_edge_gateway_id_not_starts_with?: string | null;
+  primary_edge_gateway_id_starts_with?: string | null;
+  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
+}
+
+export interface VirtualPrivateCloudServiceWhereInput {
+  AND?: VirtualPrivateCloudServiceWhereInput[] | null;
+  NOT?: VirtualPrivateCloudServiceWhereInput[] | null;
+  OR?: VirtualPrivateCloudServiceWhereInput[] | null;
+  cluster_bindings_every?: VirtualPrivateCloudClusterBindingWhereInput | null;
+  cluster_bindings_none?: VirtualPrivateCloudClusterBindingWhereInput | null;
+  cluster_bindings_some?: VirtualPrivateCloudClusterBindingWhereInput | null;
+  edge_gateway_groups_every?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
+  edge_gateway_groups_none?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
+  edge_gateway_groups_some?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
+  edge_gateways_every?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  edge_gateways_none?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  edge_gateways_some?: VirtualPrivateCloudEdgeGatewayWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  everoute_cluster?: EverouteClusterWhereInput | null;
+  external_subnets_every?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  external_subnets_none?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  external_subnets_some?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  internal_cidr?: string | null;
+  internal_cidr_contains?: string | null;
+  internal_cidr_ends_with?: string | null;
+  internal_cidr_gt?: string | null;
+  internal_cidr_gte?: string | null;
+  internal_cidr_in?: string[] | null;
+  internal_cidr_lt?: string | null;
+  internal_cidr_lte?: string | null;
+  internal_cidr_not?: string | null;
+  internal_cidr_not_contains?: string | null;
+  internal_cidr_not_ends_with?: string | null;
+  internal_cidr_not_in?: string[] | null;
+  internal_cidr_not_starts_with?: string | null;
+  internal_cidr_starts_with?: string | null;
+  phase?: EverouteClusterPhase | null;
+  phase_in?: EverouteClusterPhase[] | null;
+  phase_not?: EverouteClusterPhase | null;
+  phase_not_in?: EverouteClusterPhase[] | null;
+  vpcs_every?: VirtualPrivateCloudWhereInput | null;
+  vpcs_none?: VirtualPrivateCloudWhereInput | null;
+  vpcs_some?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudClusterBindingWhereInput {
+  AND?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
+  NOT?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
+  OR?: VirtualPrivateCloudClusterBindingWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  /** @format int32 */
+  mtu?: number | null;
+  /** @format int32 */
+  mtu_gt?: number | null;
+  /** @format int32 */
+  mtu_gte?: number | null;
+  mtu_in?: number[] | null;
+  /** @format int32 */
+  mtu_lt?: number | null;
+  /** @format int32 */
+  mtu_lte?: number | null;
+  /** @format int32 */
+  mtu_not?: number | null;
+  mtu_not_in?: number[] | null;
+  vds?: VdsWhereInput | null;
+  /** @format int32 */
+  vlan_id?: number | null;
+  /** @format int32 */
+  vlan_id_gt?: number | null;
+  /** @format int32 */
+  vlan_id_gte?: number | null;
+  vlan_id_in?: number[] | null;
+  /** @format int32 */
+  vlan_id_lt?: number | null;
+  /** @format int32 */
+  vlan_id_lte?: number | null;
+  /** @format int32 */
+  vlan_id_not?: number | null;
+  vlan_id_not_in?: number[] | null;
+  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
+}
+
+export enum EverouteClusterPhase {
+  Associated = "Associated",
+  Failed = "Failed",
+  Init = "Init",
+  Running = "Running",
+  Terminating = "Terminating",
+  Updating = "Updating",
+  Upgrading = "Upgrading",
+}
+
+export interface VirtualPrivateCloudWhereInput {
+  AND?: VirtualPrivateCloudWhereInput[] | null;
+  NOT?: VirtualPrivateCloudWhereInput[] | null;
+  OR?: VirtualPrivateCloudWhereInput[] | null;
+  /** @format int32 */
+  associate_external_subnet_num?: number | null;
+  /** @format int32 */
+  associate_external_subnet_num_gt?: number | null;
+  /** @format int32 */
+  associate_external_subnet_num_gte?: number | null;
+  associate_external_subnet_num_in?: number[] | null;
+  /** @format int32 */
+  associate_external_subnet_num_lt?: number | null;
+  /** @format int32 */
+  associate_external_subnet_num_lte?: number | null;
+  /** @format int32 */
+  associate_external_subnet_num_not?: number | null;
+  associate_external_subnet_num_not_in?: number[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  /** @format int32 */
+  mtu?: number | null;
+  /** @format int32 */
+  mtu_gt?: number | null;
+  /** @format int32 */
+  mtu_gte?: number | null;
+  mtu_in?: number[] | null;
+  /** @format int32 */
+  mtu_lt?: number | null;
+  /** @format int32 */
+  mtu_lte?: number | null;
+  /** @format int32 */
+  mtu_not?: number | null;
+  mtu_not_in?: number[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  route_tables_every?: VirtualPrivateCloudRouteTableWhereInput | null;
+  route_tables_none?: VirtualPrivateCloudRouteTableWhereInput | null;
+  route_tables_some?: VirtualPrivateCloudRouteTableWhereInput | null;
+  security_groups_every?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_groups_none?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_groups_some?: VirtualPrivateCloudSecurityGroupWhereInput | null;
+  security_policies_every?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
+  security_policies_none?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
+  security_policies_some?: VirtualPrivateCloudSecurityPolicyWhereInput | null;
+  subnets_every?: VirtualPrivateCloudSubnetWhereInput | null;
+  subnets_none?: VirtualPrivateCloudSubnetWhereInput | null;
+  subnets_some?: VirtualPrivateCloudSubnetWhereInput | null;
+  vpc_service?: VirtualPrivateCloudServiceWhereInput | null;
+}
+
+export interface VirtualPrivateCloudSecurityGroupWhereInput {
+  AND?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
+  NOT?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
+  OR?: VirtualPrivateCloudSecurityGroupWhereInput[] | null;
+  default_for_vpc?: boolean | null;
+  default_for_vpc_not?: boolean | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudRouteTableWhereInput {
+  AND?: VirtualPrivateCloudRouteTableWhereInput[] | null;
+  NOT?: VirtualPrivateCloudRouteTableWhereInput[] | null;
+  OR?: VirtualPrivateCloudRouteTableWhereInput[] | null;
+  default_for_vpc?: boolean | null;
+  default_for_vpc_not?: boolean | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  routes_every?: VirtualPrivateCloudRouteWhereInput | null;
+  routes_none?: VirtualPrivateCloudRouteWhereInput | null;
+  routes_some?: VirtualPrivateCloudRouteWhereInput | null;
+  subnets_every?: VirtualPrivateCloudSubnetWhereInput | null;
+  subnets_none?: VirtualPrivateCloudSubnetWhereInput | null;
+  subnets_some?: VirtualPrivateCloudSubnetWhereInput | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudRouteWhereInput {
+  AND?: VirtualPrivateCloudRouteWhereInput[] | null;
+  NOT?: VirtualPrivateCloudRouteWhereInput[] | null;
+  OR?: VirtualPrivateCloudRouteWhereInput[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  destination?: string | null;
+  destination_contains?: string | null;
+  destination_ends_with?: string | null;
+  destination_gt?: string | null;
+  destination_gte?: string | null;
+  destination_in?: string[] | null;
+  destination_lt?: string | null;
+  destination_lte?: string | null;
+  destination_not?: string | null;
+  destination_not_contains?: string | null;
+  destination_not_ends_with?: string | null;
+  destination_not_in?: string[] | null;
+  destination_not_starts_with?: string | null;
+  destination_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  nat_gateway?: VirtualPrivateCloudNatGatewayWhereInput | null;
+  next_hop_local_id?: string | null;
+  next_hop_local_id_contains?: string | null;
+  next_hop_local_id_ends_with?: string | null;
+  next_hop_local_id_gt?: string | null;
+  next_hop_local_id_gte?: string | null;
+  next_hop_local_id_in?: string[] | null;
+  next_hop_local_id_lt?: string | null;
+  next_hop_local_id_lte?: string | null;
+  next_hop_local_id_not?: string | null;
+  next_hop_local_id_not_contains?: string | null;
+  next_hop_local_id_not_ends_with?: string | null;
+  next_hop_local_id_not_in?: string[] | null;
+  next_hop_local_id_not_starts_with?: string | null;
+  next_hop_local_id_starts_with?: string | null;
+  next_hop_type?: VirtualPrivateCloudRouteNextHopType | null;
+  next_hop_type_in?: VirtualPrivateCloudRouteNextHopType[] | null;
+  next_hop_type_not?: VirtualPrivateCloudRouteNextHopType | null;
+  next_hop_type_not_in?: VirtualPrivateCloudRouteNextHopType[] | null;
+  route_table?: VirtualPrivateCloudRouteTableWhereInput | null;
+  router_gateway?: VirtualPrivateCloudRouterGatewayWhereInput | null;
+}
+
+export interface VirtualPrivateCloudNatGatewayWhereInput {
+  AND?: VirtualPrivateCloudNatGatewayWhereInput[] | null;
+  NOT?: VirtualPrivateCloudNatGatewayWhereInput[] | null;
+  OR?: VirtualPrivateCloudNatGatewayWhereInput[] | null;
+  enable_dnat?: boolean | null;
+  enable_dnat_not?: boolean | null;
+  enable_snat?: boolean | null;
+  enable_snat_not?: boolean | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  external_ip?: string | null;
+  external_ip_contains?: string | null;
+  external_ip_ends_with?: string | null;
+  external_ip_gt?: string | null;
+  external_ip_gte?: string | null;
+  external_ip_in?: string[] | null;
+  external_ip_lt?: string | null;
+  external_ip_lte?: string | null;
+  external_ip_not?: string | null;
+  external_ip_not_contains?: string | null;
+  external_ip_not_ends_with?: string | null;
+  external_ip_not_in?: string[] | null;
+  external_ip_not_starts_with?: string | null;
+  external_ip_starts_with?: string | null;
+  external_subnet?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  external_subnet_group?: VirtualPrivateCloudExternalSubnetGroupWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudExternalSubnetGroupWhereInput {
+  AND?: VirtualPrivateCloudExternalSubnetGroupWhereInput[] | null;
+  NOT?: VirtualPrivateCloudExternalSubnetGroupWhereInput[] | null;
+  OR?: VirtualPrivateCloudExternalSubnetGroupWhereInput[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  edge_gateway_group?: VirtualPrivateCloudEdgeGatewayGroupWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  exclusive?: boolean | null;
+  exclusive_not?: boolean | null;
+  floating_ips_every?: VirtualPrivateCloudFloatingIpWhereInput | null;
+  floating_ips_none?: VirtualPrivateCloudFloatingIpWhereInput | null;
+  floating_ips_some?: VirtualPrivateCloudFloatingIpWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  nat_gateways_every?: VirtualPrivateCloudNatGatewayWhereInput | null;
+  nat_gateways_none?: VirtualPrivateCloudNatGatewayWhereInput | null;
+  nat_gateways_some?: VirtualPrivateCloudNatGatewayWhereInput | null;
+  router_gateways_every?: VirtualPrivateCloudRouterGatewayWhereInput | null;
+  router_gateways_none?: VirtualPrivateCloudRouterGatewayWhereInput | null;
+  router_gateways_some?: VirtualPrivateCloudRouterGatewayWhereInput | null;
+  shared_in_edge_gateway_group?: boolean | null;
+  shared_in_edge_gateway_group_not?: boolean | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudRouterGatewayWhereInput {
+  AND?: VirtualPrivateCloudRouterGatewayWhereInput[] | null;
+  NOT?: VirtualPrivateCloudRouterGatewayWhereInput[] | null;
+  OR?: VirtualPrivateCloudRouterGatewayWhereInput[] | null;
+  associated_subnets_every?: VirtualPrivateCloudSubnetWhereInput | null;
+  associated_subnets_none?: VirtualPrivateCloudSubnetWhereInput | null;
+  associated_subnets_some?: VirtualPrivateCloudSubnetWhereInput | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  external_ip?: string | null;
+  external_ip_contains?: string | null;
+  external_ip_ends_with?: string | null;
+  external_ip_gt?: string | null;
+  external_ip_gte?: string | null;
+  external_ip_in?: string[] | null;
+  external_ip_lt?: string | null;
+  external_ip_lte?: string | null;
+  external_ip_not?: string | null;
+  external_ip_not_contains?: string | null;
+  external_ip_not_ends_with?: string | null;
+  external_ip_not_in?: string[] | null;
+  external_ip_not_starts_with?: string | null;
+  external_ip_starts_with?: string | null;
+  external_subnet?: VirtualPrivateCloudExternalSubnetWhereInput | null;
+  external_subnet_group?: VirtualPrivateCloudExternalSubnetGroupWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  nexthop_ip?: string | null;
+  nexthop_ip_contains?: string | null;
+  nexthop_ip_ends_with?: string | null;
+  nexthop_ip_gt?: string | null;
+  nexthop_ip_gte?: string | null;
+  nexthop_ip_in?: string[] | null;
+  nexthop_ip_lt?: string | null;
+  nexthop_ip_lte?: string | null;
+  nexthop_ip_not?: string | null;
+  nexthop_ip_not_contains?: string | null;
+  nexthop_ip_not_ends_with?: string | null;
+  nexthop_ip_not_in?: string[] | null;
+  nexthop_ip_not_starts_with?: string | null;
+  nexthop_ip_starts_with?: string | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export interface VirtualPrivateCloudSubnetWhereInput {
+  AND?: VirtualPrivateCloudSubnetWhereInput[] | null;
+  NOT?: VirtualPrivateCloudSubnetWhereInput[] | null;
+  OR?: VirtualPrivateCloudSubnetWhereInput[] | null;
+  cidr?: string | null;
+  cidr_contains?: string | null;
+  cidr_ends_with?: string | null;
+  cidr_gt?: string | null;
+  cidr_gte?: string | null;
+  cidr_in?: string[] | null;
+  cidr_lt?: string | null;
+  cidr_lte?: string | null;
+  cidr_not?: string | null;
+  cidr_not_contains?: string | null;
+  cidr_not_ends_with?: string | null;
+  cidr_not_in?: string[] | null;
+  cidr_not_starts_with?: string | null;
+  cidr_starts_with?: string | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  gateway?: string | null;
+  gateway_contains?: string | null;
+  gateway_ends_with?: string | null;
+  gateway_gt?: string | null;
+  gateway_gte?: string | null;
+  gateway_in?: string[] | null;
+  gateway_lt?: string | null;
+  gateway_lte?: string | null;
+  gateway_not?: string | null;
+  gateway_not_contains?: string | null;
+  gateway_not_ends_with?: string | null;
+  gateway_not_in?: string[] | null;
+  gateway_not_starts_with?: string | null;
+  gateway_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  route_table?: VirtualPrivateCloudRouteTableWhereInput | null;
+  /** @format int32 */
+  total_ip_count?: number | null;
+  /** @format int32 */
+  total_ip_count_gt?: number | null;
+  /** @format int32 */
+  total_ip_count_gte?: number | null;
+  total_ip_count_in?: number[] | null;
+  /** @format int32 */
+  total_ip_count_lt?: number | null;
+  /** @format int32 */
+  total_ip_count_lte?: number | null;
+  /** @format int32 */
+  total_ip_count_not?: number | null;
+  total_ip_count_not_in?: number[] | null;
+  /** @format int32 */
+  unused_ip_count?: number | null;
+  /** @format int32 */
+  unused_ip_count_gt?: number | null;
+  /** @format int32 */
+  unused_ip_count_gte?: number | null;
+  unused_ip_count_in?: number[] | null;
+  /** @format int32 */
+  unused_ip_count_lt?: number | null;
+  /** @format int32 */
+  unused_ip_count_lte?: number | null;
+  /** @format int32 */
+  unused_ip_count_not?: number | null;
+  unused_ip_count_not_in?: number[] | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export enum VirtualPrivateCloudRouteNextHopType {
+  NAT_GATEWAY = "NAT_GATEWAY",
+  ROUTER_GATEWAY = "ROUTER_GATEWAY",
+  UNKNOWN = "UNKNOWN",
+  VPC_PEERING = "VPC_PEERING",
+}
+
+export interface VirtualPrivateCloudSecurityPolicyWhereInput {
+  AND?: VirtualPrivateCloudSecurityPolicyWhereInput[] | null;
+  NOT?: VirtualPrivateCloudSecurityPolicyWhereInput[] | null;
+  OR?: VirtualPrivateCloudSecurityPolicyWhereInput[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  policy_mode?: VirtualPrivateCloudSecurityPolicyMode | null;
+  policy_mode_in?: VirtualPrivateCloudSecurityPolicyMode[] | null;
+  policy_mode_not?: VirtualPrivateCloudSecurityPolicyMode | null;
+  policy_mode_not_in?: VirtualPrivateCloudSecurityPolicyMode[] | null;
+  vpc?: VirtualPrivateCloudWhereInput | null;
+}
+
+export enum VirtualPrivateCloudSecurityPolicyMode {
+  MONITOR = "MONITOR",
+  WORK = "WORK",
+}
+
+export enum GlobalPolicyAction {
+  ALLOW = "ALLOW",
+  DROP = "DROP",
+}
+
+export interface LoadBalancerServiceWhereInput {
+  AND?: LoadBalancerServiceWhereInput[] | null;
+  NOT?: LoadBalancerServiceWhereInput[] | null;
+  OR?: LoadBalancerServiceWhereInput[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  everoute_cluster?: EverouteClusterWhereInput | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  phase?: EverouteClusterPhase | null;
+  phase_in?: EverouteClusterPhase[] | null;
+  phase_not?: EverouteClusterPhase | null;
+  phase_not_in?: EverouteClusterPhase[] | null;
+  vm_instances_every?: VmWhereInput | null;
+  vm_instances_none?: VmWhereInput | null;
+  vm_instances_some?: VmWhereInput | null;
+}
+
+export enum IsolationMode {
+  ALL = "ALL",
+  PARTIAL = "PARTIAL",
+}
+
+export interface SecurityPolicyStatisticsWhereInput {
+  AND?: SecurityPolicyStatisticsWhereInput[] | null;
+  NOT?: SecurityPolicyStatisticsWhereInput[] | null;
+  OR?: SecurityPolicyStatisticsWhereInput[] | null;
+  count_reset_timestamp?: string | null;
+  count_reset_timestamp_gt?: string | null;
+  count_reset_timestamp_gte?: string | null;
+  count_reset_timestamp_in?: string[] | null;
+  count_reset_timestamp_lt?: string | null;
+  count_reset_timestamp_lte?: string | null;
+  count_reset_timestamp_not?: string | null;
+  count_reset_timestamp_not_in?: string[] | null;
+  count_update_timestamp?: string | null;
+  count_update_timestamp_gt?: string | null;
+  count_update_timestamp_gte?: string | null;
+  count_update_timestamp_in?: string[] | null;
+  count_update_timestamp_lt?: string | null;
+  count_update_timestamp_lte?: string | null;
+  count_update_timestamp_not?: string | null;
+  count_update_timestamp_not_in?: string[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  /** @format int32 */
+  match_allow_count?: number | null;
+  /** @format int32 */
+  match_allow_count_gt?: number | null;
+  /** @format int32 */
+  match_allow_count_gte?: number | null;
+  match_allow_count_in?: number[] | null;
+  /** @format int32 */
+  match_allow_count_lt?: number | null;
+  /** @format int32 */
+  match_allow_count_lte?: number | null;
+  /** @format int32 */
+  match_allow_count_not?: number | null;
+  match_allow_count_not_in?: number[] | null;
+  /** @format int32 */
+  match_default_allow_count?: number | null;
+  /** @format int32 */
+  match_default_allow_count_gt?: number | null;
+  /** @format int32 */
+  match_default_allow_count_gte?: number | null;
+  match_default_allow_count_in?: number[] | null;
+  /** @format int32 */
+  match_default_allow_count_lt?: number | null;
+  /** @format int32 */
+  match_default_allow_count_lte?: number | null;
+  /** @format int32 */
+  match_default_allow_count_not?: number | null;
+  match_default_allow_count_not_in?: number[] | null;
+  /** @format int32 */
+  match_default_drop_count?: number | null;
+  /** @format int32 */
+  match_default_drop_count_gt?: number | null;
+  /** @format int32 */
+  match_default_drop_count_gte?: number | null;
+  match_default_drop_count_in?: number[] | null;
+  /** @format int32 */
+  match_default_drop_count_lt?: number | null;
+  /** @format int32 */
+  match_default_drop_count_lte?: number | null;
+  /** @format int32 */
+  match_default_drop_count_not?: number | null;
+  match_default_drop_count_not_in?: number[] | null;
+  /** @format int32 */
+  match_drop_count?: number | null;
+  /** @format int32 */
+  match_drop_count_gt?: number | null;
+  /** @format int32 */
+  match_drop_count_gte?: number | null;
+  match_drop_count_in?: number[] | null;
+  /** @format int32 */
+  match_drop_count_lt?: number | null;
+  /** @format int32 */
+  match_drop_count_lte?: number | null;
+  /** @format int32 */
+  match_drop_count_not?: number | null;
+  match_drop_count_not_in?: number[] | null;
+  /** @format int32 */
+  match_whitelist_count?: number | null;
+  /** @format int32 */
+  match_whitelist_count_gt?: number | null;
+  /** @format int32 */
+  match_whitelist_count_gte?: number | null;
+  match_whitelist_count_in?: number[] | null;
+  /** @format int32 */
+  match_whitelist_count_lt?: number | null;
+  /** @format int32 */
+  match_whitelist_count_lte?: number | null;
+  /** @format int32 */
+  match_whitelist_count_not?: number | null;
+  match_whitelist_count_not_in?: number[] | null;
+  /** @format int32 */
+  total_count?: number | null;
+  /** @format int32 */
+  total_count_gt?: number | null;
+  /** @format int32 */
+  total_count_gte?: number | null;
+  total_count_in?: number[] | null;
+  /** @format int32 */
+  total_count_lt?: number | null;
+  /** @format int32 */
+  total_count_lte?: number | null;
+  /** @format int32 */
+  total_count_not?: number | null;
+  total_count_not_in?: number[] | null;
 }
 
 export interface SecurityPolicyWhereInput {
@@ -8674,6 +12845,20 @@ export interface VmVolumeSnapshotWhereInput {
   /** @format int32 */
   elf_storage_policy_replica_num_not?: number | null;
   elf_storage_policy_replica_num_not_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_gt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_gte?: number | null;
+  elf_storage_policy_stripe_num_in?: number[] | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_lt?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_lte?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num_not?: number | null;
+  elf_storage_policy_stripe_num_not_in?: number[] | null;
   elf_storage_policy_thin_provision?: boolean | null;
   elf_storage_policy_thin_provision_not?: boolean | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
@@ -8733,6 +12918,20 @@ export interface VmVolumeSnapshotWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
+  provision_policy?: string | null;
+  provision_policy_contains?: string | null;
+  provision_policy_ends_with?: string | null;
+  provision_policy_gt?: string | null;
+  provision_policy_gte?: string | null;
+  provision_policy_in?: string[] | null;
+  provision_policy_lt?: string | null;
+  provision_policy_lte?: string | null;
+  provision_policy_not?: string | null;
+  provision_policy_not_contains?: string | null;
+  provision_policy_not_ends_with?: string | null;
+  provision_policy_not_in?: string[] | null;
+  provision_policy_not_starts_with?: string | null;
+  provision_policy_starts_with?: string | null;
   resident_in_cache?: boolean | null;
   resident_in_cache_not?: boolean | null;
   /** @format double */
@@ -8817,15 +13016,69 @@ export interface VmVolumeSnapshotWhereInput {
 export enum VmVolumeSnapshotType {
   KVM_VOLUME_ISCSI_SNAPSHOT = "KVM_VOLUME_ISCSI_SNAPSHOT",
   KVM_VOLUME_SNAPSHOT = "KVM_VOLUME_SNAPSHOT",
+  KVM_VOLUME_VCFS_SNAPSHOT = "KVM_VOLUME_VCFS_SNAPSHOT",
 }
 
-export interface OrganizationWhereInput {
-  AND?: OrganizationWhereInput[] | null;
-  NOT?: OrganizationWhereInput[] | null;
-  OR?: OrganizationWhereInput[] | null;
-  datacenters_every?: DatacenterWhereInput | null;
-  datacenters_none?: DatacenterWhereInput | null;
-  datacenters_some?: DatacenterWhereInput | null;
+export enum DatastoreStatus {
+  ACTIVE = "ACTIVE",
+  ATTACHING = "ATTACHING",
+  CREATING = "CREATING",
+  ERROR = "ERROR",
+  INACTIVE = "INACTIVE",
+}
+
+export enum StorageProtocol {
+  FC = "FC",
+  ISCSI = "ISCSI",
+}
+
+export enum HostMergedStatus {
+  DISCONNECTED = "DISCONNECTED",
+  HEALTHY = "HEALTHY",
+  INITIALIZING = "INITIALIZING",
+  UNUSUAL = "UNUSUAL",
+}
+
+export enum HostState {
+  IDLE = "IDLE",
+  IN_USE = "IN_USE",
+  REMOVING = "REMOVING",
+}
+
+export enum HostStatus {
+  CONNECTED_ERROR = "CONNECTED_ERROR",
+  CONNECTED_HEALTHY = "CONNECTED_HEALTHY",
+  CONNECTED_WARNING = "CONNECTED_WARNING",
+  CONNECTING = "CONNECTING",
+  INITIALIZING = "INITIALIZING",
+  SESSION_EXPIRED = "SESSION_EXPIRED",
+}
+
+export interface UsbDeviceWhereInput {
+  AND?: UsbDeviceWhereInput[] | null;
+  NOT?: UsbDeviceWhereInput[] | null;
+  OR?: UsbDeviceWhereInput[] | null;
+  binded?: boolean | null;
+  binded_not?: boolean | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  host?: HostWhereInput | null;
   id?: string | null;
   id_contains?: string | null;
   id_ends_with?: string | null;
@@ -8840,6 +13093,42 @@ export interface OrganizationWhereInput {
   id_not_in?: string[] | null;
   id_not_starts_with?: string | null;
   id_starts_with?: string | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  manufacturer?: string | null;
+  manufacturer_contains?: string | null;
+  manufacturer_ends_with?: string | null;
+  manufacturer_gt?: string | null;
+  manufacturer_gte?: string | null;
+  manufacturer_in?: string[] | null;
+  manufacturer_lt?: string | null;
+  manufacturer_lte?: string | null;
+  manufacturer_not?: string | null;
+  manufacturer_not_contains?: string | null;
+  manufacturer_not_ends_with?: string | null;
+  manufacturer_not_in?: string[] | null;
+  manufacturer_not_starts_with?: string | null;
+  manufacturer_starts_with?: string | null;
   name?: string | null;
   name_contains?: string | null;
   name_ends_with?: string | null;
@@ -8854,6 +13143,228 @@ export interface OrganizationWhereInput {
   name_not_in?: string[] | null;
   name_not_starts_with?: string | null;
   name_starts_with?: string | null;
+  /** @format int64 */
+  size?: number | null;
+  /** @format int64 */
+  size_gt?: number | null;
+  /** @format int64 */
+  size_gte?: number | null;
+  size_in?: number[] | null;
+  /** @format int64 */
+  size_lt?: number | null;
+  /** @format int64 */
+  size_lte?: number | null;
+  /** @format int64 */
+  size_not?: number | null;
+  size_not_in?: number[] | null;
+  status?: UsbDeviceStatus | null;
+  status_in?: UsbDeviceStatus[] | null;
+  status_not?: UsbDeviceStatus | null;
+  status_not_in?: UsbDeviceStatus[] | null;
+  usb_type?: string | null;
+  usb_type_contains?: string | null;
+  usb_type_ends_with?: string | null;
+  usb_type_gt?: string | null;
+  usb_type_gte?: string | null;
+  usb_type_in?: string[] | null;
+  usb_type_lt?: string | null;
+  usb_type_lte?: string | null;
+  usb_type_not?: string | null;
+  usb_type_not_contains?: string | null;
+  usb_type_not_ends_with?: string | null;
+  usb_type_not_in?: string[] | null;
+  usb_type_not_starts_with?: string | null;
+  usb_type_starts_with?: string | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
+}
+
+export enum UsbDeviceStatus {
+  EJECTED = "EJECTED",
+  NORMAL = "NORMAL",
+}
+
+export enum GpuDeviceStatus {
+  NEED_REBOOT = "NEED_REBOOT",
+  NOT_READY = "NOT_READY",
+  READY = "READY",
+}
+
+export enum GpuDeviceUsage {
+  PASS_THROUGH = "PASS_THROUGH",
+  VGPU = "VGPU",
+}
+
+export enum VmStatus {
+  DELETED = "DELETED",
+  RUNNING = "RUNNING",
+  STOPPED = "STOPPED",
+  SUSPENDED = "SUSPENDED",
+  UNKNOWN = "UNKNOWN",
+}
+
+export enum VmVideoType {
+  CIRRUS = "CIRRUS",
+  QXL = "QXL",
+  VGA = "VGA",
+  VIRTIO = "VIRTIO",
+}
+
+export interface VmPlacementGroupWhereInput {
+  AND?: VmPlacementGroupWhereInput[] | null;
+  NOT?: VmPlacementGroupWhereInput[] | null;
+  OR?: VmPlacementGroupWhereInput[] | null;
+  cluster?: ClusterWhereInput | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  enabled?: boolean | null;
+  enabled_not?: boolean | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  entityAsyncStatus_in?: EntityAsyncStatus[] | null;
+  entityAsyncStatus_not?: EntityAsyncStatus | null;
+  entityAsyncStatus_not_in?: EntityAsyncStatus[] | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  local_created_at?: string | null;
+  local_created_at_gt?: string | null;
+  local_created_at_gte?: string | null;
+  local_created_at_in?: string[] | null;
+  local_created_at_lt?: string | null;
+  local_created_at_lte?: string | null;
+  local_created_at_not?: string | null;
+  local_created_at_not_in?: string[] | null;
+  local_id?: string | null;
+  local_id_contains?: string | null;
+  local_id_ends_with?: string | null;
+  local_id_gt?: string | null;
+  local_id_gte?: string | null;
+  local_id_in?: string[] | null;
+  local_id_lt?: string | null;
+  local_id_lte?: string | null;
+  local_id_not?: string | null;
+  local_id_not_contains?: string | null;
+  local_id_not_ends_with?: string | null;
+  local_id_not_in?: string[] | null;
+  local_id_not_starts_with?: string | null;
+  local_id_starts_with?: string | null;
+  local_updated_at?: string | null;
+  local_updated_at_gt?: string | null;
+  local_updated_at_gte?: string | null;
+  local_updated_at_in?: string[] | null;
+  local_updated_at_lt?: string | null;
+  local_updated_at_lte?: string | null;
+  local_updated_at_not?: string | null;
+  local_updated_at_not_in?: string[] | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  usage?: VmPlacementGroupUsage | null;
+  usage_in?: VmPlacementGroupUsage[] | null;
+  usage_not?: VmPlacementGroupUsage | null;
+  usage_not_in?: VmPlacementGroupUsage[] | null;
+  vm_host_must_enabled?: boolean | null;
+  vm_host_must_enabled_not?: boolean | null;
+  vm_host_must_host_uuids_every?: HostWhereInput | null;
+  vm_host_must_host_uuids_none?: HostWhereInput | null;
+  vm_host_must_host_uuids_some?: HostWhereInput | null;
+  vm_host_must_policy?: boolean | null;
+  vm_host_must_policy_not?: boolean | null;
+  vm_host_prefer_enabled?: boolean | null;
+  vm_host_prefer_enabled_not?: boolean | null;
+  vm_host_prefer_host_uuids_every?: HostWhereInput | null;
+  vm_host_prefer_host_uuids_none?: HostWhereInput | null;
+  vm_host_prefer_host_uuids_some?: HostWhereInput | null;
+  vm_host_prefer_policy?: boolean | null;
+  vm_host_prefer_policy_not?: boolean | null;
+  vm_vm_policy?: VmVmPolicy | null;
+  vm_vm_policy_enabled?: boolean | null;
+  vm_vm_policy_enabled_not?: boolean | null;
+  vm_vm_policy_in?: VmVmPolicy[] | null;
+  vm_vm_policy_not?: VmVmPolicy | null;
+  vm_vm_policy_not_in?: VmVmPolicy[] | null;
+  vms_every?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_some?: VmWhereInput | null;
+}
+
+export enum VmPlacementGroupUsage {
+  SVM = "SVM",
+}
+
+export enum VmVmPolicy {
+  MUST_DIFFERENT = "MUST_DIFFERENT",
+  MUST_SAME = "MUST_SAME",
+  PREFER_DIFFERENT = "PREFER_DIFFERENT",
+  PREFER_SAME = "PREFER_SAME",
+}
+
+export enum VmToolsStatus {
+  NOT_INSTALLED = "NOT_INSTALLED",
+  NOT_RUNNING = "NOT_RUNNING",
+  RESTRICTION = "RESTRICTION",
+  RUNNING = "RUNNING",
+}
+
+export enum VmUsage {
+  ADVANCED_MONITORING = "ADVANCED_MONITORING",
+  AGENT_MESH_NODE = "AGENT_MESH_NODE",
+  BACKUP_CONTROLLER = "BACKUP_CONTROLLER",
+  BUNDLE_APPLICATION = "BUNDLE_APPLICATION",
+  CLOUDTOWER = "CLOUDTOWER",
+  CLOUDTOWER_PASSIVE = "CLOUDTOWER_PASSIVE",
+  CLOUDTOWER_WITNESS = "CLOUDTOWER_WITNESS",
+  EVEROUTE_CONTROLLER = "EVEROUTE_CONTROLLER",
+  EVEROUTE_LB = "EVEROUTE_LB",
+  EVEROUTE_VPC_EDGE = "EVEROUTE_VPC_EDGE",
+  REGISTRY = "REGISTRY",
+  REPLICATION_CONTROLLER = "REPLICATION_CONTROLLER",
+  SFS_CONTROLLER = "SFS_CONTROLLER",
+  SHARE_REGISTRY = "SHARE_REGISTRY",
+  SKS_MANAGEMENT = "SKS_MANAGEMENT",
+}
+
+export enum ConnectState {
+  CONNECTED = "CONNECTED",
+  CONNECTED_ERROR = "CONNECTED_ERROR",
+  DISCONNECTED = "DISCONNECTED",
+  INITIALIZING = "INITIALIZING",
+  REMOVING = "REMOVING",
 }
 
 export enum ClusterConnectorErrorCode {
@@ -8864,17 +13375,17 @@ export enum ClusterConnectorErrorCode {
   LOAD_CLUSTER_UNHEALTHY = "LOAD_CLUSTER_UNHEALTHY",
 }
 
+export enum LicenseType {
+  PERPETUAL = "PERPETUAL",
+  SUBSCRIPTION = "SUBSCRIPTION",
+  TRIAL = "TRIAL",
+}
+
 export enum Hypervisor {
   BLUESHARK = "BLUESHARK",
   ELF = "ELF",
   VMWARE = "VMWARE",
   XENSERVER = "XENSERVER",
-}
-
-export enum LicenseType {
-  PERPETUAL = "PERPETUAL",
-  SUBSCRIPTION = "SUBSCRIPTION",
-  TRIAL = "TRIAL",
 }
 
 export enum NtpMode {
@@ -8896,8 +13407,13 @@ export enum ClusterType {
   ACOS = "ACOS",
 }
 
+export enum ContentLanguage {
+  EnUS = "en-US",
+}
+
 export interface NestedCluster {
   id: string;
+  local_id?: string | null;
   name: string;
 }
 
@@ -9160,6 +13676,512 @@ export interface UserAuditLog {
   username?: string | null;
 }
 
+export interface NestedBackupPlanExecution {
+  id: string;
+}
+
+export interface NestedBackupRestorePoint {
+  id: string;
+}
+
+export interface NestedBackupService {
+  id: string;
+  name: string;
+}
+
+export interface NestedBackupStoreRepository {
+  id: string;
+  name: string;
+}
+
+export enum WeekdayTypeEnum {
+  FRI = "FRI",
+  MON = "MON",
+  SAT = "SAT",
+  SUN = "SUN",
+  THU = "THU",
+  TUE = "TUE",
+  WED = "WED",
+}
+
+export interface NestedBackupPlanTimePoint {
+  /** @format int32 */
+  date?: number | null;
+  date_position?: number[] | null;
+  /** @format int32 */
+  hour: number;
+  /** @format int32 */
+  minute: number;
+  weekday?: WeekdayTypeEnum | null;
+}
+
+export interface BackupPlan {
+  backup_delay_option?: BackupPlanDelayOption | null;
+  backup_plan_executions?: NestedBackupPlanExecution[] | null;
+  /** @format int32 */
+  backup_restore_point_count?: number | null;
+  backup_restore_points?: NestedBackupRestorePoint[] | null;
+  backup_service: NestedBackupService;
+  backup_store_repository: NestedBackupStoreRepository;
+  /** @format int64 */
+  backup_total_size?: number | null;
+  compression?: boolean | null;
+  /** @format double */
+  compression_ratio?: number | null;
+  createdAt: string;
+  delete_strategy?: BackupPlanDeleteStrategy | null;
+  description?: string | null;
+  enable_window: boolean;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  /** @format int32 */
+  full_interval?: number | null;
+  full_period?: BackupPlanPeriod | null;
+  full_time_point?: NestedBackupPlanTimePoint | null;
+  id: string;
+  /** @format int32 */
+  incremental_interval?: number | null;
+  incremental_period: BackupPlanPeriod;
+  incremental_time_points: NestedBackupPlanTimePoint[];
+  incremental_weekdays?: WeekdayTypeEnum[] | null;
+  keep_policy?: BackupPlanKeepPolicy | null;
+  /** @format int32 */
+  keep_policy_value?: number | null;
+  last_execute_status: BackupPlanExecutionStatus;
+  last_execute_status_message?: string | null;
+  /** @format int32 */
+  last_execute_success_job_count?: number | null;
+  /** @format int32 */
+  last_execute_total_job_count?: number | null;
+  last_executed_at?: string | null;
+  last_manual_execute_status: BackupPlanExecutionStatus;
+  last_manual_execute_status_message?: string | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count?: number | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count?: number | null;
+  last_manual_executed_at?: string | null;
+  /** @format int64 */
+  logical_size: number;
+  name: string;
+  next_execute_time?: string | null;
+  phase?: BackupPlanPhase | null;
+  /** @format int64 */
+  physical_size: number;
+  snapshot_consistent_type?: ConsistentType | null;
+  status: BackupPlanStatus;
+  /** @format int64 */
+  valid_size_of_backup_object: number;
+  /** @format int64 */
+  valid_size_of_restore_point: number;
+  vms?: NestedVm[] | null;
+  window_end?: string | null;
+  window_start?: string | null;
+}
+
+export interface WithTaskBackupPlan {
+  task_id?: string | null;
+  data: BackupPlan;
+}
+
+export interface BackupPlanTimePoint {
+  weekday?: WeekdayTypeEnum | null;
+  /** @format int32 */
+  minute: number;
+  /** @format int32 */
+  hour: number;
+  date_position?: number[] | null;
+  /** @format int32 */
+  date?: number | null;
+}
+
+export interface BackupPlanCreationParams {
+  /** @format int32 */
+  keep_policy_value: number;
+  keep_policy: BackupPlanKeepPolicy;
+  backup_delay_option?: BackupPlanDelayOption;
+  window_end?: string;
+  window_start?: string;
+  enable_window: boolean;
+  full_time_point: BackupPlanTimePoint;
+  full_period: BackupPlanPeriod;
+  /** @format int32 */
+  full_interval: number;
+  incremental_weekdays?: WeekdayTypeEnum[];
+  incremental_time_points?: BackupPlanTimePoint[];
+  /** @format int32 */
+  incremental_interval: number;
+  incremental_period: BackupPlanPeriod;
+  snapshot_consistent_type: ConsistentType;
+  compression: boolean;
+  vms: VmWhereInput;
+  description?: string;
+  backup_store_repository_id: string;
+  backup_service_id: string;
+  name: string;
+}
+
+export interface BackupPlanUpdationParams {
+  data: {
+    disconnect_strategy?: BackupPlanDeleteStrategy;
+    /** @format int32 */
+    keep_policy_value?: number;
+    keep_policy?: BackupPlanKeepPolicy;
+    backup_delay_option?: BackupPlanDelayOption;
+    window_end?: string;
+    window_start?: string;
+    enable_window?: boolean;
+    full_time_point?: BackupPlanTimePoint;
+    full_period?: BackupPlanPeriod;
+    /** @format int32 */
+    full_interval?: number;
+    incremental_weekdays?: WeekdayTypeEnum[];
+    incremental_time_points?: BackupPlanTimePoint[];
+    /** @format int32 */
+    incremental_interval?: number;
+    incremental_period?: BackupPlanPeriod;
+    snapshot_consistent_type?: ConsistentType;
+    compression?: boolean;
+    vms?: VmWhereInput;
+    description?: string;
+    name?: string;
+  };
+  where: BackupPlanWhereInput;
+}
+
+export interface DeleteBackupPlan {
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  id: string;
+}
+
+export interface WithTaskDeleteBackupPlan {
+  task_id?: string | null;
+  data: DeleteBackupPlan;
+}
+
+export interface BackupPlanDeletionParams {
+  data: {
+    delete_strategy: BackupPlanDeleteStrategy;
+  };
+  where: BackupPlanWhereInput;
+}
+
+export interface BackupPlanSuspendParams {
+  where: BackupPlanWhereInput;
+}
+
+export interface BackupPlanResumeParams {
+  where: BackupPlanWhereInput;
+}
+
+export interface NestedBackupPlan {
+  id: string;
+  name: string;
+}
+
+export interface BackupPlanExecution {
+  backup_plan?: NestedBackupPlan | null;
+  deletable_flag_marked?: boolean | null;
+  /** @format int32 */
+  duration?: number | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  executed_at?: string | null;
+  id: string;
+  local_created_at: string;
+  local_id: string;
+  method: BackupExecutionMethod;
+  state?: BackupPlanExecutionState | null;
+  status: BackupPlanExecutionStatus;
+  /** @format int32 */
+  success_job_count?: number | null;
+  /** @format int32 */
+  total_job_count?: number | null;
+  type: BackupExecutionType;
+}
+
+export interface WithTaskBackupPlanExecution {
+  task_id?: string | null;
+  data: BackupPlanExecution;
+}
+
+export interface BackupPlanExecuteParams {
+  data: {
+    type: BackupExecutionType;
+  };
+  where: BackupPlanWhereInput;
+}
+
+export interface NestedBackupRestoreExecutionNetworkMapping {
+  dst_vlan_id: string;
+  src_vlan_id: string;
+}
+
+export interface BackupRestoreExecution {
+  backup_restore_point?: NestedBackupRestorePoint | null;
+  /** @format int32 */
+  duration?: number | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  executed_at: string;
+  id: string;
+  mode: BackupRestoreExecutionMode;
+  name: string;
+  /** @format int64 */
+  read_bytes?: number | null;
+  rebuild_name?: string | null;
+  rebuild_network_mapping?: NestedBackupRestoreExecutionNetworkMapping[] | null;
+  rebuild_target_cluster?: string | null;
+  /** @format int32 */
+  retry_times?: number | null;
+  startup_after_restore: boolean;
+  status: BackupExecutionStatus;
+  /** @format int64 */
+  total_bytes?: number | null;
+}
+
+export interface WithTaskBackupRestoreExecution {
+  task_id?: string | null;
+  data: BackupRestoreExecution;
+}
+
+export interface BackupRestoreExecutionNetworkInformation {
+  vpc_subnet_local_id?: string | null;
+  vpc_local_id?: string | null;
+  vlan_local_id?: string | null;
+  type?: VmNicType | null;
+  __typename?: "BackupRestoreExecutionNetworkInformation";
+}
+
+export interface BackupRestoreExecutionNetworkMapping {
+  target?: BackupRestoreExecutionNetworkInformation | null;
+  src_vlan_id: string;
+  source?: BackupRestoreExecutionNetworkInformation | null;
+  dst_vlan_id: string;
+  __typename?: "BackupRestoreExecutionNetworkMapping";
+}
+
+export interface BackupRestorePointRebuildParams {
+  data: {
+    rebuild_network_mapping: BackupRestoreExecutionNetworkMapping[];
+    rebuild_target_host_id: string;
+    rebuild_target_cluster_id: string;
+    rebuild_name: string;
+    startup_after_restore: boolean;
+  };
+  where: BackupRestorePointWhereInput;
+}
+
+export interface BackupRestorePointRestoreInPlaceParams {
+  data: {
+    startup_after_restore: boolean;
+  };
+  where: BackupRestorePointWhereInput;
+}
+
+export interface DeleteBackupRestorePoint {
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  id: string;
+}
+
+export interface WithTaskDeleteBackupRestorePointArray {
+  task_id?: string | null;
+  data: DeleteBackupRestorePoint[];
+}
+
+export interface BackupRestorePointDeletionParams {
+  where: BackupRestorePointWhereInput;
+}
+
+export interface VmDiskMetaData {
+  /** @format double */
+  vm_volume_size?: number | null;
+  vm_volume_sharing?: boolean | null;
+  vm_volume_path?: string | null;
+  vm_volume_name?: string | null;
+  vm_volume_mounting?: boolean | null;
+  vm_volume_lun_zbs_volume_id?: string | null;
+  vm_volume_elf_storage_policy?: VmVolumeElfStoragePolicyType | null;
+  type?: VmDiskType | null;
+  max_iops_policy?: VmDiskIoRestrictType | null;
+  /** @format int32 */
+  max_iops?: number | null;
+  max_bandwidth_policy?: VmDiskIoRestrictType | null;
+  /** @format double */
+  max_bandwidth?: number | null;
+  disabled?: boolean | null;
+  bus?: Bus | null;
+  /** @format int32 */
+  boot?: number | null;
+}
+
+export interface VmNicMetaData {
+  vlan_name?: string | null;
+  vlan_mode_type?: VlanModeType | null;
+  vlan_local_id?: string | null;
+  model?: string | null;
+  mirror?: boolean | null;
+  mac_address?: string | null;
+  local_id?: string | null;
+  /** @format double */
+  ingress_rate_limit_max_rate_in_bitps?: number | null;
+  ingress_rate_limit_enabled?: boolean | null;
+  /** @format double */
+  ingress_rate_limit_burst_in_bit?: number | null;
+  enabled?: boolean | null;
+  /** @format double */
+  egress_rate_limit_max_rate_in_bitps?: number | null;
+  egress_rate_limit_enabled?: boolean | null;
+  /** @format double */
+  egress_rate_limit_burst_in_bit?: number | null;
+}
+
+export interface VmMetaData {
+  win_opt?: boolean | null;
+  vm_tools_status?: VmToolsStatus | null;
+  vm_nics?: VmNicMetaData[] | null;
+  vm_disks?: VmDiskMetaData[] | null;
+  video_type?: VmVideoType | null;
+  /** @format int32 */
+  vcpu?: number | null;
+  sync_vm_time_on_resume?: boolean | null;
+  protected?: boolean | null;
+  nested_virtualization?: boolean | null;
+  name?: string | null;
+  /** @format double */
+  memory?: number | null;
+  max_iops_policy?: VmDiskIoRestrictType | null;
+  /** @format int32 */
+  max_iops?: number | null;
+  max_bandwidth_policy?: VmDiskIoRestrictType | null;
+  /** @format double */
+  max_bandwidth?: number | null;
+  local_id?: string | null;
+  io_policy?: VmDiskIoPolicy | null;
+  internal?: boolean | null;
+  host_local_id?: string | null;
+  ha_priority?: VmHaPriority | null;
+  ha?: boolean | null;
+  guest_os_type?: VmGuestsOperationSystem | null;
+  firmware?: VmFirmware | null;
+  description?: string | null;
+  /** @format int32 */
+  cpu_sockets?: number | null;
+  cpu_model?: string | null;
+  cpu_exclusive_expected_enabled?: boolean | null;
+  /** @format int32 */
+  cpu_cores?: number | null;
+  cluster_vhost_enabled?: boolean | null;
+  cluster_version?: string | null;
+  cluster_type?: ClusterType | null;
+  cluster_local_id?: string | null;
+  cluster_architecture?: Architecture | null;
+  clock_offset?: VmClockOffset | null;
+  boot_with_host?: boolean | null;
+}
+
+export interface BackupRestorePointWhereUniqueInput {
+  id?: string | null;
+  local_id?: string | null;
+}
+
+export interface GetBackupRestorePointMetadataRequestBody {
+  where: BackupRestorePointWhereUniqueInput;
+}
+
+export enum BackupPlanOrderByInput {
+  BackupDelayOptionASC = "backup_delay_option_ASC",
+  BackupDelayOptionDESC = "backup_delay_option_DESC",
+  BackupRestorePointCountASC = "backup_restore_point_count_ASC",
+  BackupRestorePointCountDESC = "backup_restore_point_count_DESC",
+  BackupTotalSizeASC = "backup_total_size_ASC",
+  BackupTotalSizeDESC = "backup_total_size_DESC",
+  CompressionASC = "compression_ASC",
+  CompressionDESC = "compression_DESC",
+  CompressionRatioASC = "compression_ratio_ASC",
+  CompressionRatioDESC = "compression_ratio_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DeleteStrategyASC = "delete_strategy_ASC",
+  DeleteStrategyDESC = "delete_strategy_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EnableWindowASC = "enable_window_ASC",
+  EnableWindowDESC = "enable_window_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FullIntervalASC = "full_interval_ASC",
+  FullIntervalDESC = "full_interval_DESC",
+  FullPeriodASC = "full_period_ASC",
+  FullPeriodDESC = "full_period_DESC",
+  FullTimePointASC = "full_time_point_ASC",
+  FullTimePointDESC = "full_time_point_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IncrementalIntervalASC = "incremental_interval_ASC",
+  IncrementalIntervalDESC = "incremental_interval_DESC",
+  IncrementalPeriodASC = "incremental_period_ASC",
+  IncrementalPeriodDESC = "incremental_period_DESC",
+  IncrementalTimePointsASC = "incremental_time_points_ASC",
+  IncrementalTimePointsDESC = "incremental_time_points_DESC",
+  KeepPolicyASC = "keep_policy_ASC",
+  KeepPolicyDESC = "keep_policy_DESC",
+  KeepPolicyValueASC = "keep_policy_value_ASC",
+  KeepPolicyValueDESC = "keep_policy_value_DESC",
+  LastExecuteStatusASC = "last_execute_status_ASC",
+  LastExecuteStatusDESC = "last_execute_status_DESC",
+  LastExecuteStatusMessageASC = "last_execute_status_message_ASC",
+  LastExecuteStatusMessageDESC = "last_execute_status_message_DESC",
+  LastExecuteSuccessJobCountASC = "last_execute_success_job_count_ASC",
+  LastExecuteSuccessJobCountDESC = "last_execute_success_job_count_DESC",
+  LastExecuteTotalJobCountASC = "last_execute_total_job_count_ASC",
+  LastExecuteTotalJobCountDESC = "last_execute_total_job_count_DESC",
+  LastExecutedAtASC = "last_executed_at_ASC",
+  LastExecutedAtDESC = "last_executed_at_DESC",
+  LastManualExecuteStatusASC = "last_manual_execute_status_ASC",
+  LastManualExecuteStatusDESC = "last_manual_execute_status_DESC",
+  LastManualExecuteStatusMessageASC = "last_manual_execute_status_message_ASC",
+  LastManualExecuteStatusMessageDESC = "last_manual_execute_status_message_DESC",
+  LastManualExecuteSuccessJobCountASC = "last_manual_execute_success_job_count_ASC",
+  LastManualExecuteSuccessJobCountDESC = "last_manual_execute_success_job_count_DESC",
+  LastManualExecuteTotalJobCountASC = "last_manual_execute_total_job_count_ASC",
+  LastManualExecuteTotalJobCountDESC = "last_manual_execute_total_job_count_DESC",
+  LastManualExecutedAtASC = "last_manual_executed_at_ASC",
+  LastManualExecutedAtDESC = "last_manual_executed_at_DESC",
+  LogicalSizeASC = "logical_size_ASC",
+  LogicalSizeDESC = "logical_size_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NextExecuteTimeASC = "next_execute_time_ASC",
+  NextExecuteTimeDESC = "next_execute_time_DESC",
+  PhaseASC = "phase_ASC",
+  PhaseDESC = "phase_DESC",
+  PhysicalSizeASC = "physical_size_ASC",
+  PhysicalSizeDESC = "physical_size_DESC",
+  SnapshotConsistentTypeASC = "snapshot_consistent_type_ASC",
+  SnapshotConsistentTypeDESC = "snapshot_consistent_type_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  ValidSizeOfBackupObjectASC = "valid_size_of_backup_object_ASC",
+  ValidSizeOfBackupObjectDESC = "valid_size_of_backup_object_DESC",
+  ValidSizeOfRestorePointASC = "valid_size_of_restore_point_ASC",
+  ValidSizeOfRestorePointDESC = "valid_size_of_restore_point_DESC",
+  WindowEndASC = "window_end_ASC",
+  WindowEndDESC = "window_end_DESC",
+  WindowStartASC = "window_start_ASC",
+  WindowStartDESC = "window_start_DESC",
+}
+
+export interface GetBackupPlansRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupPlanOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupPlanWhereInput | null;
+}
+
 export enum UploadResourceType {
   CLUSTER_IMAGE = "CLUSTER_IMAGE",
   CLUSTER_IMAGE_META = "CLUSTER_IMAGE_META",
@@ -9206,220 +14228,6 @@ export enum ByteUnit {
   GB = "GB",
   TB = "TB",
   PB = "PB",
-}
-
-export interface UserWhereInput {
-  AND?: UserWhereInput[] | null;
-  NOT?: UserWhereInput[] | null;
-  OR?: UserWhereInput[] | null;
-  auth_config_id?: string | null;
-  auth_config_id_contains?: string | null;
-  auth_config_id_ends_with?: string | null;
-  auth_config_id_gt?: string | null;
-  auth_config_id_gte?: string | null;
-  auth_config_id_in?: string[] | null;
-  auth_config_id_lt?: string | null;
-  auth_config_id_lte?: string | null;
-  auth_config_id_not?: string | null;
-  auth_config_id_not_contains?: string | null;
-  auth_config_id_not_ends_with?: string | null;
-  auth_config_id_not_in?: string[] | null;
-  auth_config_id_not_starts_with?: string | null;
-  auth_config_id_starts_with?: string | null;
-  display_username?: string | null;
-  display_username_contains?: string | null;
-  display_username_ends_with?: string | null;
-  display_username_gt?: string | null;
-  display_username_gte?: string | null;
-  display_username_in?: string[] | null;
-  display_username_lt?: string | null;
-  display_username_lte?: string | null;
-  display_username_not?: string | null;
-  display_username_not_contains?: string | null;
-  display_username_not_ends_with?: string | null;
-  display_username_not_in?: string[] | null;
-  display_username_not_starts_with?: string | null;
-  display_username_starts_with?: string | null;
-  email_address?: string | null;
-  email_address_contains?: string | null;
-  email_address_ends_with?: string | null;
-  email_address_gt?: string | null;
-  email_address_gte?: string | null;
-  email_address_in?: string[] | null;
-  email_address_lt?: string | null;
-  email_address_lte?: string | null;
-  email_address_not?: string | null;
-  email_address_not_contains?: string | null;
-  email_address_not_ends_with?: string | null;
-  email_address_not_in?: string[] | null;
-  email_address_not_starts_with?: string | null;
-  email_address_starts_with?: string | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  internal?: boolean | null;
-  internal_not?: boolean | null;
-  ldap_dn?: string | null;
-  ldap_dn_contains?: string | null;
-  ldap_dn_ends_with?: string | null;
-  ldap_dn_gt?: string | null;
-  ldap_dn_gte?: string | null;
-  ldap_dn_in?: string[] | null;
-  ldap_dn_lt?: string | null;
-  ldap_dn_lte?: string | null;
-  ldap_dn_not?: string | null;
-  ldap_dn_not_contains?: string | null;
-  ldap_dn_not_ends_with?: string | null;
-  ldap_dn_not_in?: string[] | null;
-  ldap_dn_not_starts_with?: string | null;
-  ldap_dn_starts_with?: string | null;
-  mobile_phone?: string | null;
-  mobile_phone_contains?: string | null;
-  mobile_phone_ends_with?: string | null;
-  mobile_phone_gt?: string | null;
-  mobile_phone_gte?: string | null;
-  mobile_phone_in?: string[] | null;
-  mobile_phone_lt?: string | null;
-  mobile_phone_lte?: string | null;
-  mobile_phone_not?: string | null;
-  mobile_phone_not_contains?: string | null;
-  mobile_phone_not_ends_with?: string | null;
-  mobile_phone_not_in?: string[] | null;
-  mobile_phone_not_starts_with?: string | null;
-  mobile_phone_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  password_expired?: boolean | null;
-  password_expired_not?: boolean | null;
-  password_updated_at?: string | null;
-  password_updated_at_gt?: string | null;
-  password_updated_at_gte?: string | null;
-  password_updated_at_in?: string[] | null;
-  password_updated_at_lt?: string | null;
-  password_updated_at_lte?: string | null;
-  password_updated_at_not?: string | null;
-  password_updated_at_not_in?: string[] | null;
-  role?: UserRole | null;
-  role_in?: UserRole[] | null;
-  role_not?: UserRole | null;
-  role_not_in?: UserRole[] | null;
-  roles_every?: UserRoleNextWhereInput | null;
-  roles_none?: UserRoleNextWhereInput | null;
-  roles_some?: UserRoleNextWhereInput | null;
-  source?: UserSource | null;
-  source_in?: UserSource[] | null;
-  source_not?: UserSource | null;
-  source_not_in?: UserSource[] | null;
-  username?: string | null;
-  username_contains?: string | null;
-  username_ends_with?: string | null;
-  username_gt?: string | null;
-  username_gte?: string | null;
-  username_in?: string[] | null;
-  username_lt?: string | null;
-  username_lte?: string | null;
-  username_not?: string | null;
-  username_not_contains?: string | null;
-  username_not_ends_with?: string | null;
-  username_not_in?: string[] | null;
-  username_not_starts_with?: string | null;
-  username_starts_with?: string | null;
-}
-
-export enum UserRole {
-  ADMIN = "ADMIN",
-  READ_ONLY = "READ_ONLY",
-  ROOT = "ROOT",
-}
-
-export interface UserRoleNextWhereInput {
-  AND?: UserRoleNextWhereInput[] | null;
-  NOT?: UserRoleNextWhereInput[] | null;
-  OR?: UserRoleNextWhereInput[] | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  platform?: UserRolePlatform | null;
-  platform_in?: UserRolePlatform[] | null;
-  platform_not?: UserRolePlatform | null;
-  platform_not_in?: UserRolePlatform[] | null;
-  preset?: UserRolePreset | null;
-  preset_in?: UserRolePreset[] | null;
-  preset_not?: UserRolePreset | null;
-  preset_not_in?: UserRolePreset[] | null;
-  users_every?: UserWhereInput | null;
-  users_none?: UserWhereInput | null;
-  users_some?: UserWhereInput | null;
-}
-
-export enum UserRolePlatform {
-  MANAGEMENT = "MANAGEMENT",
-  SELF_SERVICE = "SELF_SERVICE",
-}
-
-export enum UserRolePreset {
-  ADMIN = "ADMIN",
-  AUDITOR = "AUDITOR",
-  READ_ONLY = "READ_ONLY",
-  ROOT = "ROOT",
-  USER_ADMIN = "USER_ADMIN",
-  VM_USER = "VM_USER",
-  WORKLOAD_CLUSTER_USER = "WORKLOAD_CLUSTER_USER",
-}
-
-export enum UserSource {
-  AUTHN = "AUTHN",
-  LDAP = "LDAP",
-  LOCAL = "LOCAL",
-  SSO = "SSO",
 }
 
 export interface NestedDatacenter {
@@ -9482,6 +14290,7 @@ export interface NestedVds {
 export interface NestedVmFolder {
   id: string;
   name: string;
+  path?: string | null;
 }
 
 export interface NestedVmTemplate {
@@ -9492,12 +14301,18 @@ export interface NestedVmTemplate {
 export interface Cluster {
   access_write_compress_enabled?: boolean | null;
   /** @format int64 */
+  allocated_memory_bytes?: number | null;
+  /** @format int64 */
   allocated_prioritized_space?: number | null;
   /** @format double */
   allocated_prioritized_space_usage?: number | null;
   application_highest_version?: string | null;
   architecture: Architecture;
   auto_converge?: boolean | null;
+  /** @format int64 */
+  cap_snapshot_unique_size?: number | null;
+  /** @format int64 */
+  cap_volume_unique_size?: number | null;
   /** @format int64 */
   commited_memory_bytes?: number | null;
   connect_state: ConnectState;
@@ -9507,6 +14322,10 @@ export interface Cluster {
   /** @format double */
   data_reduction_saving?: number | null;
   datacenters?: NestedDatacenter[] | null;
+  /** @format int64 */
+  dirty_cache_space?: number | null;
+  /** @format double */
+  dirty_cache_usage?: number | null;
   disconnected_date?: string | null;
   disconnected_reason?: ClusterConnectorErrorCode | null;
   dns: string[];
@@ -9515,6 +14334,8 @@ export interface Cluster {
   enable_tiering?: boolean | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   everoute_cluster?: NestedEverouteCluster | null;
+  /** @format int64 */
+  failure_cache_space?: number | null;
   /** @format int64 */
   failure_data_space?: number | null;
   has_metrox?: boolean | null;
@@ -9543,6 +14364,8 @@ export interface Cluster {
   max_physical_data_capacity?: number | null;
   /** @format int64 */
   max_physical_data_capacity_per_node?: number | null;
+  /** @format double */
+  memory_allocation_rate?: number | null;
   metro_availability_checklist?: NestedMetroAvailabilityChecklist | null;
   mgt_gateway?: string | null;
   mgt_netmask?: string | null;
@@ -9559,6 +14382,10 @@ export interface Cluster {
   nvmf_enabled?: boolean | null;
   /** @format double */
   overall_efficiency?: number | null;
+  /** @format double */
+  overcommit_memory_ratio?: number | null;
+  /** @format double */
+  overprovision_ratio?: number | null;
   /** @format int64 */
   perf_allocated_data_space?: number | null;
   /** @format int64 */
@@ -9662,6 +14489,21 @@ export interface NestedIscsiLun {
   name: string;
 }
 
+export interface NestedDatastore {
+  /** @format int64 */
+  datastore_capacity_bytes?: number | null;
+  description?: string | null;
+  /** @format int64 */
+  free_bytes?: number | null;
+  id: string;
+  local_id: string;
+  name: string;
+  status: DatastoreStatus;
+  type: StorageProtocol;
+  /** @format int64 */
+  used_bytes?: number | null;
+}
+
 export interface NestedElfImage {
   id: string;
   name: string;
@@ -9679,6 +14521,7 @@ export interface NestedVmSnapshot {
 export interface ContentLibraryImage {
   clusters?: NestedCluster[] | null;
   createdAt: string;
+  datastores?: NestedDatastore[] | null;
   description: string;
   elf_image_uuids: string[];
   elf_images?: NestedElfImage[] | null;
@@ -9701,6 +14544,7 @@ export interface WithTaskContentLibraryImage {
 }
 
 export interface ContentLibraryImageUpdationParamsData {
+  datastores?: DatastoreWhereInput | null;
   clusters?: ClusterWhereInput;
   description?: string;
   name?: string;
@@ -9712,7 +14556,8 @@ export interface ContentLibraryImageUpdationParams {
 }
 
 export interface ContentLibraryImageUpdationClusterParamsData {
-  clusters: ClusterWhereInput;
+  datastores?: DatastoreWhereInput | null;
+  clusters?: ClusterWhereInput;
 }
 
 export interface ContentLibraryImageUpdationClusterParams {
@@ -9737,7 +14582,8 @@ export interface ContentLibraryImageImportData {
   url: string;
   name: string;
   description?: string;
-  cluster: ClusterWhereInput;
+  datastore?: DatastoreWhereInput | null;
+  cluster?: ClusterWhereInput;
 }
 
 export interface ContentLibraryImageImportParams {
@@ -9826,6 +14672,8 @@ export interface NestedVmPlacementGroup {
 }
 
 export interface Vm {
+  anti_malware_enabled?: boolean | null;
+  backup_plans?: NestedBackupPlan[] | null;
   bios_uuid?: string | null;
   clock_offset: VmClockOffset;
   cloud_init_supported?: boolean | null;
@@ -9837,6 +14685,7 @@ export interface Vm {
   deleted_at?: string | null;
   description: string;
   dns_servers?: string | null;
+  dpi_enabled?: boolean | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   firmware: VmFirmware;
   folder?: NestedVmFolder | null;
@@ -9854,6 +14703,8 @@ export interface Vm {
   id: string;
   in_recycle_bin: boolean;
   internal: boolean;
+  internal_product?: string | null;
+  internal_product_name?: string | null;
   io_policy?: VmDiskIoPolicy | null;
   ips: string;
   isolation_policy?: NestedIsolationPolicy | null;
@@ -9914,6 +14765,12 @@ export interface WithTaskVm {
   data: Vm;
 }
 
+export enum VmVolumeProvisionPolicy {
+  Thin = "thin",
+  ThickLazyZeroed = "thick_lazy_zeroed",
+  ThickEagerZeroed = "thick_eager_zeroed",
+}
+
 export enum BPSUnit {
   Bps = "Bps",
   KBps = "KBps",
@@ -9922,7 +14779,16 @@ export enum BPSUnit {
   TBps = "TBps",
 }
 
+export interface StorageConfig {
+  /** VCFS Datastore.id */
+  datastore_id?: string;
+  /** Clustered-storage Cluster.id */
+  storage_cluster_id?: string;
+}
+
 export interface MountNewCreateDisksParams {
+  /** Associated storage for a compute cluster. */
+  storage_config?: StorageConfig;
   max_bandwidth_policy?: VmDiskIoRestrictType;
   max_bandwidth_unit?: BPSUnit;
   /** @format int64 */
@@ -9932,6 +14798,8 @@ export interface MountNewCreateDisksParams {
   max_iops?: number;
   vm_volume: {
     resident_in_cache?: boolean;
+    /** Provisioning type for imported datastore volumes. */
+    provision_policy?: VmVolumeProvisionPolicy;
     elf_ec_storage_policy?: {
       thin_provision?: boolean;
       /** @format int32 */
@@ -9976,6 +14844,8 @@ export interface MountDisksParams {
 }
 
 export interface VmCdRomParams {
+  /** Associated storage for a compute cluster. */
+  storage_config?: StorageConfig;
   content_library_image_id?: string;
   elf_image_id?: string;
   /** @format int32 */
@@ -10059,6 +14929,8 @@ export interface VmOwnerParams {
 }
 
 export interface VmCreationParams {
+  /** Associated storage for a compute cluster. */
+  storage_config?: StorageConfig;
   owner?: VmOwnerParams;
   gpu_devices?: VmGpuOperationParams[];
   max_bandwidth_policy?: VmDiskIoRestrictType;
@@ -10095,6 +14967,8 @@ export interface VmCreationParams {
 }
 
 export interface DiskOperateModifyDisk {
+  /** Associated storage for a compute cluster. */
+  storage_config?: StorageConfig;
   vm_volume_id?: string;
   bus?: Bus;
   /** @format int32 */
@@ -10180,6 +15054,7 @@ export interface VmCreateVmFromTemplateParams {
 }
 
 export interface VmCreateVmFromContentLibraryTemplateParams {
+  storage_config?: StorageConfig;
   owner?: VmOwnerParams;
   gpu_devices?: VmGpuOperationParams[];
   cloud_init?: TemplateCloudInit;
@@ -10225,6 +15100,8 @@ export interface ConvertVmTemplateToVmParams {
 }
 
 export interface VmCloneParams {
+  /** Associated storage for a compute cluster. */
+  storage_config?: StorageConfig;
   owner?: VmOwnerParams;
   gpu_devices?: VmGpuOperationParams[];
   is_full_copy?: boolean;
@@ -10264,6 +15141,8 @@ export interface VmCloneParams {
 }
 
 export interface VmRebuildParams {
+  /** Associated storage for a compute cluster. */
+  storage_config?: StorageConfig;
   owner?: VmOwnerParams;
   gpu_devices?: VmGpuOperationParams[];
   is_full_copy?: boolean;
@@ -10532,6 +15411,12 @@ export enum MigrateType {
   LIVE_MIGRATE = "LIVE_MIGRATE",
 }
 
+export enum MigrateMode {
+  CHANGE_COMPUTE_RESOURCE_AND_STORAGE = "CHANGE_COMPUTE_RESOURCE_AND_STORAGE",
+  CHANGE_COMPUTE_RESOURCE_ONLY = "CHANGE_COMPUTE_RESOURCE_ONLY",
+  CHANGE_STORAGE_ONLY = "CHANGE_STORAGE_ONLY",
+}
+
 export interface VlanMapping {
   src_vlan_local_id: string;
   dest_vlan_local_id: string;
@@ -10541,6 +15426,10 @@ export interface MigrateVmConfig {
   remove_unmovable_devices?: boolean;
   new_name?: string;
   network_mapping: VlanMapping[];
+  /** Target datastore provision for live migration; cold storage migration preserves the source provision. */
+  provision_policy?: VmVolumeProvisionPolicy;
+  /** Omitted means migrating both compute resources and storage. */
+  migrate_mode?: MigrateMode;
   migrate_type: MigrateType;
   elf_ec_storage_policy?: {
     thin_provision?: boolean;
@@ -10558,6 +15447,8 @@ export interface MigrateVmConfig {
 export interface VmMigrateAcrossClusterParams {
   data: {
     vm_config: MigrateVmConfig;
+    /** Required for ELF targets when migrating storage. */
+    storage_config?: StorageConfig;
     cluster_id: string;
     host_id?: string;
   };
@@ -10988,6 +15879,8 @@ export interface VmdkDiskModify {
   /** @format int32 */
   boot?: number;
   vmdk_name: string;
+  provision_policy?: VmVolumeProvisionPolicy;
+  storage_config?: StorageConfig;
 }
 
 export interface VmdkCdromModify {
@@ -10998,6 +15891,7 @@ export interface VmdkCdromModify {
   boot?: number;
   /** @format int32 */
   index: number;
+  storage_config?: StorageConfig;
 }
 
 export interface OvfDiskOperate {
@@ -11046,6 +15940,7 @@ export interface VmImportParams {
   description?: string;
   name: string;
   host_id?: string;
+  storage_config?: StorageConfig;
   cluster_id: string;
   upload_tasks: string[];
   owner_id?: string;
@@ -11111,6 +16006,8 @@ export interface VmGpuInfo {
 }
 
 export enum VmOrderByInput {
+  AntiMalwareEnabledASC = "anti_malware_enabled_ASC",
+  AntiMalwareEnabledDESC = "anti_malware_enabled_DESC",
   BiosUuidASC = "bios_uuid_ASC",
   BiosUuidDESC = "bios_uuid_DESC",
   ClockOffsetASC = "clock_offset_ASC",
@@ -11129,6 +16026,8 @@ export enum VmOrderByInput {
   DescriptionDESC = "description_DESC",
   DnsServersASC = "dns_servers_ASC",
   DnsServersDESC = "dns_servers_DESC",
+  DpiEnabledASC = "dpi_enabled_ASC",
+  DpiEnabledDESC = "dpi_enabled_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
   FirmwareASC = "firmware_ASC",
@@ -11153,6 +16052,10 @@ export enum VmOrderByInput {
   InRecycleBinDESC = "in_recycle_bin_DESC",
   InternalASC = "internal_ASC",
   InternalDESC = "internal_DESC",
+  InternalProductASC = "internal_product_ASC",
+  InternalProductDESC = "internal_product_DESC",
+  InternalProductNameASC = "internal_product_name_ASC",
+  InternalProductNameDESC = "internal_product_name_DESC",
   IoPolicyASC = "io_policy_ASC",
   IoPolicyDESC = "io_policy_DESC",
   IpsASC = "ips_ASC",
@@ -11323,6 +16226,51 @@ export interface NestedContentLibraryVmTemplateNic {
   vpc_nic?: NestedTemplateVpcNic | null;
 }
 
+export interface NestedVmVolumeTemplateRawFile {
+  datastore: NestedDatastore;
+  id: string;
+  name: string;
+  path: string;
+}
+
+export interface NestedVmVolumeTemplateConfigFile {
+  datastore: NestedDatastore;
+  id: string;
+  local_id: string;
+  name: string;
+  path: string;
+  raw_files?: NestedVmVolumeTemplateRawFile[] | null;
+  /** @format int64 */
+  size: number;
+  vcfs_version: string;
+}
+
+export interface NestedVmTemplateConfigDisk {
+  /** @format int32 */
+  boot: number;
+  bus: Bus;
+  disk_name?: string | null;
+  id: string;
+  /** @format int32 */
+  index: number;
+  /** @format int64 */
+  size?: number | null;
+  type: VmDiskType;
+  vm_volume_template_config_file?: NestedVmVolumeTemplateConfigFile | null;
+  volume_storage_type: VmTemplateConfigDiskVolumeStorageType;
+}
+
+export interface NestedVmTemplateConfig {
+  datastore?: NestedDatastore | null;
+  disks?: NestedVmTemplateConfigDisk[] | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  id: string;
+  local_id: string;
+  path?: string | null;
+  storage_cluster?: NestedCluster | null;
+  type: StorageClusterConfigStorageType;
+}
+
 export interface NestedStoragePolicyConfig {
   /** @format int32 */
   ec_k?: number | null;
@@ -11355,6 +16303,7 @@ export interface ContentLibraryVmTemplate {
   cpu?: NestedCpu | null;
   cpu_model?: string | null;
   createdAt: string;
+  datastores?: NestedDatastore[] | null;
   description: string;
   entityAsyncStatus?: EntityAsyncStatus | null;
   firmware?: VmFirmware | null;
@@ -11375,11 +16324,13 @@ export interface ContentLibraryVmTemplate {
   /** @format int64 */
   size: number;
   template_config?: NestedTemplateConfig | null;
+  usage?: ContentLibraryVmTemplateUsage | null;
   /** @format int32 */
   vcpu: number;
   video_type?: string | null;
   vm_disks?: NestedContentLibraryVmTemplateDisk[] | null;
   vm_nics?: NestedContentLibraryVmTemplateNic[] | null;
+  vm_template_configs?: NestedVmTemplateConfig[] | null;
   vm_template_uuids: string[];
   vm_templates?: NestedVmTemplate[] | null;
   win_opt?: boolean | null;
@@ -11391,8 +16342,32 @@ export interface WithTaskContentLibraryVmTemplate {
   data: ContentLibraryVmTemplate;
 }
 
+/**
+ * Storage target for a template file. Currently only VCFS datastores are supported.
+ */
+export interface ContentLibraryVmTemplateStorageConfig {
+  /** VCFS Datastore.id. Clustered-storage targets can be added to this type later. */
+  datastore_id: string;
+}
+
+export interface ContentLibraryVmTemplateVolumeStoragePlacement {
+  /** Storage targets for this volume's raw file copies. */
+  raw_file_storage_configs: ContentLibraryVmTemplateStorageConfig[];
+  /** Database ID of a volume belonging to the source VM. */
+  volume_id: string;
+}
+
+export interface ContentLibraryVmTemplateStoragePlacement {
+  volume_storage_configs: ContentLibraryVmTemplateVolumeStoragePlacement[];
+  /** Storage target for a template file. Currently only VCFS datastores are supported. */
+  config_file_storage_config: ContentLibraryVmTemplateStorageConfig;
+}
+
 export interface ContentLibraryVmTemplateCreationParams {
-  clusters: ClusterWhereInput;
+  /** Template file placements. Provide nonempty storage_configs or clusters. */
+  storage_configs?: ContentLibraryVmTemplateStoragePlacement[];
+  /** Template copies on clustered storage. An empty filter selects all clusters. Provide clusters or nonempty storage_configs. */
+  clusters?: ClusterWhereInput;
   cloud_init_supported?: boolean;
   vm: VmWhereUniqueInput;
   description?: string;
@@ -11479,8 +16454,16 @@ export interface ContentLibraryVmTemplateImportParams {
   cpu_sockets?: number;
   description?: string;
   name: string;
+  /**
+   * Successful VMDK upload task IDs. For clustered-storage template imports,
+   * upload to the explicit or inferred storage_config.storage_cluster_id;
+   * otherwise upload to cluster_id. Use that target as cluster_id of /upload-elf-file.
+   */
   upload_tasks: string[];
   parsed_ovf: ParsedOVF;
+  /** Required for datastore and ZBS template imports. */
+  template_architecture?: Architecture;
+  storage_config?: StorageConfig;
   cluster_id: string;
 }
 
@@ -11744,6 +16727,8 @@ export interface Host {
   /** @format int64 */
   allocatable_memory_bytes: number;
   /** @format int64 */
+  allocated_memory_bytes?: number | null;
+  /** @format int64 */
   allocated_prioritized_space?: number | null;
   /** @format double */
   allocated_prioritized_space_usage?: number | null;
@@ -11763,8 +16748,14 @@ export interface Host {
   cpu_vendor?: string | null;
   data_ip?: string | null;
   /** @format int64 */
+  dirty_cache_space?: number | null;
+  /** @format double */
+  dirty_cache_usage?: number | null;
+  /** @format int64 */
   downgraded_prioritized_space?: number | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
+  /** @format int64 */
+  failure_cache_space?: number | null;
   /** @format int64 */
   failure_data_space: number;
   gpu_devices?: NestedGpuDevice[] | null;
@@ -11781,6 +16772,9 @@ export interface Host {
   local_id: string;
   lsm_cap_disk_safe_umount: boolean;
   management_ip: string;
+  /** @format double */
+  memory_allocation_rate?: number | null;
+  memory_overcommit_enabled?: boolean | null;
   merged_status?: HostMergedStatus | null;
   model: string;
   name: string;
@@ -11792,6 +16786,12 @@ export interface Host {
   /** @format int64 */
   os_memory_bytes: number;
   os_version?: string | null;
+  /** @format int64 */
+  overcommit_active_memory_bytes?: number | null;
+  /** @format int64 */
+  overcommit_memory_bytes?: number | null;
+  /** @format double */
+  overcommit_memory_ratio?: number | null;
   /** @format int64 */
   perf_allocated_data_space?: number | null;
   /** @format int64 */
@@ -11816,6 +16816,12 @@ export interface Host {
   provisioned_cpu_cores: number;
   /** @format int64 */
   provisioned_memory_bytes: number;
+  /** @format int64 */
+  reserved_memory_bytes?: number | null;
+  /** @format int64 */
+  running_pause_overcommit_memory_bytes?: number | null;
+  /** @format int64 */
+  running_pause_reserved_memory_bytes?: number | null;
   /** @format int64 */
   running_pause_vm_memory_bytes: number;
   /** @format int32 */
@@ -11846,8 +16852,12 @@ export interface Host {
   total_cpu_sockets?: number | null;
   /** @format int64 */
   total_data_capacity: number;
+  /** @format int32 */
+  total_logical_cpu_cores?: number | null;
   /** @format int64 */
   total_memory_bytes: number;
+  /** @format int64 */
+  total_physical_memory_bytes: number;
   usb_devices?: NestedUsbDevice[] | null;
   /** @format int64 */
   used_cache_space?: number | null;
@@ -11889,6 +16899,11 @@ export interface IscsiLunSnapshot {
   resiliency_type?: ResiliencyType | null;
   /** @format int64 */
   unique_size: number;
+}
+
+export interface NestedReplicationPlan {
+  id: string;
+  name: string;
 }
 
 export interface IscsiLun {
@@ -11954,6 +16969,7 @@ export interface IscsiLun {
   prioritized?: boolean | null;
   /** @format int32 */
   replica_num: number;
+  replication_plans?: NestedReplicationPlan[] | null;
   resiliency_type?: ResiliencyType | null;
   /** @format int64 */
   shared_size: number;
@@ -12291,6 +17307,234 @@ export interface ElfImageDeletionParams {
   where: ElfImageWhereInput;
 }
 
+export enum NetworkPolicyRuleAlgProtocol {
+  FTP = "FTP",
+  TFTP = "TFTP",
+}
+
+export enum NetworkPolicyRulePortProtocol {
+  ALG = "ALG",
+  ICMP = "ICMP",
+  IPIP = "IPIP",
+  TCP = "TCP",
+  UDP = "UDP",
+}
+
+export interface NestedNetworkPolicyRulePort {
+  alg_protocol?: NetworkPolicyRuleAlgProtocol | null;
+  port?: string | null;
+  protocol: NetworkPolicyRulePortProtocol;
+}
+
+export interface NestedSecurityGroup {
+  id: string;
+  name: string;
+}
+
+export interface NestedNetworkPolicyRuleService {
+  id: string;
+  name: string;
+}
+
+export enum NetworkPolicyRuleType {
+  ALL = "ALL",
+  IP_BLOCK = "IP_BLOCK",
+  SECURITY_GROUP = "SECURITY_GROUP",
+  SELECTOR = "SELECTOR",
+}
+
+export interface NestedNetworkPolicyRule {
+  except_ip_block?: string[] | null;
+  ip_block?: string | null;
+  ports?: NestedNetworkPolicyRulePort[] | null;
+  security_group?: NestedSecurityGroup | null;
+  security_group_id?: string | null;
+  selector?: NestedLabel[] | null;
+  selector_ids?: string[] | null;
+  service_ids?: string[] | null;
+  services?: NestedNetworkPolicyRuleService[] | null;
+  type: NetworkPolicyRuleType;
+}
+
+export interface NestedSecurityPolicyStatistics {
+  count_reset_timestamp?: string | null;
+  count_update_timestamp?: string | null;
+  /** @format int32 */
+  match_allow_count?: number | null;
+  /** @format int32 */
+  match_default_allow_count?: number | null;
+  /** @format int32 */
+  match_default_drop_count?: number | null;
+  /** @format int32 */
+  match_drop_count?: number | null;
+  /** @format int32 */
+  match_whitelist_count?: number | null;
+  /** @format int32 */
+  total_count?: number | null;
+}
+
+export interface IsolationPolicy {
+  egress?: NestedNetworkPolicyRule[] | null;
+  everoute_cluster: NestedEverouteCluster;
+  id: string;
+  ingress?: NestedNetworkPolicyRule[] | null;
+  labels?: NestedLabel[] | null;
+  mode: IsolationMode;
+  statistics?: NestedSecurityPolicyStatistics | null;
+  vm: NestedVm;
+}
+
+export interface IPSecurityPolicy {
+  except_ip_block?: string[];
+  ip_block: string;
+}
+
+export interface SecurityGroupWhereInput {
+  vms_some?: VmWhereInput | null;
+  vms_none?: VmWhereInput | null;
+  vms_every?: VmWhereInput | null;
+  security_policies_some?: SecurityPolicyWhereInput | null;
+  security_policies_none?: SecurityPolicyWhereInput | null;
+  security_policies_every?: SecurityPolicyWhereInput | null;
+  OR?: SecurityGroupWhereInput[] | null;
+  NOT?: SecurityGroupWhereInput[] | null;
+  name_starts_with?: string | null;
+  name_not_starts_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_ends_with?: string | null;
+  name_not_contains?: string | null;
+  name_not?: string | null;
+  name_lte?: string | null;
+  name_lt?: string | null;
+  name_in?: string[] | null;
+  name_gte?: string | null;
+  name_gt?: string | null;
+  name_ends_with?: string | null;
+  name_contains?: string | null;
+  name?: string | null;
+  member_type_not_in?: SecurityGroupMemberType[] | null;
+  member_type_not?: SecurityGroupMemberType | null;
+  member_type_in?: SecurityGroupMemberType[] | null;
+  member_type?: SecurityGroupMemberType | null;
+  isolation_policies_some?: IsolationPolicyWhereInput | null;
+  isolation_policies_none?: IsolationPolicyWhereInput | null;
+  isolation_policies_every?: IsolationPolicyWhereInput | null;
+  ips_starts_with?: string | null;
+  ips_not_starts_with?: string | null;
+  ips_not_in?: string[] | null;
+  ips_not_ends_with?: string | null;
+  ips_not_contains?: string | null;
+  ips_not?: string | null;
+  ips_lte?: string | null;
+  ips_lt?: string | null;
+  ips_in?: string[] | null;
+  ips_gte?: string | null;
+  ips_gt?: string | null;
+  ips_ends_with?: string | null;
+  ips_contains?: string | null;
+  ips?: string | null;
+  id_starts_with?: string | null;
+  id_not_starts_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_ends_with?: string | null;
+  id_not_contains?: string | null;
+  id_not?: string | null;
+  id_lte?: string | null;
+  id_lt?: string | null;
+  id_in?: string[] | null;
+  id_gte?: string | null;
+  id_gt?: string | null;
+  id_ends_with?: string | null;
+  id_contains?: string | null;
+  id?: string | null;
+  exclude_ips_starts_with?: string | null;
+  exclude_ips_not_starts_with?: string | null;
+  exclude_ips_not_in?: string[] | null;
+  exclude_ips_not_ends_with?: string | null;
+  exclude_ips_not_contains?: string | null;
+  exclude_ips_not?: string | null;
+  exclude_ips_lte?: string | null;
+  exclude_ips_lt?: string | null;
+  exclude_ips_in?: string[] | null;
+  exclude_ips_gte?: string | null;
+  exclude_ips_gt?: string | null;
+  exclude_ips_ends_with?: string | null;
+  exclude_ips_contains?: string | null;
+  exclude_ips?: string | null;
+  everoute_cluster?: EverouteClusterWhereInput | null;
+  description_starts_with?: string | null;
+  description_not_starts_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_ends_with?: string | null;
+  description_not_contains?: string | null;
+  description_not?: string | null;
+  description_lte?: string | null;
+  description_lt?: string | null;
+  description_in?: string[] | null;
+  description_gte?: string | null;
+  description_gt?: string | null;
+  description_ends_with?: string | null;
+  description_contains?: string | null;
+  description?: string | null;
+  AND?: SecurityGroupWhereInput[] | null;
+}
+
+export enum SecurityGroupMemberType {
+  IP = "IP",
+  POD = "POD",
+  VM = "VM",
+}
+
+export interface SecurityPolicyIngressEgressInputTarget {
+  security_groups?: SecurityGroupWhereInput;
+  ips?: IPSecurityPolicy[];
+  label_groups?: LabelWhereInput[];
+}
+
+export interface NetworkPolicyRulePortInput {
+  alg_protocol?: NetworkPolicyRuleAlgProtocol;
+  protocol: NetworkPolicyRulePortProtocol;
+  port?: string;
+}
+
+export enum SecurityPolicyFlowControlType {
+  ALL = "ALL",
+}
+
+export interface SecurityPolicyIngressEgressInput {
+  service_ids?: string[];
+  type?: SecurityPolicyFlowControlType;
+  ports?: NetworkPolicyRulePortInput[];
+  target?: SecurityPolicyIngressEgressInputTarget;
+}
+
+export interface IsolationPolicyCreateParams {
+  ingress?: SecurityPolicyIngressEgressInput[];
+  egress?: SecurityPolicyIngressEgressInput[];
+  mode: IsolationMode;
+  vm_id: string;
+  everoute_cluster_id: string;
+}
+
+export interface IsolationPolicyUpdateParams {
+  ingress?: SecurityPolicyIngressEgressInput[];
+  egress?: SecurityPolicyIngressEgressInput[];
+  mode?: IsolationMode;
+}
+
+export interface IsolationPolicyUpdateBody {
+  data: IsolationPolicyUpdateParams;
+  where: IsolationPolicyWhereInput;
+}
+
+export interface DeleteIsolationPolicy {
+  id: string;
+}
+
+export interface IsolationPolicyDeleteParams {
+  where: IsolationPolicyWhereInput;
+}
+
 export interface NestedSecurityPolicy {
   id: string;
   name: string;
@@ -12419,6 +17663,72 @@ export interface AddLabelsToResourcesParams {
 
 export type RemoveLabelsFromResourcesParams = AddLabelsToResourcesParams;
 
+export enum LabelOrderByInput {
+  ClusterNumASC = "cluster_num_ASC",
+  ClusterNumDESC = "cluster_num_DESC",
+  ContentLibraryImageNumASC = "content_library_image_num_ASC",
+  ContentLibraryImageNumDESC = "content_library_image_num_DESC",
+  ContentLibraryVmTemplateNumASC = "content_library_vm_template_num_ASC",
+  ContentLibraryVmTemplateNumDESC = "content_library_vm_template_num_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DatacenterNumASC = "datacenter_num_ASC",
+  DatacenterNumDESC = "datacenter_num_DESC",
+  DiskNumASC = "disk_num_ASC",
+  DiskNumDESC = "disk_num_DESC",
+  ElfImageNumASC = "elf_image_num_ASC",
+  ElfImageNumDESC = "elf_image_num_DESC",
+  GpuDeviceNumASC = "gpu_device_num_ASC",
+  GpuDeviceNumDESC = "gpu_device_num_DESC",
+  HostNumASC = "host_num_ASC",
+  HostNumDESC = "host_num_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IscsiLunNumASC = "iscsi_lun_num_ASC",
+  IscsiLunNumDESC = "iscsi_lun_num_DESC",
+  IscsiLunSnapshotNumASC = "iscsi_lun_snapshot_num_ASC",
+  IscsiLunSnapshotNumDESC = "iscsi_lun_snapshot_num_DESC",
+  IscsiTargetNumASC = "iscsi_target_num_ASC",
+  IscsiTargetNumDESC = "iscsi_target_num_DESC",
+  KeyASC = "key_ASC",
+  KeyDESC = "key_DESC",
+  NicNumASC = "nic_num_ASC",
+  NicNumDESC = "nic_num_DESC",
+  SystemVlanNumASC = "system_vlan_num_ASC",
+  SystemVlanNumDESC = "system_vlan_num_DESC",
+  TotalNumASC = "total_num_ASC",
+  TotalNumDESC = "total_num_DESC",
+  ValueASC = "value_ASC",
+  ValueDESC = "value_DESC",
+  VdsNumASC = "vds_num_ASC",
+  VdsNumDESC = "vds_num_DESC",
+  VmNumASC = "vm_num_ASC",
+  VmNumDESC = "vm_num_DESC",
+  VmSnapshotNumASC = "vm_snapshot_num_ASC",
+  VmSnapshotNumDESC = "vm_snapshot_num_DESC",
+  VmTemplateNumASC = "vm_template_num_ASC",
+  VmTemplateNumDESC = "vm_template_num_DESC",
+  VmVlanNumASC = "vm_vlan_num_ASC",
+  VmVlanNumDESC = "vm_vlan_num_DESC",
+  VmVolumeNumASC = "vm_volume_num_ASC",
+  VmVolumeNumDESC = "vm_volume_num_DESC",
+  VmVolumeSnapshotNumASC = "vm_volume_snapshot_num_ASC",
+  VmVolumeSnapshotNumDESC = "vm_volume_snapshot_num_DESC",
+}
+
+export interface GetLabelsRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: LabelOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: LabelWhereInput | null;
+}
+
 export interface DeleteLabel {
   id: string;
 }
@@ -12430,6 +17740,103 @@ export interface WithTaskDeleteLabel {
 
 export interface LabelDeletionParams {
   where: LabelWhereInput;
+}
+
+export interface NetworkPolicyRuleService {
+  description?: string | null;
+  id: string;
+  members: NestedNetworkPolicyRulePort[];
+  name: string;
+  preset: boolean;
+}
+
+export interface WithTaskNetworkPolicyRuleService {
+  task_id?: string | null;
+  data: NetworkPolicyRuleService;
+}
+
+export interface NetworkPolicyRuleServiceMemberParams {
+  alg_protocol?: NetworkPolicyRuleAlgProtocol;
+  port?: string;
+  protocol: NetworkPolicyRulePortProtocol;
+}
+
+export interface NetworkPolicyRuleServiceCreationParams {
+  members: NetworkPolicyRuleServiceMemberParams[];
+  description?: string;
+  name: string;
+}
+
+export interface NetworkPolicyRuleServiceWhereInput {
+  AND?: NetworkPolicyRuleServiceWhereInput[] | null;
+  NOT?: NetworkPolicyRuleServiceWhereInput[] | null;
+  OR?: NetworkPolicyRuleServiceWhereInput[] | null;
+  description?: string | null;
+  description_contains?: string | null;
+  description_ends_with?: string | null;
+  description_gt?: string | null;
+  description_gte?: string | null;
+  description_in?: string[] | null;
+  description_lt?: string | null;
+  description_lte?: string | null;
+  description_not?: string | null;
+  description_not_contains?: string | null;
+  description_not_ends_with?: string | null;
+  description_not_in?: string[] | null;
+  description_not_starts_with?: string | null;
+  description_starts_with?: string | null;
+  id?: string | null;
+  id_contains?: string | null;
+  id_ends_with?: string | null;
+  id_gt?: string | null;
+  id_gte?: string | null;
+  id_in?: string[] | null;
+  id_lt?: string | null;
+  id_lte?: string | null;
+  id_not?: string | null;
+  id_not_contains?: string | null;
+  id_not_ends_with?: string | null;
+  id_not_in?: string[] | null;
+  id_not_starts_with?: string | null;
+  id_starts_with?: string | null;
+  name?: string | null;
+  name_contains?: string | null;
+  name_ends_with?: string | null;
+  name_gt?: string | null;
+  name_gte?: string | null;
+  name_in?: string[] | null;
+  name_lt?: string | null;
+  name_lte?: string | null;
+  name_not?: string | null;
+  name_not_contains?: string | null;
+  name_not_ends_with?: string | null;
+  name_not_in?: string[] | null;
+  name_not_starts_with?: string | null;
+  name_starts_with?: string | null;
+  preset?: boolean | null;
+  preset_not?: boolean | null;
+}
+
+export interface NetworkPolicyRuleServiceUpdationParams {
+  data: {
+    members?: NetworkPolicyRuleServiceMemberParams[];
+    description?: string;
+    name?: string;
+  };
+  where: NetworkPolicyRuleServiceWhereInput;
+}
+
+export interface DeleteNetworkPolicyRuleService {
+  id: string;
+}
+
+export interface WithTaskDeleteNetworkPolicyRuleService {
+  task_id?: string | null;
+  data: DeleteNetworkPolicyRuleService;
+}
+
+export interface NetworkPolicyRuleServiceDeletionParams {
+  where: NetworkPolicyRuleServiceWhereInput;
 }
 
 export interface Nic {
@@ -12516,6 +17923,236 @@ export interface OrganizationCreationParams {
   name: string;
 }
 
+export interface NestedReplicationNetworkConfigure {
+  gateway?: string | null;
+  ip: string;
+  subnet_mask?: string | null;
+}
+
+export interface NestedReplicationIPAddressMapping {
+  source: NestedReplicationNetworkConfigure;
+  target: NestedReplicationNetworkConfigure;
+}
+
+export interface NestedReplicationNetworkInformation {
+  cluster_local_id: string;
+  cluster_name: string;
+  network_ids?: string[] | null;
+  vds_name?: string | null;
+  /** @format int32 */
+  vlan_id?: number | null;
+  vlan_local_id: string;
+  vlan_mode_type: VlanModeType;
+  vlan_name: string;
+}
+
+export interface NestedReplicationPlanNetworkMapping {
+  source: NestedReplicationNetworkInformation;
+  target: NestedReplicationNetworkInformation;
+}
+
+export interface NestedReplicationObjectDescriptor {
+  cluster_local_id: string;
+  cluster_name?: string | null;
+  object_local_id: string;
+  object_name?: string | null;
+  parent_object_local_id?: string | null;
+  parent_object_name?: string | null;
+  tower_deploy_id?: string | null;
+  type: ReplicationObjectType;
+  zbs_volume_id?: string | null;
+}
+
+export interface NestedReplicaVm {
+  id: string;
+}
+
+export interface NestedReplicationClusterDescriptor {
+  cluster_local_id: string;
+  cluster_name?: string | null;
+  tower_deploy_id?: string | null;
+}
+
+export interface NestedReplicationService {
+  id: string;
+  name: string;
+}
+
+export interface ReplicationPlan {
+  abort_window_unfinished?: boolean | null;
+  activation_timestamp?: string | null;
+  compression: boolean;
+  createdAt: string;
+  delete_strategy?: BackupPlanDeleteStrategy | null;
+  description?: string | null;
+  /** @format int32 */
+  ec_k?: number | null;
+  /** @format int32 */
+  ec_m?: number | null;
+  enable_window: boolean;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  id: string;
+  inbound?: boolean | null;
+  /** @format int32 */
+  interval: number;
+  ip_mapping: NestedReplicationIPAddressMapping[];
+  iscsi_luns?: NestedIscsiLun[] | null;
+  keep_mac_address?: boolean | null;
+  keep_policy?: BackupPlanKeepPolicy | null;
+  /** @format int32 */
+  keep_policy_value?: number | null;
+  last_execute_status: BackupPlanExecutionStatus;
+  last_execute_status_message?: string | null;
+  /** @format int32 */
+  last_execute_success_job_count?: number | null;
+  /** @format int32 */
+  last_execute_total_job_count?: number | null;
+  last_executed_at?: string | null;
+  last_manual_execute_status: BackupPlanExecutionStatus;
+  last_manual_execute_status_message?: string | null;
+  /** @format int32 */
+  last_manual_execute_success_job_count?: number | null;
+  /** @format int32 */
+  last_manual_execute_total_job_count?: number | null;
+  last_manual_executed_at?: string | null;
+  name: string;
+  network_mapping: NestedReplicationPlanNetworkMapping[];
+  next_execution_time?: string | null;
+  objects_descriptor: NestedReplicationObjectDescriptor[];
+  period: ReplicationPlanPeriod;
+  phase?: BackupPlanPhase | null;
+  replica_name_rule: ReplicaNameRule;
+  replica_name_setting?: string | null;
+  /** @format int32 */
+  replica_num?: number | null;
+  replica_vms?: NestedReplicaVm[] | null;
+  resiliency_type?: ResiliencyType | null;
+  snapshot_consistent_type?: ConsistentType | null;
+  status: BackupPlanStatus;
+  storage_policy: VmVolumeElfStoragePolicyType;
+  target_cluster?: NestedCluster | null;
+  target_cluster_descriptor: NestedReplicationClusterDescriptor;
+  target_replication_service: NestedReplicationService;
+  thin_provision?: boolean | null;
+  time_points: NestedBackupPlanTimePoint[];
+  type: ReplicationPlanType;
+  updatedAt: string;
+  vms?: NestedVm[] | null;
+  weekdays?: WeekdayTypeEnum[] | null;
+  window_end?: string | null;
+  window_start?: string | null;
+}
+
+export enum ReplicationPlanOrderByInput {
+  AbortWindowUnfinishedASC = "abort_window_unfinished_ASC",
+  AbortWindowUnfinishedDESC = "abort_window_unfinished_DESC",
+  ActivationTimestampASC = "activation_timestamp_ASC",
+  ActivationTimestampDESC = "activation_timestamp_DESC",
+  CompressionASC = "compression_ASC",
+  CompressionDESC = "compression_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DeleteStrategyASC = "delete_strategy_ASC",
+  DeleteStrategyDESC = "delete_strategy_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EcKASC = "ec_k_ASC",
+  EcKDESC = "ec_k_DESC",
+  EcMASC = "ec_m_ASC",
+  EcMDESC = "ec_m_DESC",
+  EnableWindowASC = "enable_window_ASC",
+  EnableWindowDESC = "enable_window_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InboundASC = "inbound_ASC",
+  InboundDESC = "inbound_DESC",
+  IntervalASC = "interval_ASC",
+  IntervalDESC = "interval_DESC",
+  IpMappingASC = "ip_mapping_ASC",
+  IpMappingDESC = "ip_mapping_DESC",
+  KeepMacAddressASC = "keep_mac_address_ASC",
+  KeepMacAddressDESC = "keep_mac_address_DESC",
+  KeepPolicyASC = "keep_policy_ASC",
+  KeepPolicyDESC = "keep_policy_DESC",
+  KeepPolicyValueASC = "keep_policy_value_ASC",
+  KeepPolicyValueDESC = "keep_policy_value_DESC",
+  LastExecuteStatusASC = "last_execute_status_ASC",
+  LastExecuteStatusDESC = "last_execute_status_DESC",
+  LastExecuteStatusMessageASC = "last_execute_status_message_ASC",
+  LastExecuteStatusMessageDESC = "last_execute_status_message_DESC",
+  LastExecuteSuccessJobCountASC = "last_execute_success_job_count_ASC",
+  LastExecuteSuccessJobCountDESC = "last_execute_success_job_count_DESC",
+  LastExecuteTotalJobCountASC = "last_execute_total_job_count_ASC",
+  LastExecuteTotalJobCountDESC = "last_execute_total_job_count_DESC",
+  LastExecutedAtASC = "last_executed_at_ASC",
+  LastExecutedAtDESC = "last_executed_at_DESC",
+  LastManualExecuteStatusASC = "last_manual_execute_status_ASC",
+  LastManualExecuteStatusDESC = "last_manual_execute_status_DESC",
+  LastManualExecuteStatusMessageASC = "last_manual_execute_status_message_ASC",
+  LastManualExecuteStatusMessageDESC = "last_manual_execute_status_message_DESC",
+  LastManualExecuteSuccessJobCountASC = "last_manual_execute_success_job_count_ASC",
+  LastManualExecuteSuccessJobCountDESC = "last_manual_execute_success_job_count_DESC",
+  LastManualExecuteTotalJobCountASC = "last_manual_execute_total_job_count_ASC",
+  LastManualExecuteTotalJobCountDESC = "last_manual_execute_total_job_count_DESC",
+  LastManualExecutedAtASC = "last_manual_executed_at_ASC",
+  LastManualExecutedAtDESC = "last_manual_executed_at_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NetworkMappingASC = "network_mapping_ASC",
+  NetworkMappingDESC = "network_mapping_DESC",
+  NextExecutionTimeASC = "next_execution_time_ASC",
+  NextExecutionTimeDESC = "next_execution_time_DESC",
+  ObjectsDescriptorASC = "objects_descriptor_ASC",
+  ObjectsDescriptorDESC = "objects_descriptor_DESC",
+  PeriodASC = "period_ASC",
+  PeriodDESC = "period_DESC",
+  PhaseASC = "phase_ASC",
+  PhaseDESC = "phase_DESC",
+  ReplicaNameRuleASC = "replica_name_rule_ASC",
+  ReplicaNameRuleDESC = "replica_name_rule_DESC",
+  ReplicaNameSettingASC = "replica_name_setting_ASC",
+  ReplicaNameSettingDESC = "replica_name_setting_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  ResiliencyTypeASC = "resiliency_type_ASC",
+  ResiliencyTypeDESC = "resiliency_type_DESC",
+  SnapshotConsistentTypeASC = "snapshot_consistent_type_ASC",
+  SnapshotConsistentTypeDESC = "snapshot_consistent_type_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  StoragePolicyASC = "storage_policy_ASC",
+  StoragePolicyDESC = "storage_policy_DESC",
+  TargetClusterDescriptorASC = "target_cluster_descriptor_ASC",
+  TargetClusterDescriptorDESC = "target_cluster_descriptor_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+  TimePointsASC = "time_points_ASC",
+  TimePointsDESC = "time_points_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+  WindowEndASC = "window_end_ASC",
+  WindowEndDESC = "window_end_DESC",
+  WindowStartASC = "window_start_ASC",
+  WindowStartDESC = "window_start_DESC",
+}
+
+export interface GetReplicationPlansRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: ReplicationPlanOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: ReplicationPlanWhereInput | null;
+}
+
 export interface UserRoleNext {
   actions: string[];
   id: string;
@@ -12562,64 +18199,6 @@ export interface WithTaskDeleteSecurityGroup {
   data: DeleteSecurityGroup;
 }
 
-export interface SecurityGroupWhereInput {
-  AND?: SecurityGroupWhereInput[] | null;
-  NOT?: SecurityGroupWhereInput[] | null;
-  OR?: SecurityGroupWhereInput[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  everoute_cluster?: EverouteClusterWhereInput | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  isolation_policies_every?: IsolationPolicyWhereInput | null;
-  isolation_policies_none?: IsolationPolicyWhereInput | null;
-  isolation_policies_some?: IsolationPolicyWhereInput | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  security_policies_every?: SecurityPolicyWhereInput | null;
-  security_policies_none?: SecurityPolicyWhereInput | null;
-  security_policies_some?: SecurityPolicyWhereInput | null;
-  vms_every?: VmWhereInput | null;
-  vms_none?: VmWhereInput | null;
-  vms_some?: VmWhereInput | null;
-}
-
 export interface SecurityGroupDeleteParams {
   where: SecurityGroupWhereInput;
 }
@@ -12636,78 +18215,12 @@ export interface SecurityGroupUpdateBody {
   where: SecurityGroupWhereInput;
 }
 
-export interface NestedSecurityGroup {
-  id: string;
-  name: string;
-}
-
 export interface NestedSecurityPolicyApply {
   communicable: boolean;
   security_group?: NestedSecurityGroup | null;
   security_group_id?: string | null;
   selector: NestedLabel[];
   selector_ids: string[];
-}
-
-export enum NetworkPolicyRuleAlgProtocol {
-  FTP = "FTP",
-  TFTP = "TFTP",
-}
-
-export enum NetworkPolicyRulePortProtocol {
-  ALG = "ALG",
-  ICMP = "ICMP",
-  IPIP = "IPIP",
-  TCP = "TCP",
-  UDP = "UDP",
-}
-
-export interface NestedNetworkPolicyRulePort {
-  alg_protocol?: NetworkPolicyRuleAlgProtocol | null;
-  port?: string | null;
-  protocol: NetworkPolicyRulePortProtocol;
-}
-
-export interface NestedNetworkPolicyRuleService {
-  id: string;
-  name: string;
-}
-
-export enum NetworkPolicyRuleType {
-  ALL = "ALL",
-  IP_BLOCK = "IP_BLOCK",
-  SECURITY_GROUP = "SECURITY_GROUP",
-  SELECTOR = "SELECTOR",
-}
-
-export interface NestedNetworkPolicyRule {
-  except_ip_block?: string[] | null;
-  ip_block?: string | null;
-  ports?: NestedNetworkPolicyRulePort[] | null;
-  security_group?: NestedSecurityGroup | null;
-  security_group_id?: string | null;
-  selector?: NestedLabel[] | null;
-  selector_ids?: string[] | null;
-  service_ids?: string[] | null;
-  services?: NestedNetworkPolicyRuleService[] | null;
-  type: NetworkPolicyRuleType;
-}
-
-export interface NestedSecurityPolicyStatistics {
-  count_reset_timestamp?: string | null;
-  count_update_timestamp?: string | null;
-  /** @format int32 */
-  match_allow_count?: number | null;
-  /** @format int32 */
-  match_default_allow_count?: number | null;
-  /** @format int32 */
-  match_default_drop_count?: number | null;
-  /** @format int32 */
-  match_drop_count?: number | null;
-  /** @format int32 */
-  match_whitelist_count?: number | null;
-  /** @format int32 */
-  total_count?: number | null;
 }
 
 export interface SecurityPolicy {
@@ -12736,34 +18249,6 @@ export interface SecurityPolicyApplyToInputTarget {
 export interface SecurityPolicyApplyToInput {
   communicable?: boolean;
   target: SecurityPolicyApplyToInputTarget;
-}
-
-export interface IPSecurityPolicy {
-  except_ip_block?: string[];
-  ip_block: string;
-}
-
-export interface SecurityPolicyIngressEgressInputTarget {
-  security_groups?: SecurityGroupWhereInput;
-  ips?: IPSecurityPolicy[];
-  label_groups?: LabelWhereInput[];
-}
-
-export interface NetworkPolicyRulePortInput {
-  alg_protocol?: NetworkPolicyRuleAlgProtocol;
-  protocol: NetworkPolicyRulePortProtocol;
-  port?: string;
-}
-
-export enum SecurityPolicyFlowControlType {
-  ALL = "ALL",
-}
-
-export interface SecurityPolicyIngressEgressInput {
-  service_ids?: string[];
-  type?: SecurityPolicyFlowControlType;
-  ports?: NetworkPolicyRulePortInput[];
-  target?: SecurityPolicyIngressEgressInputTarget;
 }
 
 export interface SecurityPolicyCreateParams {
@@ -12810,6 +18295,8 @@ export enum HostOrderByInput {
   AllocableCpuCoresForVmExclusiveDESC = "allocable_cpu_cores_for_vm_exclusive_DESC",
   AllocatableMemoryBytesASC = "allocatable_memory_bytes_ASC",
   AllocatableMemoryBytesDESC = "allocatable_memory_bytes_DESC",
+  AllocatedMemoryBytesASC = "allocated_memory_bytes_ASC",
+  AllocatedMemoryBytesDESC = "allocated_memory_bytes_DESC",
   AllocatedPrioritizedSpaceASC = "allocated_prioritized_space_ASC",
   AllocatedPrioritizedSpaceDESC = "allocated_prioritized_space_DESC",
   AllocatedPrioritizedSpaceUsageASC = "allocated_prioritized_space_usage_ASC",
@@ -12832,10 +18319,16 @@ export enum HostOrderByInput {
   CpuVendorDESC = "cpu_vendor_DESC",
   DataIpASC = "data_ip_ASC",
   DataIpDESC = "data_ip_DESC",
+  DirtyCacheSpaceASC = "dirty_cache_space_ASC",
+  DirtyCacheSpaceDESC = "dirty_cache_space_DESC",
+  DirtyCacheUsageASC = "dirty_cache_usage_ASC",
+  DirtyCacheUsageDESC = "dirty_cache_usage_DESC",
   DowngradedPrioritizedSpaceASC = "downgraded_prioritized_space_ASC",
   DowngradedPrioritizedSpaceDESC = "downgraded_prioritized_space_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FailureCacheSpaceASC = "failure_cache_space_ASC",
+  FailureCacheSpaceDESC = "failure_cache_space_DESC",
   FailureDataSpaceASC = "failure_data_space_ASC",
   FailureDataSpaceDESC = "failure_data_space_DESC",
   HddDataCapacityASC = "hdd_data_capacity_ASC",
@@ -12858,6 +18351,10 @@ export enum HostOrderByInput {
   LsmCapDiskSafeUmountDESC = "lsm_cap_disk_safe_umount_DESC",
   ManagementIpASC = "management_ip_ASC",
   ManagementIpDESC = "management_ip_DESC",
+  MemoryAllocationRateASC = "memory_allocation_rate_ASC",
+  MemoryAllocationRateDESC = "memory_allocation_rate_DESC",
+  MemoryOvercommitEnabledASC = "memory_overcommit_enabled_ASC",
+  MemoryOvercommitEnabledDESC = "memory_overcommit_enabled_DESC",
   MergedStatusASC = "merged_status_ASC",
   MergedStatusDESC = "merged_status_DESC",
   ModelASC = "model_ASC",
@@ -12874,6 +18371,12 @@ export enum HostOrderByInput {
   OsMemoryBytesDESC = "os_memory_bytes_DESC",
   OsVersionASC = "os_version_ASC",
   OsVersionDESC = "os_version_DESC",
+  OvercommitActiveMemoryBytesASC = "overcommit_active_memory_bytes_ASC",
+  OvercommitActiveMemoryBytesDESC = "overcommit_active_memory_bytes_DESC",
+  OvercommitMemoryBytesASC = "overcommit_memory_bytes_ASC",
+  OvercommitMemoryBytesDESC = "overcommit_memory_bytes_DESC",
+  OvercommitMemoryRatioASC = "overcommit_memory_ratio_ASC",
+  OvercommitMemoryRatioDESC = "overcommit_memory_ratio_DESC",
   PerfAllocatedDataSpaceASC = "perf_allocated_data_space_ASC",
   PerfAllocatedDataSpaceDESC = "perf_allocated_data_space_DESC",
   PerfFailureDataSpaceASC = "perf_failure_data_space_ASC",
@@ -12898,6 +18401,12 @@ export enum HostOrderByInput {
   ProvisionedCpuCoresDESC = "provisioned_cpu_cores_DESC",
   ProvisionedMemoryBytesASC = "provisioned_memory_bytes_ASC",
   ProvisionedMemoryBytesDESC = "provisioned_memory_bytes_DESC",
+  ReservedMemoryBytesASC = "reserved_memory_bytes_ASC",
+  ReservedMemoryBytesDESC = "reserved_memory_bytes_DESC",
+  RunningPauseOvercommitMemoryBytesASC = "running_pause_overcommit_memory_bytes_ASC",
+  RunningPauseOvercommitMemoryBytesDESC = "running_pause_overcommit_memory_bytes_DESC",
+  RunningPauseReservedMemoryBytesASC = "running_pause_reserved_memory_bytes_ASC",
+  RunningPauseReservedMemoryBytesDESC = "running_pause_reserved_memory_bytes_DESC",
   RunningPauseVmMemoryBytesASC = "running_pause_vm_memory_bytes_ASC",
   RunningPauseVmMemoryBytesDESC = "running_pause_vm_memory_bytes_DESC",
   RunningVmNumASC = "running_vm_num_ASC",
@@ -12932,8 +18441,12 @@ export enum HostOrderByInput {
   TotalCpuSocketsDESC = "total_cpu_sockets_DESC",
   TotalDataCapacityASC = "total_data_capacity_ASC",
   TotalDataCapacityDESC = "total_data_capacity_DESC",
+  TotalLogicalCpuCoresASC = "total_logical_cpu_cores_ASC",
+  TotalLogicalCpuCoresDESC = "total_logical_cpu_cores_DESC",
   TotalMemoryBytesASC = "total_memory_bytes_ASC",
   TotalMemoryBytesDESC = "total_memory_bytes_DESC",
+  TotalPhysicalMemoryBytesASC = "total_physical_memory_bytes_ASC",
+  TotalPhysicalMemoryBytesDESC = "total_physical_memory_bytes_DESC",
   UsedCacheSpaceASC = "used_cache_space_ASC",
   UsedCacheSpaceDESC = "used_cache_space_DESC",
   UsedCpuHzASC = "used_cpu_hz_ASC",
@@ -13010,6 +18523,8 @@ export interface GetDatacentersRequestBody {
 export enum ClusterOrderByInput {
   AccessWriteCompressEnabledASC = "access_write_compress_enabled_ASC",
   AccessWriteCompressEnabledDESC = "access_write_compress_enabled_DESC",
+  AllocatedMemoryBytesASC = "allocated_memory_bytes_ASC",
+  AllocatedMemoryBytesDESC = "allocated_memory_bytes_DESC",
   AllocatedPrioritizedSpaceASC = "allocated_prioritized_space_ASC",
   AllocatedPrioritizedSpaceDESC = "allocated_prioritized_space_DESC",
   AllocatedPrioritizedSpaceUsageASC = "allocated_prioritized_space_usage_ASC",
@@ -13020,6 +18535,10 @@ export enum ClusterOrderByInput {
   ArchitectureDESC = "architecture_DESC",
   AutoConvergeASC = "auto_converge_ASC",
   AutoConvergeDESC = "auto_converge_DESC",
+  CapSnapshotUniqueSizeASC = "cap_snapshot_unique_size_ASC",
+  CapSnapshotUniqueSizeDESC = "cap_snapshot_unique_size_DESC",
+  CapVolumeUniqueSizeASC = "cap_volume_unique_size_ASC",
+  CapVolumeUniqueSizeDESC = "cap_volume_unique_size_DESC",
   CommitedMemoryBytesASC = "commited_memory_bytes_ASC",
   CommitedMemoryBytesDESC = "commited_memory_bytes_DESC",
   ConnectStateASC = "connect_state_ASC",
@@ -13030,6 +18549,10 @@ export enum ClusterOrderByInput {
   DataReductionRatioDESC = "data_reduction_ratio_DESC",
   DataReductionSavingASC = "data_reduction_saving_ASC",
   DataReductionSavingDESC = "data_reduction_saving_DESC",
+  DirtyCacheSpaceASC = "dirty_cache_space_ASC",
+  DirtyCacheSpaceDESC = "dirty_cache_space_DESC",
+  DirtyCacheUsageASC = "dirty_cache_usage_ASC",
+  DirtyCacheUsageDESC = "dirty_cache_usage_DESC",
   DisconnectedDateASC = "disconnected_date_ASC",
   DisconnectedDateDESC = "disconnected_date_DESC",
   DisconnectedReasonASC = "disconnected_reason_ASC",
@@ -13040,6 +18563,8 @@ export enum ClusterOrderByInput {
   EnableTieringDESC = "enable_tiering_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
   EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FailureCacheSpaceASC = "failure_cache_space_ASC",
+  FailureCacheSpaceDESC = "failure_cache_space_DESC",
   FailureDataSpaceASC = "failure_data_space_ASC",
   FailureDataSpaceDESC = "failure_data_space_DESC",
   HasMetroxASC = "has_metrox_ASC",
@@ -13080,6 +18605,8 @@ export enum ClusterOrderByInput {
   MaxPhysicalDataCapacityDESC = "max_physical_data_capacity_DESC",
   MaxPhysicalDataCapacityPerNodeASC = "max_physical_data_capacity_per_node_ASC",
   MaxPhysicalDataCapacityPerNodeDESC = "max_physical_data_capacity_per_node_DESC",
+  MemoryAllocationRateASC = "memory_allocation_rate_ASC",
+  MemoryAllocationRateDESC = "memory_allocation_rate_DESC",
   MetroAvailabilityChecklistASC = "metro_availability_checklist_ASC",
   MetroAvailabilityChecklistDESC = "metro_availability_checklist_DESC",
   MgtGatewayASC = "mgt_gateway_ASC",
@@ -13104,6 +18631,10 @@ export enum ClusterOrderByInput {
   NvmfEnabledDESC = "nvmf_enabled_DESC",
   OverallEfficiencyASC = "overall_efficiency_ASC",
   OverallEfficiencyDESC = "overall_efficiency_DESC",
+  OvercommitMemoryRatioASC = "overcommit_memory_ratio_ASC",
+  OvercommitMemoryRatioDESC = "overcommit_memory_ratio_DESC",
+  OverprovisionRatioASC = "overprovision_ratio_ASC",
+  OverprovisionRatioDESC = "overprovision_ratio_DESC",
   PerfAllocatedDataSpaceASC = "perf_allocated_data_space_ASC",
   PerfAllocatedDataSpaceDESC = "perf_allocated_data_space_DESC",
   PerfFailureDataSpaceASC = "perf_failure_data_space_ASC",
@@ -13508,6 +19039,8 @@ export enum VmVolumeOrderByInput {
   ElfStoragePolicyEcMDESC = "elf_storage_policy_ec_m_DESC",
   ElfStoragePolicyReplicaNumASC = "elf_storage_policy_replica_num_ASC",
   ElfStoragePolicyReplicaNumDESC = "elf_storage_policy_replica_num_DESC",
+  ElfStoragePolicyStripeNumASC = "elf_storage_policy_stripe_num_ASC",
+  ElfStoragePolicyStripeNumDESC = "elf_storage_policy_stripe_num_DESC",
   ElfStoragePolicyThinProvisionASC = "elf_storage_policy_thin_provision_ASC",
   ElfStoragePolicyThinProvisionDESC = "elf_storage_policy_thin_provision_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
@@ -13528,6 +19061,8 @@ export enum VmVolumeOrderByInput {
   NameDESC = "name_DESC",
   PathASC = "path_ASC",
   PathDESC = "path_DESC",
+  ProvisionPolicyASC = "provision_policy_ASC",
+  ProvisionPolicyDESC = "provision_policy_DESC",
   ResidentInCacheASC = "resident_in_cache_ASC",
   ResidentInCacheDESC = "resident_in_cache_DESC",
   SharingASC = "sharing_ASC",
@@ -13672,6 +19207,8 @@ export enum VmPlacementGroupOrderByInput {
   LocalUpdatedAtDESC = "local_updated_at_DESC",
   NameASC = "name_ASC",
   NameDESC = "name_DESC",
+  UsageASC = "usage_ASC",
+  UsageDESC = "usage_DESC",
   VmHostMustEnabledASC = "vm_host_must_enabled_ASC",
   VmHostMustEnabledDESC = "vm_host_must_enabled_DESC",
   VmHostMustPolicyASC = "vm_host_must_policy_ASC",
@@ -14376,6 +19913,8 @@ export enum ContentLibraryVmTemplateOrderByInput {
   SizeDESC = "size_DESC",
   TemplateConfigASC = "template_config_ASC",
   TemplateConfigDESC = "template_config_DESC",
+  UsageASC = "usage_ASC",
+  UsageDESC = "usage_DESC",
   VcpuASC = "vcpu_ASC",
   VcpuDESC = "vcpu_DESC",
   VideoTypeASC = "video_type_ASC",
@@ -14528,6 +20067,8 @@ export interface WithTaskLoginResponse {
 export enum MfaType {
   Mail = "Mail",
   Sms = "Sms",
+  Totp = "Totp",
+  TotpRecoveryCode = "TotpRecoveryCode",
 }
 
 export interface LoginInput {
@@ -14801,6 +20342,7 @@ export interface NestedVirtualPrivateCloudRoute {
 }
 
 export interface NestedVirtualPrivateCloudSubnet {
+  cidr: string;
   id: string;
   name: string;
 }
@@ -15185,18 +20727,10 @@ export interface NestedVirtualPrivateCloudSecurityPolicy {
   name: string;
 }
 
-export interface NestedVirtualPrivateCloudServiceTepIpPool {
-  display_name: string;
-  gateway: string;
-  ip_end: string;
-  ip_start: string;
-  netmask: string;
-}
-
 export interface NestedVirtualPrivateCloudService {
+  everoute_cluster: NestedEverouteCluster;
   id: string;
   internal_cidr: string;
-  tep_ip_pools: NestedVirtualPrivateCloudServiceTepIpPool[];
 }
 
 export interface VirtualPrivateCloud {
@@ -15354,6 +20888,10 @@ export interface VmFolder {
   id: string;
   local_id?: string | null;
   name: string;
+  parent?: NestedVmFolder | null;
+  path?: string | null;
+  /** @format int32 */
+  total_vm_num?: number | null;
   /** @format int32 */
   vm_num?: number | null;
   vms?: NestedVm[] | null;
@@ -15365,13 +20903,15 @@ export interface WithTaskVmFolder {
 }
 
 export interface VmFolderCreationParams {
+  parent_id?: string;
   cluster_id: string;
   name: string;
 }
 
 export interface VmFolderUpdationParams {
   data: {
-    name: string;
+    parent_id?: string | null;
+    name?: string;
   };
   where: VmFolderWhereInput;
 }
@@ -15399,6 +20939,7 @@ export interface VmPlacementGroup {
   local_id: string;
   local_updated_at: string;
   name: string;
+  usage?: VmPlacementGroupUsage | null;
   vm_host_must_enabled: boolean;
   vm_host_must_host_uuids?: NestedHost[] | null;
   vm_host_must_policy: boolean;
@@ -15663,6 +21204,8 @@ export interface VmVolumeSnapshot {
   elf_storage_policy_ec_m?: number | null;
   /** @format int32 */
   elf_storage_policy_replica_num?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num?: number | null;
   elf_storage_policy_thin_provision?: boolean | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   id: string;
@@ -15670,6 +21213,7 @@ export interface VmVolumeSnapshot {
   local_created_at: string;
   local_id: string;
   name: string;
+  provision_policy?: string | null;
   resident_in_cache?: boolean | null;
   /** @format double */
   shared_size?: number | null;
@@ -15719,6 +21263,8 @@ export interface VmVolume {
   elf_storage_policy_ec_m?: number | null;
   /** @format int32 */
   elf_storage_policy_replica_num?: number | null;
+  /** @format int32 */
+  elf_storage_policy_stripe_num?: number | null;
   elf_storage_policy_thin_provision?: boolean | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   /** @format double */
@@ -15733,6 +21279,7 @@ export interface VmVolume {
   mounting: boolean;
   name: string;
   path: string;
+  provision_policy?: string | null;
   resident_in_cache?: boolean | null;
   sharing: boolean;
   /** @format int64 */
@@ -15755,6 +21302,10 @@ export interface WithTaskVmVolume {
 }
 
 export interface VmVolumeCreationParams {
+  /** Provisioning type when associated storage is a datastore. */
+  provision_policy?: VmVolumeProvisionPolicy;
+  /** Associated storage for a compute cluster. */
+  storage_config?: StorageConfig;
   resident_in_cache?: boolean;
   elf_ec_storage_policy?: {
     thin_provision?: boolean;
@@ -15810,6 +21361,11 @@ export interface VmVolumeWhereUniqueInput {
 export interface CloneVmVolumeParams {
   where: VmVolumeWhereUniqueInput;
   data: {
+    /**
+     * Datastore volumes only. Omitted means inheriting the source policy.
+     * Shared volumes require thick_eager_zeroed.
+     */
+    provision_policy?: VmVolumeProvisionPolicy;
     description?: string;
     name: string;
   };
@@ -15839,6 +21395,10 @@ export interface ExportVmVolumeParams {
 }
 
 export interface ImportVmVolumeParams {
+  /** Provisioning type for datastore volumes. Defaults to thin. */
+  provision_policy?: VmVolumeProvisionPolicy;
+  /** Associated storage for a compute cluster. */
+  storage_config?: StorageConfig;
   upload_task_id: string;
   name: string;
   elf_ec_storage_policy?: {
@@ -15852,141 +21412,6 @@ export interface ImportVmVolumeParams {
   /** @deprecated */
   storage_policy?: VmVolumeElfStoragePolicyType;
   cluster_id: string;
-}
-
-export interface IsolationPolicy {
-  egress?: NestedNetworkPolicyRule[] | null;
-  everoute_cluster: NestedEverouteCluster;
-  id: string;
-  ingress?: NestedNetworkPolicyRule[] | null;
-  labels?: NestedLabel[] | null;
-  mode: IsolationMode;
-  statistics?: NestedSecurityPolicyStatistics | null;
-  vm: NestedVm;
-}
-
-export interface IsolationPolicyCreateParams {
-  ingress?: SecurityPolicyIngressEgressInput[];
-  egress?: SecurityPolicyIngressEgressInput[];
-  mode: IsolationMode;
-  vm_id: string;
-  everoute_cluster_id: string;
-}
-
-export interface IsolationPolicyUpdateParams {
-  ingress?: SecurityPolicyIngressEgressInput[];
-  egress?: SecurityPolicyIngressEgressInput[];
-  mode?: IsolationMode;
-}
-
-export interface IsolationPolicyUpdateBody {
-  data: IsolationPolicyUpdateParams;
-  where: IsolationPolicyWhereInput;
-}
-
-export interface DeleteIsolationPolicy {
-  id: string;
-}
-
-export interface IsolationPolicyDeleteParams {
-  where: IsolationPolicyWhereInput;
-}
-
-export interface NetworkPolicyRuleService {
-  description?: string | null;
-  id: string;
-  members: NestedNetworkPolicyRulePort[];
-  name: string;
-  preset: boolean;
-}
-
-export interface WithTaskNetworkPolicyRuleService {
-  task_id?: string | null;
-  data: NetworkPolicyRuleService;
-}
-
-export interface NetworkPolicyRuleServiceMemberParams {
-  alg_protocol?: NetworkPolicyRuleAlgProtocol;
-  port?: string;
-  protocol: NetworkPolicyRulePortProtocol;
-}
-
-export interface NetworkPolicyRuleServiceCreationParams {
-  members: NetworkPolicyRuleServiceMemberParams[];
-  description?: string;
-  name: string;
-}
-
-export interface NetworkPolicyRuleServiceWhereInput {
-  AND?: NetworkPolicyRuleServiceWhereInput[] | null;
-  NOT?: NetworkPolicyRuleServiceWhereInput[] | null;
-  OR?: NetworkPolicyRuleServiceWhereInput[] | null;
-  description?: string | null;
-  description_contains?: string | null;
-  description_ends_with?: string | null;
-  description_gt?: string | null;
-  description_gte?: string | null;
-  description_in?: string[] | null;
-  description_lt?: string | null;
-  description_lte?: string | null;
-  description_not?: string | null;
-  description_not_contains?: string | null;
-  description_not_ends_with?: string | null;
-  description_not_in?: string[] | null;
-  description_not_starts_with?: string | null;
-  description_starts_with?: string | null;
-  id?: string | null;
-  id_contains?: string | null;
-  id_ends_with?: string | null;
-  id_gt?: string | null;
-  id_gte?: string | null;
-  id_in?: string[] | null;
-  id_lt?: string | null;
-  id_lte?: string | null;
-  id_not?: string | null;
-  id_not_contains?: string | null;
-  id_not_ends_with?: string | null;
-  id_not_in?: string[] | null;
-  id_not_starts_with?: string | null;
-  id_starts_with?: string | null;
-  name?: string | null;
-  name_contains?: string | null;
-  name_ends_with?: string | null;
-  name_gt?: string | null;
-  name_gte?: string | null;
-  name_in?: string[] | null;
-  name_lt?: string | null;
-  name_lte?: string | null;
-  name_not?: string | null;
-  name_not_contains?: string | null;
-  name_not_ends_with?: string | null;
-  name_not_in?: string[] | null;
-  name_not_starts_with?: string | null;
-  name_starts_with?: string | null;
-  preset?: boolean | null;
-  preset_not?: boolean | null;
-}
-
-export interface NetworkPolicyRuleServiceUpdationParams {
-  data: {
-    members?: NetworkPolicyRuleServiceMemberParams[];
-    description?: string;
-    name?: string;
-  };
-  where: NetworkPolicyRuleServiceWhereInput;
-}
-
-export interface DeleteNetworkPolicyRuleService {
-  id: string;
-}
-
-export interface WithTaskDeleteNetworkPolicyRuleService {
-  task_id?: string | null;
-  data: DeleteNetworkPolicyRuleService;
-}
-
-export interface NetworkPolicyRuleServiceDeletionParams {
-  where: NetworkPolicyRuleServiceWhereInput;
 }
 
 export interface NestedAggregateAlert {
@@ -16009,6 +21434,629 @@ export interface GetAlertsConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: AlertWhereInput | null;
+}
+
+export enum BackupPlanExecutionOrderByInput {
+  DeletableFlagMarkedASC = "deletable_flag_marked_ASC",
+  DeletableFlagMarkedDESC = "deletable_flag_marked_DESC",
+  DurationASC = "duration_ASC",
+  DurationDESC = "duration_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  ExecutedAtASC = "executed_at_ASC",
+  ExecutedAtDESC = "executed_at_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  MethodASC = "method_ASC",
+  MethodDESC = "method_DESC",
+  StateASC = "state_ASC",
+  StateDESC = "state_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  SuccessJobCountASC = "success_job_count_ASC",
+  SuccessJobCountDESC = "success_job_count_DESC",
+  TotalJobCountASC = "total_job_count_ASC",
+  TotalJobCountDESC = "total_job_count_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+}
+
+export interface GetBackupPlanExecutionsRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupPlanExecutionOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupPlanExecutionWhereInput | null;
+}
+
+export interface NestedAggregateBackupPlanExecution {
+  /** @format int32 */
+  count: number;
+}
+
+export interface BackupPlanExecutionConnection {
+  aggregate: NestedAggregateBackupPlanExecution;
+}
+
+export interface GetBackupPlanExecutionsConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupPlanExecutionOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupPlanExecutionWhereInput | null;
+}
+
+export interface NestedAggregateBackupPlan {
+  /** @format int32 */
+  count: number;
+}
+
+export interface BackupPlanConnection {
+  aggregate: NestedAggregateBackupPlan;
+}
+
+export interface GetBackupPlansConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupPlanOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupPlanWhereInput | null;
+}
+
+export enum BackupRestoreExecutionOrderByInput {
+  DurationASC = "duration_ASC",
+  DurationDESC = "duration_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  ExecutedAtASC = "executed_at_ASC",
+  ExecutedAtDESC = "executed_at_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  ModeASC = "mode_ASC",
+  ModeDESC = "mode_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ReadBytesASC = "read_bytes_ASC",
+  ReadBytesDESC = "read_bytes_DESC",
+  RebuildNameASC = "rebuild_name_ASC",
+  RebuildNameDESC = "rebuild_name_DESC",
+  RebuildNetworkMappingASC = "rebuild_network_mapping_ASC",
+  RebuildNetworkMappingDESC = "rebuild_network_mapping_DESC",
+  RebuildTargetClusterASC = "rebuild_target_cluster_ASC",
+  RebuildTargetClusterDESC = "rebuild_target_cluster_DESC",
+  RetryTimesASC = "retry_times_ASC",
+  RetryTimesDESC = "retry_times_DESC",
+  StartupAfterRestoreASC = "startup_after_restore_ASC",
+  StartupAfterRestoreDESC = "startup_after_restore_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  TotalBytesASC = "total_bytes_ASC",
+  TotalBytesDESC = "total_bytes_DESC",
+}
+
+export interface GetBackupRestoreExecutionsRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupRestoreExecutionOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupRestoreExecutionWhereInput | null;
+}
+
+export interface NestedAggregateBackupRestoreExecution {
+  /** @format int32 */
+  count: number;
+}
+
+export interface BackupRestoreExecutionConnection {
+  aggregate: NestedAggregateBackupRestoreExecution;
+}
+
+export interface GetBackupRestoreExecutionsConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupRestoreExecutionOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupRestoreExecutionWhereInput | null;
+}
+
+export interface NestedBackupRestoreExecution {
+  id: string;
+}
+
+export interface NestedBackupTargetExecution {
+  id: string;
+}
+
+export interface BackupRestorePoint {
+  backup_plan: NestedBackupPlan;
+  backup_restore_executions?: NestedBackupRestoreExecution[] | null;
+  backup_target_execution: NestedBackupTargetExecution;
+  cluster_local_id?: string | null;
+  compressed?: boolean | null;
+  /** @format double */
+  compression_ratio?: number | null;
+  creation?: BackupRestorePointCreation | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  id: string;
+  local_created_at?: string | null;
+  local_id: string;
+  /** @format int64 */
+  logical_size?: number | null;
+  parent_restore_point?: string | null;
+  /** @format int64 */
+  physical_size?: number | null;
+  /** @format int64 */
+  size?: number | null;
+  slice: string;
+  snapshot_consistent_type?: ConsistentType | null;
+  type?: BackupRestorePointType | null;
+  /** @format int64 */
+  valid_capacity?: number | null;
+  /** @format int64 */
+  valid_size?: number | null;
+  vm?: NestedVm | null;
+  vm_local_id?: string | null;
+  vm_name?: string | null;
+}
+
+export enum BackupRestorePointOrderByInput {
+  ClusterLocalIdASC = "cluster_local_id_ASC",
+  ClusterLocalIdDESC = "cluster_local_id_DESC",
+  CompressedASC = "compressed_ASC",
+  CompressedDESC = "compressed_DESC",
+  CompressionRatioASC = "compression_ratio_ASC",
+  CompressionRatioDESC = "compression_ratio_DESC",
+  CreationASC = "creation_ASC",
+  CreationDESC = "creation_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalCreatedAtASC = "local_created_at_ASC",
+  LocalCreatedAtDESC = "local_created_at_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  LogicalSizeASC = "logical_size_ASC",
+  LogicalSizeDESC = "logical_size_DESC",
+  ParentRestorePointASC = "parent_restore_point_ASC",
+  ParentRestorePointDESC = "parent_restore_point_DESC",
+  PhysicalSizeASC = "physical_size_ASC",
+  PhysicalSizeDESC = "physical_size_DESC",
+  SizeASC = "size_ASC",
+  SizeDESC = "size_DESC",
+  SliceASC = "slice_ASC",
+  SliceDESC = "slice_DESC",
+  SnapshotConsistentTypeASC = "snapshot_consistent_type_ASC",
+  SnapshotConsistentTypeDESC = "snapshot_consistent_type_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  ValidCapacityASC = "valid_capacity_ASC",
+  ValidCapacityDESC = "valid_capacity_DESC",
+  ValidSizeASC = "valid_size_ASC",
+  ValidSizeDESC = "valid_size_DESC",
+  VmLocalIdASC = "vm_local_id_ASC",
+  VmLocalIdDESC = "vm_local_id_DESC",
+  VmNameASC = "vm_name_ASC",
+  VmNameDESC = "vm_name_DESC",
+}
+
+export interface GetBackupRestorePointsRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupRestorePointOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupRestorePointWhereInput | null;
+}
+
+export interface NestedAggregateBackupRestorePoint {
+  /** @format int32 */
+  count: number;
+}
+
+export interface BackupRestorePointConnection {
+  aggregate: NestedAggregateBackupRestorePoint;
+}
+
+export interface GetBackupRestorePointsConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupRestorePointOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupRestorePointWhereInput | null;
+}
+
+export enum BackupServiceNetworkStatusEnum {
+  CONNECTED = "CONNECTED",
+  DISCONNECTED = "DISCONNECTED",
+}
+
+export interface NestedBackupServiceNetworkStatus {
+  cluster: string;
+  status: BackupServiceNetworkStatusEnum;
+}
+
+export interface BackupService {
+  backup_clusters?: NestedCluster[] | null;
+  backup_network_gateway?: string | null;
+  backup_network_ip?: string | null;
+  backup_network_subnet_mask?: string | null;
+  backup_network_type?: BackupServiceNetworkType | null;
+  backup_network_vlan?: string | null;
+  backup_plans?: NestedBackupPlan[] | null;
+  /** @format int64 */
+  backup_rd_iops_max?: number | null;
+  backup_store_repositories?: NestedBackupStoreRepository[] | null;
+  /** @format int64 */
+  backup_wr_iops_max?: number | null;
+  description?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  id: string;
+  kube_config: string;
+  management_network_gateway?: string | null;
+  management_network_ip?: string | null;
+  management_network_subnet_mask?: string | null;
+  management_network_vlan?: string | null;
+  /** @format int32 */
+  max_job_retry_times?: number | null;
+  /** @format int32 */
+  max_parallel_backup_jobs?: number | null;
+  /** @format int32 */
+  max_parallel_restore_jobs?: number | null;
+  name: string;
+  network_status?: NestedBackupServiceNetworkStatus[] | null;
+  /** @format int64 */
+  restore_rd_iops_max?: number | null;
+  /** @format int64 */
+  restore_wr_iops_max?: number | null;
+  /** @format int32 */
+  retry_interval?: number | null;
+  running_vm?: NestedVm | null;
+  status?: BackupServiceStatus | null;
+  storage_network_gateway?: string | null;
+  storage_network_ip?: string | null;
+  storage_network_subnet_mask?: string | null;
+  storage_network_type?: BackupServiceNetworkType | null;
+  storage_network_vlan?: string | null;
+}
+
+export enum BackupServiceOrderByInput {
+  BackupNetworkGatewayASC = "backup_network_gateway_ASC",
+  BackupNetworkGatewayDESC = "backup_network_gateway_DESC",
+  BackupNetworkIpASC = "backup_network_ip_ASC",
+  BackupNetworkIpDESC = "backup_network_ip_DESC",
+  BackupNetworkSubnetMaskASC = "backup_network_subnet_mask_ASC",
+  BackupNetworkSubnetMaskDESC = "backup_network_subnet_mask_DESC",
+  BackupNetworkTypeASC = "backup_network_type_ASC",
+  BackupNetworkTypeDESC = "backup_network_type_DESC",
+  BackupNetworkVlanASC = "backup_network_vlan_ASC",
+  BackupNetworkVlanDESC = "backup_network_vlan_DESC",
+  BackupRdIopsMaxASC = "backup_rd_iops_max_ASC",
+  BackupRdIopsMaxDESC = "backup_rd_iops_max_DESC",
+  BackupWrIopsMaxASC = "backup_wr_iops_max_ASC",
+  BackupWrIopsMaxDESC = "backup_wr_iops_max_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  KubeConfigASC = "kube_config_ASC",
+  KubeConfigDESC = "kube_config_DESC",
+  ManagementNetworkGatewayASC = "management_network_gateway_ASC",
+  ManagementNetworkGatewayDESC = "management_network_gateway_DESC",
+  ManagementNetworkIpASC = "management_network_ip_ASC",
+  ManagementNetworkIpDESC = "management_network_ip_DESC",
+  ManagementNetworkSubnetMaskASC = "management_network_subnet_mask_ASC",
+  ManagementNetworkSubnetMaskDESC = "management_network_subnet_mask_DESC",
+  ManagementNetworkVlanASC = "management_network_vlan_ASC",
+  ManagementNetworkVlanDESC = "management_network_vlan_DESC",
+  MaxJobRetryTimesASC = "max_job_retry_times_ASC",
+  MaxJobRetryTimesDESC = "max_job_retry_times_DESC",
+  MaxParallelBackupJobsASC = "max_parallel_backup_jobs_ASC",
+  MaxParallelBackupJobsDESC = "max_parallel_backup_jobs_DESC",
+  MaxParallelRestoreJobsASC = "max_parallel_restore_jobs_ASC",
+  MaxParallelRestoreJobsDESC = "max_parallel_restore_jobs_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NetworkStatusASC = "network_status_ASC",
+  NetworkStatusDESC = "network_status_DESC",
+  RestoreRdIopsMaxASC = "restore_rd_iops_max_ASC",
+  RestoreRdIopsMaxDESC = "restore_rd_iops_max_DESC",
+  RestoreWrIopsMaxASC = "restore_wr_iops_max_ASC",
+  RestoreWrIopsMaxDESC = "restore_wr_iops_max_DESC",
+  RetryIntervalASC = "retry_interval_ASC",
+  RetryIntervalDESC = "retry_interval_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  StorageNetworkGatewayASC = "storage_network_gateway_ASC",
+  StorageNetworkGatewayDESC = "storage_network_gateway_DESC",
+  StorageNetworkIpASC = "storage_network_ip_ASC",
+  StorageNetworkIpDESC = "storage_network_ip_DESC",
+  StorageNetworkSubnetMaskASC = "storage_network_subnet_mask_ASC",
+  StorageNetworkSubnetMaskDESC = "storage_network_subnet_mask_DESC",
+  StorageNetworkTypeASC = "storage_network_type_ASC",
+  StorageNetworkTypeDESC = "storage_network_type_DESC",
+  StorageNetworkVlanASC = "storage_network_vlan_ASC",
+  StorageNetworkVlanDESC = "storage_network_vlan_DESC",
+}
+
+export interface GetBackupServicesRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupServiceOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupServiceWhereInput | null;
+}
+
+export interface NestedAggregateBackupService {
+  /** @format int32 */
+  count: number;
+}
+
+export interface BackupServiceConnection {
+  aggregate: NestedAggregateBackupService;
+}
+
+export interface GetBackupServicesConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupServiceOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupServiceWhereInput | null;
+}
+
+export interface BackupStoreRepository {
+  backup_plans?: NestedBackupPlan[] | null;
+  backup_restore_points?: NestedBackupRestorePoint[] | null;
+  backup_service?: NestedBackupService | null;
+  createdAt: string;
+  description?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  error_code?: string | null;
+  id: string;
+  iscsi_chap_name?: string | null;
+  iscsi_chap_secret?: string | null;
+  iscsi_ip?: string | null;
+  iscsi_lun_id?: string | null;
+  /** @format int32 */
+  iscsi_port?: number | null;
+  iscsi_target_iqn?: string | null;
+  name: string;
+  nfs_path?: string | null;
+  nfs_server?: string | null;
+  status: BackupStoreStatus;
+  /** @format int64 */
+  total_capacity: number;
+  type: BackupStoreType;
+  update_timestamp?: string | null;
+  /** @format int64 */
+  used_data_space: number;
+  /** @format double */
+  used_data_space_usage?: number | null;
+  /** @format int64 */
+  valid_data_space?: number | null;
+}
+
+export enum BackupStoreRepositoryOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  ErrorCodeASC = "error_code_ASC",
+  ErrorCodeDESC = "error_code_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  IscsiChapNameASC = "iscsi_chap_name_ASC",
+  IscsiChapNameDESC = "iscsi_chap_name_DESC",
+  IscsiChapSecretASC = "iscsi_chap_secret_ASC",
+  IscsiChapSecretDESC = "iscsi_chap_secret_DESC",
+  IscsiIpASC = "iscsi_ip_ASC",
+  IscsiIpDESC = "iscsi_ip_DESC",
+  IscsiLunIdASC = "iscsi_lun_id_ASC",
+  IscsiLunIdDESC = "iscsi_lun_id_DESC",
+  IscsiPortASC = "iscsi_port_ASC",
+  IscsiPortDESC = "iscsi_port_DESC",
+  IscsiTargetIqnASC = "iscsi_target_iqn_ASC",
+  IscsiTargetIqnDESC = "iscsi_target_iqn_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NfsPathASC = "nfs_path_ASC",
+  NfsPathDESC = "nfs_path_DESC",
+  NfsServerASC = "nfs_server_ASC",
+  NfsServerDESC = "nfs_server_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  TotalCapacityASC = "total_capacity_ASC",
+  TotalCapacityDESC = "total_capacity_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdateTimestampASC = "update_timestamp_ASC",
+  UpdateTimestampDESC = "update_timestamp_DESC",
+  UsedDataSpaceASC = "used_data_space_ASC",
+  UsedDataSpaceDESC = "used_data_space_DESC",
+  UsedDataSpaceUsageASC = "used_data_space_usage_ASC",
+  UsedDataSpaceUsageDESC = "used_data_space_usage_DESC",
+  ValidDataSpaceASC = "valid_data_space_ASC",
+  ValidDataSpaceDESC = "valid_data_space_DESC",
+}
+
+export interface GetBackupStoreRepositoriesRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupStoreRepositoryOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupStoreRepositoryWhereInput | null;
+}
+
+export interface NestedAggregateBackupStoreRepository {
+  /** @format int32 */
+  count: number;
+}
+
+export interface BackupStoreRepositoryConnection {
+  aggregate: NestedAggregateBackupStoreRepository;
+}
+
+export interface GetBackupStoreRepositoriesConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupStoreRepositoryOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupStoreRepositoryWhereInput | null;
+}
+
+export interface BackupTargetExecution {
+  backup_group: string;
+  backup_plan_execution?: NestedBackupPlanExecution | null;
+  backup_restore_point?: NestedBackupRestorePoint | null;
+  cluster_local_id?: string | null;
+  /** @format int32 */
+  duration?: number | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  executed_at: string;
+  id: string;
+  local_id: string;
+  parent_backup: string;
+  /** @format int64 */
+  read_bytes?: number | null;
+  /** @format int32 */
+  retry_times?: number | null;
+  status?: BackupExecutionStatus | null;
+  /** @format int64 */
+  total_bytes?: number | null;
+  type: BackupExecutionType;
+  vm?: NestedVm | null;
+  vm_local_id?: string | null;
+  vm_name?: string | null;
+}
+
+export enum BackupTargetExecutionOrderByInput {
+  BackupGroupASC = "backup_group_ASC",
+  BackupGroupDESC = "backup_group_DESC",
+  ClusterLocalIdASC = "cluster_local_id_ASC",
+  ClusterLocalIdDESC = "cluster_local_id_DESC",
+  DurationASC = "duration_ASC",
+  DurationDESC = "duration_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  ExecutedAtASC = "executed_at_ASC",
+  ExecutedAtDESC = "executed_at_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  LocalIdASC = "local_id_ASC",
+  LocalIdDESC = "local_id_DESC",
+  ParentBackupASC = "parent_backup_ASC",
+  ParentBackupDESC = "parent_backup_DESC",
+  ReadBytesASC = "read_bytes_ASC",
+  ReadBytesDESC = "read_bytes_DESC",
+  RetryTimesASC = "retry_times_ASC",
+  RetryTimesDESC = "retry_times_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  TotalBytesASC = "total_bytes_ASC",
+  TotalBytesDESC = "total_bytes_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  VmLocalIdASC = "vm_local_id_ASC",
+  VmLocalIdDESC = "vm_local_id_DESC",
+  VmNameASC = "vm_name_ASC",
+  VmNameDESC = "vm_name_DESC",
+}
+
+export interface GetBackupTargetExecutionsRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupTargetExecutionOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupTargetExecutionWhereInput | null;
+}
+
+export interface NestedAggregateBackupTargetExecution {
+  /** @format int32 */
+  count: number;
+}
+
+export interface BackupTargetExecutionConnection {
+  aggregate: NestedAggregateBackupTargetExecution;
+}
+
+export interface GetBackupTargetExecutionsConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: BackupTargetExecutionOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: BackupTargetExecutionWhereInput | null;
 }
 
 export interface NestedAggregateCluster {
@@ -16216,8 +22264,8 @@ export interface GetElfStoragePoliciesConnectionRequestBody {
 }
 
 export interface NestedEverouteControllerInstance {
-  ipAddr: string;
-  vlan: string;
+  ipAddr?: string | null;
+  vlan?: string | null;
 }
 
 export interface NestedEverouteControllerTemplate {
@@ -16325,7 +22373,7 @@ export interface EverouteCluster {
   agent_elf_clusters?: NestedCluster[] | null;
   agent_elf_vdses?: NestedVds[] | null;
   controller_instances: NestedEverouteControllerInstance[];
-  controller_template: NestedEverouteControllerTemplate;
+  controller_template?: NestedEverouteControllerTemplate | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   global_default_action: GlobalPolicyAction;
   global_whitelist?: NestedEverouteClusterWhitelist | null;
@@ -16863,72 +22911,6 @@ export interface GetIsolationPoliciesConnectionRequestBody {
   where?: IsolationPolicyWhereInput | null;
 }
 
-export enum LabelOrderByInput {
-  ClusterNumASC = "cluster_num_ASC",
-  ClusterNumDESC = "cluster_num_DESC",
-  ContentLibraryImageNumASC = "content_library_image_num_ASC",
-  ContentLibraryImageNumDESC = "content_library_image_num_DESC",
-  ContentLibraryVmTemplateNumASC = "content_library_vm_template_num_ASC",
-  ContentLibraryVmTemplateNumDESC = "content_library_vm_template_num_DESC",
-  CreatedAtASC = "createdAt_ASC",
-  CreatedAtDESC = "createdAt_DESC",
-  DatacenterNumASC = "datacenter_num_ASC",
-  DatacenterNumDESC = "datacenter_num_DESC",
-  DiskNumASC = "disk_num_ASC",
-  DiskNumDESC = "disk_num_DESC",
-  ElfImageNumASC = "elf_image_num_ASC",
-  ElfImageNumDESC = "elf_image_num_DESC",
-  GpuDeviceNumASC = "gpu_device_num_ASC",
-  GpuDeviceNumDESC = "gpu_device_num_DESC",
-  HostNumASC = "host_num_ASC",
-  HostNumDESC = "host_num_DESC",
-  IdASC = "id_ASC",
-  IdDESC = "id_DESC",
-  IscsiLunNumASC = "iscsi_lun_num_ASC",
-  IscsiLunNumDESC = "iscsi_lun_num_DESC",
-  IscsiLunSnapshotNumASC = "iscsi_lun_snapshot_num_ASC",
-  IscsiLunSnapshotNumDESC = "iscsi_lun_snapshot_num_DESC",
-  IscsiTargetNumASC = "iscsi_target_num_ASC",
-  IscsiTargetNumDESC = "iscsi_target_num_DESC",
-  KeyASC = "key_ASC",
-  KeyDESC = "key_DESC",
-  NicNumASC = "nic_num_ASC",
-  NicNumDESC = "nic_num_DESC",
-  SystemVlanNumASC = "system_vlan_num_ASC",
-  SystemVlanNumDESC = "system_vlan_num_DESC",
-  TotalNumASC = "total_num_ASC",
-  TotalNumDESC = "total_num_DESC",
-  ValueASC = "value_ASC",
-  ValueDESC = "value_DESC",
-  VdsNumASC = "vds_num_ASC",
-  VdsNumDESC = "vds_num_DESC",
-  VmNumASC = "vm_num_ASC",
-  VmNumDESC = "vm_num_DESC",
-  VmSnapshotNumASC = "vm_snapshot_num_ASC",
-  VmSnapshotNumDESC = "vm_snapshot_num_DESC",
-  VmTemplateNumASC = "vm_template_num_ASC",
-  VmTemplateNumDESC = "vm_template_num_DESC",
-  VmVlanNumASC = "vm_vlan_num_ASC",
-  VmVlanNumDESC = "vm_vlan_num_DESC",
-  VmVolumeNumASC = "vm_volume_num_ASC",
-  VmVolumeNumDESC = "vm_volume_num_DESC",
-  VmVolumeSnapshotNumASC = "vm_volume_snapshot_num_ASC",
-  VmVolumeSnapshotNumDESC = "vm_volume_snapshot_num_DESC",
-}
-
-export interface GetLabelsRequestBody {
-  after?: string | null;
-  before?: string | null;
-  /** @format int32 */
-  first?: number | null;
-  /** @format int32 */
-  last?: number | null;
-  orderBy?: LabelOrderByInput | null;
-  /** @format int32 */
-  skip?: number | null;
-  where?: LabelWhereInput | null;
-}
-
 export interface NestedAggregateLabel {
   /** @format int32 */
   count: number;
@@ -17061,6 +23043,267 @@ export interface GetOrganizationsConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: OrganizationWhereInput | null;
+}
+
+export interface NestedSyncReplicationPlan {
+  id: string;
+  name: string;
+}
+
+export interface ReplicaVm {
+  createdAt: string;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  failover_test_object_descriptor?: NestedReplicationObjectDescriptor | null;
+  failover_test_replica_group?: string | null;
+  failover_test_vm?: NestedVm | null;
+  id: string;
+  inbound?: boolean | null;
+  iscsi_lun?: NestedIscsiLun | null;
+  last_out_of_sync_at?: string | null;
+  last_out_of_sync_reason?: string | null;
+  last_synced_at?: string | null;
+  method: ReplicationMethod;
+  object_descriptor?: NestedReplicationObjectDescriptor | null;
+  origin_iscsi_lun?: NestedIscsiLun | null;
+  origin_object_descriptor: NestedReplicationObjectDescriptor;
+  origin_vm?: NestedVm | null;
+  origin_vm_cluster_local_id?: string | null;
+  origin_vm_cluster_name?: string | null;
+  origin_vm_local_id?: string | null;
+  origin_vm_name?: string | null;
+  replica_group?: string | null;
+  replication_group?: string | null;
+  replication_plan?: NestedReplicationPlan | null;
+  replication_service: NestedReplicationService;
+  /** @format int32 */
+  resource_version?: number | null;
+  state: ReplicaVmState;
+  sync_replication_object_status?: SyncReplicationObjectStatus | null;
+  sync_replication_plan?: NestedSyncReplicationPlan | null;
+  sync_replication_status?: SyncReplicationStatus | null;
+  targets_deletable?: boolean | null;
+  type: ReplicationObjectType;
+  updatedAt: string;
+  vm?: NestedVm | null;
+}
+
+export enum ReplicaVmOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FailoverTestObjectDescriptorASC = "failover_test_object_descriptor_ASC",
+  FailoverTestObjectDescriptorDESC = "failover_test_object_descriptor_DESC",
+  FailoverTestReplicaGroupASC = "failover_test_replica_group_ASC",
+  FailoverTestReplicaGroupDESC = "failover_test_replica_group_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InboundASC = "inbound_ASC",
+  InboundDESC = "inbound_DESC",
+  LastOutOfSyncAtASC = "last_out_of_sync_at_ASC",
+  LastOutOfSyncAtDESC = "last_out_of_sync_at_DESC",
+  LastOutOfSyncReasonASC = "last_out_of_sync_reason_ASC",
+  LastOutOfSyncReasonDESC = "last_out_of_sync_reason_DESC",
+  LastSyncedAtASC = "last_synced_at_ASC",
+  LastSyncedAtDESC = "last_synced_at_DESC",
+  MethodASC = "method_ASC",
+  MethodDESC = "method_DESC",
+  ObjectDescriptorASC = "object_descriptor_ASC",
+  ObjectDescriptorDESC = "object_descriptor_DESC",
+  OriginObjectDescriptorASC = "origin_object_descriptor_ASC",
+  OriginObjectDescriptorDESC = "origin_object_descriptor_DESC",
+  OriginVmClusterLocalIdASC = "origin_vm_cluster_local_id_ASC",
+  OriginVmClusterLocalIdDESC = "origin_vm_cluster_local_id_DESC",
+  OriginVmClusterNameASC = "origin_vm_cluster_name_ASC",
+  OriginVmClusterNameDESC = "origin_vm_cluster_name_DESC",
+  OriginVmLocalIdASC = "origin_vm_local_id_ASC",
+  OriginVmLocalIdDESC = "origin_vm_local_id_DESC",
+  OriginVmNameASC = "origin_vm_name_ASC",
+  OriginVmNameDESC = "origin_vm_name_DESC",
+  ReplicaGroupASC = "replica_group_ASC",
+  ReplicaGroupDESC = "replica_group_DESC",
+  ReplicationGroupASC = "replication_group_ASC",
+  ReplicationGroupDESC = "replication_group_DESC",
+  ResourceVersionASC = "resource_version_ASC",
+  ResourceVersionDESC = "resource_version_DESC",
+  StateASC = "state_ASC",
+  StateDESC = "state_DESC",
+  SyncReplicationObjectStatusASC = "sync_replication_object_status_ASC",
+  SyncReplicationObjectStatusDESC = "sync_replication_object_status_DESC",
+  SyncReplicationStatusASC = "sync_replication_status_ASC",
+  SyncReplicationStatusDESC = "sync_replication_status_DESC",
+  TargetsDeletableASC = "targets_deletable_ASC",
+  TargetsDeletableDESC = "targets_deletable_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
+
+export interface GetReplicaVmsRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: ReplicaVmOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: ReplicaVmWhereInput | null;
+}
+
+export interface NestedAggregateReplicaVm {
+  /** @format int32 */
+  count: number;
+}
+
+export interface ReplicaVmConnection {
+  aggregate: NestedAggregateReplicaVm;
+}
+
+export interface GetReplicaVmsConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: ReplicaVmOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: ReplicaVmWhereInput | null;
+}
+
+export interface NestedAggregateReplicationPlan {
+  /** @format int32 */
+  count: number;
+}
+
+export interface ReplicationPlanConnection {
+  aggregate: NestedAggregateReplicationPlan;
+}
+
+export interface GetReplicationPlansConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: ReplicationPlanOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: ReplicationPlanWhereInput | null;
+}
+
+export interface NestedReplicationServiceNetwork {
+  gateway?: string | null;
+  ip: string;
+  mask: string;
+  type: BackupServiceNetworkType;
+  vlanId: string;
+}
+
+export interface ReplicationService {
+  createdAt: string;
+  description?: string | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  id: string;
+  kube_config: string;
+  management_network: NestedReplicationServiceNetwork;
+  /** @format int32 */
+  max_failback_jobs?: number | null;
+  /** @format double */
+  max_failback_speed_limit?: number | null;
+  /** @format int32 */
+  max_replication_jobs?: number | null;
+  /** @format double */
+  max_replication_speed_limit?: number | null;
+  /** @format int32 */
+  max_retry_times?: number | null;
+  name: string;
+  replication_clusters?: NestedCluster[] | null;
+  replication_clusters_descriptor: NestedReplicationClusterDescriptor[];
+  replication_network: NestedReplicationServiceNetwork;
+  replication_plans?: NestedReplicationPlan[] | null;
+  /** @format int32 */
+  retry_interval?: number | null;
+  storage_network: NestedReplicationServiceNetwork;
+  sync_replication_plans?: NestedSyncReplicationPlan[] | null;
+  updatedAt: string;
+}
+
+export enum ReplicationServiceOrderByInput {
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  KubeConfigASC = "kube_config_ASC",
+  KubeConfigDESC = "kube_config_DESC",
+  ManagementNetworkASC = "management_network_ASC",
+  ManagementNetworkDESC = "management_network_DESC",
+  MaxFailbackJobsASC = "max_failback_jobs_ASC",
+  MaxFailbackJobsDESC = "max_failback_jobs_DESC",
+  MaxFailbackSpeedLimitASC = "max_failback_speed_limit_ASC",
+  MaxFailbackSpeedLimitDESC = "max_failback_speed_limit_DESC",
+  MaxReplicationJobsASC = "max_replication_jobs_ASC",
+  MaxReplicationJobsDESC = "max_replication_jobs_DESC",
+  MaxReplicationSpeedLimitASC = "max_replication_speed_limit_ASC",
+  MaxReplicationSpeedLimitDESC = "max_replication_speed_limit_DESC",
+  MaxRetryTimesASC = "max_retry_times_ASC",
+  MaxRetryTimesDESC = "max_retry_times_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  ReplicationClustersDescriptorASC = "replication_clusters_descriptor_ASC",
+  ReplicationClustersDescriptorDESC = "replication_clusters_descriptor_DESC",
+  ReplicationNetworkASC = "replication_network_ASC",
+  ReplicationNetworkDESC = "replication_network_DESC",
+  RetryIntervalASC = "retry_interval_ASC",
+  RetryIntervalDESC = "retry_interval_DESC",
+  StorageNetworkASC = "storage_network_ASC",
+  StorageNetworkDESC = "storage_network_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
+
+export interface GetReplicationServicesRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: ReplicationServiceOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: ReplicationServiceWhereInput | null;
+}
+
+export interface NestedAggregateReplicationService {
+  /** @format int32 */
+  count: number;
+}
+
+export interface ReplicationServiceConnection {
+  aggregate: NestedAggregateReplicationService;
+}
+
+export interface GetReplicationServicesConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: ReplicationServiceOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: ReplicationServiceWhereInput | null;
 }
 
 export enum SecurityGroupOrderByInput {
@@ -17230,6 +23473,182 @@ export interface GetSvtImagesConnectionRequestBody {
   /** @format int32 */
   skip?: number | null;
   where?: SvtImageWhereInput | null;
+}
+
+export interface SyncReplicationPlan {
+  activation_timestamp?: string | null;
+  compression: boolean;
+  createdAt: string;
+  /** @format int32 */
+  data_version?: number | null;
+  delete_strategy?: BackupPlanDeleteStrategy | null;
+  description?: string | null;
+  /** @format int32 */
+  ec_k?: number | null;
+  /** @format int32 */
+  ec_m?: number | null;
+  entityAsyncStatus?: EntityAsyncStatus | null;
+  failover_test_ip_mapping?: NestedReplicationIPAddressMapping[] | null;
+  failover_test_keep_mac_address?: boolean | null;
+  failover_test_name_rule: ReplicaNameRule;
+  failover_test_name_setting: string;
+  failover_test_network_mapping?: NestedReplicationPlanNetworkMapping[] | null;
+  id: string;
+  inbound?: boolean | null;
+  initialization_time_point?: string | null;
+  /** @format int32 */
+  interval?: number | null;
+  ip_mapping: NestedReplicationIPAddressMapping[];
+  keep_mac_address?: boolean | null;
+  keep_policy?: BackupPlanKeepPolicy | null;
+  /** @format int32 */
+  keep_policy_value?: number | null;
+  name: string;
+  network_mapping: NestedReplicationPlanNetworkMapping[];
+  objects_descriptor: NestedReplicationObjectDescriptor[];
+  period?: ReplicationPlanPeriod | null;
+  phase?: BackupPlanPhase | null;
+  replica_name_rule: ReplicaNameRule;
+  replica_name_setting?: string | null;
+  /** @format int32 */
+  replica_num?: number | null;
+  replica_vms?: NestedReplicaVm[] | null;
+  resiliency_type?: ResiliencyType | null;
+  /** @format int32 */
+  resource_version?: number | null;
+  snapshot_consistent_type?: ConsistentType | null;
+  status: BackupPlanStatus;
+  storage_encrypted?: boolean | null;
+  storage_policy: VmVolumeElfStoragePolicyType;
+  target_cluster?: NestedCluster | null;
+  target_cluster_descriptor: NestedReplicationClusterDescriptor;
+  target_replication_service: NestedReplicationService;
+  thin_provision?: boolean | null;
+  time_points?: NestedBackupPlanTimePoint[] | null;
+  type: ReplicationPlanType;
+  updatedAt: string;
+  vms?: NestedVm[] | null;
+  weekdays?: WeekdayTypeEnum[] | null;
+}
+
+export enum SyncReplicationPlanOrderByInput {
+  ActivationTimestampASC = "activation_timestamp_ASC",
+  ActivationTimestampDESC = "activation_timestamp_DESC",
+  CompressionASC = "compression_ASC",
+  CompressionDESC = "compression_DESC",
+  CreatedAtASC = "createdAt_ASC",
+  CreatedAtDESC = "createdAt_DESC",
+  DataVersionASC = "data_version_ASC",
+  DataVersionDESC = "data_version_DESC",
+  DeleteStrategyASC = "delete_strategy_ASC",
+  DeleteStrategyDESC = "delete_strategy_DESC",
+  DescriptionASC = "description_ASC",
+  DescriptionDESC = "description_DESC",
+  EcKASC = "ec_k_ASC",
+  EcKDESC = "ec_k_DESC",
+  EcMASC = "ec_m_ASC",
+  EcMDESC = "ec_m_DESC",
+  EntityAsyncStatusASC = "entityAsyncStatus_ASC",
+  EntityAsyncStatusDESC = "entityAsyncStatus_DESC",
+  FailoverTestIpMappingASC = "failover_test_ip_mapping_ASC",
+  FailoverTestIpMappingDESC = "failover_test_ip_mapping_DESC",
+  FailoverTestKeepMacAddressASC = "failover_test_keep_mac_address_ASC",
+  FailoverTestKeepMacAddressDESC = "failover_test_keep_mac_address_DESC",
+  FailoverTestNameRuleASC = "failover_test_name_rule_ASC",
+  FailoverTestNameRuleDESC = "failover_test_name_rule_DESC",
+  FailoverTestNameSettingASC = "failover_test_name_setting_ASC",
+  FailoverTestNameSettingDESC = "failover_test_name_setting_DESC",
+  FailoverTestNetworkMappingASC = "failover_test_network_mapping_ASC",
+  FailoverTestNetworkMappingDESC = "failover_test_network_mapping_DESC",
+  IdASC = "id_ASC",
+  IdDESC = "id_DESC",
+  InboundASC = "inbound_ASC",
+  InboundDESC = "inbound_DESC",
+  InitializationTimePointASC = "initialization_time_point_ASC",
+  InitializationTimePointDESC = "initialization_time_point_DESC",
+  IntervalASC = "interval_ASC",
+  IntervalDESC = "interval_DESC",
+  IpMappingASC = "ip_mapping_ASC",
+  IpMappingDESC = "ip_mapping_DESC",
+  KeepMacAddressASC = "keep_mac_address_ASC",
+  KeepMacAddressDESC = "keep_mac_address_DESC",
+  KeepPolicyASC = "keep_policy_ASC",
+  KeepPolicyDESC = "keep_policy_DESC",
+  KeepPolicyValueASC = "keep_policy_value_ASC",
+  KeepPolicyValueDESC = "keep_policy_value_DESC",
+  NameASC = "name_ASC",
+  NameDESC = "name_DESC",
+  NetworkMappingASC = "network_mapping_ASC",
+  NetworkMappingDESC = "network_mapping_DESC",
+  ObjectsDescriptorASC = "objects_descriptor_ASC",
+  ObjectsDescriptorDESC = "objects_descriptor_DESC",
+  PeriodASC = "period_ASC",
+  PeriodDESC = "period_DESC",
+  PhaseASC = "phase_ASC",
+  PhaseDESC = "phase_DESC",
+  ReplicaNameRuleASC = "replica_name_rule_ASC",
+  ReplicaNameRuleDESC = "replica_name_rule_DESC",
+  ReplicaNameSettingASC = "replica_name_setting_ASC",
+  ReplicaNameSettingDESC = "replica_name_setting_DESC",
+  ReplicaNumASC = "replica_num_ASC",
+  ReplicaNumDESC = "replica_num_DESC",
+  ResiliencyTypeASC = "resiliency_type_ASC",
+  ResiliencyTypeDESC = "resiliency_type_DESC",
+  ResourceVersionASC = "resource_version_ASC",
+  ResourceVersionDESC = "resource_version_DESC",
+  SnapshotConsistentTypeASC = "snapshot_consistent_type_ASC",
+  SnapshotConsistentTypeDESC = "snapshot_consistent_type_DESC",
+  StatusASC = "status_ASC",
+  StatusDESC = "status_DESC",
+  StorageEncryptedASC = "storage_encrypted_ASC",
+  StorageEncryptedDESC = "storage_encrypted_DESC",
+  StoragePolicyASC = "storage_policy_ASC",
+  StoragePolicyDESC = "storage_policy_DESC",
+  TargetClusterDescriptorASC = "target_cluster_descriptor_ASC",
+  TargetClusterDescriptorDESC = "target_cluster_descriptor_DESC",
+  ThinProvisionASC = "thin_provision_ASC",
+  ThinProvisionDESC = "thin_provision_DESC",
+  TimePointsASC = "time_points_ASC",
+  TimePointsDESC = "time_points_DESC",
+  TypeASC = "type_ASC",
+  TypeDESC = "type_DESC",
+  UpdatedAtASC = "updatedAt_ASC",
+  UpdatedAtDESC = "updatedAt_DESC",
+}
+
+export interface GetSyncReplicationPlansRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: SyncReplicationPlanOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: SyncReplicationPlanWhereInput | null;
+}
+
+export interface NestedAggregateSyncReplicationPlan {
+  /** @format int32 */
+  count: number;
+}
+
+export interface SyncReplicationPlanConnection {
+  aggregate: NestedAggregateSyncReplicationPlan;
+}
+
+export interface GetSyncReplicationPlansConnectionRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: SyncReplicationPlanOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+  where?: SyncReplicationPlanWhereInput | null;
 }
 
 export interface SystemAuditLog {
@@ -17465,7 +23884,9 @@ export enum EverouteFeatureType {
 }
 
 export enum EverouteLicensePricingType {
+  CORE_NUM = "CORE_NUM",
   CPU_SLOT_NUM = "CPU_SLOT_NUM",
+  VCPU_NUM = "VCPU_NUM",
   VM_NUM = "VM_NUM",
 }
 
@@ -17526,6 +23947,27 @@ export enum V2EverouteLicenseOrderByInput {
 }
 
 export interface GetV2EverouteLicensesRequestBody {
+  after?: string | null;
+  before?: string | null;
+  /** @format int32 */
+  first?: number | null;
+  /** @format int32 */
+  last?: number | null;
+  orderBy?: V2EverouteLicenseOrderByInput | null;
+  /** @format int32 */
+  skip?: number | null;
+}
+
+export interface NestedAggregateV2EverouteLicense {
+  /** @format int32 */
+  count: number;
+}
+
+export interface V2EverouteLicenseConnection {
+  aggregate: NestedAggregateV2EverouteLicense;
+}
+
+export interface GetV2EverouteLicensesConnectionRequestBody {
   after?: string | null;
   before?: string | null;
   /** @format int32 */
@@ -17625,6 +24067,7 @@ export interface VirtualPrivateCloudEdgeGatewayGroup {
   id: string;
   name: string;
   primary_edge_gateway_id?: string | null;
+  vpc_service: NestedVirtualPrivateCloudService;
 }
 
 export enum VirtualPrivateCloudEdgeGatewayGroupOrderByInput {
@@ -17685,11 +24128,13 @@ export interface NestedVirtualPrivateCloudEdgeGatewayStatus {
 
 export interface VirtualPrivateCloudEdgeGateway {
   description?: string | null;
+  edge_gateway_group?: NestedVirtualPrivateCloudEdgeGatewayGroup | null;
   entityAsyncStatus?: EntityAsyncStatus | null;
   id: string;
   name: string;
   status?: NestedVirtualPrivateCloudEdgeGatewayStatus | null;
   vdses?: NestedVds[] | null;
+  vpc_service: NestedVirtualPrivateCloudService;
 }
 
 export enum VirtualPrivateCloudEdgeGatewayOrderByInput {
@@ -18604,6 +25049,10 @@ export enum VmFolderOrderByInput {
   LocalIdDESC = "local_id_DESC",
   NameASC = "name_ASC",
   NameDESC = "name_DESC",
+  PathASC = "path_ASC",
+  PathDESC = "path_DESC",
+  TotalVmNumASC = "total_vm_num_ASC",
+  TotalVmNumDESC = "total_vm_num_DESC",
   VmNumASC = "vm_num_ASC",
   VmNumDESC = "vm_num_DESC",
 }
@@ -18644,6 +25093,7 @@ export interface GetVmFoldersConnectionRequestBody {
 }
 
 export interface VmNic {
+  dpi_enabled?: boolean | null;
   /** @format double */
   egress_rate_limit_burst_in_bit?: number | null;
   egress_rate_limit_enabled?: boolean | null;
@@ -18651,6 +25101,8 @@ export interface VmNic {
   egress_rate_limit_max_rate_in_bitps?: number | null;
   enabled?: boolean | null;
   gateway?: string | null;
+  guest_info_ip_addresses: string[];
+  guest_info_ip_addresses_v6: string[];
   id: string;
   /** @format double */
   ingress_rate_limit_burst_in_bit?: number | null;
@@ -18673,6 +25125,8 @@ export interface VmNic {
 }
 
 export enum VmNicOrderByInput {
+  DpiEnabledASC = "dpi_enabled_ASC",
+  DpiEnabledDESC = "dpi_enabled_DESC",
   EgressRateLimitBurstInBitASC = "egress_rate_limit_burst_in_bit_ASC",
   EgressRateLimitBurstInBitDESC = "egress_rate_limit_burst_in_bit_DESC",
   EgressRateLimitEnabledASC = "egress_rate_limit_enabled_ASC",
@@ -18889,6 +25343,8 @@ export enum VmVolumeSnapshotOrderByInput {
   ElfStoragePolicyEcMDESC = "elf_storage_policy_ec_m_DESC",
   ElfStoragePolicyReplicaNumASC = "elf_storage_policy_replica_num_ASC",
   ElfStoragePolicyReplicaNumDESC = "elf_storage_policy_replica_num_DESC",
+  ElfStoragePolicyStripeNumASC = "elf_storage_policy_stripe_num_ASC",
+  ElfStoragePolicyStripeNumDESC = "elf_storage_policy_stripe_num_DESC",
   ElfStoragePolicyThinProvisionASC = "elf_storage_policy_thin_provision_ASC",
   ElfStoragePolicyThinProvisionDESC = "elf_storage_policy_thin_provision_DESC",
   EntityAsyncStatusASC = "entityAsyncStatus_ASC",
@@ -18901,6 +25357,8 @@ export enum VmVolumeSnapshotOrderByInput {
   LocalIdDESC = "local_id_DESC",
   NameASC = "name_ASC",
   NameDESC = "name_DESC",
+  ProvisionPolicyASC = "provision_policy_ASC",
+  ProvisionPolicyDESC = "provision_policy_DESC",
   ResidentInCacheASC = "resident_in_cache_ASC",
   ResidentInCacheDESC = "resident_in_cache_DESC",
   SharedSizeASC = "shared_size_ASC",
