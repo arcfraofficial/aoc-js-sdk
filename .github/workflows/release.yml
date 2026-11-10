@@ -20,7 +20,7 @@ jobs:
           node-version: 22
           registry-url: https://registry.npmjs.org
       - run: npm install -g npm@latest yarn
-      - run: npm ci
+      - run: npm install # FIXME: commit lockfile later
       - name: Pack
         id: pack
         run: echo "tarball=$(npm pack)" >> "$GITHUB_OUTPUT"
